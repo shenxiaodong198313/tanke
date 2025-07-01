@@ -161,11 +161,11 @@ const ContactUs: React.FC = () => {
   };
 
   const menuItems = [
-    { name: t('nav.aiTech') },
-    { name: t('nav.personal') },
-    { name: t('nav.smallBusiness') },
-    { name: t('nav.industry') },
-    { name: t('nav.partners') }
+    { name: t('nav.home') },
+    { name: t('nav.products') },
+    { name: t('nav.tutorials') },
+    { name: t('nav.partnership') },
+    { name: t('nav.about') }
   ];
 
   return (

@@ -14,11 +14,11 @@ const LanguageContext = createContext<LanguageContextType | undefined>(undefined
 const translations: Record<Language, Record<string, string>> = {
   'zh-CN': {
     // 导航栏
-    'nav.aiTech': 'AI技术',
-    'nav.personal': '个人用户',
-    'nav.smallBusiness': '中小企业用户',
-    'nav.industry': '行业客户',
-    'nav.partners': '生态合作伙伴',
+    'nav.home': '首页',
+    'nav.products': '产品方案',
+    'nav.tutorials': '使用教程',
+    'nav.partnership': '代理合作',
+    'nav.about': '关于我们',
     'nav.customize': '立即定制',
     'nav.language': '语言',
     
@@ -142,11 +142,11 @@ const translations: Record<Language, Record<string, string>> = {
   
   'zh-TW': {
     // 導航欄
-    'nav.aiTech': 'AI技術',
-    'nav.personal': '個人用戶',
-    'nav.smallBusiness': '中小企業用戶',
-    'nav.industry': '行業客戶',
-    'nav.partners': '生態合作夥伴',
+    'nav.home': '首頁',
+    'nav.products': '產品方案',
+    'nav.tutorials': '使用教程',
+    'nav.partnership': '代理合作',
+    'nav.about': '關於我們',
     'nav.customize': '立即定制',
     'nav.language': '語言',
     
@@ -270,11 +270,11 @@ const translations: Record<Language, Record<string, string>> = {
   
   'en': {
     // Navigation
-    'nav.aiTech': 'AI Technology',
-    'nav.personal': 'Personal Users',
-    'nav.smallBusiness': 'Small Business',
-    'nav.industry': 'Enterprise',
-    'nav.partners': 'Partners',
+    'nav.home': 'Home',
+    'nav.products': 'Products',
+    'nav.tutorials': 'Tutorials',
+    'nav.partnership': 'Partnership',
+    'nav.about': 'About Us',
     'nav.customize': 'Get Started',
     'nav.language': 'Language',
     
@@ -398,11 +398,11 @@ const translations: Record<Language, Record<string, string>> = {
   
   'ja': {
     // ナビゲーション
-    'nav.aiTech': 'AI技術',
-    'nav.personal': '個人ユーザー',
-    'nav.smallBusiness': '中小企業ユーザー',
-    'nav.industry': '業界顧客',
-    'nav.partners': 'エコシステムパートナー',
+    'nav.home': 'ホーム',
+    'nav.products': '製品ソリューション',
+    'nav.tutorials': '使用チュートリアル',
+    'nav.partnership': '代理パートナー',
+    'nav.about': '会社概要',
     'nav.customize': '今すぐカスタマイズ',
     'nav.language': '言語',
     
@@ -526,11 +526,11 @@ const translations: Record<Language, Record<string, string>> = {
   
   'ko': {
     // 내비게이션
-    'nav.aiTech': 'AI 기술',
-    'nav.personal': '개인 사용자',
-    'nav.smallBusiness': '중소기업 사용자',
-    'nav.industry': '산업 고객',
-    'nav.partners': '생태계 파트너',
+    'nav.home': '홈페이지',
+    'nav.products': '제품 솔루션',
+    'nav.tutorials': '사용 튜토리얼',
+    'nav.partnership': '대리 협력',
+    'nav.about': '회사 소개',
     'nav.customize': '즉시 맞춤화',
     'nav.language': '언어',
     

@@ -110,11 +110,11 @@ const KuaiNavbar: React.FC = () => {
   };
 
   const menuItems = [
-    { name: t('nav.aiTech'), hasDropdown: true },
-    { name: t('nav.personal'), hasDropdown: true },
-    { name: t('nav.smallBusiness'), hasDropdown: false },
-    { name: t('nav.industry'), hasDropdown: true },
-    { name: t('nav.partners'), hasDropdown: false }
+    { name: t('nav.home'), hasDropdown: false },
+    { name: t('nav.products'), hasDropdown: false },
+    { name: t('nav.tutorials'), hasDropdown: false },
+    { name: t('nav.partnership'), hasDropdown: false },
+    { name: t('nav.about'), hasDropdown: false }
   ];
 
   return (
