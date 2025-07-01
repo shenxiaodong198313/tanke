@@ -1,7 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
+import { useLanguage } from '../contexts/LanguageContext';
+import LanguageSwitcher from './LanguageSwitcher';
 
 const KuaiNavbar: React.FC = () => {
+  const { t } = useLanguage();
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [isMobile, setIsMobile] = useState(window.innerWidth <= 768);
@@ -96,17 +99,7 @@ const KuaiNavbar: React.FC = () => {
     transition: 'all 0.3s ease'
   };
 
-  const secondaryButtonStyle: React.CSSProperties = {
-    backgroundColor: 'transparent',
-    color: isScrolled ? '#5f6368' : 'rgba(255, 255, 255, 0.9)',
-    padding: '0.75rem 1.5rem',
-    borderRadius: '6px',
-    fontWeight: '500',
-    fontSize: '0.9rem',
-    border: isScrolled ? '1px solid #e8eaed' : '1px solid rgba(255, 255, 255, 0.3)',
-    cursor: 'pointer',
-    transition: 'all 0.3s ease'
-  };
+
 
   const mobileMenuButtonStyle: React.CSSProperties = {
     backgroundColor: 'transparent',
@@ -117,11 +110,11 @@ const KuaiNavbar: React.FC = () => {
   };
 
   const menuItems = [
-    { name: 'AI技术', hasDropdown: true },
-    { name: '个人用户', hasDropdown: true },
-    { name: '中小企业用户', hasDropdown: false },
-    { name: '行业客户', hasDropdown: true },
-    { name: '生态合作伙伴', hasDropdown: false }
+    { name: t('nav.aiTech'), hasDropdown: true },
+    { name: t('nav.personal'), hasDropdown: true },
+    { name: t('nav.smallBusiness'), hasDropdown: false },
+    { name: t('nav.industry'), hasDropdown: true },
+    { name: t('nav.partners'), hasDropdown: false }
   ];
 
   return (
@@ -134,8 +127,8 @@ const KuaiNavbar: React.FC = () => {
           whileHover={{ scale: 1.02 }}
           transition={{ duration: 0.2 }}
         >
-          <span style={logoIconStyle}>🧠</span>
-          <span>360智脑</span>
+          <span style={logoIconStyle}>🚀</span>
+          <span>{t('contact.brand')}</span>
         </motion.a>
 
         {/* Desktop Menu */}
@@ -164,17 +157,7 @@ const KuaiNavbar: React.FC = () => {
 
         {/* Action Buttons */}
         <div style={actionButtonsStyle}>
-          <motion.button
-            style={secondaryButtonStyle}
-            whileHover={{ 
-              backgroundColor: isScrolled ? '#f8f9fa' : 'rgba(255, 255, 255, 0.1)',
-              scale: 1.02 
-            }}
-            whileTap={{ scale: 0.98 }}
-            transition={{ duration: 0.2 }}
-          >
-            登录
-          </motion.button>
+          <LanguageSwitcher isScrolled={isScrolled} />
 
           <motion.button
             style={primaryButtonStyle}
@@ -185,7 +168,7 @@ const KuaiNavbar: React.FC = () => {
             whileTap={{ scale: 0.98 }}
             transition={{ duration: 0.2 }}
           >
-            立即定制
+            {t('nav.customize')}
           </motion.button>
 
           {/* Mobile Menu Button */}

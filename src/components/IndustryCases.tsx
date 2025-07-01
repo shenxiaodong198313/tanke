@@ -1,271 +1,177 @@
 import React from 'react';
-import { motion } from 'framer-motion';
+import { useLanguage } from '../contexts/LanguageContext';
 
 const IndustryCases: React.FC = () => {
-  const industries = [
-    "服装", "鞋子", "箱包", "珠宝", "玩具", "茶叶", 
-    "家具", "生鲜", "3C", "书籍", "美容", "母婴",
-    "汽车", "二手", "超市", "社区", "家政", "同城", 
-    "房产", "旅游", "鲜花"
-  ];
+  const { t } = useLanguage();
+  const [isMobile, setIsMobile] = React.useState(false);
 
-  const cases = [
+  React.useEffect(() => {
+    const checkMobile = () => {
+      const mobile = window.innerWidth <= 768 || 
+                    /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+      setIsMobile(mobile);
+    };
+    
+    checkMobile();
+    window.addEventListener('resize', checkMobile);
+    return () => window.removeEventListener('resize', checkMobile);
+  }, []);
+
+  const industryCases = [
     {
-      title: "房租租赁",
-      description: "专业的房屋租赁管理系统",
-      image: "🏠",
-      features: ["在线看房", "合同管理", "租金收缴"]
+      title: t('industry.manufacturing'),
+      icon: "🏭",
+      description: t('industry.manufacturing.desc'),
+      color: "#e91e63"
     },
     {
-      title: "服鞋箱包",
-      description: "时尚零售行业解决方案",
-      image: "👗",
-      features: ["款式展示", "尺码管理", "库存同步"]
+      title: t('industry.localBusiness'), 
+      icon: "👨‍🍳",
+      description: t('industry.localBusiness.desc'),
+      color: "#e91e63"
     },
     {
-      title: "3C电子",
-      description: "数码产品销售管理平台",
-      image: "📱",
-      features: ["产品配置", "价格管理", "售后服务"]
+      title: t('industry.beauty'),
+      icon: "💄", 
+      description: t('industry.beauty.desc'),
+      color: "#e91e63"
     },
     {
-      title: "社区团购",
-      description: "社区电商运营解决方案",
-      image: "🛒",
-      features: ["团长管理", "订单配送", "分佣结算"]
+      title: t('industry.homeDecor'),
+      icon: "🏠",
+      description: t('industry.homeDecor.desc'),
+      color: "#e91e63"
     },
     {
-      title: "美食外卖",
-      description: "餐饮外卖配送管理系统",
-      image: "🍜",
-      features: ["菜单管理", "订单处理", "配送跟踪"]
+      title: t('industry.anyAccount'),
+      icon: "📱",
+      description: t('industry.anyAccount.desc'),
+      color: "#e91e63"
     }
   ];
 
   const sectionStyle: React.CSSProperties = {
-    padding: '4rem 0',
-    backgroundColor: '#F9FAFB'
-  };
-
-  const containerStyle: React.CSSProperties = {
-    maxWidth: '1200px',
-    margin: '0 auto',
-    padding: '0 1rem'
-  };
-
-  const headerStyle: React.CSSProperties = {
-    textAlign: 'center',
-    marginBottom: '3rem'
-  };
-
-  const titleStyle: React.CSSProperties = {
-    fontSize: '2.5rem',
-    fontWeight: 'bold',
-    color: '#1F2937',
-    marginBottom: '1rem'
-  };
-
-  const subtitleStyle: React.CSSProperties = {
-    fontSize: '1.125rem',
-    color: '#6B7280',
-    maxWidth: '600px',
-    margin: '0 auto',
-    marginBottom: '2rem'
-  };
-
-  const industriesContainerStyle: React.CSSProperties = {
+    minHeight: '100vh',
+    height: '100vh',
+    background: 'linear-gradient(135deg, #fce4ec 0%, #f3e5f5 100%)',
     display: 'flex',
-    flexWrap: 'wrap',
+    flexDirection: 'column',
     justifyContent: 'center',
-    gap: '1rem',
-    marginBottom: '4rem'
-  };
-
-  const industryTagStyle: React.CSSProperties = {
-    backgroundColor: 'white',
-    padding: '0.5rem 1rem',
-    borderRadius: '2rem',
-    fontSize: '0.875rem',
-    color: '#374151',
-    border: '1px solid #E5E7EB',
-    whiteSpace: 'nowrap'
-  };
-
-  const casesHeaderStyle: React.CSSProperties = {
-    textAlign: 'center',
-    marginBottom: '2rem'
-  };
-
-  const casesSubtitleStyle: React.CSSProperties = {
-    fontSize: '1.5rem',
-    fontWeight: 'bold',
-    color: '#1F2937',
-    marginBottom: '0.5rem'
-  };
-
-  const casesDescStyle: React.CSSProperties = {
-    fontSize: '1rem',
-    color: '#6B7280'
-  };
-
-  const casesGridStyle: React.CSSProperties = {
-    display: 'grid',
-    gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))',
-    gap: '2rem'
-  };
-
-  const caseCardStyle: React.CSSProperties = {
-    backgroundColor: 'white',
-    borderRadius: '1rem',
-    padding: '2rem',
-    textAlign: 'center',
-    boxShadow: '0 4px 6px rgba(0, 0, 0, 0.05)',
-    border: '1px solid #E5E7EB',
     position: 'relative',
+    padding: isMobile ? '2rem 1rem' : '3rem 2rem',
+    boxSizing: 'border-box',
     overflow: 'hidden'
   };
 
-  const caseImageStyle: React.CSSProperties = {
-    fontSize: '4rem',
-    marginBottom: '1rem',
-    display: 'block'
+  const containerStyle: React.CSSProperties = {
+    maxWidth: '1400px',
+    margin: '0 auto',
+    padding: '0 0.5rem',
+    width: '100%'
   };
 
-  const caseTitleStyle: React.CSSProperties = {
-    fontSize: '1.5rem',
+  const cardStyle: React.CSSProperties = {
+    backgroundColor: 'rgba(255, 255, 255, 0.95)',
+    borderRadius: '20px',
+    padding: isMobile ? '1.5rem 1rem' : 'clamp(1.5rem, 2.5vw, 2rem) clamp(1rem, 1.5vw, 1.5rem)',
+    textAlign: 'center',
+    backdropFilter: 'blur(10px)',
+    border: '1px solid rgba(255, 255, 255, 0.2)',
+    boxShadow: '0 8px 32px rgba(233, 30, 99, 0.1)',
+    transition: 'all 0.3s ease',
+    position: 'relative',
+    overflow: 'hidden',
+    minHeight: isMobile ? '280px' : 'clamp(250px, 30vh, 320px)',
+    display: 'flex',
+    flexDirection: 'column',
+    justifyContent: 'space-between'
+  };
+
+  const iconStyle: React.CSSProperties = {
+    fontSize: isMobile ? '2.5rem' : 'clamp(2.5rem, 4vw, 3.5rem)',
+    marginBottom: isMobile ? '1rem' : '1.5rem',
+    background: 'linear-gradient(135deg, #e91e63, #ad1457)',
+    borderRadius: '50%',
+    width: isMobile ? '60px' : '80px',
+    height: isMobile ? '60px' : '80px',
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'center',
+    margin: '0 auto 1rem'
+  };
+
+  const titleStyle: React.CSSProperties = {
+    fontSize: isMobile ? '1.2rem' : 'clamp(1.2rem, 2.8vw, 1.5rem)',
     fontWeight: 'bold',
-    color: '#1F2937',
-    marginBottom: '0.5rem'
+    marginBottom: isMobile ? '0.8rem' : 'clamp(0.8rem, 1.5vw, 1rem)',
+    color: '#2d3748'
   };
 
-  const caseDescriptionStyle: React.CSSProperties = {
-    fontSize: '1rem',
-    color: '#6B7280',
-    marginBottom: '1.5rem'
-  };
-
-  const featuresListStyle: React.CSSProperties = {
-    listStyle: 'none',
-    padding: 0,
-    margin: 0
-  };
-
-  const featureItemStyle: React.CSSProperties = {
-    padding: '0.25rem 0',
-    fontSize: '0.875rem',
-    color: '#4B5563'
-  };
-
-  const qrCodeStyle: React.CSSProperties = {
-    marginTop: '1rem',
-    padding: '0.5rem',
-    backgroundColor: '#F3F4F6',
-    borderRadius: '0.5rem',
-    fontSize: '0.75rem',
-    color: '#6B7280'
+  const descStyle: React.CSSProperties = {
+    fontSize: isMobile ? '0.85rem' : 'clamp(0.85rem, 1.8vw, 0.95rem)',
+    color: '#4a5568',
+    lineHeight: '1.6',
+    flex: '1'
   };
 
   return (
     <section style={sectionStyle}>
       <div style={containerStyle}>
-        <div style={headerStyle}>
-          <motion.h2
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-            viewport={{ once: true }}
-            style={titleStyle}
-          >
-            各行各业都在用
-          </motion.h2>
-          <motion.p
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.2 }}
-            viewport={{ once: true }}
-            style={subtitleStyle}
-          >
-            生意人必备的生产力工具
-          </motion.p>
-
-          {/* Industries Tags */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.4 }}
-            viewport={{ once: true }}
-            style={industriesContainerStyle}
-          >
-            {industries.map((industry, index) => (
-              <motion.span
-                key={industry}
-                initial={{ opacity: 0, scale: 0.8 }}
-                whileInView={{ opacity: 1, scale: 1 }}
-                transition={{ duration: 0.4, delay: 0.6 + index * 0.05 }}
-                viewport={{ once: true }}
-                whileHover={{ scale: 1.05, backgroundColor: '#EBF8FF' }}
-                style={industryTagStyle}
-              >
-                {industry}
-              </motion.span>
-            ))}
-          </motion.div>
+        {/* 标题区域 */}
+        <div style={{ 
+          textAlign: 'center', 
+          marginBottom: isMobile ? '2rem' : '3rem',
+          padding: '0 1rem'
+        }}>
+          <h1 style={{
+            fontSize: isMobile ? '1.8rem' : 'clamp(2.2rem, 4.5vw, 3rem)',
+            fontWeight: 'bold',
+            marginBottom: '1rem',
+            color: '#333',
+            lineHeight: '1.3'
+          }}>
+            {t('industry.title')}
+          </h1>
         </div>
 
-        {/* Cases Header */}
-        <div style={casesHeaderStyle}>
-          <motion.h3
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-            viewport={{ once: true }}
-            style={casesSubtitleStyle}
-          >
-            行业案例
-          </motion.h3>
-          <motion.p
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.2 }}
-            viewport={{ once: true }}
-            style={casesDescStyle}
-          >
-            傻瓜式，自动化，一个人就能搞定
-          </motion.p>
-        </div>
-
-        {/* Cases Grid */}
-        <div style={casesGridStyle}>
-          {cases.map((caseItem, index) => (
-            <motion.div
-              key={index}
-              initial={{ opacity: 0, y: 50 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: index * 0.1 }}
-              viewport={{ once: true }}
-              whileHover={{ 
-                y: -10, 
-                boxShadow: '0 20px 25px rgba(0, 0, 0, 0.1)',
-                transition: { duration: 0.3 }
+        {/* 5个行业案例 */}
+        <div style={{
+          display: 'grid',
+          gridTemplateColumns: isMobile ? '1fr' : 'repeat(5, 1fr)',
+          gap: isMobile ? '1.5rem' : '1rem',
+          width: '100%'
+        }}>
+          {industryCases.map((industryCase, index) => (
+            <div
+              key={industryCase.title}
+              style={cardStyle}
+              onMouseEnter={(e) => {
+                if (!isMobile) {
+                  e.currentTarget.style.transform = 'translateY(-8px)';
+                  e.currentTarget.style.boxShadow = '0 12px 40px rgba(233, 30, 99, 0.2)';
+                }
               }}
-              style={caseCardStyle}
+              onMouseLeave={(e) => {
+                if (!isMobile) {
+                  e.currentTarget.style.transform = 'translateY(0)';
+                  e.currentTarget.style.boxShadow = '0 8px 32px rgba(233, 30, 99, 0.1)';
+                }
+              }}
             >
-              <span style={caseImageStyle}>{caseItem.image}</span>
-              <h3 style={caseTitleStyle}>{caseItem.title}</h3>
-              <p style={caseDescriptionStyle}>{caseItem.description}</p>
-              
-              <ul style={featuresListStyle}>
-                {caseItem.features.map((feature, featureIndex) => (
-                  <li key={featureIndex} style={featureItemStyle}>
-                    ✓ {feature}
-                  </li>
-                ))}
-              </ul>
-              
-              <div style={qrCodeStyle}>
-                微信扫码即刻体验
-              </div>
-            </motion.div>
+              {/* 顶部装饰条 */}
+              <div style={{
+                position: 'absolute',
+                top: 0,
+                left: 0,
+                right: 0,
+                height: '4px',
+                background: `linear-gradient(135deg, ${industryCase.color}, #ad1457)`
+              }} />
+
+              <div style={iconStyle}>{industryCase.icon}</div>
+              <h3 style={titleStyle}>{industryCase.title}</h3>
+              <p style={descStyle}>{industryCase.description}</p>
+            </div>
           ))}
         </div>
       </div>

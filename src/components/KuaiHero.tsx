@@ -1,7 +1,9 @@
 import React from 'react';
 import { motion } from 'framer-motion';
+import { useLanguage } from '../contexts/LanguageContext';
 
 const KuaiHero: React.FC = () => {
+  const { t } = useLanguage();
   const [isMobile, setIsMobile] = React.useState(window.innerWidth <= 768);
 
   React.useEffect(() => {
@@ -132,7 +134,7 @@ const KuaiHero: React.FC = () => {
             transition={{ duration: 0.8, delay: 0.2 }}
             style={mainTitleStyle}
           >
-            探客AI手机
+            {t('hero.title')}
           </motion.h1>
 
           <motion.h2
@@ -141,7 +143,7 @@ const KuaiHero: React.FC = () => {
             transition={{ duration: 0.6, delay: 0.4 }}
             style={subtitleStyle}
           >
-            您的个人营销专家
+            {t('hero.subtitle')}
           </motion.h2>
 
           <motion.p
@@ -150,8 +152,7 @@ const KuaiHero: React.FC = () => {
             transition={{ duration: 0.6, delay: 0.6 }}
             style={sloganStyle}
           >
-            让每个人都能轻松实现自动化营销与直播，<br />
-            提升效率，创造更多价值。
+            {t('hero.description')}
           </motion.p>
 
           <motion.div
@@ -168,7 +169,7 @@ const KuaiHero: React.FC = () => {
               whileTap={{ scale: 0.95 }}
               style={primaryButtonStyle}
             >
-              立即体验
+              {t('hero.getStarted')}
             </motion.button>
 
             <motion.button
@@ -180,7 +181,7 @@ const KuaiHero: React.FC = () => {
               whileTap={{ scale: 0.95 }}
               style={secondaryButtonStyle}
             >
-              获取报价
+              {t('hero.learnMore')}
             </motion.button>
           </motion.div>
 

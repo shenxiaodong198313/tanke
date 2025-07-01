@@ -1,11 +1,13 @@
 import React from 'react';
 import { HelmetProvider } from 'react-helmet-async';
+import { LanguageProvider } from './contexts/LanguageContext';
 import SEOHead from './components/SEOHead';
 import KuaiNavbar from './components/KuaiNavbar';
 import KuaiHero from './components/KuaiHero';
 import KuaiFeatures from './components/KuaiFeatures';
 import KuaiDetails from './components/KuaiDetails';
-import KuaiFooter from './components/KuaiFooter';
+import IndustryCases from './components/IndustryCases';
+import Pricing from './components/Pricing';
 import FullPageScroll from './components/FullPageScroll';
 import ContactUs from './components/ContactUs';
 import './App.css';
@@ -20,18 +22,21 @@ function App() {
 
   return (
     <HelmetProvider>
-      <div className="App" style={appStyle}>
-        <SEOHead />
-        <KuaiNavbar />
-        
-        <FullPageScroll>
-          <KuaiHero />
-          <KuaiFeatures />
-          <KuaiDetails />
-          <KuaiFooter />
-          <ContactUs />
-        </FullPageScroll>
-      </div>
+      <LanguageProvider>
+        <div className="App" style={appStyle}>
+          <SEOHead />
+          <KuaiNavbar />
+          
+          <FullPageScroll>
+            <KuaiHero />
+            <KuaiFeatures />
+            <KuaiDetails />
+            <IndustryCases />
+            <Pricing />
+            <ContactUs />
+          </FullPageScroll>
+        </div>
+      </LanguageProvider>
     </HelmetProvider>
   );
 }

@@ -1,6 +1,8 @@
 import React from 'react';
+import { useLanguage } from '../contexts/LanguageContext';
 
 const KuaiDetails: React.FC = () => {
+  const { t } = useLanguage();
   const [isMobile, setIsMobile] = React.useState(false);
 
   React.useEffect(() => {
@@ -17,124 +19,64 @@ const KuaiDetails: React.FC = () => {
 
   const marketingModules = [
     {
-      title: "全触点互动",
-      subtitle: "数智化运营多链路消费者",
-      description: "用户在哪里，沟通和体验就在哪里",
+      title: t('marketing.interaction'),
+      subtitle: t('marketing.interaction.subtitle'),
+      description: t('marketing.interaction.description'),
       icon: "👆",
       color: "#f59e0b"
     },
     {
-      title: "邮件营销", 
-      subtitle: "无缝衔接Shopify平台，用EDM邮件",
-      description: "营销实现您的私域GMV增长",
+      title: t('marketing.email'), 
+      subtitle: t('marketing.email.subtitle'),
+      description: t('marketing.email.description'),
       icon: "📧",
       color: "#f59e0b"
     },
     {
-      title: "微信营销",
-      subtitle: "微信生态全域营销",
-      description: "助力移动端获客·留客",
+      title: t('marketing.wechat'),
+      subtitle: t('marketing.wechat.subtitle'),
+      description: t('marketing.wechat.description'),
       icon: "💬",
       color: "#f59e0b"
     },
     {
-      title: "短信营销",
-      subtitle: "国内外高速率高送达",
-      description: "短链点击追踪｜首视频呈现｜数据累积",
+      title: t('marketing.sms'),
+      subtitle: t('marketing.sms.subtitle'),
+      description: t('marketing.sms.description'),
       icon: "📱",
       color: "#f59e0b"
     },
     {
-      title: "AI智能外呼",
-      subtitle: "助力企业规模化，精细化会员运营",
-      description: "实现品牌再增长",
+      title: t('marketing.aiCall'),
+      subtitle: t('marketing.aiCall.subtitle'),
+      description: t('marketing.aiCall.description'),
       icon: "🎧",
       color: "#f59e0b"
     },
     {
-      title: "TikTok Ads",
-      subtitle: "出海必占位的主流平台",
-      description: "移动时代领跑用户注意力",
+      title: t('marketing.tiktok'),
+      subtitle: t('marketing.tiktok.subtitle'),
+      description: t('marketing.tiktok.description'),
       icon: "🎵",
       color: "#f59e0b"
     },
     {
-      title: "5G消息",
-      subtitle: "全方位提升展现与转化链路",
-      description: "富媒体消息，开启5G营销新时代",
+      title: t('marketing.5g'),
+      subtitle: t('marketing.5g.subtitle'),
+      description: t('marketing.5g.description'),
       icon: "📨",
       color: "#f59e0b"
     },
     {
-      title: "WhatsApp消息",
-      subtitle: "让企业与全球的用户链接起来",
-      description: "实现无缝的消息交换和互动",
+      title: t('marketing.whatsapp'),
+      subtitle: t('marketing.whatsapp.subtitle'),
+      description: t('marketing.whatsapp.description'),
       icon: "📞",
       color: "#f59e0b"
     }
   ];
 
-  // 导航栏样式
-  const navStyle: React.CSSProperties = {
-    position: 'fixed',
-    top: 0,
-    left: 0,
-    right: 0,
-    zIndex: 1000,
-    backgroundColor: '#1a73e8',
-    padding: '0.75rem 0'
-  };
 
-  const navContainerStyle: React.CSSProperties = {
-    maxWidth: '1200px',
-    margin: '0 auto',
-    padding: '0 2rem',
-    display: 'flex',
-    alignItems: 'center',
-    justifyContent: 'space-between'
-  };
-
-  const logoStyle: React.CSSProperties = {
-    display: 'flex',
-    alignItems: 'center',
-    gap: '0.5rem',
-    fontSize: '1.5rem',
-    fontWeight: 'bold',
-    color: 'white',
-    textDecoration: 'none',
-    cursor: 'pointer'
-  };
-
-  const menuStyle: React.CSSProperties = {
-    display: 'flex',
-    alignItems: 'center',
-    gap: '2rem',
-    listStyle: 'none',
-    margin: 0,
-    padding: 0
-  };
-
-  const menuItemStyle: React.CSSProperties = {
-    fontSize: '0.95rem',
-    fontWeight: '500',
-    color: 'rgba(255, 255, 255, 0.9)',
-    textDecoration: 'none',
-    transition: 'all 0.3s ease',
-    cursor: 'pointer',
-    padding: '0.5rem 0'
-  };
-
-  const primaryButtonStyle: React.CSSProperties = {
-    backgroundColor: 'white',
-    color: '#1a73e8',
-    padding: '0.75rem 1.5rem',
-    borderRadius: '6px',
-    fontWeight: '500',
-    fontSize: '0.9rem',
-    border: 'none',
-    cursor: 'pointer',
-    transition: 'all 0.3s ease'
-  };
 
   const sectionStyle: React.CSSProperties = {
     minHeight: isMobile ? 'auto' : '100vh',
@@ -192,62 +134,40 @@ const KuaiDetails: React.FC = () => {
     color: '#888'
   };
 
-  const menuItems = [
-    { name: 'AI技术' },
-    { name: '个人用户' },
-    { name: '中小企业用户' },
-    { name: '行业客户' },
-    { name: '生态合作伙伴' }
-  ];
+
 
   return (
     <section style={sectionStyle}>
-      {/* 顶部导航 - 固定定位 */}
-      <nav style={navStyle}>
-        <div style={navContainerStyle}>
-          <div style={logoStyle}>
-            <span style={{ fontSize: '2rem' }}>🧠</span>
-            <span>360智脑</span>
-          </div>
-
-          <ul style={{ 
-            ...menuStyle, 
-            display: isMobile ? 'none' : 'flex' 
-          }}>
-            {menuItems.map((item) => (
-              <li key={item.name}>
-                <span
-                  style={menuItemStyle}
-                  onMouseEnter={(e) => {
-                    e.currentTarget.style.color = '#ffffff';
-                  }}
-                  onMouseLeave={(e) => {
-                    e.currentTarget.style.color = 'rgba(255, 255, 255, 0.9)';
-                  }}
-                >
-                  {item.name}
-                </span>
-              </li>
-            ))}
-          </ul>
-
-          <button
-            style={primaryButtonStyle}
-            onMouseEnter={(e) => {
-              e.currentTarget.style.transform = 'translateY(-2px)';
-              e.currentTarget.style.boxShadow = '0 4px 12px rgba(0, 0, 0, 0.2)';
-            }}
-            onMouseLeave={(e) => {
-              e.currentTarget.style.transform = 'translateY(0)';
-              e.currentTarget.style.boxShadow = 'none';
-            }}
-          >
-            立即定制
-          </button>
-        </div>
-      </nav>
-
       <div style={containerStyle}>
+        {/* 标题区域 */}
+        <div style={{ 
+          textAlign: 'center', 
+          marginBottom: isMobile ? '2rem' : '3rem',
+          padding: '0 1rem'
+        }}>
+          <h1 style={{
+            fontSize: isMobile ? '2rem' : 'clamp(2.5rem, 5vw, 3.5rem)',
+            fontWeight: 'bold',
+            marginBottom: '1rem',
+            color: '#333',
+            background: 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)',
+            WebkitBackgroundClip: 'text',
+            WebkitTextFillColor: 'transparent',
+            backgroundClip: 'text'
+          }}>
+            {t('marketing.title')}
+          </h1>
+          <p style={{
+            fontSize: isMobile ? '1rem' : 'clamp(1rem, 2.5vw, 1.2rem)',
+            color: '#666',
+            maxWidth: '800px',
+            margin: '0 auto',
+            lineHeight: '1.6'
+          }}>
+            {t('marketing.subtitle')}
+          </p>
+        </div>
+
         {/* 8个营销模块 - 响应式网格 */}
         <div className={isMobile ? "mobile-8-grid" : "responsive-grid-8"}>
           {marketingModules.map((module, index) => (
@@ -289,7 +209,7 @@ const KuaiDetails: React.FC = () => {
             lineHeight: '1.6',
             padding: '0 1rem'
           }}>
-            全渠道营销，一站式解决 - 探客AI手机集成多种营销工具
+            {t('marketing.description')}
           </p>
         </div>
       </div>

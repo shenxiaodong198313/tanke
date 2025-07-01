@@ -1,6 +1,8 @@
 import React from 'react';
+import { useLanguage } from '../contexts/LanguageContext';
 
 const KuaiFeatures: React.FC = () => {
+  const { t } = useLanguage();
   const [isMobile, setIsMobile] = React.useState(false);
 
   React.useEffect(() => {
@@ -17,92 +19,32 @@ const KuaiFeatures: React.FC = () => {
 
   const features = [
     {
-      title: "私域直播",
-      description: "AI智能主播，24小时不间断直播营销",
-      longDescription: "利用AI技术打造虚拟主播，实现全天候直播带货，提升转化率和用户参与度",
+      title: t('features.privateLive'),
+      description: t('features.privateLive.desc'),
+      longDescription: t('features.privateLive.desc'),
       icon: "📺",
       gradient: "linear-gradient(135deg, #667eea 0%, #764ba2 100%)",
       color: "#667eea"
     },
     {
-      title: "SCRM",
-      description: "社交化客户关系管理，精准营销触达",
-      longDescription: "整合多渠道客户数据，实现精准营销和个性化客户服务，提升客户生命周期价值",
+      title: t('features.scrm'),
+      description: t('features.scrm.desc'),
+      longDescription: t('features.scrm.desc'),
       icon: "👥",
       gradient: "linear-gradient(135deg, #f093fb 0%, #f5576c 100%)",
       color: "#f093fb"
     },
     {
-      title: "门户和商城",
-      description: "一站式数字化营销平台",
-      longDescription: "打通线上线下渠道，构建完整的数字化营销生态，实现销售闭环",
+      title: t('features.portal'),
+      description: t('features.portal.desc'),
+      longDescription: t('features.portal.desc'),
       icon: "🏪",
       gradient: "linear-gradient(135deg, #4facfe 0%, #00f2fe 100%)",
       color: "#4facfe"
     }
   ];
 
-  // 导航栏样式
-  const navStyle: React.CSSProperties = {
-    position: 'fixed',
-    top: 0,
-    left: 0,
-    right: 0,
-    zIndex: 1000,
-    backgroundColor: '#1a73e8',
-    padding: '0.75rem 0'
-  };
 
-  const navContainerStyle: React.CSSProperties = {
-    maxWidth: '1200px',
-    margin: '0 auto',
-    padding: '0 2rem',
-    display: 'flex',
-    alignItems: 'center',
-    justifyContent: 'space-between'
-  };
-
-  const logoStyle: React.CSSProperties = {
-    display: 'flex',
-    alignItems: 'center',
-    gap: '0.5rem',
-    fontSize: '1.5rem',
-    fontWeight: 'bold',
-    color: 'white',
-    textDecoration: 'none',
-    cursor: 'pointer'
-  };
-
-  const menuStyle: React.CSSProperties = {
-    display: 'flex',
-    alignItems: 'center',
-    gap: '2rem',
-    listStyle: 'none',
-    margin: 0,
-    padding: 0
-  };
-
-  const menuItemStyle: React.CSSProperties = {
-    fontSize: '0.95rem',
-    fontWeight: '500',
-    color: 'rgba(255, 255, 255, 0.9)',
-    textDecoration: 'none',
-    transition: 'all 0.3s ease',
-    cursor: 'pointer',
-    padding: '0.5rem 0'
-  };
-
-  const primaryButtonStyle: React.CSSProperties = {
-    backgroundColor: 'white',
-    color: '#1a73e8',
-    padding: '0.75rem 1.5rem',
-    borderRadius: '6px',
-    fontWeight: '500',
-    fontSize: '0.9rem',
-    border: 'none',
-    cursor: 'pointer',
-    transition: 'all 0.3s ease'
-  };
 
   const sectionStyle: React.CSSProperties = {
     minHeight: isMobile ? 'auto' : '100vh',
@@ -180,61 +122,10 @@ const KuaiFeatures: React.FC = () => {
     marginTop: 'auto'
   };
 
-  const menuItems = [
-    { name: 'AI技术' },
-    { name: '个人用户' },
-    { name: '中小企业用户' },
-    { name: '行业客户' },
-    { name: '生态合作伙伴' }
-  ];
+
 
   return (
     <section style={sectionStyle}>
-      {/* 顶部导航 - 固定定位 */}
-      <nav style={navStyle}>
-        <div style={navContainerStyle}>
-          <div style={logoStyle}>
-            <span style={{ fontSize: '2rem' }}>🧠</span>
-            <span>360智脑</span>
-          </div>
-
-          <ul style={{ 
-            ...menuStyle, 
-            display: isMobile ? 'none' : 'flex' 
-          }}>
-            {menuItems.map((item) => (
-              <li key={item.name}>
-                <span
-                  style={menuItemStyle}
-                  onMouseEnter={(e) => {
-                    e.currentTarget.style.color = '#ffffff';
-                  }}
-                  onMouseLeave={(e) => {
-                    e.currentTarget.style.color = 'rgba(255, 255, 255, 0.9)';
-                  }}
-                >
-                  {item.name}
-                </span>
-              </li>
-            ))}
-          </ul>
-
-          <button
-            style={primaryButtonStyle}
-            onMouseEnter={(e) => {
-              e.currentTarget.style.transform = 'translateY(-2px)';
-              e.currentTarget.style.boxShadow = '0 4px 12px rgba(0, 0, 0, 0.2)';
-            }}
-            onMouseLeave={(e) => {
-              e.currentTarget.style.transform = 'translateY(0)';
-              e.currentTarget.style.boxShadow = 'none';
-            }}
-          >
-            立即定制
-          </button>
-        </div>
-      </nav>
-
       <div style={containerStyle}>
         {/* AI营销模块 */}
         <div className={isMobile ? "mobile-features-grid" : "responsive-grid-3"}>
@@ -294,7 +185,7 @@ const KuaiFeatures: React.FC = () => {
                   e.currentTarget.style.transform = 'translateY(0)';
                 }}
               >
-                了解更多
+                {t('features.learnMore')}
               </button>
             </div>
           ))}
@@ -315,7 +206,7 @@ const KuaiFeatures: React.FC = () => {
             lineHeight: '1.6',
             padding: '0 1rem'
           }}>
-            AI驱动的全方位营销解决方案，助力企业数字化转型
+            {t('features.description')}
           </p>
         </div>
       </div>

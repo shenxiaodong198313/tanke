@@ -1,6 +1,8 @@
 import React from 'react';
+import { useLanguage } from '../contexts/LanguageContext';
 
 const ContactUs: React.FC = () => {
+  const { t } = useLanguage();
   const [isMobile, setIsMobile] = React.useState(false);
 
   React.useEffect(() => {
@@ -159,11 +161,11 @@ const ContactUs: React.FC = () => {
   };
 
   const menuItems = [
-    { name: 'AI技术' },
-    { name: '个人用户' },
-    { name: '中小企业用户' },
-    { name: '行业客户' },
-    { name: '生态合作伙伴' }
+    { name: t('nav.aiTech') },
+    { name: t('nav.personal') },
+    { name: t('nav.smallBusiness') },
+    { name: t('nav.industry') },
+    { name: t('nav.partners') }
   ];
 
   return (
@@ -172,8 +174,8 @@ const ContactUs: React.FC = () => {
       <nav style={navStyle}>
         <div style={navContainerStyle}>
           <div style={logoStyle}>
-            <span style={{ fontSize: '2rem' }}>🧠</span>
-            <span>360智脑</span>
+            <span style={{ fontSize: '2rem' }}>🚀</span>
+            <span>{t('contact.brand')}</span>
           </div>
 
           {/* 桌面菜单 */}
@@ -209,15 +211,15 @@ const ContactUs: React.FC = () => {
               e.currentTarget.style.boxShadow = 'none';
             }}
           >
-            立即定制
+{t('contact.customize')}
           </button>
         </div>
       </nav>
 
       <div style={containerStyle}>
-        <h2 style={titleStyle}>联系我们</h2>
+        <h2 style={titleStyle}>{t('contact.title')}</h2>
         <p style={subtitleStyle}>
-          探客AI手机期待与您合作，共创智能营销新时代
+          {t('contact.subtitle')}
         </p>
 
         {/* 响应式联系卡片网格 */}
@@ -238,10 +240,10 @@ const ContactUs: React.FC = () => {
             }}
           >
             <span style={contactIconStyle}>📞</span>
-            <h3 style={contactTitleStyle}>电话咨询</h3>
+            <h3 style={contactTitleStyle}>{t('contact.phone')}</h3>
             <p style={contactInfoStyle}>
-              400-123-4567<br/>
-              工作时间：9:00-18:00
+              {t('contact.phone.number')}<br/>
+              {t('contact.phone.hours')}
             </p>
           </div>
 
@@ -261,10 +263,10 @@ const ContactUs: React.FC = () => {
             }}
           >
             <span style={contactIconStyle}>📧</span>
-            <h3 style={contactTitleStyle}>邮箱联系</h3>
+            <h3 style={contactTitleStyle}>{t('contact.email')}</h3>
             <p style={contactInfoStyle}>
-              contact@tanke.ai<br/>
-              sales@tanke.ai
+              {t('contact.email.business')}<br/>
+              {t('contact.email.sales')}
             </p>
           </div>
 
@@ -284,17 +286,17 @@ const ContactUs: React.FC = () => {
             }}
           >
             <span style={contactIconStyle}>💬</span>
-            <h3 style={contactTitleStyle}>微信咨询</h3>
+            <h3 style={contactTitleStyle}>{t('contact.wechat')}</h3>
             <p style={contactInfoStyle}>
-              微信号：tanke-ai<br/>
-              扫码添加客服
+              {t('contact.wechat.id')}<br/>
+              {t('contact.wechat.qr')}
             </p>
           </div>
         </div>
 
         <div style={footerTextStyle}>
-          <p>© 2024 探客AI手机. All rights reserved.</p>
-          <p>让营销更智能，让增长更简单</p>
+          <p>{t('contact.copyright')}</p>
+          <p>{t('contact.slogan')}</p>
         </div>
       </div>
     </section>
