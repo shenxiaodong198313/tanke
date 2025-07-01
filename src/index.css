@@ -211,3 +211,119 @@ html {
 .container-custom {
   @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
 }
+
+/* 响应式网格布局 */
+.responsive-grid-3 {
+  display: grid;
+  gap: 1.5rem;
+}
+
+/* 桌面：3列 */
+@media (min-width: 1024px) {
+  .responsive-grid-3 {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+  }
+}
+
+/* 平板：2列 */
+@media (min-width: 768px) and (max-width: 1023px) {
+  .responsive-grid-3 {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+  }
+}
+
+/* 手机：1列 */
+@media (max-width: 767px) {
+  .responsive-grid-3 {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+}
+
+/* 8模块响应式网格 */
+.responsive-grid-8 {
+  display: grid;
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+/* 桌面：每行4个 */
+@media (min-width: 1024px) {
+  .responsive-grid-8 {
+    grid-template-columns: repeat(4, 1fr);
+    gap: 2rem;
+  }
+}
+
+/* 平板：每行2个 */
+@media (min-width: 768px) and (max-width: 1023px) {
+  .responsive-grid-8 {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+  }
+}
+
+/* 手机：每行1个 */
+@media (max-width: 767px) {
+  .responsive-grid-8 {
+    grid-template-columns: 1fr;
+    gap: 1.2rem;
+  }
+}
+
+/* 联系卡片响应式网格 */
+.contact-grid {
+  display: grid;
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+/* 桌面：3列 */
+@media (min-width: 1024px) {
+  .contact-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+  }
+}
+
+/* 平板：2列 */
+@media (min-width: 768px) and (max-width: 1023px) {
+  .contact-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+  }
+}
+
+/* 手机：1列 */
+@media (max-width: 767px) {
+  .contact-grid {
+    grid-template-columns: 1fr;
+    gap: 1.2rem;
+  }
+}
+
+/* 手机版特色功能网格 */
+.mobile-features-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  margin-bottom: 2rem;
+}
+
+/* 手机版8模块网格 */
+.mobile-8-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+/* 手机版联系卡片网格 */
+.mobile-contact-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+}

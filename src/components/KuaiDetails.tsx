@@ -1,284 +1,297 @@
 import React from 'react';
-import { motion } from 'framer-motion';
 
 const KuaiDetails: React.FC = () => {
-  const streamingFeatures = [
+  const [isMobile, setIsMobile] = React.useState(false);
+
+  React.useEffect(() => {
+    const checkMobile = () => {
+      const mobile = window.innerWidth <= 768 || 
+                    /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+      setIsMobile(mobile);
+    };
+    
+    checkMobile();
+    window.addEventListener('resize', checkMobile);
+    return () => window.removeEventListener('resize', checkMobile);
+  }, []);
+
+  const marketingModules = [
     {
-      title: "自动开播与下播",
-      description: "只需联网连电，全程无需人工干预，自动开始和结束直播。",
-      icon: "📺",
-      color: "#4285f4"
+      title: "全触点互动",
+      subtitle: "数智化运营多链路消费者",
+      description: "用户在哪里，沟通和体验就在哪里",
+      icon: "👆",
+      color: "#f59e0b"
     },
     {
-      title: "智能互动", 
-      description: "欢迎粉丝进入直播间并引导互动，预热气氛，增加观众参与度。",
-      icon: "💫",
-      color: "#34a853"
+      title: "邮件营销", 
+      subtitle: "无缝衔接Shopify平台，用EDM邮件",
+      description: "营销实现您的私域GMV增长",
+      icon: "📧",
+      color: "#f59e0b"
     },
     {
-      title: "自动售卖",
-      description: "根据话术自动点击讲解商品小黄车，提升直播间转化率。",
-      icon: "🛒",
-      color: "#fbbc04"
+      title: "微信营销",
+      subtitle: "微信生态全域营销",
+      description: "助力移动端获客·留客",
+      icon: "💬",
+      color: "#f59e0b"
+    },
+    {
+      title: "短信营销",
+      subtitle: "国内外高速率高送达",
+      description: "短链点击追踪｜首视频呈现｜数据累积",
+      icon: "📱",
+      color: "#f59e0b"
+    },
+    {
+      title: "AI智能外呼",
+      subtitle: "助力企业规模化，精细化会员运营",
+      description: "实现品牌再增长",
+      icon: "🎧",
+      color: "#f59e0b"
+    },
+    {
+      title: "TikTok Ads",
+      subtitle: "出海必占位的主流平台",
+      description: "移动时代领跑用户注意力",
+      icon: "🎵",
+      color: "#f59e0b"
+    },
+    {
+      title: "5G消息",
+      subtitle: "全方位提升展现与转化链路",
+      description: "富媒体消息，开启5G营销新时代",
+      icon: "📨",
+      color: "#f59e0b"
+    },
+    {
+      title: "WhatsApp消息",
+      subtitle: "让企业与全球的用户链接起来",
+      description: "实现无缝的消息交换和互动",
+      icon: "📞",
+      color: "#f59e0b"
     }
   ];
 
-  const successCases = [
-    {
-      title: "小型企业主",
-      description: "使用探客AI手机后，营销效果显著提升，销售额增长了30%。",
-      image: "👨‍💼",
-      stats: "+30%",
-      statLabel: "销售增长"
-    },
-    {
-      title: "个人创业者",
-      description: "通过AI自动化直播，每天吸引超过500名观众，有效提升了品牌知名度。",
-      image: "👩‍💻",
-      stats: "500+",
-      statLabel: "日观众数"
-    },
-    {
-      title: "社交媒体达人",
-      description: "利用AI智能分析工具，精准定位目标受众，粉丝增长速度提高了40%。",
-      image: "📱",
-      stats: "+40%",
-      statLabel: "粉丝增长"
-    }
-  ];
+  // 导航栏样式
+  const navStyle: React.CSSProperties = {
+    position: 'fixed',
+    top: 0,
+    left: 0,
+    right: 0,
+    zIndex: 1000,
+    backgroundColor: '#1a73e8',
+    padding: '0.75rem 0'
+  };
+
+  const navContainerStyle: React.CSSProperties = {
+    maxWidth: '1200px',
+    margin: '0 auto',
+    padding: '0 2rem',
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'space-between'
+  };
+
+  const logoStyle: React.CSSProperties = {
+    display: 'flex',
+    alignItems: 'center',
+    gap: '0.5rem',
+    fontSize: '1.5rem',
+    fontWeight: 'bold',
+    color: 'white',
+    textDecoration: 'none',
+    cursor: 'pointer'
+  };
+
+  const menuStyle: React.CSSProperties = {
+    display: 'flex',
+    alignItems: 'center',
+    gap: '2rem',
+    listStyle: 'none',
+    margin: 0,
+    padding: 0
+  };
+
+  const menuItemStyle: React.CSSProperties = {
+    fontSize: '0.95rem',
+    fontWeight: '500',
+    color: 'rgba(255, 255, 255, 0.9)',
+    textDecoration: 'none',
+    transition: 'all 0.3s ease',
+    cursor: 'pointer',
+    padding: '0.5rem 0'
+  };
+
+  const primaryButtonStyle: React.CSSProperties = {
+    backgroundColor: 'white',
+    color: '#1a73e8',
+    padding: '0.75rem 1.5rem',
+    borderRadius: '6px',
+    fontWeight: '500',
+    fontSize: '0.9rem',
+    border: 'none',
+    cursor: 'pointer',
+    transition: 'all 0.3s ease'
+  };
 
   const sectionStyle: React.CSSProperties = {
-    padding: '6rem 0',
-    backgroundColor: 'white'
+    minHeight: isMobile ? 'auto' : '100vh',
+    padding: isMobile ? '6rem 1rem 3rem' : '6rem 1rem 2rem',
+    backgroundColor: 'white',
+    display: 'flex',
+    flexDirection: 'column',
+    justifyContent: isMobile ? 'flex-start' : 'center',
+    position: 'relative'
   };
 
   const containerStyle: React.CSSProperties = {
-    maxWidth: '1200px',
+    maxWidth: '1400px',
     margin: '0 auto',
-    padding: '0 2rem'
-  };
-
-  const streamingSectionStyle: React.CSSProperties = {
-    marginBottom: '6rem'
-  };
-
-  const headerStyle: React.CSSProperties = {
-    textAlign: 'center',
-    marginBottom: '4rem'
-  };
-
-  const titleStyle: React.CSSProperties = {
-    fontSize: '2.5rem',
-    fontWeight: 'bold',
-    color: '#1a73e8',
-    marginBottom: '1rem'
-  };
-
-  const subtitleStyle: React.CSSProperties = {
-    fontSize: '1.125rem',
-    color: '#5f6368',
-    marginBottom: '3rem'
-  };
-
-  const gridStyle: React.CSSProperties = {
-    display: 'grid',
-    gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))',
-    gap: '2rem'
+    padding: '0 0.5rem',
+    width: '100%'
   };
 
   const cardStyle: React.CSSProperties = {
-    backgroundColor: '#f8f9fa',
-    borderRadius: '12px',
-    padding: '2rem',
-    border: '1px solid #e8eaed',
+    backgroundColor: '#ffffff',
+    borderRadius: '16px',
+    padding: isMobile ? '1.5rem 1rem' : 'clamp(1.5rem, 3vw, 2rem) clamp(1rem, 2vw, 1.5rem)',
+    textAlign: 'center',
+    border: '1px solid #f0f0f0',
     transition: 'all 0.3s ease',
     position: 'relative',
-    overflow: 'hidden'
+    boxShadow: '0 2px 8px rgba(0, 0, 0, 0.05)',
+    minHeight: isMobile ? '200px' : 'auto'
   };
 
   const iconStyle: React.CSSProperties = {
-    fontSize: '3rem',
-    marginBottom: '1.5rem',
-    display: 'block'
+    fontSize: isMobile ? '2rem' : 'clamp(2.5rem, 4vw, 3rem)',
+    marginBottom: isMobile ? '1rem' : '1.5rem',
+    display: 'block',
+    color: '#f59e0b'
   };
 
   const cardTitleStyle: React.CSSProperties = {
-    fontSize: '1.5rem',
+    fontSize: isMobile ? '1.1rem' : 'clamp(1.2rem, 3vw, 1.4rem)',
     fontWeight: '600',
-    marginBottom: '1rem',
-    color: '#202124'
+    marginBottom: isMobile ? '0.8rem' : '1rem',
+    color: '#333'
+  };
+
+  const cardSubtitleStyle: React.CSSProperties = {
+    fontSize: isMobile ? '0.8rem' : 'clamp(0.85rem, 2vw, 0.95rem)',
+    color: '#666',
+    marginBottom: isMobile ? '0.6rem' : '0.8rem',
+    lineHeight: '1.4'
   };
 
   const cardDescStyle: React.CSSProperties = {
-    fontSize: '1rem',
-    lineHeight: '1.6',
-    color: '#5f6368'
+    fontSize: isMobile ? '0.75rem' : 'clamp(0.8rem, 1.8vw, 0.9rem)',
+    lineHeight: '1.5',
+    color: '#888'
   };
 
-  const caseCardStyle: React.CSSProperties = {
-    backgroundColor: 'white',
-    borderRadius: '12px',
-    padding: '2rem',
-    boxShadow: '0 2px 10px rgba(0, 0, 0, 0.08)',
-    border: '1px solid #e8eaed',
-    transition: 'all 0.3s ease',
-    textAlign: 'center'
-  };
-
-  const caseImageStyle: React.CSSProperties = {
-    fontSize: '4rem',
-    marginBottom: '1.5rem',
-    display: 'block'
-  };
-
-  const statsStyle: React.CSSProperties = {
-    fontSize: '2rem',
-    fontWeight: 'bold',
-    color: '#1a73e8',
-    marginBottom: '0.5rem'
-  };
-
-  const statsLabelStyle: React.CSSProperties = {
-    fontSize: '0.875rem',
-    color: '#5f6368',
-    marginBottom: '1rem'
-  };
+  const menuItems = [
+    { name: 'AI技术' },
+    { name: '个人用户' },
+    { name: '中小企业用户' },
+    { name: '行业客户' },
+    { name: '生态合作伙伴' }
+  ];
 
   return (
     <section style={sectionStyle}>
-      <div style={containerStyle}>
-        {/* AI自动化直播 */}
-        <div style={streamingSectionStyle}>
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-            viewport={{ once: true }}
-            style={headerStyle}
-          >
-            <h2 style={titleStyle}>AI自动化直播</h2>
-            <p style={subtitleStyle}>随时随地开启高质量直播</p>
-          </motion.div>
-
-          <div style={gridStyle}>
-            {streamingFeatures.map((feature, index) => (
-              <motion.div
-                key={feature.title}
-                initial={{ opacity: 0, y: 50 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: index * 0.1 }}
-                viewport={{ once: true }}
-                whileHover={{ 
-                  y: -8,
-                  boxShadow: '0 8px 30px rgba(0, 0, 0, 0.12)'
-                }}
-                style={cardStyle}
-              >
-                {/* Color accent */}
-                <div style={{
-                  position: 'absolute',
-                  top: 0,
-                  left: 0,
-                  right: 0,
-                  height: '4px',
-                  backgroundColor: feature.color
-                }} />
-
-                <span style={iconStyle}>{feature.icon}</span>
-                <h3 style={{
-                  ...cardTitleStyle,
-                  color: feature.color
-                }}>
-                  {feature.title}
-                </h3>
-                <p style={cardDescStyle}>{feature.description}</p>
-              </motion.div>
-            ))}
+      {/* 顶部导航 - 固定定位 */}
+      <nav style={navStyle}>
+        <div style={navContainerStyle}>
+          <div style={logoStyle}>
+            <span style={{ fontSize: '2rem' }}>🧠</span>
+            <span>360智脑</span>
           </div>
+
+          <ul style={{ 
+            ...menuStyle, 
+            display: isMobile ? 'none' : 'flex' 
+          }}>
+            {menuItems.map((item) => (
+              <li key={item.name}>
+                <span
+                  style={menuItemStyle}
+                  onMouseEnter={(e) => {
+                    e.currentTarget.style.color = '#ffffff';
+                  }}
+                  onMouseLeave={(e) => {
+                    e.currentTarget.style.color = 'rgba(255, 255, 255, 0.9)';
+                  }}
+                >
+                  {item.name}
+                </span>
+              </li>
+            ))}
+          </ul>
+
+          <button
+            style={primaryButtonStyle}
+            onMouseEnter={(e) => {
+              e.currentTarget.style.transform = 'translateY(-2px)';
+              e.currentTarget.style.boxShadow = '0 4px 12px rgba(0, 0, 0, 0.2)';
+            }}
+            onMouseLeave={(e) => {
+              e.currentTarget.style.transform = 'translateY(0)';
+              e.currentTarget.style.boxShadow = 'none';
+            }}
+          >
+            立即定制
+          </button>
         </div>
+      </nav>
 
-        {/* 成功案例 */}
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
-          viewport={{ once: true }}
-          style={headerStyle}
-        >
-          <h2 style={titleStyle}>我们的成功案例</h2>
-          <p style={subtitleStyle}>真实用户，真实效果</p>
-        </motion.div>
-
-        <div style={gridStyle}>
-          {successCases.map((caseItem, index) => (
-            <motion.div
-              key={caseItem.title}
-              initial={{ opacity: 0, y: 50 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: index * 0.1 }}
-              viewport={{ once: true }}
-              whileHover={{ 
-                y: -5,
-                boxShadow: '0 10px 30px rgba(0, 0, 0, 0.15)'
+      <div style={containerStyle}>
+        {/* 8个营销模块 - 响应式网格 */}
+        <div className={isMobile ? "mobile-8-grid" : "responsive-grid-8"}>
+          {marketingModules.map((module, index) => (
+            <div
+              key={module.title}
+              style={cardStyle}
+              onMouseEnter={(e) => {
+                if (!isMobile) {
+                  e.currentTarget.style.transform = 'translateY(-8px)';
+                  e.currentTarget.style.boxShadow = '0 8px 25px rgba(0, 0, 0, 0.15)';
+                }
               }}
-              style={caseCardStyle}
+              onMouseLeave={(e) => {
+                if (!isMobile) {
+                  e.currentTarget.style.transform = 'translateY(0)';
+                  e.currentTarget.style.boxShadow = '0 2px 8px rgba(0, 0, 0, 0.05)';
+                }
+              }}
             >
-              <span style={caseImageStyle}>{caseItem.image}</span>
-              <div style={statsStyle}>{caseItem.stats}</div>
-              <div style={statsLabelStyle}>{caseItem.statLabel}</div>
-              <h3 style={cardTitleStyle}>{caseItem.title}</h3>
-              <p style={cardDescStyle}>{caseItem.description}</p>
-            </motion.div>
+              <span style={iconStyle}>{module.icon}</span>
+              <h3 style={cardTitleStyle}>{module.title}</h3>
+              <p style={cardSubtitleStyle}>{module.subtitle}</p>
+              <p style={cardDescStyle}>{module.description}</p>
+            </div>
           ))}
         </div>
 
-        {/* CTA */}
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
-          viewport={{ once: true }}
-          style={{ textAlign: 'center', marginTop: '4rem' }}
-        >
-          <h3 style={{
-            fontSize: '1.75rem',
-            fontWeight: '600',
-            color: '#202124',
-            marginBottom: '1rem'
-          }}>
-            加入成功者行列
-          </h3>
+        {/* 底部简化的CTA */}
+        <div style={{ 
+          textAlign: 'center', 
+          marginTop: isMobile ? '2rem' : '3rem',
+          paddingBottom: isMobile ? '2rem' : '0'
+        }}>
           <p style={{
-            fontSize: '1rem',
-            color: '#5f6368',
-            marginBottom: '2rem',
+            fontSize: isMobile ? '0.95rem' : 'clamp(1rem, 2.5vw, 1.1rem)',
+            color: '#666',
             maxWidth: '600px',
-            margin: '0 auto 2rem'
+            margin: '0 auto',
+            lineHeight: '1.6',
+            padding: '0 1rem'
           }}>
-            让探客AI手机帮助您实现营销和直播的全面自动化
+            全渠道营销，一站式解决 - 探客AI手机集成多种营销工具
           </p>
-          <motion.button
-            whileHover={{ 
-              scale: 1.05,
-              boxShadow: '0 4px 15px rgba(26, 115, 232, 0.4)'
-            }}
-            whileTap={{ scale: 0.95 }}
-            style={{
-              backgroundColor: '#1a73e8',
-              color: 'white',
-              padding: '1rem 3rem',
-              borderRadius: '6px',
-              fontWeight: '600',
-              fontSize: '1rem',
-              border: 'none',
-              cursor: 'pointer',
-              boxShadow: '0 2px 8px rgba(26, 115, 232, 0.3)',
-              transition: 'all 0.3s ease'
-            }}
-          >
-            开始体验
-          </motion.button>
-        </motion.div>
+        </div>
       </div>
     </section>
   );

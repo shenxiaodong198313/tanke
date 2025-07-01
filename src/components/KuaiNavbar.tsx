@@ -27,7 +27,7 @@ const KuaiNavbar: React.FC = () => {
     top: 0,
     left: 0,
     right: 0,
-    zIndex: 1000,
+    zIndex: 9999,
     backgroundColor: isScrolled ? 'rgba(255, 255, 255, 0.95)' : 'rgba(255, 255, 255, 0.1)',
     backdropFilter: 'blur(10px)',
     borderBottom: isScrolled ? '1px solid rgba(0, 0, 0, 0.08)' : 'none',
@@ -125,18 +125,14 @@ const KuaiNavbar: React.FC = () => {
   ];
 
   return (
-    <motion.nav
-      initial={{ y: -100, opacity: 0 }}
-      animate={{ y: 0, opacity: 1 }}
-      transition={{ duration: 0.6 }}
-      style={navStyle}
-    >
+    <nav style={navStyle}>
       <div style={containerStyle}>
         {/* Logo */}
         <motion.a
           href="#"
           style={logoStyle}
-          whileHover={{ scale: 1.05 }}
+          whileHover={{ scale: 1.02 }}
+          transition={{ duration: 0.2 }}
         >
           <span style={logoIconStyle}>🧠</span>
           <span>360智脑</span>
@@ -146,13 +142,13 @@ const KuaiNavbar: React.FC = () => {
         {!isMobile && (
         <ul style={menuStyle}>
           {menuItems.map((item, index) => (
-            <motion.li key={item.name}>
+            <li key={item.name}>
               <motion.a
                 href="#"
                 style={menuItemStyle}
                 whileHover={{ 
                   color: '#1a73e8',
-                  scale: 1.05 
+                  scale: 1.02 
                 }}
                 transition={{ duration: 0.2 }}
               >
@@ -161,7 +157,7 @@ const KuaiNavbar: React.FC = () => {
                   <span style={{ marginLeft: '0.25rem', fontSize: '0.75rem' }}>▼</span>
                 )}
               </motion.a>
-            </motion.li>
+            </li>
           ))}
         </ul>
         )}
@@ -172,9 +168,10 @@ const KuaiNavbar: React.FC = () => {
             style={secondaryButtonStyle}
             whileHover={{ 
               backgroundColor: isScrolled ? '#f8f9fa' : 'rgba(255, 255, 255, 0.1)',
-              scale: 1.05 
+              scale: 1.02 
             }}
-            whileTap={{ scale: 0.95 }}
+            whileTap={{ scale: 0.98 }}
+            transition={{ duration: 0.2 }}
           >
             登录
           </motion.button>
@@ -182,10 +179,11 @@ const KuaiNavbar: React.FC = () => {
           <motion.button
             style={primaryButtonStyle}
             whileHover={{ 
-              scale: 1.05,
+              scale: 1.02,
               boxShadow: '0 4px 15px rgba(26, 115, 232, 0.4)'
             }}
-            whileTap={{ scale: 0.95 }}
+            whileTap={{ scale: 0.98 }}
+            transition={{ duration: 0.2 }}
           >
             立即定制
           </motion.button>
@@ -208,6 +206,7 @@ const KuaiNavbar: React.FC = () => {
           initial={{ opacity: 0, height: 0 }}
           animate={{ opacity: 1, height: 'auto' }}
           exit={{ opacity: 0, height: 0 }}
+          transition={{ duration: 0.3 }}
           style={{
             backgroundColor: 'rgba(255, 255, 255, 0.98)',
             backdropFilter: 'blur(10px)',
@@ -236,7 +235,7 @@ const KuaiNavbar: React.FC = () => {
                 whileHover={{ color: '#1a73e8' }}
                 initial={{ opacity: 0, x: -20 }}
                 animate={{ opacity: 1, x: 0 }}
-                transition={{ delay: index * 0.1 }}
+                transition={{ delay: index * 0.05, duration: 0.3 }}
               >
                 {item.name}
                 {item.hasDropdown && (
@@ -247,7 +246,7 @@ const KuaiNavbar: React.FC = () => {
           </div>
         </motion.div>
       )}
-    </motion.nav>
+    </nav>
   );
 };
 

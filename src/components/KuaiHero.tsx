@@ -12,12 +12,12 @@ const KuaiHero: React.FC = () => {
 
   const heroStyle: React.CSSProperties = {
     background: 'linear-gradient(135deg, #1e3c72 0%, #2a5298 100%)',
-    minHeight: '90vh',
+    height: '100vh',
     display: 'flex',
     alignItems: 'center',
+    justifyContent: 'center',
     position: 'relative',
-    overflow: 'hidden',
-    paddingTop: '80px'
+    overflow: 'hidden'
   };
 
   const overlayStyle: React.CSSProperties = {
@@ -94,9 +94,9 @@ const KuaiHero: React.FC = () => {
 
   const featuresStyle: React.CSSProperties = {
     display: 'grid',
-    gridTemplateColumns: isMobile ? '1fr 1fr' : 'repeat(3, 1fr)',
-    gap: '2rem',
-    maxWidth: '600px',
+    gridTemplateColumns: 'repeat(3, 1fr)',
+    gap: isMobile ? '1rem' : '2rem',
+    maxWidth: isMobile ? '320px' : '600px',
     margin: '0 auto'
   };
 
@@ -105,14 +105,15 @@ const KuaiHero: React.FC = () => {
   };
 
   const featureIconStyle: React.CSSProperties = {
-    fontSize: '2.5rem',
+    fontSize: isMobile ? '1.8rem' : '2.5rem',
     display: 'block',
     marginBottom: '0.5rem'
   };
 
   const featureLabelStyle: React.CSSProperties = {
-    fontSize: '0.875rem',
-    color: 'rgba(255, 255, 255, 0.8)'
+    fontSize: isMobile ? '0.7rem' : '0.875rem',
+    color: 'rgba(255, 255, 255, 0.8)',
+    lineHeight: '1.2'
   };
 
   return (

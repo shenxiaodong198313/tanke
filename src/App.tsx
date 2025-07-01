@@ -6,6 +6,7 @@ import KuaiHero from './components/KuaiHero';
 import KuaiFeatures from './components/KuaiFeatures';
 import KuaiDetails from './components/KuaiDetails';
 import KuaiFooter from './components/KuaiFooter';
+import FullPageScroll from './components/FullPageScroll';
 import './App.css';
 
 function App() {
@@ -21,10 +22,13 @@ function App() {
       <div className="App" style={appStyle}>
         <SEOHead />
         <KuaiNavbar />
-        <KuaiHero />
-        <KuaiFeatures />
-        <KuaiDetails />
-        <KuaiFooter />
+        
+        <FullPageScroll>
+          <KuaiHero />
+          <KuaiFeatures />
+          <KuaiDetails />
+          <KuaiFooter />
+        </FullPageScroll>
       </div>
     </HelmetProvider>
   );
