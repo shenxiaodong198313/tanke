@@ -7,6 +7,7 @@ import KuaiFeatures from './components/KuaiFeatures';
 import KuaiDetails from './components/KuaiDetails';
 import KuaiFooter from './components/KuaiFooter';
 import FullPageScroll from './components/FullPageScroll';
+import ContactUs from './components/ContactUs';
 import './App.css';
 
 function App() {
@@ -28,6 +29,7 @@ function App() {
           <KuaiFeatures />
           <KuaiDetails />
           <KuaiFooter />
+          <ContactUs />
         </FullPageScroll>
       </div>
     </HelmetProvider>
