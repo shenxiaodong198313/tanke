@@ -1,8 +1,7 @@
 import React from 'react';
-import { useLanguage } from '../contexts/LanguageContext';
+import { motion } from 'framer-motion';
 
 const Pricing: React.FC = () => {
-  const { t } = useLanguage();
   const [isMobile, setIsMobile] = React.useState(false);
 
   React.useEffect(() => {
@@ -17,282 +16,292 @@ const Pricing: React.FC = () => {
     return () => window.removeEventListener('resize', checkMobile);
   }, []);
 
-  const pricingPlans = [
+  const industryApps = [
     {
-      name: t('pricing.personal'),
-      price: '399',
-      originalPrice: '699',
-      currency: '¥',
-      features: [
-        t('pricing.personal.feature1'),
-        t('pricing.personal.feature2'),
-        t('pricing.personal.feature3'),
-        t('pricing.personal.feature4')
-      ],
-      buttonText: t('pricing.personal.button'),
-      buttonStyle: 'outline',
-      popular: false
+      title: '房租租赁',
+      color: '#f4f1e8',
+      headerColor: '#8b7355',
+      appName: '号房网'
     },
     {
-      name: t('pricing.professional'),
-      price: '999',
-      originalPrice: '1999',
-      currency: '¥',
-      features: [
-        t('pricing.professional.feature1'),
-        t('pricing.professional.feature2'),
-        t('pricing.professional.feature3'),
-        t('pricing.professional.feature4')
-      ],
-      buttonText: t('pricing.professional.button'),
-      buttonStyle: 'filled',
-      popular: true
+      title: '服装箱包',
+      color: '#ff6b47',
+      headerColor: '#ff6b47',
+      appName: '爱搭不将就'
     },
     {
-      name: t('pricing.oem'),
-      price: '??',
-      originalPrice: '??',
-      currency: '¥',
-      features: [
-        t('pricing.oem.feature1'),
-        t('pricing.oem.feature2'),
-        t('pricing.oem.feature3'),
-        t('pricing.oem.feature4')
-      ],
-      buttonText: t('pricing.oem.button'),
-      buttonStyle: 'outline',
-      popular: false
+      title: '3c电子',
+      color: '#e8f2ff',
+      headerColor: '#4a90e2',
+      appName: '极地数码'
+    },
+    {
+      title: '社区团购',
+      color: '#f0f8ff',
+      headerColor: '#52c41a',
+      appName: '生鲜到家'
+    },
+    {
+      title: '美食外卖',
+      color: '#f6f8fa',
+      headerColor: '#52c41a',
+      appName: '麻辣送'
     }
   ];
 
   const sectionStyle: React.CSSProperties = {
     minHeight: '100vh',
-    height: '100vh',
-    background: 'linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%)',
-    backgroundImage: `
-      radial-gradient(circle at 20% 80%, rgba(120, 200, 255, 0.1) 0%, transparent 50%),
-      radial-gradient(circle at 80% 20%, rgba(255, 120, 200, 0.1) 0%, transparent 50%),
-      radial-gradient(circle at 40% 40%, rgba(120, 255, 200, 0.05) 0%, transparent 50%)
-    `,
+    background: 'linear-gradient(135deg, #f8faff 0%, #e8f4fd 100%)',
     display: 'flex',
     flexDirection: 'column',
     justifyContent: 'center',
-    position: 'relative',
-    padding: isMobile ? '2rem 1rem' : '3rem 2rem',
-    boxSizing: 'border-box',
-    overflow: 'hidden'
+    alignItems: 'center',
+    padding: isMobile ? '3rem 1rem' : '4rem 2rem',
+    position: 'relative'
   };
 
   const containerStyle: React.CSSProperties = {
     maxWidth: '1400px',
+    width: '100%',
     margin: '0 auto',
-    padding: '0 0.5rem',
-    width: '100%'
+    textAlign: 'center'
   };
 
-  const cardStyle = (plan: any): React.CSSProperties => ({
-    backgroundColor: plan.popular 
-      ? 'rgba(255, 255, 255, 0.98)' 
-      : 'rgba(255, 255, 255, 0.95)',
-    borderRadius: '20px',
-    padding: isMobile ? '2rem 1.5rem' : '2.5rem 2rem',
-    textAlign: 'center',
-    backdropFilter: 'blur(20px)',
-    border: plan.popular 
-      ? '2px solid #4fc3f7' 
-      : '1px solid rgba(255, 255, 255, 0.2)',
-    boxShadow: plan.popular 
-      ? '0 20px 60px rgba(79, 195, 247, 0.3), 0 8px 30px rgba(0, 0, 0, 0.2)' 
-      : '0 8px 32px rgba(0, 0, 0, 0.15)',
-    transition: 'all 0.4s cubic-bezier(0.4, 0, 0.2, 1)',
+  const headerStyle: React.CSSProperties = {
+    marginBottom: isMobile ? '3rem' : '4rem'
+  };
+
+  const titleStyle: React.CSSProperties = {
+    fontSize: isMobile ? '2.5rem' : '3.5rem',
+    fontWeight: 'bold',
+    color: '#1a1a1a',
+    marginBottom: '1rem',
+    lineHeight: '1.2'
+  };
+
+  const subtitleStyle: React.CSSProperties = {
+    fontSize: isMobile ? '1rem' : '1.2rem',
+    color: '#666',
+    lineHeight: '1.6'
+  };
+
+  const phonesContainerStyle: React.CSSProperties = {
+    display: 'flex',
+    justifyContent: 'center',
+    alignItems: 'flex-end',
+    gap: isMobile ? '1rem' : '2rem',
+    flexWrap: isMobile ? 'wrap' : 'nowrap',
+    maxWidth: '100%'
+  };
+
+  const phoneFrameStyle: React.CSSProperties = {
+    width: isMobile ? '140px' : '200px',
+    height: isMobile ? '280px' : '400px',
+    backgroundColor: '#1a1a1a',
+    borderRadius: isMobile ? '20px' : '30px',
+    padding: isMobile ? '4px' : '6px',
+    position: 'relative',
+    boxShadow: '0 10px 30px rgba(0, 0, 0, 0.3)',
+    marginBottom: isMobile ? '1rem' : '0'
+  };
+
+  const phoneScreenStyle = (app: any): React.CSSProperties => ({
+    width: '100%',
+    height: '100%',
+    backgroundColor: app.color,
+    borderRadius: isMobile ? '16px' : '24px',
     position: 'relative',
     overflow: 'hidden',
-    transform: plan.popular && !isMobile ? 'scale(1.05)' : 'scale(1)',
-    zIndex: plan.popular ? 2 : 1
+    display: 'flex',
+    flexDirection: 'column'
   });
 
-  const priceStyle: React.CSSProperties = {
-    fontSize: isMobile ? '2.5rem' : '3rem',
-    fontWeight: 'bold',
-    color: '#1a73e8',
-    marginBottom: '0.5rem',
-    background: 'linear-gradient(135deg, #1a73e8, #4fc3f7)',
-    WebkitBackgroundClip: 'text',
-    WebkitTextFillColor: 'transparent',
-    backgroundClip: 'text'
+  const phoneHeaderStyle = (app: any): React.CSSProperties => ({
+    backgroundColor: app.headerColor,
+    height: isMobile ? '60px' : '80px',
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'center',
+    color: 'white',
+    fontSize: isMobile ? '0.7rem' : '0.9rem',
+    fontWeight: '500',
+    position: 'relative'
+  });
+
+  const phoneContentStyle: React.CSSProperties = {
+    flex: 1,
+    padding: isMobile ? '0.5rem' : '1rem',
+    display: 'flex',
+    flexDirection: 'column',
+    gap: isMobile ? '0.3rem' : '0.5rem'
   };
 
-  const originalPriceStyle: React.CSSProperties = {
-    fontSize: isMobile ? '1rem' : '1.2rem',
-    color: '#999',
-    textDecoration: 'line-through',
-    marginLeft: '0.5rem'
+  const notchStyle: React.CSSProperties = {
+    position: 'absolute',
+    top: isMobile ? '4px' : '6px',
+    left: '50%',
+    transform: 'translateX(-50%)',
+    width: isMobile ? '60px' : '80px',
+    height: isMobile ? '12px' : '18px',
+    backgroundColor: '#1a1a1a',
+    borderRadius: isMobile ? '0 0 8px 8px' : '0 0 12px 12px',
+    zIndex: 10
   };
 
-  const buttonStyle = (plan: any): React.CSSProperties => ({
-    width: '100%',
-    padding: isMobile ? '1rem' : '1.2rem 2rem',
-    borderRadius: '50px',
-    fontSize: isMobile ? '1rem' : '1.1rem',
+  const labelStyle: React.CSSProperties = {
+    fontSize: isMobile ? '0.9rem' : '1.1rem',
     fontWeight: '600',
-    cursor: 'pointer',
-    transition: 'all 0.3s ease',
-    border: plan.buttonStyle === 'filled' ? 'none' : '2px solid #1a73e8',
-    backgroundColor: plan.buttonStyle === 'filled' ? 'linear-gradient(135deg, #1a73e8, #4fc3f7)' : 'transparent',
-    color: plan.buttonStyle === 'filled' ? 'white' : '#1a73e8',
-    background: plan.buttonStyle === 'filled' ? 'linear-gradient(135deg, #1a73e8, #4fc3f7)' : 'transparent'
-  });
+    color: '#1a1a1a',
+    marginTop: isMobile ? '0.5rem' : '1rem'
+  };
+
+  const mockContentBoxStyle: React.CSSProperties = {
+    backgroundColor: 'rgba(255, 255, 255, 0.8)',
+    borderRadius: isMobile ? '4px' : '6px',
+    height: isMobile ? '20px' : '30px',
+    marginBottom: isMobile ? '0.2rem' : '0.3rem'
+  };
+
+  const mockImageStyle: React.CSSProperties = {
+    backgroundColor: 'rgba(0, 0, 0, 0.1)',
+    borderRadius: isMobile ? '4px' : '6px',
+    height: isMobile ? '40px' : '60px',
+    marginBottom: isMobile ? '0.3rem' : '0.5rem'
+  };
 
   return (
     <section style={sectionStyle}>
-      {/* 动画背景点 */}
-      <div style={{
-        position: 'absolute',
-        top: 0,
-        left: 0,
-        right: 0,
-        bottom: 0,
-        background: 'url("data:image/svg+xml,%3Csvg width="60" height="60" viewBox="0 0 60 60" xmlns="http://www.w3.org/2000/svg"%3E%3Cg fill="none" fill-rule="evenodd"%3E%3Cg fill="%239C92AC" fill-opacity="0.1"%3E%3Ccircle cx="30" cy="30" r="1"/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")',
-        opacity: 0.3
-      }} />
-      
       <div style={containerStyle}>
-        {/* 标题区域 */}
-        <div style={{ 
-          textAlign: 'center', 
-          marginBottom: isMobile ? '3rem' : '4rem',
-          padding: '0 1rem'
-        }}>
-          <h1 style={{
-            fontSize: isMobile ? '2.5rem' : 'clamp(3rem, 5vw, 4rem)',
-            fontWeight: 'bold',
-            marginBottom: '1rem',
-            color: '#ffffff',
-            background: 'linear-gradient(135deg, #4fc3f7 0%, #29b6f6 100%)',
-            WebkitBackgroundClip: 'text',
-            WebkitTextFillColor: 'transparent',
-            backgroundClip: 'text'
-          }}>
-            {t('pricing.title')}
-          </h1>
-          <p style={{
-            fontSize: isMobile ? '1.1rem' : 'clamp(1.2rem, 2.5vw, 1.4rem)',
-            color: 'rgba(255, 255, 255, 0.8)',
-            maxWidth: '600px',
-            margin: '0 auto',
-            lineHeight: '1.6'
-          }}>
-            {t('pricing.subtitle')}
-          </p>
-        </div>
+        {/* 头部标题区域 */}
+        <motion.div 
+          style={headerStyle}
+          initial={{ opacity: 0, y: 30 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6 }}
+        >
+          <h2 style={titleStyle}>行业案例</h2>
+          <p style={subtitleStyle}>便民式，自动化，一个人就能搞定</p>
+        </motion.div>
 
-        {/* 定价卡片 */}
-        <div style={{
-          display: 'grid',
-          gridTemplateColumns: isMobile ? '1fr' : 'repeat(3, 1fr)',
-          gap: isMobile ? '2rem' : '1.5rem',
-          width: '100%',
-          alignItems: 'flex-start'
-        }}>
-          {pricingPlans.map((plan, index) => (
-            <div
-              key={plan.name}
-              style={cardStyle(plan)}
-              onMouseEnter={(e) => {
-                if (!isMobile && !plan.popular) {
-                  e.currentTarget.style.transform = 'translateY(-10px) scale(1.02)';
-                  e.currentTarget.style.boxShadow = '0 20px 50px rgba(0, 0, 0, 0.25)';
-                }
+        {/* 手机展示区域 */}
+        <motion.div 
+          style={phonesContainerStyle}
+          initial={{ opacity: 0, y: 40 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 0.2 }}
+        >
+          {industryApps.map((app, index) => (
+            <motion.div
+              key={app.title}
+              initial={{ opacity: 0, y: 60, scale: 0.9 }}
+              animate={{ opacity: 1, y: 0, scale: 1 }}
+              transition={{ 
+                duration: 0.5, 
+                delay: 0.3 + index * 0.1,
+                ease: "easeOut"
               }}
-              onMouseLeave={(e) => {
-                if (!isMobile && !plan.popular) {
-                  e.currentTarget.style.transform = 'translateY(0) scale(1)';
-                  e.currentTarget.style.boxShadow = '0 8px 32px rgba(0, 0, 0, 0.15)';
-                }
-              }}
+              style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}
             >
-              {/* 推荐标签 */}
-              {plan.popular && (
-                <div style={{
-                  position: 'absolute',
-                  top: '-1px',
-                  left: '50%',
-                  transform: 'translateX(-50%)',
-                  background: 'linear-gradient(135deg, #4fc3f7, #29b6f6)',
-                  color: 'white',
-                  padding: '0.5rem 1.5rem',
-                  borderRadius: '0 0 15px 15px',
-                  fontSize: '0.9rem',
-                  fontWeight: '600'
-                }}>
-                  {t('pricing.recommended')}
-                </div>
-              )}
-
-              <h3 style={{
-                fontSize: isMobile ? '1.5rem' : '1.8rem',
-                fontWeight: 'bold',
-                marginBottom: '1rem',
-                marginTop: plan.popular ? '1rem' : '0',
-                color: '#2d3748'
-              }}>
-                {plan.name}
-              </h3>
-
-              <div style={{ marginBottom: '2rem' }}>
-                <span style={priceStyle}>
-                  {plan.currency}{plan.price}
-                </span>
-                <span style={originalPriceStyle}>
-                  {plan.currency}{plan.originalPrice}
-                </span>
-              </div>
-
-              <div style={{ marginBottom: '2rem', textAlign: 'left' }}>
-                {plan.features.map((feature, idx) => (
-                  <div key={idx} style={{
+              <div style={phoneFrameStyle}>
+                <div style={notchStyle} />
+                <div style={phoneScreenStyle(app)}>
+                  {/* 手机状态栏 */}
+                  <div style={{
+                    height: isMobile ? '16px' : '20px',
+                    backgroundColor: 'rgba(0, 0, 0, 0.05)',
                     display: 'flex',
                     alignItems: 'center',
-                    marginBottom: '0.8rem',
-                    fontSize: isMobile ? '0.9rem' : '1rem',
-                    color: '#4a5568'
+                    justifyContent: 'space-between',
+                    padding: '0 0.5rem',
+                    fontSize: isMobile ? '0.5rem' : '0.6rem',
+                    color: '#666'
                   }}>
-                    <span style={{
-                      color: '#4fc3f7',
-                      marginRight: '0.8rem',
-                      fontSize: '1.2rem'
-                    }}>✓</span>
-                    {feature}
+                    <span>10:44</span>
+                    <span>●●●</span>
                   </div>
-                ))}
-              </div>
 
-              <button
-                style={buttonStyle(plan)}
-                onMouseEnter={(e) => {
-                  if (plan.buttonStyle === 'filled') {
-                    e.currentTarget.style.transform = 'translateY(-2px)';
-                    e.currentTarget.style.boxShadow = '0 8px 25px rgba(26, 115, 232, 0.4)';
-                  } else {
-                    e.currentTarget.style.backgroundColor = '#1a73e8';
-                    e.currentTarget.style.color = 'white';
-                  }
-                }}
-                onMouseLeave={(e) => {
-                  if (plan.buttonStyle === 'filled') {
-                    e.currentTarget.style.transform = 'translateY(0)';
-                    e.currentTarget.style.boxShadow = 'none';
-                  } else {
-                    e.currentTarget.style.backgroundColor = 'transparent';
-                    e.currentTarget.style.color = '#1a73e8';
-                  }
-                }}
-              >
-                {plan.buttonText}
-              </button>
-            </div>
+                  {/* 应用头部 */}
+                  <div style={phoneHeaderStyle(app)}>
+                    <div style={{
+                      display: 'flex',
+                      alignItems: 'center',
+                      gap: '0.5rem'
+                    }}>
+                      <div style={{
+                        width: isMobile ? '16px' : '20px',
+                        height: isMobile ? '16px' : '20px',
+                        backgroundColor: 'rgba(255, 255, 255, 0.3)',
+                        borderRadius: '4px'
+                      }} />
+                      <span style={{ fontSize: isMobile ? '0.6rem' : '0.8rem' }}>
+                        {app.appName}
+                      </span>
+                      <div style={{
+                        backgroundColor: '#4ade80',
+                        color: 'white',
+                        padding: '1px 4px',
+                        borderRadius: '2px',
+                        fontSize: isMobile ? '0.4rem' : '0.5rem'
+                      }}>
+                        小程序
+                      </div>
+                    </div>
+                  </div>
+
+                  {/* 应用内容 */}
+                  <div style={phoneContentStyle}>
+                    {/* 模拟界面内容 */}
+                    <div style={mockImageStyle} />
+                    
+                    {/* 功能按钮区域 */}
+                    <div style={{
+                      display: 'grid',
+                      gridTemplateColumns: isMobile ? 'repeat(4, 1fr)' : 'repeat(5, 1fr)',
+                      gap: isMobile ? '0.2rem' : '0.3rem',
+                      marginBottom: isMobile ? '0.3rem' : '0.5rem'
+                    }}>
+                      {[...Array(isMobile ? 8 : 10)].map((_, i) => (
+                        <div key={i} style={{
+                          backgroundColor: 'rgba(255, 255, 255, 0.6)',
+                          borderRadius: isMobile ? '3px' : '4px',
+                          height: isMobile ? '12px' : '16px'
+                        }} />
+                      ))}
+                    </div>
+
+                    {/* 列表内容 */}
+                    {[...Array(isMobile ? 3 : 4)].map((_, i) => (
+                      <div key={i} style={mockContentBoxStyle} />
+                    ))}
+
+                    {/* 底部导航栏 */}
+                    <div style={{
+                      marginTop: 'auto',
+                      height: isMobile ? '40px' : '50px',
+                      backgroundColor: 'rgba(255, 255, 255, 0.9)',
+                      borderRadius: isMobile ? '4px' : '6px',
+                      display: 'flex',
+                      alignItems: 'center',
+                      justifyContent: 'space-around'
+                    }}>
+                      {[...Array(3)].map((_, i) => (
+                        <div key={i} style={{
+                          width: isMobile ? '20px' : '25px',
+                          height: isMobile ? '20px' : '25px',
+                          backgroundColor: 'rgba(0, 0, 0, 0.1)',
+                          borderRadius: '50%'
+                        }} />
+                      ))}
+                    </div>
+                  </div>
+                </div>
+              </div>
+              
+              {/* 标签 */}
+              <div style={labelStyle}>{app.title}</div>
+            </motion.div>
           ))}
-        </div>
+        </motion.div>
       </div>
     </section>
   );

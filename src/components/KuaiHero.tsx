@@ -16,16 +16,19 @@ const KuaiHero: React.FC = () => {
   // 整个section的容器
   const sectionStyle: React.CSSProperties = {
     position: 'relative',
-    minHeight: '100vh'
+    height: '100vh', // 固定第一屏高度为100vh
+    overflow: 'hidden' // 隐藏超出部分，确保不露出第二屏
   };
 
   const heroStyle: React.CSSProperties = {
     background: 'linear-gradient(135deg, #1677ff 0%, #69b1ff 100%)',
-    minHeight: '70vh', // 减少蓝色背景高度，与设计图保持一致
+    minHeight: '80vh', // 增加蓝色背景高度，确保白色容器50%覆盖
     display: 'flex',
     flexDirection: 'column',
     position: 'relative',
-    overflow: 'hidden'
+    overflow: 'hidden',
+    marginTop: '-64px', // 向上偏移导航栏高度，让蓝色背景从顶部开始
+    paddingTop: '64px'   // 补偿偏移，确保内容不被导航栏遮挡
   };
 
   const overlayStyle: React.CSSProperties = {
@@ -38,7 +41,7 @@ const KuaiHero: React.FC = () => {
     flex: 1,
     display: 'flex',
     alignItems: 'center',
-    paddingTop: '80px',
+    paddingTop: '140px', // 大幅增加顶部间距，让文字往下移动更多
     paddingBottom: '60px' // 减少底部padding
   };
 
@@ -90,7 +93,7 @@ const KuaiHero: React.FC = () => {
     gap: '16px',
     justifyContent: isMobile ? 'center' : 'flex-start',
     flexWrap: 'wrap',
-    marginBottom: '60px'
+    marginBottom: '120px' // 增加按钮和白色容器之间的间距
   };
 
   const primaryButtonStyle: React.CSSProperties = {
@@ -132,7 +135,7 @@ const KuaiHero: React.FC = () => {
   // 白色特性容器 - 调整位置让一半覆盖蓝色背景
   const featuresContainerStyle: React.CSSProperties = {
     position: 'absolute',
-    bottom: isMobile ? '12%' : '16%', // 稍微向下调整，更接近真实的覆盖比例
+    top: isMobile ? '55vh' : '60vh', // 调整到合适位置，确保在第一屏内且50%覆盖蓝色背景
     left: '0',
     right: '0',
     margin: '0 auto',
@@ -140,7 +143,7 @@ const KuaiHero: React.FC = () => {
     maxWidth: '1200px',
     backgroundColor: 'white',
     borderRadius: '24px',
-    padding: isMobile ? '32px 20px' : '48px 32px', // 减少内边距，降低高度
+    padding: isMobile ? '24px 16px' : '36px 24px', // 进一步减少内边距，确保容器不会太高
     boxShadow: '0 20px 40px rgba(0, 0, 0, 0.1), 0 8px 16px rgba(0, 0, 0, 0.08)',
     zIndex: 20
   };
@@ -183,7 +186,7 @@ const KuaiHero: React.FC = () => {
 
   // 底部占位区域 - 增加高度确保白色容器有足够空间
   const spacerStyle: React.CSSProperties = {
-    height: '250px', // 增加高度给白色容器的下半部分留空间
+    height: '350px', // 进一步增加高度，确保第一屏完整显示
     backgroundColor: '#f5f5f5'
   };
 

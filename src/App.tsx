@@ -8,6 +8,7 @@ import KuaiFeatures from './components/KuaiFeatures';
 import KuaiDetails from './components/KuaiDetails';
 import IndustryCases from './components/IndustryCases';
 import Pricing from './components/Pricing';
+import IndustryShowcase from './components/IndustryShowcase';
 import FullPageScroll from './components/FullPageScroll';
 import ContactUs from './components/ContactUs';
 import './App.css';
@@ -33,6 +34,7 @@ function App() {
             <KuaiDetails />
             <IndustryCases />
             <Pricing />
+            <IndustryShowcase />
             <ContactUs />
           </FullPageScroll>
         </div>
