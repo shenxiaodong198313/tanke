@@ -3,6 +3,7 @@ import { motion } from 'framer-motion';
 import { useLanguage } from '../contexts/LanguageContext';
 
 const KuaiHero: React.FC = () => {
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const { t } = useLanguage();
   const [isMobile, setIsMobile] = React.useState(window.innerWidth <= 768);
 
@@ -12,12 +13,17 @@ const KuaiHero: React.FC = () => {
     return () => window.removeEventListener('resize', handleResize);
   }, []);
 
+  // 整个section的容器
+  const sectionStyle: React.CSSProperties = {
+    position: 'relative',
+    minHeight: '100vh'
+  };
+
   const heroStyle: React.CSSProperties = {
-    background: 'linear-gradient(135deg, #1e3c72 0%, #2a5298 100%)',
-    height: '100vh',
+    background: 'linear-gradient(135deg, #1677ff 0%, #69b1ff 100%)',
+    minHeight: '70vh', // 减少蓝色背景高度，与设计图保持一致
     display: 'flex',
-    alignItems: 'center',
-    justifyContent: 'center',
+    flexDirection: 'column',
     position: 'relative',
     overflow: 'hidden'
   };
@@ -25,81 +31,124 @@ const KuaiHero: React.FC = () => {
   const overlayStyle: React.CSSProperties = {
     position: 'absolute',
     inset: 0,
-    background: 'rgba(0, 0, 0, 0.1)'
+    background: 'rgba(0, 0, 0, 0.05)'
+  };
+
+  const mainContentStyle: React.CSSProperties = {
+    flex: 1,
+    display: 'flex',
+    alignItems: 'center',
+    paddingTop: '80px',
+    paddingBottom: '60px' // 减少底部padding
   };
 
   const containerStyle: React.CSSProperties = {
     maxWidth: '1200px',
     margin: '0 auto',
-    padding: '0 2rem',
+    padding: '0 24px',
     position: 'relative',
     zIndex: 10,
-    textAlign: 'center',
-    color: 'white'
+    color: 'white',
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'space-between',
+    width: '100%'
+  };
+
+  const contentStyle: React.CSSProperties = {
+    flex: 1,
+    maxWidth: isMobile ? '100%' : '600px',
+    textAlign: isMobile ? 'center' : 'left'
   };
 
   const mainTitleStyle: React.CSSProperties = {
-    fontSize: isMobile ? '2.5rem' : '4rem',
+    fontSize: isMobile ? '48px' : '68px',
     fontWeight: 'bold',
     lineHeight: '1.2',
-    marginBottom: '1rem'
+    marginBottom: '16px',
+    color: 'white'
   };
 
   const subtitleStyle: React.CSSProperties = {
-    fontSize: isMobile ? '1.2rem' : '1.8rem',
-    fontWeight: '300',
-    marginBottom: '2rem',
-    color: 'rgba(255, 255, 255, 0.9)'
+    fontSize: isMobile ? '18px' : '20px',
+    fontWeight: '400',
+    marginBottom: '20px',
+    color: 'rgba(255, 255, 255, 0.85)',
+    lineHeight: '1.6'
   };
 
   const sloganStyle: React.CSSProperties = {
-    fontSize: isMobile ? '1rem' : '1.3rem',
-    lineHeight: '1.6',
-    marginBottom: '3rem',
-    color: 'rgba(255, 255, 255, 0.8)',
-    maxWidth: '800px',
-    margin: '0 auto 3rem'
+    fontSize: isMobile ? '16px' : '18px',
+    fontWeight: '400',
+    marginBottom: '40px',
+    color: 'rgba(255, 255, 255, 0.75)',
+    lineHeight: '1.6'
   };
 
   const buttonContainerStyle: React.CSSProperties = {
     display: 'flex',
-    gap: '1.5rem',
-    justifyContent: 'center',
+    gap: '16px',
+    justifyContent: isMobile ? 'center' : 'flex-start',
     flexWrap: 'wrap',
-    marginBottom: '4rem'
+    marginBottom: '60px'
   };
 
   const primaryButtonStyle: React.CSSProperties = {
-    backgroundColor: '#4285f4',
-    color: 'white',
-    padding: '1rem 2.5rem',
+    backgroundColor: 'white',
+    color: '#1677ff',
+    padding: '12px 24px',
     borderRadius: '6px',
     fontWeight: '600',
-    fontSize: '1rem',
+    fontSize: '16px',
     border: 'none',
     cursor: 'pointer',
-    boxShadow: '0 4px 12px rgba(66, 133, 244, 0.3)',
-    transition: 'all 0.3s ease'
+    transition: 'all 0.3s ease',
+    minWidth: '120px',
+    height: '44px'
   };
 
   const secondaryButtonStyle: React.CSSProperties = {
     backgroundColor: 'transparent',
     color: 'white',
-    padding: '1rem 2.5rem',
+    padding: '12px 24px',
     borderRadius: '6px',
     fontWeight: '600',
-    fontSize: '1rem',
-    border: '2px solid rgba(255, 255, 255, 0.3)',
+    fontSize: '16px',
+    border: '1px solid rgba(255, 255, 255, 0.4)',
     cursor: 'pointer',
-    transition: 'all 0.3s ease'
+    transition: 'all 0.3s ease',
+    minWidth: '120px',
+    height: '44px'
+  };
+
+  const illustrationStyle: React.CSSProperties = {
+    flex: 1,
+    display: 'none', // 暂时隐藏右侧图片区域
+    justifyContent: 'center',
+    alignItems: 'center',
+    maxWidth: '500px'
+  };
+
+  // 白色特性容器 - 调整位置让一半覆盖蓝色背景
+  const featuresContainerStyle: React.CSSProperties = {
+    position: 'absolute',
+    bottom: isMobile ? '12%' : '16%', // 稍微向下调整，更接近真实的覆盖比例
+    left: '0',
+    right: '0',
+    margin: '0 auto',
+    width: '90%',
+    maxWidth: '1200px',
+    backgroundColor: 'white',
+    borderRadius: '24px',
+    padding: isMobile ? '32px 20px' : '48px 32px', // 减少内边距，降低高度
+    boxShadow: '0 20px 40px rgba(0, 0, 0, 0.1), 0 8px 16px rgba(0, 0, 0, 0.08)',
+    zIndex: 20
   };
 
   const featuresStyle: React.CSSProperties = {
     display: 'grid',
-    gridTemplateColumns: 'repeat(3, 1fr)',
-    gap: isMobile ? '1rem' : '2rem',
-    maxWidth: isMobile ? '320px' : '600px',
-    margin: '0 auto'
+    gridTemplateColumns: isMobile ? '1fr' : 'repeat(3, 1fr)',
+    gap: isMobile ? '32px' : '48px' // 减少间距
   };
 
   const featureItemStyle: React.CSSProperties = {
@@ -107,133 +156,198 @@ const KuaiHero: React.FC = () => {
   };
 
   const featureIconStyle: React.CSSProperties = {
-    fontSize: isMobile ? '1.8rem' : '2.5rem',
-    display: 'block',
-    marginBottom: '0.5rem'
+    width: '56px', // 稍微减小图标尺寸
+    height: '56px',
+    backgroundColor: '#f0f8ff',
+    borderRadius: '12px',
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'center',
+    fontSize: '20px', // 减小图标字体
+    margin: '0 auto 12px', // 减少间距
+    color: '#1677ff'
   };
 
-  const featureLabelStyle: React.CSSProperties = {
-    fontSize: isMobile ? '0.7rem' : '0.875rem',
-    color: 'rgba(255, 255, 255, 0.8)',
-    lineHeight: '1.2'
+  const featureTitleStyle: React.CSSProperties = {
+    fontSize: '16px',
+    fontWeight: '600',
+    marginBottom: '6px', // 减少间距
+    color: '#000000d9'
+  };
+
+  const featureDescStyle: React.CSSProperties = {
+    fontSize: '14px',
+    color: '#00000073',
+    lineHeight: '1.4' // 减少行高
+  };
+
+  // 底部占位区域 - 增加高度确保白色容器有足够空间
+  const spacerStyle: React.CSSProperties = {
+    height: '250px', // 增加高度给白色容器的下半部分留空间
+    backgroundColor: '#f5f5f5'
   };
 
   return (
-    <section style={heroStyle}>
-      <div style={overlayStyle}></div>
-      
-      <div style={containerStyle}>
+    <>
+      {/* 整个section容器 */}
+      <section style={sectionStyle}>
+        {/* 蓝色背景区域 */}
+        <div style={heroStyle}>
+          <div style={overlayStyle}></div>
+          
+          {/* 主要内容区域 */}
+          <div style={mainContentStyle}>
+            <div style={containerStyle}>
+              <div style={contentStyle}>
+                <motion.h1
+                  initial={{ opacity: 0, y: 30 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.8, delay: 0.2 }}
+                  style={mainTitleStyle}
+                >
+                  {t('hero.title')}
+                </motion.h1>
+
+                <motion.h2
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.6, delay: 0.4 }}
+                  style={subtitleStyle}
+                >
+                  {t('hero.subtitle')}
+                </motion.h2>
+
+                <motion.p
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.6, delay: 0.5 }}
+                  style={sloganStyle}
+                >
+                  {t('hero.description')}
+                </motion.p>
+
+                <motion.div
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.6, delay: 0.6 }}
+                  style={buttonContainerStyle}
+                >
+                  <motion.button
+                    whileHover={{ 
+                      scale: 1.02,
+                      boxShadow: '0 4px 16px rgba(0, 0, 0, 0.12)'
+                    }}
+                    whileTap={{ scale: 0.98 }}
+                    style={primaryButtonStyle}
+                    onMouseEnter={(e) => {
+                      e.currentTarget.style.backgroundColor = '#f5f5f5';
+                    }}
+                    onMouseLeave={(e) => {
+                      e.currentTarget.style.backgroundColor = 'white';
+                    }}
+                  >
+                    {t('hero.getStarted')}
+                  </motion.button>
+
+                  <motion.button
+                    whileHover={{ 
+                      scale: 1.02,
+                      backgroundColor: 'rgba(255, 255, 255, 0.1)',
+                      borderColor: 'rgba(255, 255, 255, 0.6)'
+                    }}
+                    whileTap={{ scale: 0.98 }}
+                    style={secondaryButtonStyle}
+                  >
+                    {t('hero.learnMore')}
+                  </motion.button>
+                </motion.div>
+              </div>
+
+              {/* 右侧插图区域 */}
+              <div style={illustrationStyle}>
+                <motion.div
+                  initial={{ opacity: 0, scale: 0.8 }}
+                  animate={{ opacity: 1, scale: 1 }}
+                  transition={{ duration: 0.8, delay: 0.4 }}
+                  style={{
+                    width: '400px',
+                    height: '300px',
+                    backgroundColor: 'rgba(255, 255, 255, 0.1)',
+                    borderRadius: '16px',
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                    backdropFilter: 'blur(10px)',
+                    border: '1px solid rgba(255, 255, 255, 0.2)'
+                  }}
+                >
+                  <div style={{
+                    color: 'white',
+                    fontSize: '48px',
+                    textAlign: 'center'
+                  }}>
+                    📱<br/>
+                    <span style={{ fontSize: '16px' }}>移动端组件库</span>
+                  </div>
+                </motion.div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        {/* 白色特性容器 - 绝对定位，一半覆盖蓝色背景 */}
         <motion.div
-          initial={{ opacity: 0, y: 30 }}
+          initial={{ opacity: 0, y: 40 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
+          transition={{ duration: 0.8, delay: 0.8 }}
+          style={featuresContainerStyle}
         >
-          <motion.h1
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.2 }}
-            style={mainTitleStyle}
-          >
-            {t('hero.title')}
-          </motion.h1>
-
-          <motion.h2
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.4 }}
-            style={subtitleStyle}
-          >
-            {t('hero.subtitle')}
-          </motion.h2>
-
-          <motion.p
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.6 }}
-            style={sloganStyle}
-          >
-            {t('hero.description')}
-          </motion.p>
-
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.8 }}
-            style={buttonContainerStyle}
-          >
-            <motion.button
-              whileHover={{ 
-                scale: 1.05,
-                boxShadow: '0 6px 20px rgba(66, 133, 244, 0.4)'
-              }}
-              whileTap={{ scale: 0.95 }}
-              style={primaryButtonStyle}
+          <div style={featuresStyle}>
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 1 }}
+              style={featureItemStyle}
             >
-              {t('hero.getStarted')}
-            </motion.button>
-
-            <motion.button
-              whileHover={{ 
-                scale: 1.05,
-                backgroundColor: 'rgba(255, 255, 255, 0.1)',
-                borderColor: 'rgba(255, 255, 255, 0.6)'
-              }}
-              whileTap={{ scale: 0.95 }}
-              style={secondaryButtonStyle}
+              <div style={featureIconStyle}>
+                <span>📱</span>
+              </div>
+              <div style={featureTitleStyle}>智能手机</div>
+              <div style={featureDescStyle}>无需配置，即可拥有最佳的包体积大小和极致的性能</div>
+            </motion.div>
+            
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 1.1 }}
+              style={featureItemStyle}
             >
-              {t('hero.learnMore')}
-            </motion.button>
-          </motion.div>
-
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 1.0 }}
-            style={featuresStyle}
-          >
-            <div style={featureItemStyle}>
-              <span style={featureIconStyle}>📱</span>
-              <span style={featureLabelStyle}>智能手机</span>
-            </div>
-            <div style={featureItemStyle}>
-              <span style={featureIconStyle}>🎯</span>
-              <span style={featureLabelStyle}>精准营销</span>
-            </div>
-            <div style={featureItemStyle}>
-              <span style={featureIconStyle}>📺</span>
-              <span style={featureLabelStyle}>自动直播</span>
-            </div>
-          </motion.div>
+              <div style={featureIconStyle}>
+                <span>🎯</span>
+              </div>
+              <div style={featureTitleStyle}>精准营销</div>
+              <div style={featureDescStyle}>可以高效地对组件外观进行调整或者创建自己的主题</div>
+            </motion.div>
+            
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 1.2 }}
+              style={featureItemStyle}
+            >
+              <div style={featureIconStyle}>
+                <span>📺</span>
+              </div>
+              <div style={featureTitleStyle}>自动直播</div>
+              <div style={featureDescStyle}>拥有流畅的手势和细腻的动画，助力产品打造极致体验</div>
+            </motion.div>
+          </div>
         </motion.div>
-      </div>
+      </section>
 
-      {/* Background decoration */}
-      <div style={{ position: 'absolute', inset: 0, pointerEvents: 'none', opacity: 0.1 }}>
-        {[...Array(20)].map((_, i) => (
-          <motion.div
-            key={i}
-            style={{
-              position: 'absolute',
-              width: '2px',
-              height: '2px',
-              backgroundColor: 'white',
-              borderRadius: '50%',
-              left: `${Math.random() * 100}%`,
-              top: `${Math.random() * 100}%`,
-            }}
-            animate={{
-              y: [0, -30, 0],
-              opacity: [0.3, 1, 0.3],
-            }}
-            transition={{
-              duration: 6 + Math.random() * 4,
-              repeat: Infinity,
-              delay: Math.random() * 5,
-            }}
-          />
-        ))}
-      </div>
-    </section>
+      {/* 底部占位区域 */}
+      <div style={spacerStyle}></div>
+    </>
   );
 };
 

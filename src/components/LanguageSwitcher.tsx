@@ -10,11 +10,8 @@ const LanguageSwitcher: React.FC<LanguageSwitcherProps> = ({ isScrolled = false 
   const [isOpen, setIsOpen] = useState(false);
 
   const languages = [
-    { code: 'zh-CN' as Language, name: '简体中文', flag: '🇨🇳' },
-    { code: 'zh-TW' as Language, name: '繁體中文', flag: '🇹🇼' },
-    { code: 'en' as Language, name: 'English', flag: '🇺🇸' },
-    { code: 'ja' as Language, name: '日本語', flag: '🇯🇵' },
-    { code: 'ko' as Language, name: '한국어', flag: '🇰🇷' }
+    { code: 'zh-CN' as Language, name: '简体中文', display: '中文' },
+    { code: 'en' as Language, name: 'English', display: 'English' }
   ];
 
   const currentLanguage = languages.find(lang => lang.code === language) || languages[0];
@@ -26,33 +23,34 @@ const LanguageSwitcher: React.FC<LanguageSwitcherProps> = ({ isScrolled = false 
 
   const buttonStyle: React.CSSProperties = {
     backgroundColor: 'transparent',
-    border: isScrolled ? '1px solid #e8eaed' : '1px solid rgba(255, 255, 255, 0.3)',
-    color: isScrolled ? '#5f6368' : 'rgba(255, 255, 255, 0.9)',
-    padding: '0.75rem 1rem',
+    border: '1px solid rgba(255, 255, 255, 0.25)',
+    color: isScrolled ? '#000000a6' : 'rgba(255, 255, 255, 0.65)',
+    padding: '4px 12px',
     borderRadius: '6px',
-    fontWeight: '500',
-    fontSize: '0.9rem',
+    fontWeight: '400',
+    fontSize: '14px',
     cursor: 'pointer',
     display: 'flex',
     alignItems: 'center',
-    gap: '0.5rem',
+    gap: '4px',
     position: 'relative',
     transition: 'all 0.3s ease',
-    minWidth: '120px',
-    justifyContent: 'space-between'
+    minWidth: '80px',
+    justifyContent: 'center',
+    height: '32px'
   };
 
   const dropdownStyle: React.CSSProperties = {
     position: 'absolute',
     top: '100%',
     right: 0,
-    marginTop: '0.5rem',
+    marginTop: '4px',
     backgroundColor: 'white',
-    border: '1px solid #e8eaed',
-    borderRadius: '8px',
-    boxShadow: '0 4px 12px rgba(0, 0, 0, 0.15)',
+    border: '1px solid #d9d9d9',
+    borderRadius: '6px',
+    boxShadow: '0 6px 16px 0 rgba(0, 0, 0, 0.08), 0 3px 6px -4px rgba(0, 0, 0, 0.12), 0 9px 28px 8px rgba(0, 0, 0, 0.05)',
     zIndex: 1000,
-    minWidth: '160px',
+    minWidth: '120px',
     overflow: 'hidden',
     display: isOpen ? 'block' : 'none'
   };
@@ -60,22 +58,22 @@ const LanguageSwitcher: React.FC<LanguageSwitcherProps> = ({ isScrolled = false 
   const dropdownItemStyle: React.CSSProperties = {
     display: 'flex',
     alignItems: 'center',
-    gap: '0.75rem',
-    padding: '0.75rem 1rem',
+    justifyContent: 'center',
+    padding: '8px 12px',
     cursor: 'pointer',
-    fontSize: '0.9rem',
-    color: '#5f6368',
+    fontSize: '14px',
+    color: '#000000d9',
     transition: 'background-color 0.2s ease',
     border: 'none',
     backgroundColor: 'transparent',
     width: '100%',
-    textAlign: 'left'
+    textAlign: 'center'
   };
 
   const activeItemStyle: React.CSSProperties = {
     ...dropdownItemStyle,
-    backgroundColor: '#f8f9fa',
-    color: '#1a73e8',
+    backgroundColor: '#f6f6f6',
+    color: '#1677ff',
     fontWeight: '500'
   };
 
@@ -85,20 +83,21 @@ const LanguageSwitcher: React.FC<LanguageSwitcherProps> = ({ isScrolled = false 
         style={buttonStyle}
         onClick={() => setIsOpen(!isOpen)}
         onMouseEnter={(e) => {
-          e.currentTarget.style.backgroundColor = isScrolled ? '#f8f9fa' : 'rgba(255, 255, 255, 0.1)';
+          e.currentTarget.style.backgroundColor = isScrolled ? 'rgba(0, 0, 0, 0.04)' : 'rgba(255, 255, 255, 0.1)';
+          e.currentTarget.style.borderColor = isScrolled ? '#d9d9d9' : 'rgba(255, 255, 255, 0.4)';
         }}
         onMouseLeave={(e) => {
           e.currentTarget.style.backgroundColor = 'transparent';
+          e.currentTarget.style.borderColor = 'rgba(255, 255, 255, 0.25)';
         }}
       >
-        <span style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
-          <span>{currentLanguage.flag}</span>
-          <span>{currentLanguage.code === 'zh-CN' ? '中文' : 
-                currentLanguage.code === 'zh-TW' ? '中文' :
-                currentLanguage.code === 'en' ? 'EN' :
-                currentLanguage.code === 'ja' ? '日本語' : '한국어'}</span>
-        </span>
-        <span style={{ fontSize: '0.75rem', transform: isOpen ? 'rotate(180deg)' : 'none', transition: 'transform 0.2s ease' }}>
+        <span>{currentLanguage.display}</span>
+        <span style={{ 
+          fontSize: '12px', 
+          transform: isOpen ? 'rotate(180deg)' : 'none', 
+          transition: 'transform 0.2s ease',
+          opacity: 0.65
+        }}>
           ▼
         </span>
       </button>
@@ -111,7 +110,7 @@ const LanguageSwitcher: React.FC<LanguageSwitcherProps> = ({ isScrolled = false 
             onClick={() => handleLanguageChange(lang.code)}
             onMouseEnter={(e) => {
               if (lang.code !== language) {
-                e.currentTarget.style.backgroundColor = '#f8f9fa';
+                e.currentTarget.style.backgroundColor = '#f5f5f5';
               }
             }}
             onMouseLeave={(e) => {
@@ -120,7 +119,6 @@ const LanguageSwitcher: React.FC<LanguageSwitcherProps> = ({ isScrolled = false 
               }
             }}
           >
-            <span>{lang.flag}</span>
             <span>{lang.name}</span>
           </button>
         ))}
