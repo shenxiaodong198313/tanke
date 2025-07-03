@@ -3,6 +3,7 @@ import { motion } from 'framer-motion';
 import { useInView } from 'framer-motion';
 import { useRef } from 'react';
 import { Star, Quote } from 'lucide-react';
+import SuitableGroups from './SuitableGroups';
 
 const Testimonials: React.FC = () => {
   const ref = useRef(null);
@@ -108,6 +109,11 @@ const Testimonials: React.FC = () => {
             95%的客户来自推荐，平均每个客户会为我们推荐3个新客户
           </motion.p>
         </motion.div>
+
+        {/* 适用人群横向模块 */}
+        <div className="mb-8">
+          <SuitableGroups />
+        </div>
 
         <motion.div
           initial="hidden"
