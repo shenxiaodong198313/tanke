@@ -1,8 +1,10 @@
 import React, { useState } from 'react';
+import { useModal } from '../contexts/ModalContext';
 
 const KuaiDetails: React.FC = () => {
   const [isMobile, setIsMobile] = React.useState(false);
   const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
+  const { openContactModal } = useModal();
 
   React.useEffect(() => {
     const checkMobile = () => {
@@ -289,6 +291,7 @@ const KuaiDetails: React.FC = () => {
               <div style={getOverlayStyle(hoveredIndex === index)}>
                 <button 
                   style={consultButtonStyle}
+                  onClick={() => openContactModal()}
                   onMouseEnter={(e) => {
                     e.currentTarget.style.backgroundColor = '#2563eb';
                     e.currentTarget.style.transform = 'translateY(-1px)';
@@ -311,6 +314,7 @@ const KuaiDetails: React.FC = () => {
         }}>
           <button 
             style={ctaButtonStyle}
+            onClick={() => openContactModal()}
             onMouseEnter={(e) => {
               if (!isMobile) {
                 e.currentTarget.style.backgroundColor = '#2563eb';

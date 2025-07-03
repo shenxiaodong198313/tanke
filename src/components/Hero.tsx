@@ -77,6 +77,7 @@ const Hero: React.FC = () => {
               whileHover={{ scale: 1.05, y: -2 }}
               whileTap={{ scale: 0.95 }}
               className="bg-white text-blue-600 px-8 py-4 rounded-full font-semibold text-lg shadow-xl hover:shadow-2xl transition-all duration-300 inline-flex items-center space-x-2"
+
             >
               <span>立即体验</span>
               <ArrowRight className="w-5 h-5" />

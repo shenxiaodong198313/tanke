@@ -196,13 +196,18 @@ const SimpleFeatures: React.FC = () => {
               </h4>
               <p style={detailStyle}>{feature.detail}</p>
               
-              <motion.a
-                href="#"
-                style={learnMoreStyle}
+              <motion.button
+                style={{
+                  ...learnMoreStyle,
+                  background: 'none',
+                  border: 'none',
+                  cursor: 'pointer'
+                }}
                 whileHover={{ x: 5 }}
+
               >
                 进一步了解 →
-              </motion.a>
+              </motion.button>
             </motion.div>
           ))}
         </div>

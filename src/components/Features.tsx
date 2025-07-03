@@ -13,10 +13,12 @@ import {
   TrendingUp,
   Database
 } from 'lucide-react';
+import { useModal } from '../contexts/ModalContext';
 
 const Features: React.FC = () => {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: "-100px" });
+  const { openContactModal } = useModal();
 
   const features = [
     {
@@ -157,8 +159,9 @@ const Features: React.FC = () => {
               </p>
 
               <motion.div
-                className="mt-6 flex items-center text-blue-600 font-medium"
+                className="mt-6 flex items-center text-blue-600 font-medium cursor-pointer"
                 whileHover={{ x: 5 }}
+                onClick={() => openContactModal()}
               >
                 <span className="text-sm">了解更多</span>
                 <motion.svg

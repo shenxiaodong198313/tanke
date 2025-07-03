@@ -135,6 +135,10 @@ const KuaiFooter: React.FC = () => {
                 boxShadow: '0 4px 12px rgba(59, 130, 246, 0.3)',
                 transition: 'all 0.3s ease'
               }}
+              onClick={() => {
+                // 这里可以添加其他咨询逻辑
+                console.log('在线咨询');
+              }}
               onMouseEnter={(e) => {
                 e.currentTarget.style.transform = 'translateY(-2px)';
                 e.currentTarget.style.boxShadow = '0 6px 16px rgba(59, 130, 246, 0.4)';

@@ -1,10 +1,12 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { useLanguage } from '../contexts/LanguageContext';
+import { useModal } from '../contexts/ModalContext';
 
 const KuaiHero: React.FC = () => {
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const { t } = useLanguage();
+  const { openContactModal } = useModal();
   const [isMobile, setIsMobile] = React.useState(window.innerWidth <= 768);
 
   React.useEffect(() => {
@@ -196,6 +198,24 @@ const KuaiHero: React.FC = () => {
       <section style={sectionStyle}>
         {/* 蓝色背景区域 */}
         <div style={heroStyle}>
+          {/* 视频背景 */}
+          <video
+            src="https://1252328573.vod2.myqcloud.com/de94f6e5vodgzp1252328573/18b8763d3270835009225094049/fDQAJkoPN0cA.mp4"
+            autoPlay
+            loop
+            muted
+            playsInline
+            style={{
+              position: 'absolute',
+              top: 0,
+              left: 0,
+              width: '100%',
+              height: '100%',
+              objectFit: 'cover',
+              zIndex: 0,
+              pointerEvents: 'none',
+            }}
+          />
           <div style={overlayStyle}></div>
           
           {/* 主要内容区域 */}
@@ -260,6 +280,7 @@ const KuaiHero: React.FC = () => {
                     }}
                     whileTap={{ scale: 0.98 }}
                     style={secondaryButtonStyle}
+                    onClick={() => openContactModal()}
                   >
                     {t('hero.learnMore')}
                   </motion.button>
