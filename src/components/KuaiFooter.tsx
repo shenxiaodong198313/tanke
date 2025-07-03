@@ -182,7 +182,11 @@ const KuaiFooter: React.FC = () => {
       </section>
 
       {/* Footer Section */}
-      <footer style={footerSectionStyle}>
+      <footer style={{
+        ...footerSectionStyle,
+        background: '#323238',
+        color: '#e0e0e0',
+      }}>
         <div style={{
           maxWidth: '1200px',
           margin: '0 auto',
@@ -376,18 +380,17 @@ const KuaiFooter: React.FC = () => {
 
           {/* 底部版权信息 */}
           <div style={{
-            borderTop: '1px solid #374151',
-            paddingTop: '0.5rem',
+            borderTop: '1px solid #444',
+            paddingTop: '1.2rem',
             textAlign: 'center',
-            marginTop: '0.5rem'
+            marginTop: '1.2rem',
+            fontSize: isMobile ? '0.85rem' : '1rem',
+            color: '#b0b0b0',
+            letterSpacing: '0.02em',
+            background: 'transparent',
+            fontWeight: 400
           }}>
-            <div style={{
-              fontSize: '0.6rem',
-              color: '#6b7280',
-              lineHeight: '1.2'
-            }}>
-              Copyright © 2025 北京探客互动科技有限公司 版权所有 京ICP备2022018369号
-            </div>
+            Copyright © 2025 北京探客互动科技有限公司 版权所有 京ICP备2022018369号
           </div>
         </div>
       </footer>

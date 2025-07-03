@@ -8,6 +8,8 @@ import KuaiHero from './components/KuaiHero';
 import KuaiFeatures from './components/KuaiFeatures';
 import KuaiDetails from './components/KuaiDetails';
 import AIAssistant from './components/AIAssistant';
+import AIStreamingSolutions from './components/AIStreamingSolutions';
+import MarketingToolsShowcase from './components/MarketingToolsShowcase';
 import IndustryCases from './components/IndustryCases';
 import Pricing from './components/Pricing';
 import IndustryShowcase from './components/IndustryShowcase';
@@ -37,6 +39,8 @@ const AppContent: React.FC = () => {
         <KuaiFeatures />
         <KuaiDetails />
         <AIAssistant />
+        <AIStreamingSolutions />
+        <MarketingToolsShowcase />
         <IndustryCases />
         <Pricing />
         <IndustryShowcase />
