@@ -10,7 +10,7 @@ import IndustryCases from './components/IndustryCases';
 import Pricing from './components/Pricing';
 import IndustryShowcase from './components/IndustryShowcase';
 import FullPageScroll from './components/FullPageScroll';
-import ContactUs from './components/ContactUs';
+import KuaiFooter from './components/KuaiFooter';
 import './App.css';
 
 function App() {
@@ -35,7 +35,7 @@ function App() {
             <IndustryCases />
             <Pricing />
             <IndustryShowcase />
-            <ContactUs />
+            <KuaiFooter />
           </FullPageScroll>
         </div>
       </LanguageProvider>

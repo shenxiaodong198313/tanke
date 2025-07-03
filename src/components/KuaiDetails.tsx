@@ -1,8 +1,6 @@
 import React from 'react';
-import { useLanguage } from '../contexts/LanguageContext';
 
 const KuaiDetails: React.FC = () => {
-  const { t } = useLanguage();
   const [isMobile, setIsMobile] = React.useState(false);
 
   React.useEffect(() => {
@@ -17,200 +15,172 @@ const KuaiDetails: React.FC = () => {
     return () => window.removeEventListener('resize', checkMobile);
   }, []);
 
-  const marketingModules = [
-    {
-      title: t('marketing.interaction'),
-      subtitle: t('marketing.interaction.subtitle'),
-      description: t('marketing.interaction.description'),
-      icon: "👆",
-      color: "#f59e0b"
-    },
-    {
-      title: t('marketing.email'), 
-      subtitle: t('marketing.email.subtitle'),
-      description: t('marketing.email.description'),
-      icon: "📧",
-      color: "#f59e0b"
-    },
-    {
-      title: t('marketing.wechat'),
-      subtitle: t('marketing.wechat.subtitle'),
-      description: t('marketing.wechat.description'),
-      icon: "💬",
-      color: "#f59e0b"
-    },
-    {
-      title: t('marketing.sms'),
-      subtitle: t('marketing.sms.subtitle'),
-      description: t('marketing.sms.description'),
-      icon: "📱",
-      color: "#f59e0b"
-    },
-    {
-      title: t('marketing.aiCall'),
-      subtitle: t('marketing.aiCall.subtitle'),
-      description: t('marketing.aiCall.description'),
-      icon: "🎧",
-      color: "#f59e0b"
-    },
-    {
-      title: t('marketing.tiktok'),
-      subtitle: t('marketing.tiktok.subtitle'),
-      description: t('marketing.tiktok.description'),
-      icon: "🎵",
-      color: "#f59e0b"
-    },
-    {
-      title: t('marketing.5g'),
-      subtitle: t('marketing.5g.subtitle'),
-      description: t('marketing.5g.description'),
-      icon: "📨",
-      color: "#f59e0b"
-    },
-    {
-      title: t('marketing.whatsapp'),
-      subtitle: t('marketing.whatsapp.subtitle'),
-      description: t('marketing.whatsapp.description'),
-      icon: "📞",
-      color: "#f59e0b"
-    }
+  // 16个功能模块，严格按照设计图内容
+  const featureModules = [
+    { icon: "📱", title: "小程序", description: "拓展推广路径，提振品牌声量" },
+    { icon: "📊", title: "拼团", description: "裂变拉新，多人一起下单提销量" },
+    { icon: "👥", title: "社交分销", description: "好友分享裂变，迅速扩大品牌知名度" },
+    { icon: "💰", title: "裂变红包", description: "传播拉新，实现产品或者品牌快速推广" },
+    
+    { icon: "🎫", title: "优惠券", description: "购物享优惠，完成促销或提营单价" },
+    { icon: "🎁", title: "注册赠券", description: "新人注册获得券礼包，提转化" },
+    { icon: "🎭", title: "全场赠券", description: "全场发券，领券中心全员领券" },
+    { icon: "🎯", title: "指定赠券", description: "定向发券，精准触达，会员精细化管理" },
+    
+    { icon: "💸", title: "满减", description: "刺激用户消费，提升会员忠诚度" },
+    { icon: "🏷️", title: "满折", description: "多买多优惠，有效提升店铺营业额" },
+    { icon: "🎉", title: "满赠", description: "满足指定条件获得赠品，拉动客单价" },
+    { icon: "💼", title: "打包一口价", description: "清库存，提升客单价与控成本" },
+    
+    { icon: "💎", title: "会员成长值", description: "完整的会员成长体系，提升用户粘性" },
+    { icon: "⭐", title: "会员积分", description: "积分兑消费金，激活客户消费" },
+    { icon: "🏪", title: "积分商城", description: "小积分大价值，好礼随心兑" },
+    { icon: "👔", title: "CRM", description: "会员分层管理与精准营销，拉升销售转化" }
   ];
-
-
 
   const sectionStyle: React.CSSProperties = {
     minHeight: isMobile ? 'auto' : '100vh',
-    padding: isMobile ? '6rem 1rem 3rem' : '6rem 1rem 2rem',
-    backgroundColor: 'white',
+    padding: isMobile ? '8rem 1rem 6rem' : '8rem 2rem 6rem',
+    backgroundColor: '#f8fafc',
     display: 'flex',
     flexDirection: 'column',
-    justifyContent: isMobile ? 'flex-start' : 'center',
+    justifyContent: 'center',
     position: 'relative'
   };
 
   const containerStyle: React.CSSProperties = {
-    maxWidth: '1400px',
+    maxWidth: '1200px',
     margin: '0 auto',
-    padding: '0 0.5rem',
     width: '100%'
+  };
+
+  const gridContainerStyle: React.CSSProperties = {
+    display: 'grid',
+    gridTemplateColumns: isMobile ? 'repeat(2, 1fr)' : 'repeat(4, 1fr)',
+    gap: isMobile ? '16px' : '20px',
+    marginBottom: '3rem'
   };
 
   const cardStyle: React.CSSProperties = {
     backgroundColor: '#ffffff',
-    borderRadius: '16px',
-    padding: isMobile ? '1.5rem 1rem' : 'clamp(1.5rem, 3vw, 2rem) clamp(1rem, 2vw, 1.5rem)',
-    textAlign: 'center',
-    border: '1px solid #f0f0f0',
+    borderRadius: '12px',
+    padding: isMobile ? '1rem' : '1.5rem',
+    textAlign: 'left',
+    border: '1px solid #e2e8f0',
     transition: 'all 0.3s ease',
     position: 'relative',
-    boxShadow: '0 2px 8px rgba(0, 0, 0, 0.05)',
-    minHeight: isMobile ? '200px' : 'auto'
+    boxShadow: '0 1px 3px rgba(0, 0, 0, 0.1)',
+    minHeight: isMobile ? '80px' : '90px',
+    display: 'flex',
+    flexDirection: 'row',
+    alignItems: 'flex-start',
+    gap: isMobile ? '12px' : '16px'
   };
 
   const iconStyle: React.CSSProperties = {
-    fontSize: isMobile ? '2rem' : 'clamp(2.5rem, 4vw, 3rem)',
-    marginBottom: isMobile ? '1rem' : '1.5rem',
-    display: 'block',
-    color: '#f59e0b'
+    width: isMobile ? '28px' : '32px',
+    height: isMobile ? '28px' : '32px',
+    backgroundColor: '#3b82f6',
+    borderRadius: '6px',
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'center',
+    fontSize: isMobile ? '1rem' : '1.2rem',
+    flexShrink: 0
+  };
+
+  const textContainerStyle: React.CSSProperties = {
+    flex: 1,
+    display: 'flex',
+    flexDirection: 'column',
+    minWidth: 0
   };
 
   const cardTitleStyle: React.CSSProperties = {
-    fontSize: isMobile ? '1.1rem' : 'clamp(1.2rem, 3vw, 1.4rem)',
+    fontSize: isMobile ? '0.9rem' : '1rem',
     fontWeight: '600',
-    marginBottom: isMobile ? '0.8rem' : '1rem',
-    color: '#333'
-  };
-
-  const cardSubtitleStyle: React.CSSProperties = {
-    fontSize: isMobile ? '0.8rem' : 'clamp(0.85rem, 2vw, 0.95rem)',
-    color: '#666',
-    marginBottom: isMobile ? '0.6rem' : '0.8rem',
-    lineHeight: '1.4'
+    marginBottom: '0.25rem',
+    color: '#1e293b',
+    lineHeight: '1.3'
   };
 
   const cardDescStyle: React.CSSProperties = {
-    fontSize: isMobile ? '0.75rem' : 'clamp(0.8rem, 1.8vw, 0.9rem)',
-    lineHeight: '1.5',
-    color: '#888'
+    fontSize: isMobile ? '0.75rem' : '0.8rem',
+    lineHeight: '1.3',
+    color: '#64748b',
+    margin: 0
   };
 
-
+  const ctaButtonStyle: React.CSSProperties = {
+    backgroundColor: '#3b82f6',
+    color: 'white',
+    border: 'none',
+    borderRadius: '8px',
+    padding: isMobile ? '12px 32px' : '14px 40px',
+    fontSize: isMobile ? '1rem' : '1.125rem',
+    fontWeight: '600',
+    cursor: 'pointer',
+    transition: 'all 0.3s ease',
+    display: 'inline-flex',
+    alignItems: 'center',
+    gap: '8px'
+  };
 
   return (
     <section style={sectionStyle}>
       <div style={containerStyle}>
-        {/* 标题区域 */}
-        <div style={{ 
-          textAlign: 'center', 
-          marginBottom: isMobile ? '2rem' : '3rem',
-          padding: '0 1rem'
-        }}>
-          <h1 style={{
-            fontSize: isMobile ? '2rem' : 'clamp(2.5rem, 5vw, 3.5rem)',
-            fontWeight: 'bold',
-            marginBottom: '1rem',
-            color: '#333',
-            background: 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)',
-            WebkitBackgroundClip: 'text',
-            WebkitTextFillColor: 'transparent',
-            backgroundClip: 'text'
-          }}>
-            {t('marketing.title')}
-          </h1>
-          <p style={{
-            fontSize: isMobile ? '1rem' : 'clamp(1rem, 2.5vw, 1.2rem)',
-            color: '#666',
-            maxWidth: '800px',
-            margin: '0 auto',
-            lineHeight: '1.6'
-          }}>
-            {t('marketing.subtitle')}
-          </p>
-        </div>
-
-        {/* 8个营销模块 - 响应式网格 */}
-        <div className={isMobile ? "mobile-8-grid" : "responsive-grid-8"}>
-          {marketingModules.map((module, index) => (
+        {/* 功能网格 */}
+        <div style={gridContainerStyle}>
+          {featureModules.map((module, index) => (
             <div
-              key={module.title}
+              key={index}
               style={cardStyle}
               onMouseEnter={(e) => {
                 if (!isMobile) {
-                  e.currentTarget.style.transform = 'translateY(-8px)';
-                  e.currentTarget.style.boxShadow = '0 8px 25px rgba(0, 0, 0, 0.15)';
+                  e.currentTarget.style.transform = 'translateY(-4px)';
+                  e.currentTarget.style.boxShadow = '0 4px 20px rgba(0, 0, 0, 0.1)';
                 }
               }}
               onMouseLeave={(e) => {
                 if (!isMobile) {
                   e.currentTarget.style.transform = 'translateY(0)';
-                  e.currentTarget.style.boxShadow = '0 2px 8px rgba(0, 0, 0, 0.05)';
+                  e.currentTarget.style.boxShadow = '0 1px 3px rgba(0, 0, 0, 0.1)';
                 }
               }}
             >
-              <span style={iconStyle}>{module.icon}</span>
-              <h3 style={cardTitleStyle}>{module.title}</h3>
-              <p style={cardSubtitleStyle}>{module.subtitle}</p>
-              <p style={cardDescStyle}>{module.description}</p>
+              <div style={iconStyle}>
+                {module.icon}
+              </div>
+              <div style={textContainerStyle}>
+                <h3 style={cardTitleStyle}>{module.title}</h3>
+                <p style={cardDescStyle}>{module.description}</p>
+              </div>
             </div>
           ))}
         </div>
 
-        {/* 底部简化的CTA */}
+        {/* 底部CTA按钮 */}
         <div style={{ 
-          textAlign: 'center', 
-          marginTop: isMobile ? '2rem' : '3rem',
-          paddingBottom: isMobile ? '2rem' : '0'
+          textAlign: 'center'
         }}>
-          <p style={{
-            fontSize: isMobile ? '0.95rem' : 'clamp(1rem, 2.5vw, 1.1rem)',
-            color: '#666',
-            maxWidth: '600px',
-            margin: '0 auto',
-            lineHeight: '1.6',
-            padding: '0 1rem'
-          }}>
-            {t('marketing.description')}
-          </p>
+          <button 
+            style={ctaButtonStyle}
+            onMouseEnter={(e) => {
+              if (!isMobile) {
+                e.currentTarget.style.backgroundColor = '#2563eb';
+                e.currentTarget.style.transform = 'translateY(-2px)';
+              }
+            }}
+            onMouseLeave={(e) => {
+              if (!isMobile) {
+                e.currentTarget.style.backgroundColor = '#3b82f6';
+                e.currentTarget.style.transform = 'translateY(0)';
+              }
+            }}
+          >
+            了解完整功能清单
+            <span style={{ fontSize: '1.2rem' }}>→</span>
+          </button>
         </div>
       </div>
     </section>
