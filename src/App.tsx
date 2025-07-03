@@ -11,6 +11,7 @@ import Pricing from './components/Pricing';
 import IndustryShowcase from './components/IndustryShowcase';
 import FullPageScroll from './components/FullPageScroll';
 import KuaiFooter from './components/KuaiFooter';
+import FloatingToolbar from './components/FloatingToolbar';
 import './App.css';
 
 function App() {
@@ -37,6 +38,9 @@ function App() {
             <IndustryShowcase />
             <KuaiFooter />
           </FullPageScroll>
+          
+          {/* 右侧悬浮工具条 */}
+          <FloatingToolbar />
         </div>
       </LanguageProvider>
     </HelmetProvider>

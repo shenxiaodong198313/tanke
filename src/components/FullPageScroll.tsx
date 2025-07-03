@@ -127,10 +127,10 @@ const FullPageScroll: React.FC<FullPageScrollProps> = ({ children }) => {
 
   const navigationStyle: React.CSSProperties = {
     position: 'fixed',
-    right: '2rem',
+    right: '80px', // 调整到FloatingToolbar左侧
     top: '50%',
     transform: 'translateY(-50%)',
-    zIndex: 1000,
+    zIndex: 999, // 略低于FloatingToolbar的z-index
     display: 'flex',
     flexDirection: 'column',
     gap: '1rem',
@@ -142,16 +142,16 @@ const FullPageScroll: React.FC<FullPageScrollProps> = ({ children }) => {
   };
 
   const navDotStyle = (index: number): React.CSSProperties => ({
-    width: '14px',
-    height: '14px',
+    width: '6px', // 缩小60%（14px -> 6px）
+    height: '6px',
     borderRadius: '50%',
     backgroundColor: index === currentSection ? '#1a73e8' : 'rgba(255, 255, 255, 0.6)',
-    border: '2px solid rgba(255, 255, 255, 0.8)',
+    border: '1px solid rgba(255, 255, 255, 0.8)', // 相应缩小边框
     cursor: 'pointer',
     transition: 'all 0.3s ease',
     boxShadow: index === currentSection 
-      ? '0 0 20px rgba(26, 115, 232, 0.5)' 
-      : '0 2px 8px rgba(0, 0, 0, 0.2)',
+      ? '0 0 12px rgba(26, 115, 232, 0.5)' // 缩小阴影范围
+      : '0 1px 4px rgba(0, 0, 0, 0.2)',
     transform: index === currentSection ? 'scale(1.2)' : 'scale(1)'
   });
 

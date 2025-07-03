@@ -5,6 +5,12 @@ const IndustryCases: React.FC = () => {
   const [isMobile, setIsMobile] = React.useState(false);
   const [currentIndex, setCurrentIndex] = useState(3); // 从第4个开始（真实列表的第1个）
   const [isTransitioning, setIsTransitioning] = useState(false);
+  
+  // 拖拽相关状态
+  const [isDragging, setIsDragging] = useState(false);
+  const [dragStartX, setDragStartX] = useState(0);
+  const [dragCurrentX, setDragCurrentX] = useState(0);
+  const [dragOffset, setDragOffset] = useState(0);
 
   React.useEffect(() => {
     const checkMobile = () => {
@@ -112,6 +118,49 @@ const IndustryCases: React.FC = () => {
     return () => clearTimeout(timer);
   }, [currentIndex, customerReviews.length]);
 
+  // 拖拽事件处理
+  const handleMouseDown = (e: React.MouseEvent) => {
+    if (isTransitioning) return;
+    setIsDragging(true);
+    setDragStartX(e.clientX);
+    setDragCurrentX(e.clientX);
+    setDragOffset(0);
+    e.preventDefault();
+  };
+
+  const handleMouseMove = (e: React.MouseEvent) => {
+    if (!isDragging) return;
+    const currentX = e.clientX;
+    const offset = currentX - dragStartX;
+    setDragCurrentX(currentX);
+    setDragOffset(offset);
+  };
+
+  const handleMouseUp = () => {
+    if (!isDragging) return;
+    setIsDragging(false);
+    
+    const threshold = 80; // 拖拽阈值，超过这个距离才切换
+    
+    if (Math.abs(dragOffset) > threshold) {
+      if (dragOffset > 0) {
+        // 向右拖拽，显示上一个
+        prevSlide();
+      } else {
+        // 向左拖拽，显示下一个
+        nextSlide();
+      }
+    }
+    
+    setDragOffset(0);
+  };
+
+  const handleMouseLeave = () => {
+    if (isDragging) {
+      handleMouseUp();
+    }
+  };
+
   const sectionStyle: React.CSSProperties = {
     minHeight: '100vh',
     background: 'linear-gradient(135deg, #f8faff 0%, #e8f4fd 100%)',
@@ -161,13 +210,18 @@ const IndustryCases: React.FC = () => {
   const carouselContainerStyle: React.CSSProperties = {
     overflow: 'hidden',
     width: isMobile ? '300px' : '1080px',
-    position: 'relative'
+    position: 'relative',
+    userSelect: 'none', // 防止拖拽时选中文字
+    WebkitUserSelect: 'none', // Safari支持
+    MozUserSelect: 'none', // Firefox支持
+    msUserSelect: 'none' // IE支持
   };
 
   const carouselTrackStyle: React.CSSProperties = {
     display: 'flex',
-    transition: isTransitioning ? 'transform 0.5s ease-in-out' : 'none',
-    transform: `translateX(-${currentIndex * (isMobile ? 300 : 360)}px)`
+    transition: (isTransitioning && !isDragging) ? 'transform 0.5s ease-in-out' : 'none',
+    transform: `translateX(-${currentIndex * (isMobile ? 300 : 360) - dragOffset}px)`,
+    cursor: isDragging ? 'grabbing' : 'grab'
   };
 
   const reviewCardStyle: React.CSSProperties = {
@@ -294,7 +348,13 @@ const IndustryCases: React.FC = () => {
           </div>
 
           {/* 轮播容器 */}
-          <div style={carouselContainerStyle}>
+          <div 
+            style={carouselContainerStyle}
+            onMouseDown={handleMouseDown}
+            onMouseMove={handleMouseMove}
+            onMouseUp={handleMouseUp}
+            onMouseLeave={handleMouseLeave}
+          >
             <div style={carouselTrackStyle}>
               {extendedReviews.map((review, index) => (
                 <div
