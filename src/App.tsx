@@ -6,6 +6,7 @@ import KuaiNavbar from './components/KuaiNavbar';
 import KuaiHero from './components/KuaiHero';
 import KuaiFeatures from './components/KuaiFeatures';
 import KuaiDetails from './components/KuaiDetails';
+import AIAssistant from './components/AIAssistant';
 import IndustryCases from './components/IndustryCases';
 import Pricing from './components/Pricing';
 import IndustryShowcase from './components/IndustryShowcase';
@@ -33,6 +34,7 @@ function App() {
             <KuaiHero />
             <KuaiFeatures />
             <KuaiDetails />
+            <AIAssistant />
             <IndustryCases />
             <Pricing />
             <IndustryShowcase />

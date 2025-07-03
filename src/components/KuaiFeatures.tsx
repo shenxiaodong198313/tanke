@@ -297,7 +297,7 @@ const KuaiFeatures: React.FC = () => {
                   }}>
                     OPEN SOURCE
                   </div>
-                  <div style={{
+              <div style={{
                     fontSize: isMobile ? '0.7rem' : '0.75rem',
                     opacity: 0.8,
                     marginBottom: '1.5rem'
@@ -313,7 +313,7 @@ const KuaiFeatures: React.FC = () => {
                     padding: '0.8rem',
                     marginBottom: '0.8rem',
                     textAlign: 'left'
-                  }}>
+              }}>
                     <div style={{display: 'flex', alignItems: 'center', marginBottom: '0.4rem'}}>
                       <div style={{
                         width: '16px',
@@ -340,10 +340,10 @@ const KuaiFeatures: React.FC = () => {
                         borderRadius: '50%',
                         marginLeft: '3px'
                       }} />
-                    </div>
-                  </div>
+            </div>
+        </div>
 
-                  <div style={{
+        <div style={{ 
                     display: 'flex',
                     gap: '6px',
                     justifyContent: 'center'
@@ -355,7 +355,7 @@ const KuaiFeatures: React.FC = () => {
                       borderRadius: '16px',
                       padding: '6px 12px',
                       fontSize: isMobile ? '0.6rem' : '0.65rem'
-                    }}>
+        }}>
                       登陆
                     </button>
                     <button style={{

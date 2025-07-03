@@ -206,7 +206,7 @@ const Pricing: React.FC = () => {
                 <div style={notchStyle} />
                 <div style={phoneScreenStyle(app)}>
                   {/* 手机状态栏 */}
-                  <div style={{
+                <div style={{
                     height: isMobile ? '16px' : '20px',
                     backgroundColor: 'rgba(0, 0, 0, 0.05)',
                     display: 'flex',
@@ -296,7 +296,7 @@ const Pricing: React.FC = () => {
                   </div>
                 </div>
               </div>
-              
+
               {/* 标签 */}
               <div style={labelStyle}>{app.title}</div>
             </motion.div>

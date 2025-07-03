@@ -9,7 +9,6 @@ const IndustryCases: React.FC = () => {
   // 拖拽相关状态
   const [isDragging, setIsDragging] = useState(false);
   const [dragStartX, setDragStartX] = useState(0);
-  const [dragCurrentX, setDragCurrentX] = useState(0);
   const [dragOffset, setDragOffset] = useState(0);
 
   React.useEffect(() => {
@@ -123,7 +122,6 @@ const IndustryCases: React.FC = () => {
     if (isTransitioning) return;
     setIsDragging(true);
     setDragStartX(e.clientX);
-    setDragCurrentX(e.clientX);
     setDragOffset(0);
     e.preventDefault();
   };
@@ -132,7 +130,6 @@ const IndustryCases: React.FC = () => {
     if (!isDragging) return;
     const currentX = e.clientX;
     const offset = currentX - dragStartX;
-    setDragCurrentX(currentX);
     setDragOffset(offset);
   };
 
