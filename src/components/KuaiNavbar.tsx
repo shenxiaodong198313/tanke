@@ -9,6 +9,8 @@ const KuaiNavbar: React.FC = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [isMobile, setIsMobile] = useState(window.innerWidth <= 768);
+  const [isProductsDropdownOpen, setIsProductsDropdownOpen] = useState(false);
+  const [isMobileProductsOpen, setIsMobileProductsOpen] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -114,7 +116,16 @@ const KuaiNavbar: React.FC = () => {
 
   const menuItems = [
     { name: t('nav.home'), key: 'home' },
-    { name: t('nav.products'), key: 'products' },
+    { 
+      name: t('nav.products'), 
+      key: 'products',
+      hasDropdown: true,
+      subItems: [
+        { name: t('nav.products.aiMarketing'), key: 'ai-marketing' },
+        { name: t('nav.products.aiLive'), key: 'ai-live' },
+        { name: t('nav.products.aiCall'), key: 'ai-call' }
+      ]
+    },
     { name: t('nav.tutorials'), key: 'tutorials' },
     { name: t('nav.partnership'), key: 'partnership' },
     { name: t('nav.about'), key: 'about' }
@@ -142,18 +153,88 @@ const KuaiNavbar: React.FC = () => {
           {!isMobile && (
             <ul style={menuStyle}>
               {menuItems.map((item, index) => (
-                <li key={item.key}>
-                  <motion.a
-                    href="#"
-                    style={menuItemStyle}
-                    whileHover={{ 
-                      color: isScrolled ? '#1677ff' : 'white',
-                      scale: 1.02 
-                    }}
-                    transition={{ duration: 0.2 }}
-                  >
-                    {item.name}
-                  </motion.a>
+                <li key={item.key} style={{ position: 'relative' }}>
+                  {item.hasDropdown ? (
+                    <div
+                      onMouseEnter={() => setIsProductsDropdownOpen(true)}
+                      onMouseLeave={() => setIsProductsDropdownOpen(false)}
+                    >
+                      <motion.a
+                        href="#"
+                        style={{
+                          ...menuItemStyle,
+                          display: 'flex',
+                          alignItems: 'center',
+                          gap: '4px'
+                        }}
+                        whileHover={{ 
+                          color: isScrolled ? '#1677ff' : 'white',
+                          scale: 1.02 
+                        }}
+                        transition={{ duration: 0.2 }}
+                      >
+                        {item.name}
+                        <span style={{ fontSize: '12px', transition: 'transform 0.2s', transform: isProductsDropdownOpen ? 'rotate(180deg)' : 'rotate(0deg)' }}>
+                          ▼
+                        </span>
+                      </motion.a>
+                      
+                      {/* Dropdown Menu */}
+                      {isProductsDropdownOpen && (
+                        <motion.div
+                          initial={{ opacity: 0, y: -10 }}
+                          animate={{ opacity: 1, y: 0 }}
+                          exit={{ opacity: 0, y: -10 }}
+                          transition={{ duration: 0.2 }}
+                          style={{
+                            position: 'absolute',
+                            top: '100%',
+                            left: '0',
+                            backgroundColor: 'white',
+                            borderRadius: '8px',
+                            boxShadow: '0 4px 20px rgba(0, 0, 0, 0.15)',
+                            padding: '8px 0',
+                            minWidth: '160px',
+                            zIndex: 1000,
+                            marginTop: '8px'
+                          }}
+                        >
+                          {item.subItems?.map((subItem) => (
+                            <motion.a
+                              key={subItem.key}
+                              href="#"
+                              style={{
+                                display: 'block',
+                                padding: '8px 16px',
+                                color: '#000000d9',
+                                textDecoration: 'none',
+                                fontSize: '14px',
+                                transition: 'all 0.2s'
+                              }}
+                              whileHover={{
+                                backgroundColor: '#f5f5f5',
+                                color: '#1677ff'
+                              }}
+                            >
+                              {subItem.name}
+                            </motion.a>
+                          ))}
+                        </motion.div>
+                      )}
+                    </div>
+                  ) : (
+                    <motion.a
+                      href="#"
+                      style={menuItemStyle}
+                      whileHover={{ 
+                        color: isScrolled ? '#1677ff' : 'white',
+                        scale: 1.02 
+                      }}
+                      transition={{ duration: 0.2 }}
+                    >
+                      {item.name}
+                    </motion.a>
+                  )}
                 </li>
               ))}
             </ul>
@@ -198,23 +279,92 @@ const KuaiNavbar: React.FC = () => {
             margin: '0 auto'
           }}>
             {menuItems.map((item, index) => (
-              <motion.a
-                key={item.key}
-                href="#"
-                style={{
-                  fontSize: '16px',
-                  fontWeight: '400',
-                  color: '#000000d9',
-                  textDecoration: 'none',
-                  padding: '8px 0'
-                }}
-                whileHover={{ color: '#1677ff' }}
-                initial={{ opacity: 0, x: -20 }}
-                animate={{ opacity: 1, x: 0 }}
-                transition={{ duration: 0.3, delay: index * 0.1 }}
-              >
-                {item.name}
-              </motion.a>
+              <div key={item.key}>
+                {item.hasDropdown ? (
+                  <div>
+                    <motion.div
+                      style={{
+                        fontSize: '16px',
+                        fontWeight: '400',
+                        color: '#000000d9',
+                        padding: '8px 0',
+                        cursor: 'pointer',
+                        display: 'flex',
+                        alignItems: 'center',
+                        justifyContent: 'space-between'
+                      }}
+                      onClick={() => setIsMobileProductsOpen(!isMobileProductsOpen)}
+                      whileHover={{ color: '#1677ff' }}
+                      initial={{ opacity: 0, x: -20 }}
+                      animate={{ opacity: 1, x: 0 }}
+                      transition={{ duration: 0.3, delay: index * 0.1 }}
+                    >
+                      <span>{item.name}</span>
+                      <span style={{ 
+                        fontSize: '12px', 
+                        transition: 'transform 0.2s', 
+                        transform: isMobileProductsOpen ? 'rotate(180deg)' : 'rotate(0deg)' 
+                      }}>
+                        ▼
+                      </span>
+                    </motion.div>
+                    
+                    {/* Mobile Submenu */}
+                    {isMobileProductsOpen && (
+                      <motion.div
+                        initial={{ opacity: 0, height: 0 }}
+                        animate={{ opacity: 1, height: 'auto' }}
+                        exit={{ opacity: 0, height: 0 }}
+                        transition={{ duration: 0.3 }}
+                        style={{
+                          marginLeft: '16px',
+                          marginTop: '8px'
+                        }}
+                      >
+                        {item.subItems?.map((subItem, subIndex) => (
+                          <motion.a
+                            key={subItem.key}
+                            href="#"
+                            style={{
+                              display: 'block',
+                              fontSize: '14px',
+                              fontWeight: '400',
+                              color: '#666666',
+                              textDecoration: 'none',
+                              padding: '6px 0',
+                              borderLeft: '2px solid #e0e0e0',
+                              paddingLeft: '12px'
+                            }}
+                            whileHover={{ color: '#1677ff' }}
+                            initial={{ opacity: 0, x: -10 }}
+                            animate={{ opacity: 1, x: 0 }}
+                            transition={{ duration: 0.3, delay: (index * 0.1) + (subIndex * 0.05) }}
+                          >
+                            {subItem.name}
+                          </motion.a>
+                        ))}
+                      </motion.div>
+                    )}
+                  </div>
+                ) : (
+                  <motion.a
+                    href="#"
+                    style={{
+                      fontSize: '16px',
+                      fontWeight: '400',
+                      color: '#000000d9',
+                      textDecoration: 'none',
+                      padding: '8px 0'
+                    }}
+                    whileHover={{ color: '#1677ff' }}
+                    initial={{ opacity: 0, x: -20 }}
+                    animate={{ opacity: 1, x: 0 }}
+                    transition={{ duration: 0.3, delay: index * 0.1 }}
+                  >
+                    {item.name}
+                  </motion.a>
+                )}
+              </div>
             ))}
           </div>
         </motion.div>

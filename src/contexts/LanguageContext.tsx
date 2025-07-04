@@ -16,6 +16,9 @@ const translations: Record<Language, Record<string, string>> = {
     // 导航栏
     'nav.home': '首页',
     'nav.products': '产品方案',
+    'nav.products.aiMarketing': 'AI 营销',
+    'nav.products.aiLive': 'AI 直播',
+    'nav.products.aiCall': 'AI 外呼',
     'nav.tutorials': '使用教程',
     'nav.partnership': '代理合作',
     'nav.about': '关于我们',
@@ -144,6 +147,9 @@ const translations: Record<Language, Record<string, string>> = {
     // 導航欄
     'nav.home': '首頁',
     'nav.products': '產品方案',
+    'nav.products.aiMarketing': 'AI 營銷',
+    'nav.products.aiLive': 'AI 直播',
+    'nav.products.aiCall': 'AI 外呼',
     'nav.tutorials': '使用教程',
     'nav.partnership': '代理合作',
     'nav.about': '關於我們',
@@ -272,6 +278,9 @@ const translations: Record<Language, Record<string, string>> = {
     // Navigation
     'nav.home': 'Home',
     'nav.products': 'Products',
+    'nav.products.aiMarketing': 'AI Marketing',
+    'nav.products.aiLive': 'AI Live',
+    'nav.products.aiCall': 'AI Call',
     'nav.tutorials': 'Tutorials',
     'nav.partnership': 'Partnership',
     'nav.about': 'About Us',
@@ -400,6 +409,9 @@ const translations: Record<Language, Record<string, string>> = {
     // ナビゲーション
     'nav.home': 'ホーム',
     'nav.products': '製品ソリューション',
+    'nav.products.aiMarketing': 'AI マーケティング',
+    'nav.products.aiLive': 'AI ライブ',
+    'nav.products.aiCall': 'AI コール',
     'nav.tutorials': '使用チュートリアル',
     'nav.partnership': '代理パートナー',
     'nav.about': '会社概要',
@@ -528,6 +540,9 @@ const translations: Record<Language, Record<string, string>> = {
     // 내비게이션
     'nav.home': '홈페이지',
     'nav.products': '제품 솔루션',
+    'nav.products.aiMarketing': 'AI 마케팅',
+    'nav.products.aiLive': 'AI 라이브',
+    'nav.products.aiCall': 'AI 콜',
     'nav.tutorials': '사용 튜토리얼',
     'nav.partnership': '대리 협력',
     'nav.about': '회사 소개',
