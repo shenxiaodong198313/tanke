@@ -4,6 +4,22 @@ import { LanguageProvider } from './contexts/LanguageContext';
 import { ModalProvider, useModal } from './contexts/ModalContext';
 import SEOHead from './components/SEOHead';
 import KuaiNavbar from './components/KuaiNavbar';
+import KuaiFooter from './components/KuaiFooter';
+import PageLayout from './components/PageLayout';
+import FloatingToolbar from './components/FloatingToolbar';
+import ContactModal from './components/ContactModal';
+import './App.css';
+
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+// 页面组件
+import AiMarketing from './components/pages/AiMarketing';
+import AiLive from './components/pages/AiLive';
+import AiCall from './components/pages/AiCall';
+import Tutorials from './components/pages/Tutorials';
+import Partnership from './components/pages/Partnership';
+import About from './components/pages/About';
+
+// 首页内容组件
 import KuaiHero from './components/KuaiHero';
 import KuaiFeatures from './components/KuaiFeatures';
 import KuaiDetails from './components/KuaiDetails';
@@ -14,48 +30,49 @@ import IndustryCases from './components/IndustryCases';
 import Pricing from './components/Pricing';
 import IndustryShowcase from './components/IndustryShowcase';
 import FullPageScroll from './components/FullPageScroll';
-import KuaiFooter from './components/KuaiFooter';
-import FloatingToolbar from './components/FloatingToolbar';
-import ContactModal from './components/ContactModal';
-import './App.css';
 
 const AppContent: React.FC = () => {
   const { isContactModalOpen, closeContactModal } = useModal();
-  
-  const appStyle: React.CSSProperties = {
-    fontFamily: '-apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Helvetica Neue", Helvetica, Arial, sans-serif',
-    lineHeight: 1.6,
-    color: '#333',
-    overflowX: 'hidden'
-  };
 
   return (
-    <div className="App" style={appStyle}>
+    <BrowserRouter>
       <SEOHead />
-      <KuaiNavbar />
-      
-      <FullPageScroll>
-        <KuaiHero />
-        <KuaiFeatures />
-        <KuaiDetails />
-        <AIAssistant />
-        <AIStreamingSolutions />
-        <MarketingToolsShowcase />
-        <IndustryCases />
-        <Pricing />
-        <IndustryShowcase />
-        <KuaiFooter />
-      </FullPageScroll>
-      
+      <Routes>
+        {/* 首页 */}
+        <Route path="/" element={
+          <PageLayout>
+            <FullPageScroll>
+              <KuaiHero />
+              <KuaiFeatures />
+              <KuaiDetails />
+              <AIAssistant />
+              <AIStreamingSolutions />
+              <MarketingToolsShowcase />
+              <IndustryCases />
+              <Pricing />
+              <IndustryShowcase />
+            </FullPageScroll>
+          </PageLayout>
+        } />
+        {/* 产品方案子页面 */}
+        <Route path="/ai-marketing" element={<PageLayout><AiMarketing /></PageLayout>} />
+        <Route path="/ai-live" element={<PageLayout><AiLive /></PageLayout>} />
+        <Route path="/ai-call" element={<PageLayout><AiCall /></PageLayout>} />
+        {/* 使用教程 */}
+        <Route path="/tutorials" element={<PageLayout><Tutorials /></PageLayout>} />
+        {/* 代理合作 */}
+        <Route path="/partnership" element={<PageLayout><Partnership /></PageLayout>} />
+        {/* 关于我们 */}
+        <Route path="/about" element={<PageLayout><About /></PageLayout>} />
+      </Routes>
       {/* 右侧悬浮工具条 */}
       <FloatingToolbar />
-      
       {/* 全局弹窗 */}
       <ContactModal 
         isOpen={isContactModalOpen}
         onClose={closeContactModal}
       />
-    </div>
+    </BrowserRouter>
   );
 };
 

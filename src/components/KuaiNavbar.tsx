@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { useLanguage } from '../contexts/LanguageContext';
 import LanguageSwitcher from './LanguageSwitcher';
+import { Link, useNavigate } from 'react-router-dom';
 
 const KuaiNavbar: React.FC = () => {
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
@@ -11,6 +12,8 @@ const KuaiNavbar: React.FC = () => {
   const [isMobile, setIsMobile] = useState(window.innerWidth <= 768);
   const [isProductsDropdownOpen, setIsProductsDropdownOpen] = useState(false);
   const [isMobileProductsOpen, setIsMobileProductsOpen] = useState(false);
+  const [dropdownCloseTimeout, setDropdownCloseTimeout] = useState<NodeJS.Timeout | null>(null);
+  const navigate = useNavigate();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -115,37 +118,54 @@ const KuaiNavbar: React.FC = () => {
   };
 
   const menuItems = [
-    { name: t('nav.home'), key: 'home' },
+    { name: t('nav.home'), key: 'home', path: '/' },
     { 
       name: t('nav.products'), 
       key: 'products',
       hasDropdown: true,
       subItems: [
-        { name: t('nav.products.aiMarketing'), key: 'ai-marketing' },
-        { name: t('nav.products.aiLive'), key: 'ai-live' },
-        { name: t('nav.products.aiCall'), key: 'ai-call' }
+        { name: t('nav.products.aiMarketing'), key: 'ai-marketing', path: '/ai-marketing' },
+        { name: t('nav.products.aiLive'), key: 'ai-live', path: '/ai-live' },
+        { name: t('nav.products.aiCall'), key: 'ai-call', path: '/ai-call' }
       ]
     },
-    { name: t('nav.tutorials'), key: 'tutorials' },
-    { name: t('nav.partnership'), key: 'partnership' },
-    { name: t('nav.about'), key: 'about' }
+    { name: t('nav.tutorials'), key: 'tutorials', path: '/tutorials' },
+    { name: t('nav.partnership'), key: 'partnership', path: '/partnership' },
+    { name: t('nav.about'), key: 'about', path: '/about' }
   ];
+
+  // 新增：延迟关闭下拉菜单
+  const handleProductsMouseEnter = () => {
+    if (dropdownCloseTimeout) {
+      clearTimeout(dropdownCloseTimeout);
+      setDropdownCloseTimeout(null);
+    }
+    setIsProductsDropdownOpen(true);
+  };
+  const handleProductsMouseLeave = () => {
+    const timeout = setTimeout(() => {
+      setIsProductsDropdownOpen(false);
+    }, 200); // 200ms 延迟
+    setDropdownCloseTimeout(timeout);
+  };
 
   return (
     <nav style={navStyle}>
       <div style={containerStyle}>
         {/* Logo */}
-        <motion.a
-          href="#"
-          style={logoStyle}
+        <motion.div
+          style={{ cursor: 'pointer' }}
           whileHover={{ scale: 1.02 }}
           transition={{ duration: 0.2 }}
+          onClick={() => navigate('/')}
         >
-          <div style={logoIconStyle}>
-            <span style={{ color: isScrolled ? 'white' : '#1677ff' }}>A</span>
+          <div style={logoStyle}>
+            <div style={logoIconStyle}>
+              <span style={{ color: isScrolled ? 'white' : '#1677ff' }}>A</span>
+            </div>
+            <span>Ant Design Mobile</span>
           </div>
-          <span>Ant Design Mobile</span>
-        </motion.a>
+        </motion.div>
 
         {/* Right Section: Menu + Language Switcher */}
         <div style={rightSectionStyle}>
@@ -155,12 +175,13 @@ const KuaiNavbar: React.FC = () => {
               {menuItems.map((item, index) => (
                 <li key={item.key} style={{ position: 'relative' }}>
                   {item.hasDropdown ? (
+                    // 修复：将主菜单和下拉菜单包裹在同一个容器
                     <div
-                      onMouseEnter={() => setIsProductsDropdownOpen(true)}
-                      onMouseLeave={() => setIsProductsDropdownOpen(false)}
+                      style={{ position: 'relative', display: 'inline-block' }}
+                      onMouseEnter={handleProductsMouseEnter}
+                      onMouseLeave={handleProductsMouseLeave}
                     >
-                      <motion.a
-                        href="#"
+                      <motion.span
                         style={{
                           ...menuItemStyle,
                           display: 'flex',
@@ -177,8 +198,7 @@ const KuaiNavbar: React.FC = () => {
                         <span style={{ fontSize: '12px', transition: 'transform 0.2s', transform: isProductsDropdownOpen ? 'rotate(180deg)' : 'rotate(0deg)' }}>
                           ▼
                         </span>
-                      </motion.a>
-                      
+                      </motion.span>
                       {/* Dropdown Menu */}
                       {isProductsDropdownOpen && (
                         <motion.div
@@ -200,40 +220,41 @@ const KuaiNavbar: React.FC = () => {
                           }}
                         >
                           {item.subItems?.map((subItem) => (
-                            <motion.a
+                            <motion.div
                               key={subItem.key}
-                              href="#"
-                              style={{
-                                display: 'block',
-                                padding: '8px 16px',
-                                color: '#000000d9',
-                                textDecoration: 'none',
-                                fontSize: '14px',
-                                transition: 'all 0.2s'
-                              }}
-                              whileHover={{
-                                backgroundColor: '#f5f5f5',
-                                color: '#1677ff'
-                              }}
+                              whileHover={{ backgroundColor: '#f5f5f5', color: '#1677ff' }}
+                              transition={{ duration: 0.2 }}
                             >
-                              {subItem.name}
-                            </motion.a>
+                              <Link
+                                to={subItem.path}
+                                style={{
+                                  display: 'block',
+                                  padding: '8px 16px',
+                                  color: '#000000d9',
+                                  textDecoration: 'none',
+                                  fontSize: '14px',
+                                  transition: 'all 0.2s'
+                                }}
+                              >
+                                {subItem.name}
+                              </Link>
+                            </motion.div>
                           ))}
                         </motion.div>
                       )}
                     </div>
                   ) : (
-                    <motion.a
-                      href="#"
-                      style={menuItemStyle}
-                      whileHover={{ 
-                        color: isScrolled ? '#1677ff' : 'white',
-                        scale: 1.02 
-                      }}
+                    <motion.div
+                      whileHover={{ color: isScrolled ? '#1677ff' : 'white', scale: 1.02 }}
                       transition={{ duration: 0.2 }}
                     >
-                      {item.name}
-                    </motion.a>
+                      <Link
+                        to={item.path!}
+                        style={menuItemStyle}
+                      >
+                        {item.name}
+                      </Link>
+                    </motion.div>
                   )}
                 </li>
               ))}
@@ -308,7 +329,6 @@ const KuaiNavbar: React.FC = () => {
                         ▼
                       </span>
                     </motion.div>
-                    
                     {/* Mobile Submenu */}
                     {isMobileProductsOpen && (
                       <motion.div
@@ -322,9 +342,9 @@ const KuaiNavbar: React.FC = () => {
                         }}
                       >
                         {item.subItems?.map((subItem, subIndex) => (
-                          <motion.a
+                          <Link
                             key={subItem.key}
-                            href="#"
+                            to={subItem.path}
                             style={{
                               display: 'block',
                               fontSize: '14px',
@@ -335,20 +355,17 @@ const KuaiNavbar: React.FC = () => {
                               borderLeft: '2px solid #e0e0e0',
                               paddingLeft: '12px'
                             }}
-                            whileHover={{ color: '#1677ff' }}
-                            initial={{ opacity: 0, x: -10 }}
-                            animate={{ opacity: 1, x: 0 }}
-                            transition={{ duration: 0.3, delay: (index * 0.1) + (subIndex * 0.05) }}
+                            onClick={() => setIsMobileMenuOpen(false)}
                           >
                             {subItem.name}
-                          </motion.a>
+                          </Link>
                         ))}
                       </motion.div>
                     )}
                   </div>
                 ) : (
-                  <motion.a
-                    href="#"
+                  <Link
+                    to={item.path!}
                     style={{
                       fontSize: '16px',
                       fontWeight: '400',
@@ -356,13 +373,10 @@ const KuaiNavbar: React.FC = () => {
                       textDecoration: 'none',
                       padding: '8px 0'
                     }}
-                    whileHover={{ color: '#1677ff' }}
-                    initial={{ opacity: 0, x: -20 }}
-                    animate={{ opacity: 1, x: 0 }}
-                    transition={{ duration: 0.3, delay: index * 0.1 }}
+                    onClick={() => setIsMobileMenuOpen(false)}
                   >
                     {item.name}
-                  </motion.a>
+                  </Link>
                 )}
               </div>
             ))}
