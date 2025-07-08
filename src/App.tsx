@@ -40,19 +40,23 @@ const AppContent: React.FC = () => {
       <Routes>
         {/* 首页 */}
         <Route path="/" element={
-          <PageLayout>
-            <FullPageScroll>
-              <KuaiHero />
-              <KuaiFeatures />
-              <KuaiDetails />
-              <AIAssistant />
-              <AIStreamingSolutions />
-              <MarketingToolsShowcase />
-              <IndustryCases />
-              <Pricing />
-              <IndustryShowcase />
-            </FullPageScroll>
-          </PageLayout>
+          <div style={{ minHeight: '100vh', display: 'flex', flexDirection: 'column' }}>
+            <KuaiNavbar />
+            <div style={{ flex: 1 }}>
+              <FullPageScroll>
+                <KuaiHero />
+                <KuaiFeatures />
+                <KuaiDetails />
+                <AIAssistant />
+                <AIStreamingSolutions />
+                <MarketingToolsShowcase />
+                <IndustryCases />
+                <Pricing />
+                <IndustryShowcase />
+                <KuaiFooter />
+              </FullPageScroll>
+            </div>
+          </div>
         } />
         {/* 产品方案子页面 */}
         <Route path="/ai-marketing" element={<PageLayout><AiMarketing /></PageLayout>} />
