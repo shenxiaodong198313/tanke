@@ -130,7 +130,7 @@ const KuaiNavbar: React.FC = () => {
       ]
     },
     { name: t('nav.tutorials'), key: 'tutorials', path: '/tutorials' },
-    { name: t('nav.partnership'), key: 'partnership', path: '/partnership' },
+    { name: '合作伙伴', key: 'partnership', path: '/partnership' },
     { name: t('nav.about'), key: 'about', path: '/about' }
   ];
 
@@ -163,7 +163,7 @@ const KuaiNavbar: React.FC = () => {
             <div style={logoIconStyle}>
               <span style={{ color: isScrolled ? 'white' : '#1677ff' }}>A</span>
             </div>
-            <span>Ant Design Mobile</span>
+            <span>探客AI</span>
           </div>
         </motion.div>
 
