@@ -2,40 +2,42 @@ import React from 'react';
 
 const solutions = [
   {
-    icon: '🔄',
-    badge: 1,
-    title: '实景直播',
-    desc: '一部手机就能开播，不需要声卡，用实景直播，不用培训主播，不用购买数字人。',
-    color: 'linear-gradient(135deg, #3b82f6 0%, #2563eb 100%)',
+    title: '回放即克隆',
+    mainText: '3-40min',
+    subText: ['直播回放片段', '一键克隆声形'],
+    buttonText: '便捷迅速',
+    bgColor: '#f3f4ff',
+    textColor: '#6d28d9',
+    buttonColor: 'linear-gradient(135deg, #818cf8 0%, #6366f1 100%)',
+    mainTextColor: '#4f46e5',
   },
   {
-    icon: '😐',
-    badge: 2,
-    title: '视频直播',
-    desc: '不用搭建直播场景，直接用录制好的视频进行开播，直播场景更加丰富和吸引人。',
-    color: 'linear-gradient(135deg, #f87171 0%, #f43f5e 100%)',
+    title: '拟真度升级',
+    mainText: '业内领先唇动生成技术',
+    subText: ['支持360°', '大角度侧转'],
+    buttonText: '自由录制',
+    bgColor: '#f5f3ff',
+    textColor: '#7e2d86',
+    buttonColor: 'linear-gradient(135deg, #c084fc 0%, #a855f7 100%)',
+    mainTextColor: '#9333ea',
   },
   {
-    icon: '🔒',
-    badge: 3,
-    title: '矩阵直播',
-    desc: '矩阵开播，一个账号授权无数账号同时开播。实景和AI加持，规避封号风险。',
-    color: 'linear-gradient(135deg, #34d399 0%, #059669 100%)',
-  },
-  {
-    icon: '🎧',
-    badge: 4,
-    title: '无人直播手机',
-    desc: '2024年直播黑科技，直接用视频进行直播，一部手机既可以录播又可以实景直播。',
-    color: 'linear-gradient(135deg, #a78bfa 0%, #7c3aed 100%)',
+    title: '短阵规模化',
+    mainText: '单次上传 多次开播',
+    subText: ['轻松打造数字人直播矩阵'],
+    buttonText: '高效开播',
+    bgColor: '#f0fdfa',
+    textColor: '#047857',
+    buttonColor: 'linear-gradient(135deg, #6ee7b7 0%, #2dd4bf 100%)',
+    mainTextColor: '#10b981',
   },
 ];
 
 const AIStreamingSolutions: React.FC = () => {
   return (
     <section style={{
-      background: '#fff',
-      padding: '80px 0',
+      background: 'linear-gradient(180deg, #f9fafb 0%, #f3f4f6 100%)',
+      padding: '100px 0',
       color: '#23242a',
       minHeight: '100vh',
       display: 'flex',
@@ -44,92 +46,85 @@ const AIStreamingSolutions: React.FC = () => {
       justifyContent: 'center',
     }}>
       <div style={{
-        maxWidth: 1200,
+        maxWidth: 1100,
         width: '100%',
         margin: '0 auto',
         padding: '0 24px',
         textAlign: 'center',
       }}>
-        <div style={{
+         <div style={{
           fontSize: '2.8rem',
           fontWeight: 800,
           marginBottom: '18px',
-          letterSpacing: 1,
-          color: '#23242a',
+          letterSpacing: '0.5px',
+          color: '#1f2937',
         }}>
-          AI自动直播系统技术源头<br />代理、OEM、私有化部署
+          录屏直播、实景直播、融合画中画直播
         </div>
         <div style={{
           fontSize: '1.25rem',
-          color: '#666',
-          marginBottom: '56px',
+          color: '#4b5563',
+          marginBottom: '64px',
         }}>
-          矩阵直播、防封机制、直播贴图、智能互动。
+          轻松打造AI自动化直播矩阵，高效开播，自由开播。
         </div>
         <div style={{
           display: 'grid',
-          gridTemplateColumns: 'repeat(4, 1fr)',
+          gridTemplateColumns: 'repeat(3, 1fr)',
           gap: '32px',
           marginTop: '0',
         }}>
-          {solutions.map((item, idx) => (
+          {solutions.map((item) => (
             <div key={item.title} style={{
-              background: '#f7f8fa',
-              borderRadius: '20px',
-              padding: '48px 32px 40px',
+              background: item.bgColor,
+              borderRadius: '24px',
+              padding: '40px',
               display: 'flex',
               flexDirection: 'column',
-              alignItems: 'center',
-              boxShadow: '0 4px 32px rgba(0,0,0,0.06)',
-              position: 'relative',
-              minHeight: 320,
+              justifyContent: 'space-between',
+              boxShadow: '0 10px 40px rgba(0,0,0,0.05)',
+              border: '1px solid rgba(255, 255, 255, 0.8)',
+              height: '380px',
             }}>
-              <div style={{
-                width: 72,
-                height: 72,
-                borderRadius: 20,
-                background: item.color,
-                display: 'flex',
-                alignItems: 'center',
-                justifyContent: 'center',
-                fontSize: 38,
-                color: '#fff',
-                position: 'relative',
-                marginBottom: 24,
-              }}>
-                {item.icon}
-                <span style={{
-                  position: 'absolute',
-                  top: -10,
-                  right: -10,
-                  background: '#fff',
-                  color: '#2563eb',
-                  borderRadius: '50%',
-                  fontSize: 18,
+              <div>
+                <h3 style={{
+                  fontSize: '1.8rem',
                   fontWeight: 700,
-                  width: 32,
-                  height: 32,
-                  display: 'flex',
-                  alignItems: 'center',
-                  justifyContent: 'center',
-                  boxShadow: '0 2px 8px rgba(0,0,0,0.10)',
-                  border: '2px solid #fff',
-                }}>{item.badge}</span>
+                  color: item.textColor,
+                  marginBottom: '24px',
+                }}>{item.title}</h3>
+                <div style={{
+                  fontSize: '1.5rem',
+                  fontWeight: 'bold',
+                  color: item.mainTextColor,
+                  marginBottom: '16px',
+                  minHeight: '60px',
+                }}>
+                  {item.mainText}
+                </div>
+                <div style={{
+                  color: '#6b7280',
+                  fontSize: '1rem',
+                  lineHeight: 1.6,
+                }}>
+                  {item.subText.map(line => <p key={line} style={{margin: 0}}>{line}</p>)}
+                </div>
               </div>
-              <div style={{
-                fontSize: '1.35rem',
-                fontWeight: 700,
-                marginBottom: 16,
-                letterSpacing: 1,
-                color: '#23242a',
-              }}>{item.title}</div>
-              <div style={{
-                color: '#666',
-                fontSize: '1.05rem',
-                lineHeight: 1.7,
-                fontWeight: 400,
-                textAlign: 'center',
-              }}>{item.desc}</div>
+              <button style={{
+                background: item.buttonColor,
+                color: 'white',
+                border: 'none',
+                borderRadius: '12px',
+                padding: '16px',
+                width: '100%',
+                fontSize: '1.2rem',
+                fontWeight: 600,
+                cursor: 'pointer',
+                transition: 'all 0.3s ease',
+                boxShadow: `0 4px 15px ${item.mainTextColor}40`,
+              }}>
+                {item.buttonText}
+              </button>
             </div>
           ))}
         </div>

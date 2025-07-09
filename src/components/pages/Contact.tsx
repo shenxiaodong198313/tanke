@@ -156,7 +156,7 @@ const Contact: React.FC = () => {
           </div>
         </div>
 
-        {/* 探客AI增长手机公众号 */}
+        {/* 公众号 */}
         <div style={{
           background: 'rgba(255, 255, 255, 0.9)',
           borderRadius: '20px',
@@ -168,17 +168,17 @@ const Contact: React.FC = () => {
           boxShadow: '0 8px 32px rgba(0, 0, 0, 0.1)',
         }}>
           <h3 style={{ fontSize: '1.4rem', fontWeight: 700, marginBottom: '12px', color: '#222' }}>
-            探客AI增长手机公众号
+            公众号
           </h3>
           <p style={{ fontSize: '1rem', color: '#666', marginBottom: '20px' }}>
-            关注公众号，实时掌握探客AI增长手机最新动态
+            关注公众号，实时掌握探客AI最新动态
           </p>
           <div style={qrCodeStyle}>
             <div style={qrPlaceholderStyle}></div>
           </div>
         </div>
 
-        {/* 创始人视频号 */}
+        {/* 视频号 */}
         <div style={{
           background: 'rgba(255, 255, 255, 0.9)',
           borderRadius: '20px',
@@ -190,10 +190,10 @@ const Contact: React.FC = () => {
           boxShadow: '0 8px 32px rgba(0, 0, 0, 0.1)',
         }}>
           <h3 style={{ fontSize: '1.4rem', fontWeight: 700, marginBottom: '12px', color: '#222' }}>
-            创始人视频号
+            视频号
           </h3>
           <p style={{ fontSize: '1rem', color: '#666', marginBottom: '20px' }}>
-            关注创始人视频号，分享您的商业深度思考
+            关注视频号，分享您的商业深度思考
           </p>
           <div style={qrCodeStyle}>
             <div style={qrPlaceholderStyle}></div>

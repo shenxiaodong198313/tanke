@@ -29,6 +29,7 @@ import IndustryCases from './components/IndustryCases';
 import Pricing from './components/Pricing';
 import IndustryShowcase from './components/IndustryShowcase';
 import FullPageScroll from './components/FullPageScroll';
+import CallToAction from './components/CallToAction';
 
 const AppContent: React.FC = () => {
   const { isContactModalOpen, closeContactModal } = useModal();
@@ -52,7 +53,12 @@ const AppContent: React.FC = () => {
                 <IndustryCases />
                 <Pricing />
                 <IndustryShowcase />
-                <KuaiFooter />
+                <div style={{ height: '100%', display: 'flex', flexDirection: 'column' }}>
+                  <div style={{ flex: 1, display: 'flex' }}>
+                    <CallToAction />
+                  </div>
+                  <KuaiFooter />
+                </div>
               </FullPageScroll>
             </div>
           </div>

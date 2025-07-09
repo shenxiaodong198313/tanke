@@ -16,171 +16,20 @@ const KuaiFooter: React.FC = () => {
   }, []);
 
   const containerStyle: React.CSSProperties = {
-    height: '100vh',
     display: 'flex',
     flexDirection: 'column',
     overflow: 'hidden'
   };
 
-  const ctaSectionStyle: React.CSSProperties = {
-    background: 'linear-gradient(135deg, #1e3a8a 0%, #1e40af 50%, #3730a3 100%)',
-    backgroundImage: `
-      radial-gradient(circle at 20% 80%, rgba(120, 119, 198, 0.3) 0%, transparent 50%),
-      radial-gradient(circle at 80% 20%, rgba(255, 255, 255, 0.1) 0%, transparent 50%),
-      radial-gradient(circle at 40% 40%, rgba(120, 119, 198, 0.2) 0%, transparent 50%)
-    `,
-    padding: isMobile ? '2rem 1rem' : '3rem 2rem',
-    position: 'relative',
-    overflow: 'hidden',
-    flex: isMobile ? '0 0 auto' : '0 0 65%'
-  };
-
   const footerSectionStyle: React.CSSProperties = {
     background: '#1a1a2e',
-    padding: isMobile ? '0.8rem 1rem 0.5rem' : '1rem 2rem 0.5rem',
+    padding: isMobile ? '0.8rem 1rem 0.5rem' : '1.5rem 2rem 1rem',
     color: 'white',
-    flex: 1,
     overflow: 'auto'
   };
 
   return (
     <div style={containerStyle}>
-      {/* CTA Section */}
-      <section style={ctaSectionStyle}>
-        <div style={{
-          maxWidth: '1200px',
-          margin: '0 auto',
-          display: 'flex',
-          flexDirection: 'column',
-          alignItems: 'center',
-          justifyContent: 'center',
-          height: '100%',
-          textAlign: 'center'
-        }}>
-          {/* 主标题 */}
-          <h2 style={{
-            fontSize: isMobile ? '1.8rem' : '2.5rem',
-            fontWeight: 'bold',
-            color: 'white',
-            lineHeight: '1.3',
-            marginBottom: isMobile ? '2rem' : '3rem'
-          }}>
-            立即扫码咨询，领取您的专属解决方案
-          </h2>
-
-          {/* 卡片区域 - 水平布局 */}
-          <div style={{
-            background: 'rgba(255, 255, 255, 0.95)',
-            borderRadius: '16px',
-            padding: isMobile ? '1.5rem' : '2rem',
-            boxShadow: '0 20px 40px rgba(0, 0, 0, 0.1)',
-            backdropFilter: 'blur(10px)',
-            border: '1px solid rgba(255, 255, 255, 0.2)',
-            width: isMobile ? '90%' : 'auto',
-            maxWidth: '800px'
-          }}>
-          <div style={{
-            display: 'flex',
-            alignItems: 'center',
-            gap: isMobile ? '1.5rem' : '3rem',
-            flexDirection: isMobile ? 'column' : 'row'
-          }}>
-            {/* 人物插图 */}
-            <div style={{
-              width: isMobile ? '80px' : '120px',
-              height: isMobile ? '80px' : '120px',
-              background: 'linear-gradient(135deg, #3b82f6 0%, #1d4ed8 100%)',
-              borderRadius: '50%',
-              display: 'flex',
-              alignItems: 'center',
-              justifyContent: 'center',
-              fontSize: isMobile ? '2rem' : '3rem',
-              flexShrink: 0
-            }}>
-              👨‍💼
-            </div>
-
-            {/* 中间文案和按钮 */}
-            <div style={{ 
-              flex: 1, 
-              textAlign: isMobile ? 'center' : 'left',
-              display: 'flex',
-              flexDirection: 'column',
-              alignItems: isMobile ? 'center' : 'flex-start'
-            }}>
-              <div style={{
-                fontSize: isMobile ? '1.1rem' : '1.3rem',
-                color: '#333',
-                marginBottom: '0.5rem',
-                fontWeight: '600'
-              }}>
-                马上扫码添加客户经理
-              </div>
-              <div style={{
-                fontSize: isMobile ? '0.9rem' : '1rem',
-                color: '#666',
-                marginBottom: '1.5rem'
-              }}>
-                或者您也可以先
-              </div>
-              <button style={{
-                background: 'linear-gradient(135deg, #3b82f6 0%, #1d4ed8 100%)',
-                color: 'white',
-                border: 'none',
-                borderRadius: '25px',
-                padding: isMobile ? '0.8rem 2rem' : '1rem 2.5rem',
-                fontSize: isMobile ? '1rem' : '1.1rem',
-                fontWeight: '600',
-                cursor: 'pointer',
-                boxShadow: '0 4px 12px rgba(59, 130, 246, 0.3)',
-                transition: 'all 0.3s ease'
-              }}
-              onClick={() => {
-                // 这里可以添加其他咨询逻辑
-                console.log('在线咨询');
-              }}
-              onMouseEnter={(e) => {
-                e.currentTarget.style.transform = 'translateY(-2px)';
-                e.currentTarget.style.boxShadow = '0 6px 16px rgba(59, 130, 246, 0.4)';
-              }}
-              onMouseLeave={(e) => {
-                e.currentTarget.style.transform = 'translateY(0)';
-                e.currentTarget.style.boxShadow = '0 4px 12px rgba(59, 130, 246, 0.3)';
-              }}>
-                在线咨询
-              </button>
-            </div>
-
-            {/* 二维码 */}
-            <div style={{
-              width: isMobile ? '100px' : '120px',
-              height: isMobile ? '100px' : '120px',
-              background: 'white',
-              borderRadius: '8px',
-              display: 'flex',
-              alignItems: 'center',
-              justifyContent: 'center',
-              border: '2px solid #f0f0f0',
-              flexShrink: 0
-            }}>
-              <div style={{
-                width: isMobile ? '80px' : '100px',
-                height: isMobile ? '80px' : '100px',
-                background: `
-                  linear-gradient(45deg, #000 25%, transparent 25%),
-                  linear-gradient(-45deg, #000 25%, transparent 25%),
-                  linear-gradient(45deg, transparent 75%, #000 75%),
-                  linear-gradient(-45deg, transparent 75%, #000 75%)
-                `,
-                backgroundSize: isMobile ? '8px 8px' : '10px 10px',
-                backgroundPosition: '0 0, 0 4px, 4px -4px, -4px 0px'
-              }}></div>
-            </div>
-          </div>
-        </div>
-        </div>
-      </section>
-
       {/* Footer Section */}
       <footer style={{
         ...footerSectionStyle,

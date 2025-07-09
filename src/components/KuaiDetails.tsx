@@ -22,116 +22,116 @@ const KuaiDetails: React.FC = () => {
   const featureModules = [
     { 
       icon: "📱", 
-      title: "小程序", 
-      description: "拓展推广路径，提振品牌声量",
+      title: "应用多开", 
+      description: "微信抖音多开，快捷高效办公",
       gradient: "linear-gradient(135deg, #667eea 0%, #764ba2 100%)",
       bgColor: "#f0f2ff"
     },
     { 
-      icon: "📊", 
-      title: "拼团", 
-      description: "裂变拉新，多人一起下单提销量",
+      icon: "🎯", 
+      title: "智能拓客", 
+      description: "多维画像精准拓客，高效获客",
       gradient: "linear-gradient(135deg, #f093fb 0%, #f5576c 100%)",
       bgColor: "#fff0f2"
     },
     { 
-      icon: "👥", 
-      title: "社交分销", 
-      description: "好友分享裂变，迅速扩大品牌知名度",
+      icon: "🎬", 
+      title: "视频矩阵获客", 
+      description: "AI生成热门视频，一键转发吸粉",
       gradient: "linear-gradient(135deg, #4facfe 0%, #00f2fe 100%)",
       bgColor: "#f0fbff"
     },
     { 
-      icon: "💰", 
-      title: "裂变红包", 
-      description: "传播拉新，实现产品或者品牌快速推广",
+      icon: "🗂️", 
+      title: "矩阵账号管理", 
+      description: "多账号统一管理，批量发布内容",
       gradient: "linear-gradient(135deg, #43e97b 0%, #38f9d7 100%)",
       bgColor: "#f0fff8"
     },
     
     { 
-      icon: "🎫", 
-      title: "优惠券", 
-      description: "购物享优惠，完成促销或提营单价",
+      icon: "🚀", 
+      title: "自动化运营", 
+      description: "自动加好友点赞，视频引流增长",
       gradient: "linear-gradient(135deg, #fa709a 0%, #fee140 100%)",
       bgColor: "#fff8f0"
     },
     { 
-      icon: "🎁", 
-      title: "注册赠券", 
-      description: "新人注册获得券礼包，提转化",
+      icon: "🤖", 
+      title: "AI数字人", 
+      description: "24小时AI数字人，自动直播运营",
       gradient: "linear-gradient(135deg, #a8edea 0%, #fed6e3 100%)",
       bgColor: "#f8ffff"
     },
     { 
-      icon: "🎭", 
-      title: "全场赠券", 
-      description: "全场发券，领券中心全员领券",
+      icon: "📈", 
+      title: "智能私域运营", 
+      description: "自动监控回复，跟进转化客户",
       gradient: "linear-gradient(135deg, #ffecd2 0%, #fcb69f 100%)",
       bgColor: "#fffcf0"
     },
     { 
-      icon: "🎯", 
-      title: "指定赠券", 
-      description: "定向发券，精准触达，会员精细化管理",
+      icon: "💬", 
+      title: "AI智能对话", 
+      description: "高情商AI实时对话，提升效率",
       gradient: "linear-gradient(135deg, #ff9a9e 0%, #fecfef 100%)",
       bgColor: "#fff0f8"
     },
     
     { 
-      icon: "💸", 
-      title: "满减", 
-      description: "刺激用户消费，提升会员忠诚度",
+      icon: "✍️", 
+      title: "AI评论回复", 
+      description: "智能分析评论内容，自动回复",
       gradient: "linear-gradient(135deg, #a18cd1 0%, #fbc2eb 100%)",
       bgColor: "#f8f0ff"
     },
     { 
-      icon: "🏷️", 
-      title: "满折", 
-      description: "多买多优惠，有效提升店铺营业额",
+      icon: "➕", 
+      title: "AI引导加粉", 
+      description: "智能引导粉丝加好友，提升私域转化",
       gradient: "linear-gradient(135deg, #fad0c4 0%, #ffd1ff 100%)",
       bgColor: "#fff8fc"
     },
     { 
-      icon: "🎉", 
-      title: "满赠", 
-      description: "满足指定条件获得赠品，拉动客单价",
+      icon: "💡", 
+      title: "AI推荐产品", 
+      description: "分析最佳销售时机，智能推荐产品",
       gradient: "linear-gradient(135deg, #ffeeff 0%, #d9b3ff 100%)",
       bgColor: "#fcf8ff"
     },
     { 
-      icon: "💼", 
-      title: "打包一口价", 
-      description: "清库存，提升客单价与控成本",
+      icon: "🔍", 
+      title: "大数据拓客", 
+      description: "提供丰富拓客工具，精准获客",
       gradient: "linear-gradient(135deg, #c2e9fb 0%, #a1c4fd 100%)",
       bgColor: "#f0f8ff"
     },
     
     { 
-      icon: "💎", 
-      title: "会员成长值", 
-      description: "完整的会员成长体系，提升用户粘性",
+      icon: "🖼️", 
+      title: "动态背景", 
+      description: "虚拟背景直播，降低场地成本",
       gradient: "linear-gradient(135deg, #d299c2 0%, #fef9d7 100%)",
       bgColor: "#fcf8ff"
     },
     { 
-      icon: "⭐", 
-      title: "会员积分", 
-      description: "积分兑消费金，激活客户消费",
+      icon: "📇", 
+      title: "智能名片", 
+      description: "电子名片智能获客，提升转化",
       gradient: "linear-gradient(135deg, #89f7fe 0%, #66a6ff 100%)",
       bgColor: "#f0fbff"
     },
     { 
-      icon: "🏪", 
-      title: "积分商城", 
-      description: "小积分大价值，好礼随心兑",
+      icon: "📊", 
+      title: "CRM", 
+      description: "会员分层管理与精准营销",
       gradient: "linear-gradient(135deg, #fdbb2d 0%, #22c1c3 100%)",
       bgColor: "#fffbf0"
     },
     { 
-      icon: "👔", 
-      title: "CRM", 
-      description: "会员分层管理与精准营销，拉升销售转化",
+      icon: "📞", 
+      title: "云呼叫中心", 
+      description: "外呼系统稳定，智能高效触达",
       gradient: "linear-gradient(135deg, #ee9ca7 0%, #ffdde1 100%)",
       bgColor: "#fff8f8"
     }
