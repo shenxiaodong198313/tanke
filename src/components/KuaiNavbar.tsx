@@ -131,7 +131,7 @@ const KuaiNavbar: React.FC = () => {
     },
     { name: t('nav.tutorials'), key: 'tutorials', path: '/tutorials' },
     { name: '合作伙伴', key: 'partnership', path: '/partnership' },
-    { name: t('nav.about'), key: 'about', path: '/about' }
+    { name: '联系我们', key: 'contact', path: '/contact' }
   ];
 
   // 新增：延迟关闭下拉菜单

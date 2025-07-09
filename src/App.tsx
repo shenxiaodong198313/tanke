@@ -17,7 +17,7 @@ import AiLive from './components/pages/AiLive';
 import AiCall from './components/pages/AiCall';
 import Tutorials from './components/pages/Tutorials';
 import Partnership from './components/pages/Partnership';
-import About from './components/pages/About';
+import Contact from './components/pages/Contact';
 
 // 首页内容组件
 import KuaiHero from './components/KuaiHero';
@@ -66,8 +66,8 @@ const AppContent: React.FC = () => {
         <Route path="/tutorials" element={<PageLayout><Tutorials /></PageLayout>} />
         {/* 代理合作 */}
         <Route path="/partnership" element={<PageLayout><Partnership /></PageLayout>} />
-        {/* 关于我们 */}
-        <Route path="/about" element={<PageLayout><About /></PageLayout>} />
+        {/* 联系我们 */}
+        <Route path="/contact" element={<PageLayout><Contact /></PageLayout>} />
       </Routes>
       {/* 右侧悬浮工具条 */}
       <FloatingToolbar />
