@@ -15,7 +15,6 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import AiMarketing from './components/pages/AiMarketing';
 import AiLive from './components/pages/AiLive';
 import AiCall from './components/pages/AiCall';
-import Tutorials from './components/pages/Tutorials';
 import Partnership from './components/pages/Partnership';
 import Contact from './components/pages/Contact';
 
@@ -62,8 +61,6 @@ const AppContent: React.FC = () => {
         <Route path="/ai-marketing" element={<PageLayout><AiMarketing /></PageLayout>} />
         <Route path="/ai-live" element={<PageLayout><AiLive /></PageLayout>} />
         <Route path="/ai-call" element={<PageLayout><AiCall /></PageLayout>} />
-        {/* 使用教程 */}
-        <Route path="/tutorials" element={<PageLayout><Tutorials /></PageLayout>} />
         {/* 代理合作 */}
         <Route path="/partnership" element={<PageLayout><Partnership /></PageLayout>} />
         {/* 联系我们 */}

@@ -129,7 +129,6 @@ const KuaiNavbar: React.FC = () => {
         { name: t('nav.products.aiCall'), key: 'ai-call', path: '/ai-call' }
       ]
     },
-    { name: t('nav.tutorials'), key: 'tutorials', path: '/tutorials' },
     { name: '合作伙伴', key: 'partnership', path: '/partnership' },
     { name: '联系我们', key: 'contact', path: '/contact' }
   ];
