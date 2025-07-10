@@ -20,6 +20,7 @@ import Contact from './components/pages/Contact';
 
 // 首页内容组件
 import KuaiHero from './components/KuaiHero';
+import HeroGeometric from './components/ShapeHero';
 import KuaiFeatures from './components/KuaiFeatures';
 import KuaiDetails from './components/KuaiDetails';
 import AIAssistant from './components/AIAssistant';
@@ -45,6 +46,7 @@ const AppContent: React.FC = () => {
             <div style={{ flex: 1 }}>
               <FullPageScroll>
                 <KuaiHero />
+                <HeroGeometric />
                 <KuaiFeatures />
                 <KuaiDetails />
                 <AIAssistant />
