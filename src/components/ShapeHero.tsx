@@ -133,7 +133,7 @@ export default function HeroGeometric() {
           }}
         >
           <div style={{ width: 8, height: 8, borderRadius: 9999, background: 'rgba(244,63,94,0.8)', marginRight: 6 }} />
-          <span style={{ fontSize: 16, color: 'rgba(255,255,255,0.6)', letterSpacing: 1 }}>Kokonut UI</span>
+          <span style={{ fontSize: 16, color: 'rgba(255,255,255,0.6)', letterSpacing: 1 }}>TANKE AI</span>
         </motion.div>
         {/* 标题 */}
         <motion.div
