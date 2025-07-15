@@ -3,7 +3,7 @@ import { motion } from 'framer-motion';
 
 const CallToAction: React.FC = () => {
   const sectionStyle: React.CSSProperties = {
-    backgroundColor: '#0a0a23',
+    background: '#030303', // 深色背景
     color: 'white',
     position: 'relative',
     width: '100%',
@@ -46,17 +46,20 @@ const CallToAction: React.FC = () => {
     fontWeight: 'bold',
     marginBottom: '1rem',
     letterSpacing: '1px',
-    background: 'linear-gradient(135deg, #ffffff 0%, #a0aec0 100%)',
+    background: 'linear-gradient(90deg, #a5b4fc 0%, #fca5a5 100%)',
     WebkitBackgroundClip: 'text',
     WebkitTextFillColor: 'transparent',
+    color: 'transparent',
+    display: 'inline-block',
   };
 
   const subtitleStyle: React.CSSProperties = {
     fontSize: '1.25rem',
-    color: 'rgba(255, 255, 255, 0.7)',
+    color: 'rgba(255, 255, 255, 0.85)',
     maxWidth: '600px',
     margin: '0 auto',
-    lineHeight: 1.6
+    lineHeight: 1.6,
+    textShadow: '0 2px 8px rgba(0,0,0,0.18)'
   };
 
   return (

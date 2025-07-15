@@ -4,7 +4,7 @@ const AiMarketing: React.FC = () => {
   const containerStyle: React.CSSProperties = {
     minHeight: '100vh',
     paddingTop: '64px',
-    background: 'linear-gradient(135deg, #e3f2ff 0%, #cde8ff 100%)',
+    background: '#030303', // 深色背景
     padding: '64px 24px',
   };
 
@@ -17,10 +17,14 @@ const AiMarketing: React.FC = () => {
   const titleStyle: React.CSSProperties = {
     fontSize: '2.5rem',
     fontWeight: 700,
-    color: '#222',
+    color: 'white',
     textAlign: 'center',
     marginBottom: '48px',
-    letterSpacing: '1px',
+    letterSpacing: '-2px',
+    background: 'linear-gradient(90deg, #a5b4fc 0%, #fca5a5 100%)',
+    WebkitBackgroundClip: 'text',
+    WebkitTextFillColor: 'transparent',
+    display: 'inline-block',
   };
 
   const featureContainerStyle: React.CSSProperties = {
@@ -113,14 +117,16 @@ const AiMarketing: React.FC = () => {
   };
 
   const highlightBoxStyle: React.CSSProperties = {
-    background: 'linear-gradient(135deg, #00D4AA 0%, #00B894 100%)',
-    color: 'white',
+    background: 'linear-gradient(90deg, #a5b4fc 0%, #fca5a5 100%)',
+    color: '#030303',
     padding: '20px 30px',
     borderRadius: '15px',
     display: 'inline-block',
     marginBottom: '20px',
     fontSize: '1.1rem',
     fontWeight: 600,
+    boxShadow: '0 8px 32px rgba(0,0,0,0.18)',
+    letterSpacing: '1px',
   };
 
   const descriptionStyle: React.CSSProperties = {

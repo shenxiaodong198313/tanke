@@ -51,7 +51,7 @@ const Pricing: React.FC = () => {
 
   const sectionStyle: React.CSSProperties = {
     minHeight: '100vh',
-    background: 'linear-gradient(135deg, #f8faff 0%, #e8f4fd 100%)',
+    background: '#030303', // 深色背景
     display: 'flex',
     flexDirection: 'column',
     justifyContent: 'center',
@@ -74,9 +74,14 @@ const Pricing: React.FC = () => {
   const titleStyle: React.CSSProperties = {
     fontSize: isMobile ? '2.5rem' : '3.5rem',
     fontWeight: 'bold',
-    color: '#1a1a1a',
+    color: 'white',
     marginBottom: '1rem',
-    lineHeight: '1.2'
+    lineHeight: '1.2',
+    letterSpacing: '-2px',
+    background: 'linear-gradient(90deg, #a5b4fc 0%, #fca5a5 100%)',
+    WebkitBackgroundClip: 'text',
+    WebkitTextFillColor: 'transparent',
+    display: 'inline-block',
   };
 
   const subtitleStyle: React.CSSProperties = {
@@ -108,7 +113,7 @@ const Pricing: React.FC = () => {
   const phoneScreenStyle = (app: any): React.CSSProperties => ({
     width: '100%',
     height: '100%',
-    backgroundColor: app.color,
+    background: 'linear-gradient(90deg, #a5b4fc 0%, #fca5a5 100%)',
     borderRadius: isMobile ? '16px' : '24px',
     position: 'relative',
     overflow: 'hidden',

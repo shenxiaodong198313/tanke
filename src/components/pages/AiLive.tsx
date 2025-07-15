@@ -4,7 +4,7 @@ const AiLive: React.FC = () => {
   const containerStyle: React.CSSProperties = {
     minHeight: '100vh',
     paddingTop: '64px',
-    background: 'linear-gradient(135deg, #e3f2ff 0%, #cde8ff 100%)',
+    background: '#18181c', // 深色背景
     padding: '64px 24px',
   };
 
@@ -54,7 +54,7 @@ const AiLive: React.FC = () => {
 
   const phoneScreenStyle: React.CSSProperties = {
     flex: 1,
-    background: 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)',
+    background: 'linear-gradient(135deg, #23233a 0%, #18181c 100%)',
     borderRadius: '20px',
     padding: '15px',
     display: 'flex',

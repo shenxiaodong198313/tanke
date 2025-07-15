@@ -37,8 +37,8 @@ const KuaiNavbar: React.FC = () => {
     left: 0,
     right: 0,
     zIndex: 9999,
-    backgroundColor: isScrolled ? 'rgba(255, 255, 255, 0.95)' : 'transparent',
-    background: isScrolled ? 'rgba(255, 255, 255, 0.95)' : 'linear-gradient(135deg, #1677ff 0%, #69b1ff 100%)',
+    backgroundColor: isScrolled ? 'rgba(24, 24, 28, 0.95)' : 'transparent',
+    background: isScrolled ? 'rgba(24, 24, 28, 0.95)' : 'linear-gradient(135deg, #18181c 0%, #23233a 100%)',
     backdropFilter: isScrolled ? 'blur(10px)' : 'none',
     borderBottom: 'none',
     boxShadow: 'none',
@@ -63,14 +63,14 @@ const KuaiNavbar: React.FC = () => {
     gap: '8px',
     fontSize: '20px',
     fontWeight: 'bold',
-    color: isScrolled ? '#1677ff' : 'white',
+    color: isScrolled ? '#a5b4fc' : 'white',
     textDecoration: 'none'
   };
 
   const logoIconStyle: React.CSSProperties = {
     width: '32px',
     height: '32px',
-    backgroundColor: isScrolled ? '#1677ff' : 'white',
+    backgroundColor: isScrolled ? '#a5b4fc' : 'white',
     borderRadius: '6px',
     display: 'flex',
     alignItems: 'center',
@@ -96,7 +96,7 @@ const KuaiNavbar: React.FC = () => {
   const menuItemStyle: React.CSSProperties = {
     fontSize: '14px',
     fontWeight: '400',
-    color: isScrolled ? '#000000d9' : 'rgba(255, 255, 255, 0.85)',
+    color: isScrolled ? 'rgba(255,255,255,0.85)' : 'rgba(255,255,255,0.95)',
     textDecoration: 'none',
     transition: 'all 0.3s ease',
     cursor: 'pointer',
@@ -188,7 +188,7 @@ const KuaiNavbar: React.FC = () => {
                           gap: '4px'
                         }}
                         whileHover={{ 
-                          color: isScrolled ? '#1677ff' : 'white',
+                          color: isScrolled ? '#a5b4fc' : 'white',
                           scale: 1.02 
                         }}
                         transition={{ duration: 0.2 }}
@@ -209,9 +209,9 @@ const KuaiNavbar: React.FC = () => {
                             position: 'absolute',
                             top: '100%',
                             left: '0',
-                            backgroundColor: 'white',
+                            backgroundColor: '#23233a',
                             borderRadius: '8px',
-                            boxShadow: '0 4px 20px rgba(0, 0, 0, 0.15)',
+                            boxShadow: '0 4px 20px rgba(0, 0, 0, 0.25)',
                             padding: '8px 0',
                             minWidth: '160px',
                             zIndex: 1000,
@@ -221,7 +221,7 @@ const KuaiNavbar: React.FC = () => {
                           {item.subItems?.map((subItem) => (
                             <motion.div
                               key={subItem.key}
-                              whileHover={{ backgroundColor: '#f5f5f5', color: '#1677ff' }}
+                              whileHover={{ backgroundColor: '#18181c', color: '#a5b4fc' }}
                               transition={{ duration: 0.2 }}
                             >
                               <Link
@@ -229,7 +229,7 @@ const KuaiNavbar: React.FC = () => {
                                 style={{
                                   display: 'block',
                                   padding: '8px 16px',
-                                  color: '#000000d9',
+                                  color: 'rgba(255,255,255,0.85)',
                                   textDecoration: 'none',
                                   fontSize: '14px',
                                   transition: 'all 0.2s'
@@ -244,7 +244,7 @@ const KuaiNavbar: React.FC = () => {
                     </div>
                   ) : (
                     <motion.div
-                      whileHover={{ color: isScrolled ? '#1677ff' : 'white', scale: 1.02 }}
+                      whileHover={{ color: isScrolled ? '#a5b4fc' : 'white', scale: 1.02 }}
                       transition={{ duration: 0.2 }}
                     >
                       <Link

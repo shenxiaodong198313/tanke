@@ -104,7 +104,7 @@ const Features: React.FC = () => {
   };
 
   return (
-    <section id="solutions" className="section-padding bg-gray-50">
+    <section id="solutions" style={{ background: '#030303', padding: '64px 0' }}>
       <div className="container-custom">
         <motion.div
           ref={ref}
@@ -115,16 +115,37 @@ const Features: React.FC = () => {
         >
           <motion.h2 
             variants={itemVariants}
-            className="text-4xl md:text-5xl font-bold text-gray-900 mb-6"
+            style={{
+              fontSize: '2.5rem',
+              fontWeight: 700,
+              marginBottom: '1.5rem',
+              letterSpacing: '-2px',
+              background: 'linear-gradient(90deg, #a5b4fc 0%, #fca5a5 100%)',
+              WebkitBackgroundClip: 'text',
+              WebkitTextFillColor: 'transparent',
+              display: 'inline-block',
+            }}
           >
             为什么选择
-            <span className="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
+            <span style={{
+              background: 'linear-gradient(90deg, #a5b4fc 0%, #fca5a5 100%)',
+              WebkitBackgroundClip: 'text',
+              WebkitTextFillColor: 'transparent',
+              display: 'inline-block',
+            }}>
               探客
             </span>
           </motion.h2>
           <motion.p 
             variants={itemVariants}
-            className="text-xl text-gray-600 max-w-3xl mx-auto"
+            style={{
+              fontSize: '1.25rem',
+              color: 'rgba(255,255,255,0.85)',
+              maxWidth: 700,
+              margin: '0 auto',
+              lineHeight: 1.7,
+              textShadow: '0 2px 8px rgba(0,0,0,0.18)'
+            }}
           >
             我们提供全方位的数字化解决方案，帮助企业实现数字化转型和业务增长
           </motion.p>
@@ -134,7 +155,11 @@ const Features: React.FC = () => {
           initial="hidden"
           animate={isInView ? "visible" : "hidden"}
           variants={containerVariants}
-          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
+          style={{
+            display: 'grid',
+            gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))',
+            gap: '2rem',
+          }}
         >
           {features.map((feature, index) => (
             <motion.div
@@ -144,30 +169,76 @@ const Features: React.FC = () => {
                 y: -10,
                 transition: { duration: 0.3 }
               }}
-              className="bg-white p-8 rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 border border-gray-100"
+              style={{
+                background: 'rgba(30,30,40,0.92)',
+                borderRadius: '1.5rem',
+                boxShadow: '0 8px 32px rgba(0,0,0,0.18)',
+                border: '1.5px solid',
+                borderImage: 'linear-gradient(90deg, #a5b4fc 0%, #fca5a5 100%) 1',
+                padding: '2.5rem 2rem',
+                transition: 'all 0.3s cubic-bezier(0.23,0.86,0.39,0.96)',
+                minHeight: 320,
+                display: 'flex',
+                flexDirection: 'column',
+                alignItems: 'center',
+                justifyContent: 'flex-start',
+              }}
             >
-              <div className={`inline-flex p-3 rounded-xl bg-gradient-to-r ${feature.color} text-white mb-6`}>
+              <div style={{
+                padding: 18,
+                borderRadius: 18,
+                background: 'linear-gradient(90deg, #a5b4fc 0%, #fca5a5 100%)',
+                marginBottom: 24,
+                display: 'inline-flex',
+                alignItems: 'center',
+                justifyContent: 'center',
+                boxShadow: '0 4px 24px rgba(165,180,252,0.12)',
+              }}>
                 {feature.icon}
               </div>
-              
-              <h3 className="text-xl font-semibold text-gray-900 mb-4">
+              <h3 style={{
+                fontSize: '1.25rem',
+                fontWeight: 700,
+                color: 'white',
+                marginBottom: 16,
+                letterSpacing: '-1px',
+              }}>
                 {feature.title}
               </h3>
-              
-              <p className="text-gray-600 leading-relaxed">
+              <p style={{
+                color: 'rgba(255,255,255,0.8)',
+                lineHeight: 1.7,
+                fontSize: '1rem',
+                marginBottom: 0,
+              }}>
                 {feature.description}
               </p>
-
               <motion.div
-                className="mt-6 flex items-center text-blue-600 font-medium cursor-pointer"
+                style={{
+                  marginTop: 32,
+                  display: 'flex',
+                  alignItems: 'center',
+                  color: 'white',
+                  fontWeight: 600,
+                  fontSize: '1rem',
+                  cursor: 'pointer',
+                  background: 'linear-gradient(90deg, #a5b4fc 0%, #fca5a5 100%)',
+                  borderRadius: 9999,
+                  padding: '0.5rem 1.5rem',
+                  boxShadow: '0 4px 24px rgba(165,180,252,0.10)',
+                  transition: 'all 0.3s cubic-bezier(0.23,0.86,0.39,0.96)',
+                  letterSpacing: '1px',
+                }}
                 whileHover={{ x: 5 }}
                 onClick={() => openContactModal()}
               >
-                <span className="text-sm">了解更多</span>
+                <span style={{ color: '#030303' }}>了解更多</span>
                 <motion.svg
-                  className="w-4 h-4 ml-2"
+                  style={{ marginLeft: 8 }}
                   fill="none"
-                  stroke="currentColor"
+                  stroke="#030303"
+                  width={18}
+                  height={18}
                   viewBox="0 0 24 24"
                   xmlns="http://www.w3.org/2000/svg"
                 >

@@ -38,10 +38,12 @@ const SimpleNavbar: React.FC = () => {
     left: 0,
     right: 0,
     zIndex: 50,
-    backgroundColor: isScrolled ? 'rgba(255, 255, 255, 0.95)' : 'transparent',
-    backdropFilter: isScrolled ? 'blur(10px)' : 'none',
-    boxShadow: isScrolled ? '0 4px 6px rgba(0, 0, 0, 0.1)' : 'none',
-    transition: 'all 0.3s ease'
+    background: isScrolled
+      ? 'rgba(30,30,40,0.92)'
+      : 'linear-gradient(90deg, #030303 0%, #18181c 60%, #23233a 100%)',
+    boxShadow: isScrolled ? '0 2px 12px rgba(0,0,0,0.10)' : 'none',
+    transition: 'all 0.3s cubic-bezier(0.23,0.86,0.39,0.96)',
+    backdropFilter: isScrolled ? 'blur(8px)' : 'none',
   };
 
   const containerStyle: React.CSSProperties = {
@@ -63,12 +65,12 @@ const SimpleNavbar: React.FC = () => {
   const logoIconStyle: React.CSSProperties = {
     width: '32px',
     height: '32px',
-    background: 'linear-gradient(to right, #3B82F6, #8B5CF6)',
+    background: 'linear-gradient(90deg, #a5b4fc 0%, #fca5a5 100%)',
     borderRadius: '8px',
     display: 'flex',
     alignItems: 'center',
     justifyContent: 'center',
-    color: 'white',
+    color: '#030303',
     fontWeight: 'bold',
     fontSize: '18px'
   };
@@ -76,7 +78,10 @@ const SimpleNavbar: React.FC = () => {
   const logoTextStyle: React.CSSProperties = {
     fontSize: '20px',
     fontWeight: 'bold',
-    color: isScrolled ? '#1F2937' : 'white'
+    background: 'linear-gradient(90deg, #a5b4fc 0%, #fca5a5 100%)',
+    WebkitBackgroundClip: 'text',
+    WebkitTextFillColor: 'transparent',
+    display: 'inline-block',
   };
 
   const navLinksStyle: React.CSSProperties = {
@@ -87,11 +92,14 @@ const SimpleNavbar: React.FC = () => {
   };
 
   const linkStyle: React.CSSProperties = {
-    color: isScrolled ? '#374151' : 'white',
+    color: isScrolled ? 'rgba(255,255,255,0.85)' : 'white',
     textDecoration: 'none',
     fontSize: '14px',
     fontWeight: '500',
-    transition: 'color 0.3s ease'
+    transition: 'color 0.3s ease',
+    padding: '2px 8px',
+    borderRadius: 6,
+    background: 'none',
   };
 
   return (
@@ -124,7 +132,25 @@ const SimpleNavbar: React.FC = () => {
                   transition={{ delay: index * 0.1 }}
                   whileHover={{ y: -2 }}
                 >
-                  <a href={item.href} style={linkStyle}>
+                  <a
+                    href={item.href}
+                    style={{
+                      ...linkStyle,
+                      backgroundClip: 'text',
+                      WebkitBackgroundClip: 'text',
+                      WebkitTextFillColor: 'white',
+                      display: 'inline-block',
+                    }}
+                    onMouseEnter={e => {
+                      e.currentTarget.style.background = 'none';
+                      e.currentTarget.style.backgroundImage = 'linear-gradient(90deg, #a5b4fc 0%, #fca5a5 100%)';
+                      e.currentTarget.style.webkitTextFillColor = 'transparent';
+                    }}
+                    onMouseLeave={e => {
+                      e.currentTarget.style.backgroundImage = 'none';
+                      e.currentTarget.style.webkitTextFillColor = 'white';
+                    }}
+                  >
                     {item.name}
                   </a>
                 </motion.li>

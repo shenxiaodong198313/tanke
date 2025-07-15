@@ -8,13 +8,13 @@ const SimpleHero: React.FC = () => {
     alignItems: 'center',
     position: 'relative',
     overflow: 'hidden',
-    background: 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)'
+    background: '#030303', // 深色背景
   };
 
   const overlayStyle: React.CSSProperties = {
     position: 'absolute',
     inset: 0,
-    background: 'rgba(0, 0, 0, 0.2)'
+    background: 'rgba(0, 0, 0, 0.18)'
   };
 
   const containerStyle: React.CSSProperties = {
@@ -29,45 +29,53 @@ const SimpleHero: React.FC = () => {
     maxWidth: '800px',
     margin: '0 auto',
     textAlign: 'center',
-    color: 'white'
+    color: 'white',
+    position: 'relative',
+    zIndex: 10
   };
 
   const titleStyle: React.CSSProperties = {
-    fontSize: '3rem',
+    fontSize: '3.5rem',
     fontWeight: 'bold',
-    lineHeight: '1.2',
-    marginBottom: '1.5rem'
+    lineHeight: '1.1',
+    marginBottom: '1.5rem',
+    color: 'white',
+    letterSpacing: '-2px',
   };
 
   const gradientTextStyle: React.CSSProperties = {
-    background: 'linear-gradient(to right, #FCD34D, #F97316)',
+    background: 'linear-gradient(to right, #a5b4fc, #fca5a5 80%)',
     WebkitBackgroundClip: 'text',
     WebkitTextFillColor: 'transparent',
-    backgroundClip: 'text'
+    backgroundClip: 'text',
+    display: 'inline-block',
+    fontWeight: 700,
   };
 
   const subtitleStyle: React.CSSProperties = {
     fontSize: '1.25rem',
-    color: 'rgba(255, 255, 255, 0.9)',
+    color: 'rgba(255, 255, 255, 0.85)',
     marginBottom: '2rem',
-    lineHeight: '1.6'
+    lineHeight: '1.6',
+    textShadow: '0 2px 8px rgba(0,0,0,0.18)'
   };
 
   const buttonStyle: React.CSSProperties = {
-    backgroundColor: 'white',
-    color: '#3B82F6',
-    padding: '1rem 2rem',
+    background: 'linear-gradient(90deg, #a5b4fc 0%, #fca5a5 100%)',
+    color: '#030303',
+    padding: '1rem 2.5rem',
     borderRadius: '9999px',
-    fontWeight: '600',
-    fontSize: '1.125rem',
+    fontWeight: '700',
+    fontSize: '1.25rem',
     border: 'none',
     cursor: 'pointer',
     display: 'inline-flex',
     alignItems: 'center',
     gap: '0.5rem',
-    boxShadow: '0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04)',
-    transition: 'all 0.3s ease',
-    marginBottom: '4rem'
+    boxShadow: '0 8px 32px rgba(0,0,0,0.18)',
+    transition: 'all 0.3s cubic-bezier(0.23,0.86,0.39,0.96)',
+    marginBottom: '4rem',
+    letterSpacing: '1px',
   };
 
   const statsContainerStyle: React.CSSProperties = {

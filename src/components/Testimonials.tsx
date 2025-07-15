@@ -72,13 +72,32 @@ const Testimonials: React.FC = () => {
   };
   
   return (
-    <section className="bg-gray-50 py-20 overflow-hidden">
+    <section style={{ background: '#030303', padding: '80px 0', overflow: 'hidden' }}>
       <div className="container mx-auto px-4 relative">
-        <h2 className="text-3xl font-bold text-center text-gray-800 mb-4">他们怎么说</h2>
-        <p className="text-center text-gray-500 mb-12 max-w-2xl mx-auto">
+        <h2 style={{
+          fontSize: '2.5rem',
+          fontWeight: 700,
+          marginBottom: 16,
+          letterSpacing: '-2px',
+          background: 'linear-gradient(90deg, #a5b4fc 0%, #fca5a5 100%)',
+          WebkitBackgroundClip: 'text',
+          WebkitTextFillColor: 'transparent',
+          display: 'inline-block',
+          textAlign: 'center',
+          width: '100%',
+        }}>
+          他们怎么说
+        </h2>
+        <p style={{
+          textAlign: 'center',
+          color: 'rgba(255,255,255,0.7)',
+          marginBottom: 48,
+          maxWidth: 700,
+          marginLeft: 'auto',
+          marginRight: 'auto',
+        }}>
           我们的客户来自各行各业，他们对探客AI手机的评价是我们不断前进的动力。
         </p>
-
         <div className="relative" style={{ paddingTop: '40px', paddingBottom: '20px' }}>
           <div className="w-full overflow-hidden">
             <motion.div
@@ -92,40 +111,76 @@ const Testimonials: React.FC = () => {
             >
               {displayItems.map((testimonial, index) => (
                 <div key={index} style={{ flex: `0 0 ${100 / itemsPerPage}%`, padding: '0 1rem' }}>
-                  <div className="bg-white rounded-2xl p-8 shadow-lg h-full relative" style={{ minHeight: '220px' }}>
+                  <div style={{
+                    background: 'rgba(30,30,40,0.92)',
+                    borderRadius: '1.5rem',
+                    padding: '2.5rem 2rem',
+                    boxShadow: '0 8px 32px rgba(0,0,0,0.18)',
+                    border: '1.5px solid',
+                    borderImage: 'linear-gradient(90deg, #a5b4fc 0%, #fca5a5 100%) 1',
+                    minHeight: 220,
+                    position: 'relative',
+                  }}>
                     <img
                       src={testimonial.avatar}
                       alt={testimonial.name}
-                      className="w-20 h-20 rounded-full object-cover absolute -top-10 left-1/2 -translate-x-1/2 border-4 border-white shadow-md"
+                      style={{ width: 80, height: 80, borderRadius: '50%', objectFit: 'cover', position: 'absolute', top: -40, left: '50%', transform: 'translateX(-50%)', border: '4px solid #fff', boxShadow: '0 2px 12px rgba(0,0,0,0.10)' }}
                     />
-                    <div className="pt-12 text-center">
-                      <Quote className="absolute top-6 right-6 text-gray-100" size={32} />
-                      <p className="text-gray-600 mb-4 h-24 overflow-hidden">
+                    <div style={{ paddingTop: 48, textAlign: 'center' }}>
+                      <Quote style={{ position: 'absolute', top: 24, right: 24, color: 'rgba(255,255,255,0.08)' }} size={32} />
+                      <p style={{ color: 'rgba(255,255,255,0.85)', marginBottom: 16, minHeight: 72, fontSize: '1.1rem', lineHeight: 1.7, overflow: 'hidden' }}>
                         {testimonial.content}
                       </p>
-                      <p className="font-semibold text-gray-800">{testimonial.name}</p>
+                      <p style={{ fontWeight: 600, color: 'white', fontSize: '1.1rem' }}>{testimonial.name}</p>
                     </div>
                   </div>
                 </div>
               ))}
             </motion.div>
           </div>
-
           <button
             onClick={handlePrev}
-            className="absolute left-0 top-1/2 -translate-y-1/2 z-10 bg-white rounded-full p-2 shadow-md hover:bg-gray-100 disabled:opacity-50 transition"
+            style={{
+              position: 'absolute',
+              left: 0,
+              top: '50%',
+              transform: 'translateY(-50%)',
+              zIndex: 10,
+              background: 'linear-gradient(90deg, #a5b4fc 0%, #fca5a5 100%)',
+              border: 'none',
+              borderRadius: '50%',
+              padding: 12,
+              boxShadow: '0 2px 8px rgba(0,0,0,0.10)',
+              cursor: 'pointer',
+              transition: 'all 0.2s',
+              opacity: isTransitioning ? 0.5 : 1,
+            }}
             aria-label="Previous testimonial"
             disabled={isTransitioning}
           >
-            <ChevronLeft className="w-6 h-6 text-gray-600" />
+            <ChevronLeft style={{ color: '#030303' }} className="w-6 h-6" />
           </button>
           <button
             onClick={handleNext}
-            className="absolute right-0 top-1/2 -translate-y-1/2 z-10 bg-white rounded-full p-2 shadow-md hover:bg-gray-100 disabled:opacity-50 transition"
+            style={{
+              position: 'absolute',
+              right: 0,
+              top: '50%',
+              transform: 'translateY(-50%)',
+              zIndex: 10,
+              background: 'linear-gradient(90deg, #a5b4fc 0%, #fca5a5 100%)',
+              border: 'none',
+              borderRadius: '50%',
+              padding: 12,
+              boxShadow: '0 2px 8px rgba(0,0,0,0.10)',
+              cursor: 'pointer',
+              transition: 'all 0.2s',
+              opacity: isTransitioning ? 0.5 : 1,
+            }}
             aria-label="Next testimonial"
             disabled={isTransitioning}
           >
-            <ChevronRight className="w-6 h-6 text-gray-600" />
+            <ChevronRight style={{ color: '#030303' }} className="w-6 h-6" />
           </button>
         </div>
       </div>

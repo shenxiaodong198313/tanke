@@ -16,7 +16,7 @@ const icons = [
 const MarketingToolsShowcase: React.FC = () => {
   return (
     <section style={{
-      background: '#fff',
+      background: '#030303', // 深色背景
       padding: '64px 0 0',
       minHeight: '900px',
       position: 'relative',
@@ -36,23 +36,26 @@ const MarketingToolsShowcase: React.FC = () => {
         <div style={{
           fontSize: '2.5rem',
           fontWeight: 700,
-          color: '#ff6b1b',
           marginBottom: 8,
-          letterSpacing: 1,
+          letterSpacing: '-2px',
+          background: 'linear-gradient(90deg, #a5b4fc 0%, #fca5a5 100%)',
+          WebkitBackgroundClip: 'text',
+          WebkitTextFillColor: 'transparent',
+          display: 'inline-block',
         }}>
           大模型营销工具
         </div>
         <div style={{
           fontSize: '2rem',
           fontWeight: 600,
-          color: '#23242a',
+          color: 'rgba(255,255,255,0.92)',
           marginBottom: 12,
         }}>
           内置多款营销工具，满足不同营销需求
         </div>
         <div style={{
           fontSize: '1.05rem',
-          color: '#666',
+          color: 'rgba(255,255,255,0.7)',
           marginBottom: 48,
         }}>
           高效热门营销工具，包含企业筛选、短视频爆款、短视频找门店、基开客户、精准查找各个行业下细分领域客户
@@ -68,22 +71,23 @@ const MarketingToolsShowcase: React.FC = () => {
             top: item.top,
             width: 64,
             height: 64,
-            background: item.color,
+            background: 'linear-gradient(90deg, #a5b4fc 0%, #fca5a5 100%)',
             borderRadius: 18,
             display: 'flex',
             alignItems: 'center',
             justifyContent: 'center',
             fontSize: 32,
-            boxShadow: '0 4px 24px rgba(255, 153, 51, 0.08)',
+            boxShadow: '0 4px 24px rgba(165,180,252,0.08)',
             zIndex: 1,
             opacity: 0.85,
             filter: 'blur(0.5px)',
+            color: '#fff',
           }}
         >
           {item.icon}
         </div>
       ))}
-      {/* 手机图片 */}
+      {/* 手机图片外框 */}
       <div style={{
         position: 'relative',
         zIndex: 3,
@@ -95,7 +99,9 @@ const MarketingToolsShowcase: React.FC = () => {
         boxShadow: '0 8px 48px rgba(0,0,0,0.10)',
         borderRadius: 40,
         overflow: 'hidden',
-        background: '#fff',
+        background: '#18181c',
+        border: '2.5px solid',
+        borderImage: 'linear-gradient(90deg, #a5b4fc 0%, #fca5a5 100%) 1',
       }}>
         <img
           src="https://files.cdn.bcebos.com/tanke/marketing-tools-phone-demo.png"

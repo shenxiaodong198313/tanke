@@ -39,7 +39,7 @@ const CompanyStrength: React.FC = () => {
 
   const sectionStyle: React.CSSProperties = {
     padding: '4rem 0',
-    backgroundColor: 'white'
+    background: '#030303', // 深色背景
   };
 
   const containerStyle: React.CSSProperties = {
@@ -56,8 +56,13 @@ const CompanyStrength: React.FC = () => {
   const titleStyle: React.CSSProperties = {
     fontSize: '2.5rem',
     fontWeight: 'bold',
-    color: '#1F2937',
-    marginBottom: '1rem'
+    color: 'white',
+    marginBottom: '1rem',
+    letterSpacing: '-2px',
+    background: 'linear-gradient(90deg, #a5b4fc 0%, #fca5a5 100%)',
+    WebkitBackgroundClip: 'text',
+    WebkitTextFillColor: 'transparent',
+    display: 'inline-block',
   };
 
   const subtitleStyle: React.CSSProperties = {
@@ -77,28 +82,34 @@ const CompanyStrength: React.FC = () => {
   const achievementCardStyle: React.CSSProperties = {
     textAlign: 'center',
     padding: '2rem',
-    backgroundColor: '#F9FAFB',
+    background: 'rgba(30,30,40,0.92)',
     borderRadius: '1rem',
-    border: '1px solid #E5E7EB',
-    transition: 'all 0.3s ease'
+    border: '1.5px solid',
+    borderImage: 'linear-gradient(90deg, #a5b4fc 0%, #fca5a5 100%) 1',
+    transition: 'all 0.3s cubic-bezier(0.23,0.86,0.39,0.96)',
+    color: 'white',
   };
 
   const iconStyle: React.CSSProperties = {
     fontSize: '3rem',
     marginBottom: '1rem',
-    display: 'block'
+    display: 'block',
+    background: 'linear-gradient(90deg, #a5b4fc 0%, #fca5a5 100%)',
+    WebkitBackgroundClip: 'text',
+    WebkitTextFillColor: 'transparent',
   };
 
   const achievementTitleStyle: React.CSSProperties = {
     fontSize: '1.125rem',
     fontWeight: 'bold',
-    color: '#1F2937',
-    marginBottom: '0.5rem'
+    color: 'white',
+    marginBottom: '0.5rem',
+    letterSpacing: '-0.5px',
   };
 
   const achievementDescStyle: React.CSSProperties = {
     fontSize: '0.875rem',
-    color: '#6B7280'
+    color: 'rgba(255,255,255,0.7)'
   };
 
   const statsGridStyle: React.CSSProperties = {
@@ -115,21 +126,26 @@ const CompanyStrength: React.FC = () => {
   const statNumberStyle: React.CSSProperties = {
     fontSize: '3rem',
     fontWeight: 'bold',
-    color: '#3B82F6',
+    color: 'white',
     marginBottom: '0.5rem',
-    display: 'block'
+    display: 'block',
+    background: 'linear-gradient(90deg, #a5b4fc 0%, #fca5a5 100%)',
+    WebkitBackgroundClip: 'text',
+    WebkitTextFillColor: 'transparent',
+    letterSpacing: '-1px',
   };
 
   const statLabelStyle: React.CSSProperties = {
     fontSize: '1.125rem',
     fontWeight: '600',
-    color: '#1F2937',
-    marginBottom: '0.25rem'
+    color: 'rgba(255,255,255,0.85)',
+    marginBottom: '0.25rem',
+    letterSpacing: '0.5px',
   };
 
   const statDescStyle: React.CSSProperties = {
     fontSize: '0.875rem',
-    color: '#6B7280'
+    color: 'rgba(255,255,255,0.7)'
   };
 
   return (

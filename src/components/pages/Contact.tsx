@@ -6,7 +6,7 @@ const Contact: React.FC = () => {
   const containerStyle: React.CSSProperties = {
     minHeight: '100vh',
     paddingTop: '64px',
-    background: 'linear-gradient(135deg, #e3f2ff 0%, #cde8ff 100%)',
+    background: '#18181c', // 深色背景
     display: 'flex',
     flexDirection: 'column',
     alignItems: 'center',
@@ -41,7 +41,7 @@ const Contact: React.FC = () => {
   };
 
   const getCardStyle = (cardKey: string): React.CSSProperties => ({
-    background: 'rgba(255, 255, 255, 0.9)',
+    background: 'rgba(36, 36, 48, 0.95)',
     borderRadius: '24px',
     padding: '32px',
     display: 'flex',
@@ -50,9 +50,9 @@ const Contact: React.FC = () => {
     justifyContent: 'flex-start',
     cursor: 'pointer',
     transition: 'all 0.4s ease',
-    boxShadow: '0 8px 32px rgba(0, 0, 0, 0.1)',
+    boxShadow: '0 8px 32px rgba(0, 0, 0, 0.3)',
     backdropFilter: 'blur(10px)',
-    border: '1px solid rgba(255, 255, 255, 0.2)',
+    border: '1px solid rgba(255, 255, 255, 0.08)',
     flex: activeCard === cardKey ? 3 : 1,
     position: 'relative',
     overflow: 'hidden',

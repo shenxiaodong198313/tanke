@@ -51,7 +51,7 @@ const IndustryShowcase: React.FC = () => {
 
   const sectionStyle: React.CSSProperties = {
     minHeight: '100vh',
-    background: 'linear-gradient(135deg, #fafbfd 0%, #f5f7fa 100%)',
+    background: '#030303', // 深色背景
     display: 'flex',
     flexDirection: 'column',
     justifyContent: 'center',
@@ -74,9 +74,14 @@ const IndustryShowcase: React.FC = () => {
   const titleStyle: React.CSSProperties = {
     fontSize: isMobile ? '2.5rem' : '3.5rem',
     fontWeight: 'bold',
-    color: '#1a1a1a',
+    color: 'white',
     marginBottom: '1rem',
-    lineHeight: '1.2'
+    lineHeight: '1.2',
+    letterSpacing: '-2px',
+    background: 'linear-gradient(90deg, #a5b4fc 0%, #fca5a5 100%)',
+    WebkitBackgroundClip: 'text',
+    WebkitTextFillColor: 'transparent',
+    display: 'inline-block',
   };
 
   const subtitleStyle: React.CSSProperties = {
@@ -99,11 +104,11 @@ const IndustryShowcase: React.FC = () => {
   };
 
   const industryItemStyle: React.CSSProperties = {
-    backgroundColor: 'white',
+    backgroundColor: 'rgba(255,255,255,0.04)',
     borderRadius: '12px',
     padding: isMobile ? '0.8rem 0.6rem' : '1rem 0.8rem',
     boxShadow: '0 4px 16px rgba(0, 0, 0, 0.08)',
-    border: '1px solid rgba(0, 0, 0, 0.05)',
+    border: '1px solid rgba(255,255,255,0.08)',
     transition: 'all 0.3s ease',
     cursor: 'pointer',
     textAlign: 'center',

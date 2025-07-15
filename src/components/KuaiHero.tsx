@@ -23,14 +23,14 @@ const KuaiHero: React.FC = () => {
   };
 
   const heroStyle: React.CSSProperties = {
-    background: 'linear-gradient(135deg, #1677ff 0%, #69b1ff 100%)',
-    minHeight: '80vh', // 增加蓝色背景高度，确保白色容器50%覆盖
+    background: '#030303', // 深色背景
+    minHeight: '80vh',
     display: 'flex',
     flexDirection: 'column',
     position: 'relative',
     overflow: 'hidden',
-    marginTop: '-64px', // 向上偏移导航栏高度，让蓝色背景从顶部开始
-    paddingTop: '64px'   // 补偿偏移，确保内容不被导航栏遮挡
+    marginTop: '-64px',
+    paddingTop: '64px'
   };
 
   const overlayStyle: React.CSSProperties = {
@@ -71,7 +71,12 @@ const KuaiHero: React.FC = () => {
     fontWeight: 'bold',
     lineHeight: '1.2',
     marginBottom: '16px',
-    color: 'white'
+    color: 'white',
+    letterSpacing: '-2px',
+    background: 'linear-gradient(90deg, #a5b4fc 0%, #fca5a5 100%)',
+    WebkitBackgroundClip: 'text',
+    WebkitTextFillColor: 'transparent',
+    display: 'inline-block',
   };
 
   const subtitleStyle: React.CSSProperties = {
@@ -99,17 +104,19 @@ const KuaiHero: React.FC = () => {
   };
 
   const primaryButtonStyle: React.CSSProperties = {
-    backgroundColor: 'white',
-    color: '#1677ff',
+    background: 'linear-gradient(90deg, #a5b4fc 0%, #fca5a5 100%)',
+    color: '#030303',
     padding: '12px 24px',
     borderRadius: '6px',
     fontWeight: '600',
     fontSize: '16px',
     border: 'none',
     cursor: 'pointer',
-    transition: 'all 0.3s ease',
+    transition: 'all 0.3s cubic-bezier(0.23,0.86,0.39,0.96)',
     minWidth: '120px',
-    height: '44px'
+    height: '44px',
+    boxShadow: '0 8px 32px rgba(0,0,0,0.18)',
+    letterSpacing: '1px',
   };
 
   const secondaryButtonStyle: React.CSSProperties = {

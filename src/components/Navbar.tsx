@@ -28,11 +28,19 @@ const Navbar: React.FC = () => {
     <motion.nav
       initial={{ y: -100 }}
       animate={{ y: 0 }}
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        isScrolled 
-          ? 'bg-white/95 backdrop-blur-md shadow-lg' 
-          : 'bg-transparent'
-      }`}
+      style={{
+        position: 'fixed',
+        top: 0,
+        left: 0,
+        right: 0,
+        zIndex: 50,
+        background: isScrolled
+          ? 'rgba(30,30,40,0.92)'
+          : 'linear-gradient(90deg, #030303 0%, #18181c 60%, #23233a 100%)',
+        boxShadow: isScrolled ? '0 2px 12px rgba(0,0,0,0.10)' : 'none',
+        transition: 'all 0.3s cubic-bezier(0.23,0.86,0.39,0.96)',
+        backdropFilter: isScrolled ? 'blur(8px)' : 'none',
+      }}
     >
       <div className="container-custom">
         <div className="flex items-center justify-between h-16 lg:h-20">
@@ -41,12 +49,21 @@ const Navbar: React.FC = () => {
             whileHover={{ scale: 1.05 }}
             className="flex items-center space-x-2"
           >
-            <div className="w-8 h-8 bg-gradient-to-r from-blue-600 to-purple-600 rounded-lg flex items-center justify-center">
-              <span className="text-white font-bold text-lg">T</span>
+            <div style={{
+              width: 32,
+              height: 32,
+              background: 'linear-gradient(90deg, #a5b4fc 0%, #fca5a5 100%)',
+              borderRadius: 8,
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'center',
+            }}>
+              <span style={{ color: '#030303', fontWeight: 700, fontSize: 20 }}>T</span>
             </div>
-            <span className="text-xl font-bold text-gray-900">探客</span>
+            <span style={{ fontSize: 22, fontWeight: 700, background: 'linear-gradient(90deg, #a5b4fc 0%, #fca5a5 100%)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent', display: 'inline-block' }}>
+              探客
+            </span>
           </motion.div>
-
           {/* Desktop Navigation */}
           <div className="hidden lg:flex items-center space-x-8">
             {navItems.map((item, index) => (
@@ -57,9 +74,28 @@ const Navbar: React.FC = () => {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: index * 0.1 }}
                 whileHover={{ y: -2 }}
-                className={`text-sm font-medium transition-colors hover:text-blue-600 ${
-                  isScrolled ? 'text-gray-700' : 'text-white'
-                }`}
+                style={{
+                  color: 'white',
+                  fontWeight: 500,
+                  fontSize: 15,
+                  background: 'none',
+                  transition: 'color 0.2s',
+                  padding: '2px 8px',
+                  borderRadius: 6,
+                  backgroundClip: 'text',
+                  WebkitBackgroundClip: 'text',
+                  WebkitTextFillColor: 'white',
+                  display: 'inline-block',
+                }}
+                onMouseEnter={e => {
+                  e.currentTarget.style.background = 'none';
+                  e.currentTarget.style.backgroundImage = 'linear-gradient(90deg, #a5b4fc 0%, #fca5a5 100%)';
+                  e.currentTarget.style.webkitTextFillColor = 'transparent';
+                }}
+                onMouseLeave={e => {
+                  e.currentTarget.style.backgroundImage = 'none';
+                  e.currentTarget.style.webkitTextFillColor = 'white';
+                }}
               >
                 {item.name}
               </motion.a>

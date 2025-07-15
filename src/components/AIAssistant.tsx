@@ -8,7 +8,13 @@ const AIAssistant: React.FC = () => {
       <img
         src={imageUrl}
         alt="矩阵式AI智能生态"
-        className="max-w-full max-h-full object-contain"
+        style={{
+          maxWidth: '100%',
+          height: 'auto',
+          display: 'block',
+          margin: '0 auto',
+          objectFit: 'contain',
+        }}
       />
     </section>
   );
