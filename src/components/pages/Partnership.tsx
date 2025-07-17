@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { useLanguage } from '../../contexts/LanguageContext';
+import SEOHead from '../SEOHead';
 
 const MAX_WIDTH = 1200;
 const CARD_WIDTH = 340;
@@ -273,116 +274,128 @@ const Partnership: React.FC = () => {
   };
 
   return (
-    <div style={containerStyle}>
-      <section style={heroSection}>
-        <h1 style={heroTitle}>探客AI增长手机合作伙伴火热招募中</h1>
-        <button style={heroBtn} onClick={() => setIsModalOpen(true)}>立即申请加入</button>
-      </section>
-      <div style={{ height: 40 }} />
-      <div style={contentWrap}>
-        {/* 合作伙伴体系 */}
-        <div style={sectionTitle}>合作伙伴体系</div>
-        <div style={partnerTypes}>
-          <div style={partnerCard}>
-            <div style={partnerIcon}><span style={{color: '#aaa', fontSize: 32}}>图标</span></div>
-            <div style={partnerCardTitle}>生态合作伙伴</div>
-            <div style={partnerCardDesc}>与探客AI增长手机基于共同目标和利益而建立的长期合作关系；通过整合双方的资源、产品优势和能力。</div>
+    <>
+      <SEOHead
+        title="代理合作 - 探客AI手机"
+        description="探客AI手机诚邀各界合作伙伴，共同开拓智能营销新市场，合作共赢。"
+        keywords="代理合作, 合作伙伴, 智能营销, 渠道合作, 探客AI手机"
+        ogTitle="代理合作 - 探客AI手机"
+        ogDescription="探客AI手机诚邀各界合作伙伴，共同开拓智能营销新市场，合作共赢。"
+      />
+      <div style={containerStyle}>
+        <section style={heroSection}>
+          <h1 style={heroTitle}>探客AI增长手机合作伙伴火热招募中</h1>
+          <h2 style={{fontSize: '1.3rem', color: '#6b7280', textAlign: 'center', marginBottom: '24px', fontWeight: 400}}>
+            携手共赢，共创智能营销新未来
+          </h2>
+          <button style={heroBtn} onClick={() => setIsModalOpen(true)}>立即申请加入</button>
+        </section>
+        <div style={{ height: 40 }} />
+        <div style={contentWrap}>
+          {/* 合作伙伴体系 */}
+          <div style={sectionTitle}>合作伙伴体系</div>
+          <div style={partnerTypes}>
+            <div style={partnerCard}>
+              <div style={partnerIcon}><span style={{color: '#aaa', fontSize: 32}}>图标</span></div>
+              <div style={partnerCardTitle}>生态合作伙伴</div>
+              <div style={partnerCardDesc}>与探客AI增长手机基于共同目标和利益而建立的长期合作关系；通过整合双方的资源、产品优势和能力。</div>
+            </div>
+            <div style={partnerCard}>
+              <div style={partnerIcon}><span style={{color: '#aaa', fontSize: 32}}>图标</span></div>
+              <div style={partnerCardTitle}>商机合作伙伴</div>
+              <div style={partnerCardDesc}>认同探客AI增长手机的文化和产品理念，具备一定客户资源的企业，愿意向其客户推荐探客AI增长手机的产品。</div>
+            </div>
+            <div style={partnerCard}>
+              <div style={partnerIcon}><span style={{color: '#aaa', fontSize: 32}}>图标</span></div>
+              <div style={partnerCardTitle}>推广大使</div>
+              <div style={partnerCardDesc}>具备专业知识和影响力的个人，致力于推广探客AI增长手机的品牌和产品。</div>
+            </div>
           </div>
-          <div style={partnerCard}>
-            <div style={partnerIcon}><span style={{color: '#aaa', fontSize: 32}}>图标</span></div>
-            <div style={partnerCardTitle}>商机合作伙伴</div>
-            <div style={partnerCardDesc}>认同探客AI增长手机的文化和产品理念，具备一定客户资源的企业，愿意向其客户推荐探客AI增长手机的产品。</div>
-          </div>
-          <div style={partnerCard}>
-            <div style={partnerIcon}><span style={{color: '#aaa', fontSize: 32}}>图标</span></div>
-            <div style={partnerCardTitle}>推广大使</div>
-            <div style={partnerCardDesc}>具备专业知识和影响力的个人，致力于推广探客AI增长手机的品牌和产品。</div>
+          {/* 合作支持 */}
+          <div style={sectionTitle}>合作支持</div>
+          <div style={supportSection}>
+            <div style={supportGrid}>
+              <div style={supportCard}>
+                <div style={supportIcon}>W</div>
+                <div style={supportTitle}>产品支持</div>
+                <div style={supportDesc}>领先的产品理念，快速迭代的产品功能，确保产品具有竞争力，为客户营销数字化提供保障。</div>
+              </div>
+              <div style={supportCard}>
+                <div style={supportIcon}>👤</div>
+                <div style={supportTitle}>培训支持</div>
+                <div style={supportDesc}>培训师驻场完成产品及销售SOP的培训，不定期线上产品更新培训及线下实战训练营，助理合作伙伴快速成长。</div>
+              </div>
+              <div style={supportCard}>
+                <div style={supportIcon}>◼️</div>
+                <div style={supportTitle}>业务支持</div>
+                <div style={supportDesc}>提供行业解决方案，客户打单跑路赋能，多渠道商机获取，让每位伙伴都具备销冠的能力。</div>
+              </div>
+              <div style={supportCard}>
+                <div style={supportIcon}>📄</div>
+                <div style={supportTitle}>售后支持</div>
+                <div style={supportDesc}>完善的客户成功体系，帮助客户实现协同增长，保持着行业内遥遥领先的续约率，保障合作伙伴收益。</div>
+              </div>
+            </div>
           </div>
         </div>
-        {/* 合作支持 */}
-        <div style={sectionTitle}>合作支持</div>
-        <div style={supportSection}>
-          <div style={supportGrid}>
-            <div style={supportCard}>
-              <div style={supportIcon}>W</div>
-              <div style={supportTitle}>产品支持</div>
-              <div style={supportDesc}>领先的产品理念，快速迭代的产品功能，确保产品具有竞争力，为客户营销数字化提供保障。</div>
-            </div>
-            <div style={supportCard}>
-              <div style={supportIcon}>👤</div>
-              <div style={supportTitle}>培训支持</div>
-              <div style={supportDesc}>培训师驻场完成产品及销售SOP的培训，不定期线上产品更新培训及线下实战训练营，助理合作伙伴快速成长。</div>
-            </div>
-            <div style={supportCard}>
-              <div style={supportIcon}>◼️</div>
-              <div style={supportTitle}>业务支持</div>
-              <div style={supportDesc}>提供行业解决方案，客户打单跑路赋能，多渠道商机获取，让每位伙伴都具备销冠的能力。</div>
-            </div>
-            <div style={supportCard}>
-              <div style={supportIcon}>📄</div>
-              <div style={supportTitle}>售后支持</div>
-              <div style={supportDesc}>完善的客户成功体系，帮助客户实现协同增长，保持着行业内遥遥领先的续约率，保障合作伙伴收益。</div>
+
+        {/* 申请表单模态窗口 */}
+        {isModalOpen && (
+          <div style={modalOverlay} onClick={() => setIsModalOpen(false)}>
+            <div style={modalContent} onClick={(e) => e.stopPropagation()}>
+              <button style={closeButton} onClick={() => setIsModalOpen(false)}>×</button>
+              <h2 style={modalTitle}>申请成为探客AI合作伙伴</h2>
+              
+              <div style={formField}>
+                <label style={formLabel}>您的姓名是？ <span style={{color: '#2574e8'}}>*</span></label>
+                <input
+                  style={formInput}
+                  type="text"
+                  placeholder="请填写您的姓名"
+                  value={formData.name}
+                  onChange={(e) => handleInputChange('name', e.target.value)}
+                />
+              </div>
+
+              <div style={formField}>
+                <label style={formLabel}>您的公司名称是？ <span style={{color: '#2574e8'}}>*</span></label>
+                <input
+                  style={formInput}
+                  type="text"
+                  placeholder="请填写您的公司名称"
+                  value={formData.company}
+                  onChange={(e) => handleInputChange('company', e.target.value)}
+                />
+              </div>
+
+              <div style={formField}>
+                <label style={formLabel}>您的职位是？ <span style={{color: '#2574e8'}}>*</span></label>
+                <input
+                  style={formInput}
+                  type="text"
+                  placeholder="请填写您的职位"
+                  value={formData.position}
+                  onChange={(e) => handleInputChange('position', e.target.value)}
+                />
+              </div>
+
+              <div style={formField}>
+                <label style={formLabel}>您的手机号是？ <span style={{color: '#2574e8'}}>*</span></label>
+                <input
+                  style={formInput}
+                  type="tel"
+                  placeholder="请填写您的手机号"
+                  value={formData.phone}
+                  onChange={(e) => handleInputChange('phone', e.target.value)}
+                />
+              </div>
+
+              <button style={submitButton} onClick={handleSubmit}>提交申请</button>
             </div>
           </div>
-        </div>
+        )}
       </div>
-
-      {/* 申请表单模态窗口 */}
-      {isModalOpen && (
-        <div style={modalOverlay} onClick={() => setIsModalOpen(false)}>
-          <div style={modalContent} onClick={(e) => e.stopPropagation()}>
-            <button style={closeButton} onClick={() => setIsModalOpen(false)}>×</button>
-            <h2 style={modalTitle}>申请成为探客AI合作伙伴</h2>
-            
-            <div style={formField}>
-              <label style={formLabel}>您的姓名是？ <span style={{color: '#2574e8'}}>*</span></label>
-              <input
-                style={formInput}
-                type="text"
-                placeholder="请填写您的姓名"
-                value={formData.name}
-                onChange={(e) => handleInputChange('name', e.target.value)}
-              />
-            </div>
-
-            <div style={formField}>
-              <label style={formLabel}>您的公司名称是？ <span style={{color: '#2574e8'}}>*</span></label>
-              <input
-                style={formInput}
-                type="text"
-                placeholder="请填写您的公司名称"
-                value={formData.company}
-                onChange={(e) => handleInputChange('company', e.target.value)}
-              />
-            </div>
-
-            <div style={formField}>
-              <label style={formLabel}>您的职位是？ <span style={{color: '#2574e8'}}>*</span></label>
-              <input
-                style={formInput}
-                type="text"
-                placeholder="请填写您的职位"
-                value={formData.position}
-                onChange={(e) => handleInputChange('position', e.target.value)}
-              />
-            </div>
-
-            <div style={formField}>
-              <label style={formLabel}>您的手机号是？ <span style={{color: '#2574e8'}}>*</span></label>
-              <input
-                style={formInput}
-                type="tel"
-                placeholder="请填写您的手机号"
-                value={formData.phone}
-                onChange={(e) => handleInputChange('phone', e.target.value)}
-              />
-            </div>
-
-            <button style={submitButton} onClick={handleSubmit}>提交申请</button>
-          </div>
-        </div>
-      )}
-    </div>
+    </>
   );
 };
 

@@ -8,6 +8,7 @@ const AIAssistant: React.FC = () => {
       <img
         src={imageUrl}
         alt="矩阵式AI智能生态"
+        loading="lazy"
         style={{
           maxWidth: '100%',
           height: 'auto',

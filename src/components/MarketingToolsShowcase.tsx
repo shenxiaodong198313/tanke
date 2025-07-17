@@ -106,6 +106,7 @@ const MarketingToolsShowcase: React.FC = () => {
         <img
           src="https://files.cdn.bcebos.com/tanke/marketing-tools-phone-demo.png"
           alt="营销工具手机界面"
+          loading="lazy"
           style={{ width: '100%', display: 'block', borderRadius: 40 }}
         />
       </div>

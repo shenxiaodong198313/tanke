@@ -219,7 +219,7 @@ const IndustryCases: React.FC = () => {
               {originalReviews.map((review, index) => (
                 <div key={index} style={reviewCardStyle}>
                   <div style={quoteIconStyle}>“</div>
-                  <img src={review.avatar} alt={review.name} style={avatarStyle} />
+                  <img src={review.avatar} alt={review.name} loading="lazy" style={avatarStyle} />
                   <div><p style={reviewTextStyle}>{review.review}</p></div>
                   <div style={authorInfoStyle}><p style={authorNameStyle}>— {review.name}</p></div>
                 </div>

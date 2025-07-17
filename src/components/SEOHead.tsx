@@ -66,6 +66,14 @@ const SEOHead: React.FC<SEOHeadProps> = ({
       <meta name="language" content="zh-CN" />
       <meta name="geo.region" content="CN-ZJ" />
       <meta name="geo.placename" content="杭州" />
+
+      {/* hreflang 多语言SEO优化 */}
+      <link rel="alternate" href="https://www.tanke.com/" hrefLang="zh-CN" />
+      <link rel="alternate" href="https://www.tanke.com/en" hrefLang="en" />
+      <link rel="alternate" href="https://www.tanke.com/ja" hrefLang="ja" />
+      <link rel="alternate" href="https://www.tanke.com/ko" hrefLang="ko" />
+      <link rel="alternate" href="https://www.tanke.com/zh-TW" hrefLang="zh-TW" />
+      <link rel="alternate" href="https://www.tanke.com/" hrefLang="x-default" />
       
       {/* Open Graph / Facebook */}
       <meta property="og:type" content="website" />

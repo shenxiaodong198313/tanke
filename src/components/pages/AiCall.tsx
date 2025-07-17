@@ -1,4 +1,5 @@
 import React from 'react';
+import SEOHead from '../SEOHead';
 
 const AiCall: React.FC = () => {
   const containerStyle: React.CSSProperties = {
@@ -205,272 +206,284 @@ const AiCall: React.FC = () => {
   };
 
   return (
-    <div style={containerStyle}>
-      <div style={sectionStyle}>
-        <h1 style={titleStyle}>AI外呼助手</h1>
-        
-        {/* 第一屏：线上小店功能 */}
-        <div style={featureContainerStyle}>
-          <div style={featureContentStyle}>
-            <div style={highlightBoxStyle}>
-              <span style={{marginRight: '10px'}}>🛒</span>
-              试试「线上小店」
-            </div>
-            <p style={descriptionStyle}>
-              不受时间和空间限制，24小时都能下单
-            </p>
-            <button style={learnMoreStyle} onClick={() => console.log('了解更多')}>
-              进一步了解 →
-            </button>
-          </div>
-          <div style={featureImageStyle}>
-            <div style={phoneFrameStyle}>
-              <div style={phoneScreenStyle}>
-                <div style={statusBarStyle}>
-                  <div>🔍</div>
-                  <div>📱</div>
-                  <div>🛒</div>
-                </div>
-                
-                <div style={productGridStyle}>
-                  <div style={productCardStyle}>
-                    <div style={productImageStyle}>👔</div>
-                    <div style={productInfoStyle}>
-                      <div style={productNameStyle}>潮牌</div>
-                      <div style={productPriceStyle}>¥199</div>
-                      <button style={addToCartStyle}>🛒</button>
-                    </div>
-                  </div>
-                  
-                  <div style={productCardStyle}>
-                    <div style={productImageStyle}>👟</div>
-                    <div style={productInfoStyle}>
-                      <div style={productNameStyle}>行走鞋</div>
-                      <div style={productPriceStyle}>¥299</div>
-                      <button style={addToCartStyle}>🛒</button>
-                    </div>
-                  </div>
-                  
-                  <div style={productCardStyle}>
-                    <div style={productImageStyle}>👜</div>
-                    <div style={productInfoStyle}>
-                      <div style={productNameStyle}>包包</div>
-                      <div style={productPriceStyle}>¥399</div>
-                      <button style={addToCartStyle}>🛒</button>
-                    </div>
-                  </div>
-                  
-                  <div style={productCardStyle}>
-                    <div style={productImageStyle}>⌚</div>
-                    <div style={productInfoStyle}>
-                      <div style={productNameStyle}>手表</div>
-                      <div style={productPriceStyle}>¥599</div>
-                      <button style={addToCartStyle}>🛒</button>
-                    </div>
-                  </div>
-                  
-                  <div style={productCardStyle}>
-                    <div style={productImageStyle}>🍊</div>
-                    <div style={productInfoStyle}>
-                      <div style={productNameStyle}>橙子</div>
-                      <div style={productPriceStyle}>¥29</div>
-                      <button style={addToCartStyle}>🛒</button>
-                    </div>
-                  </div>
-                  
-                  <div style={productCardStyle}>
-                    <div style={productImageStyle}>🥑</div>
-                    <div style={productInfoStyle}>
-                      <div style={productNameStyle}>牛油果</div>
-                      <div style={productPriceStyle}>¥39</div>
-                      <button style={addToCartStyle}>🛒</button>
-                    </div>
-                  </div>
-                </div>
-                
-                <div style={bottomNavStyle}>
-                  <div style={navItemStyle}>
-                    <div style={{marginBottom: '2px'}}>🏠</div>
-                    <div>首页</div>
-                  </div>
-                  <div style={navItemStyle}>
-                    <div style={{marginBottom: '2px'}}>📋</div>
-                    <div>商品分类</div>
-                  </div>
-                  <div style={navItemStyle}>
-                    <div style={{marginBottom: '2px'}}>🛒</div>
-                    <div>购物车</div>
-                  </div>
-                  <div style={navItemStyle}>
-                    <div style={{marginBottom: '2px'}}>👤</div>
-                    <div>我的</div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        {/* 第二屏：智能外呼 */}
-        <div style={{...featureContainerStyle, flexDirection: 'row-reverse'}}>
-          <div style={featureContentStyle}>
-            <div style={{...highlightBoxStyle, background: 'linear-gradient(135deg, #9b59b6 0%, #8e44ad 100%)'}}>
-              <span style={{marginRight: '10px'}}>📞</span>
-              试试「智能外呼」
-            </div>
-            <p style={descriptionStyle}>
-              AI语音助手，自动筛选意向客户，提升转化效率
-            </p>
-            <button style={{...learnMoreStyle, color: '#9b59b6'}} onClick={() => console.log('了解更多')}>
-              进一步了解 →
-            </button>
-          </div>
-          <div style={featureImageStyle}>
-            <div style={phoneFrameStyle}>
-              <div style={{...phoneScreenStyle, background: 'linear-gradient(135deg, #9b59b6 0%, #8e44ad 100%)'}}>
-                <div style={{color: 'white', textAlign: 'center', marginBottom: '20px'}}>
-                  <h3 style={{fontSize: '18px', marginBottom: '10px'}}>AI外呼中心</h3>
-                  <p style={{fontSize: '12px', opacity: 0.9}}>正在进行智能外呼</p>
-                </div>
-                <div style={{background: 'rgba(255,255,255,0.9)', borderRadius: '15px', padding: '20px'}}>
-                  <div style={{marginBottom: '15px'}}>
-                    <div style={{fontSize: '14px', color: '#333', marginBottom: '10px'}}>通话记录</div>
-                    <div style={{background: '#f8f9fa', borderRadius: '8px', padding: '10px', marginBottom: '8px'}}>
-                      <div style={{fontSize: '12px', color: '#666'}}>客户A - 已接通</div>
-                      <div style={{fontSize: '10px', color: '#28a745'}}>✓ 有购买意向</div>
-                    </div>
-                    <div style={{background: '#f8f9fa', borderRadius: '8px', padding: '10px', marginBottom: '8px'}}>
-                      <div style={{fontSize: '12px', color: '#666'}}>客户B - 已接通</div>
-                      <div style={{fontSize: '10px', color: '#ffc107'}}>⚠ 暂无意向</div>
-                    </div>
-                    <div style={{background: '#f8f9fa', borderRadius: '8px', padding: '10px'}}>
-                      <div style={{fontSize: '12px', color: '#666'}}>客户C - 通话中</div>
-                      <div style={{fontSize: '10px', color: '#17a2b8'}}>📞 正在沟通</div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        {/* 第三屏：订单管理 */}
-        <div style={featureContainerStyle}>
-          <div style={featureContentStyle}>
-            <div style={{...highlightBoxStyle, background: 'linear-gradient(135deg, #27ae60 0%, #2ecc71 100%)'}}>
-              <span style={{marginRight: '10px'}}>📋</span>
-              试试「订单管理」
-            </div>
-            <p style={descriptionStyle}>
-              一键管理所有订单，自动化处理流程
-            </p>
-            <button style={{...learnMoreStyle, color: '#27ae60'}} onClick={() => console.log('了解更多')}>
-              进一步了解 →
-            </button>
-          </div>
-          <div style={featureImageStyle}>
-            <div style={phoneFrameStyle}>
-              <div style={{...phoneScreenStyle, background: 'linear-gradient(135deg, #27ae60 0%, #2ecc71 100%)'}}>
-                <div style={{color: 'white', textAlign: 'center', marginBottom: '20px'}}>
-                  <h3 style={{fontSize: '18px', marginBottom: '10px'}}>订单中心</h3>
-                  <p style={{fontSize: '12px', opacity: 0.9}}>今日订单概览</p>
-                </div>
-                <div style={{background: 'rgba(255,255,255,0.9)', borderRadius: '15px', padding: '20px'}}>
-                  <div style={{marginBottom: '15px'}}>
-                    <div style={{display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '10px'}}>
-                      <span style={{fontSize: '14px', color: '#333'}}>待处理订单</span>
-                      <span style={{fontSize: '16px', fontWeight: '600', color: '#e74c3c'}}>12</span>
-                    </div>
-                    <div style={{display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '10px'}}>
-                      <span style={{fontSize: '14px', color: '#333'}}>已发货订单</span>
-                      <span style={{fontSize: '16px', fontWeight: '600', color: '#27ae60'}}>89</span>
-                    </div>
-                    <div style={{display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '10px'}}>
-                      <span style={{fontSize: '14px', color: '#333'}}>已完成订单</span>
-                      <span style={{fontSize: '16px', fontWeight: '600', color: '#3498db'}}>156</span>
-                    </div>
-                    <div style={{display: 'flex', justifyContent: 'space-between', alignItems: 'center'}}>
-                      <span style={{fontSize: '14px', color: '#333'}}>今日销售额</span>
-                      <span style={{fontSize: '16px', fontWeight: '600', color: '#f39c12'}}>¥25,680</span>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        {/* 第四屏：客户跟进 */}
-        <div style={{...featureContainerStyle, flexDirection: 'row-reverse'}}>
-          <div style={featureContentStyle}>
-            <div style={{...highlightBoxStyle, background: 'linear-gradient(135deg, #e74c3c 0%, #c0392b 100%)'}}>
-              <span style={{marginRight: '10px'}}>👥</span>
-              试试「客户跟进」
-            </div>
-            <p style={descriptionStyle}>
-              智能客户画像，精准跟进策略
-            </p>
-            <button style={{...learnMoreStyle, color: '#e74c3c'}} onClick={() => console.log('了解更多')}>
-              进一步了解 →
-            </button>
-          </div>
-          <div style={featureImageStyle}>
-            <div style={phoneFrameStyle}>
-              <div style={{...phoneScreenStyle, background: 'linear-gradient(135deg, #e74c3c 0%, #c0392b 100%)'}}>
-                <div style={{color: 'white', textAlign: 'center', marginBottom: '20px'}}>
-                  <h3 style={{fontSize: '18px', marginBottom: '10px'}}>客户跟进</h3>
-                  <p style={{fontSize: '12px', opacity: 0.9}}>智能客户管理</p>
-                </div>
-                <div style={{background: 'rgba(255,255,255,0.9)', borderRadius: '15px', padding: '20px'}}>
-                  <div style={{marginBottom: '15px'}}>
-                    <div style={{background: '#f8f9fa', borderRadius: '8px', padding: '12px', marginBottom: '10px'}}>
-                      <div style={{display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '5px'}}>
-                        <span style={{fontSize: '14px', fontWeight: '600', color: '#333'}}>张先生</span>
-                        <span style={{fontSize: '10px', color: '#28a745', background: '#d4edda', padding: '2px 6px', borderRadius: '4px'}}>高意向</span>
-                      </div>
-                      <div style={{fontSize: '12px', color: '#666'}}>上次沟通：2小时前</div>
-                      <div style={{fontSize: '12px', color: '#666'}}>需要跟进：明天上午</div>
-                    </div>
-                    <div style={{background: '#f8f9fa', borderRadius: '8px', padding: '12px', marginBottom: '10px'}}>
-                      <div style={{display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '5px'}}>
-                        <span style={{fontSize: '14px', fontWeight: '600', color: '#333'}}>李女士</span>
-                        <span style={{fontSize: '10px', color: '#ffc107', background: '#fff3cd', padding: '2px 6px', borderRadius: '4px'}}>中意向</span>
-                      </div>
-                      <div style={{fontSize: '12px', color: '#666'}}>上次沟通：1天前</div>
-                      <div style={{fontSize: '12px', color: '#666'}}>需要跟进：今天下午</div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        {/* 第五屏：成功案例统计 */}
-        <div style={{textAlign: 'center', marginTop: '100px'}}>
-          <h2 style={{fontSize: '2rem', fontWeight: 700, color: '#222', marginBottom: '20px'}}>
-            外呼成功案例
+    <>
+      <SEOHead
+        title="AI外呼 - 探客AI手机"
+        description="探客AI手机AI外呼模块，智能电话营销，自动化客户触达，提升销售效率。"
+        keywords="AI外呼, 电话营销, 智能外呼, 自动化销售, 探客AI手机"
+        ogTitle="AI外呼 - 探客AI手机"
+        ogDescription="探客AI手机AI外呼模块，智能电话营销，自动化客户触达，提升销售效率。"
+      />
+      <div style={containerStyle}>
+        <div style={sectionStyle}>
+          <h1 style={titleStyle}>AI外呼助手</h1>
+          <h2 style={{fontSize: '1.3rem', color: '#bdbdbd', textAlign: 'center', marginBottom: '32px', fontWeight: 400}}>
+            智能电话营销，自动化客户触达，提升销售效率
           </h2>
-          <p style={{fontSize: '1.2rem', color: '#666', marginBottom: '60px'}}>
-            提升销售效率的最佳选择
-          </p>
-          <div style={statsContainerStyle}>
-            <div style={statCardStyle}>
-              <div style={statNumberStyle}>80%</div>
-              <div style={statLabelStyle}>接通率提升</div>
+          
+          {/* 第一屏：线上小店功能 */}
+          <div style={featureContainerStyle}>
+            <div style={featureContentStyle}>
+              <div style={highlightBoxStyle}>
+                <span style={{marginRight: '10px'}}>🛒</span>
+                试试「线上小店」
+              </div>
+              <p style={descriptionStyle}>
+                不受时间和空间限制，24小时都能下单
+              </p>
+              <button style={learnMoreStyle} onClick={() => console.log('了解更多')}>
+                进一步了解 →
+              </button>
             </div>
-            <div style={statCardStyle}>
-              <div style={statNumberStyle}>3倍</div>
-              <div style={statLabelStyle}>转化效率</div>
+            <div style={featureImageStyle}>
+              <div style={phoneFrameStyle}>
+                <div style={phoneScreenStyle}>
+                  <div style={statusBarStyle}>
+                    <div>🔍</div>
+                    <div>📱</div>
+                    <div>🛒</div>
+                  </div>
+                  
+                  <div style={productGridStyle}>
+                    <div style={productCardStyle}>
+                      <div style={productImageStyle}>👔</div>
+                      <div style={productInfoStyle}>
+                        <div style={productNameStyle}>潮牌</div>
+                        <div style={productPriceStyle}>¥199</div>
+                        <button style={addToCartStyle}>🛒</button>
+                      </div>
+                    </div>
+                    
+                    <div style={productCardStyle}>
+                      <div style={productImageStyle}>👟</div>
+                      <div style={productInfoStyle}>
+                        <div style={productNameStyle}>行走鞋</div>
+                        <div style={productPriceStyle}>¥299</div>
+                        <button style={addToCartStyle}>🛒</button>
+                      </div>
+                    </div>
+                    
+                    <div style={productCardStyle}>
+                      <div style={productImageStyle}>👜</div>
+                      <div style={productInfoStyle}>
+                        <div style={productNameStyle}>包包</div>
+                        <div style={productPriceStyle}>¥399</div>
+                        <button style={addToCartStyle}>🛒</button>
+                      </div>
+                    </div>
+                    
+                    <div style={productCardStyle}>
+                      <div style={productImageStyle}>⌚</div>
+                      <div style={productInfoStyle}>
+                        <div style={productNameStyle}>手表</div>
+                        <div style={productPriceStyle}>¥599</div>
+                        <button style={addToCartStyle}>🛒</button>
+                      </div>
+                    </div>
+                    
+                    <div style={productCardStyle}>
+                      <div style={productImageStyle}>🍊</div>
+                      <div style={productInfoStyle}>
+                        <div style={productNameStyle}>橙子</div>
+                        <div style={productPriceStyle}>¥29</div>
+                        <button style={addToCartStyle}>🛒</button>
+                      </div>
+                    </div>
+                    
+                    <div style={productCardStyle}>
+                      <div style={productImageStyle}>🥑</div>
+                      <div style={productInfoStyle}>
+                        <div style={productNameStyle}>牛油果</div>
+                        <div style={productPriceStyle}>¥39</div>
+                        <button style={addToCartStyle}>🛒</button>
+                      </div>
+                    </div>
+                  </div>
+                  
+                  <div style={bottomNavStyle}>
+                    <div style={navItemStyle}>
+                      <div style={{marginBottom: '2px'}}>🏠</div>
+                      <div>首页</div>
+                    </div>
+                    <div style={navItemStyle}>
+                      <div style={{marginBottom: '2px'}}>📋</div>
+                      <div>商品分类</div>
+                    </div>
+                    <div style={navItemStyle}>
+                      <div style={{marginBottom: '2px'}}>🛒</div>
+                      <div>购物车</div>
+                    </div>
+                    <div style={navItemStyle}>
+                      <div style={{marginBottom: '2px'}}>👤</div>
+                      <div>我的</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
             </div>
-            <div style={statCardStyle}>
-              <div style={statNumberStyle}>24小时</div>
-              <div style={statLabelStyle}>全天候服务</div>
+          </div>
+
+          {/* 第二屏：智能外呼 */}
+          <div style={{...featureContainerStyle, flexDirection: 'row-reverse'}}>
+            <div style={featureContentStyle}>
+              <div style={{...highlightBoxStyle, background: 'linear-gradient(135deg, #9b59b6 0%, #8e44ad 100%)'}}>
+                <span style={{marginRight: '10px'}}>📞</span>
+                试试「智能外呼」
+              </div>
+              <p style={descriptionStyle}>
+                AI语音助手，自动筛选意向客户，提升转化效率
+              </p>
+              <button style={{...learnMoreStyle, color: '#9b59b6'}} onClick={() => console.log('了解更多')}>
+                进一步了解 →
+              </button>
+            </div>
+            <div style={featureImageStyle}>
+              <div style={phoneFrameStyle}>
+                <div style={{...phoneScreenStyle, background: 'linear-gradient(135deg, #9b59b6 0%, #8e44ad 100%)'}}>
+                  <div style={{color: 'white', textAlign: 'center', marginBottom: '20px'}}>
+                    <h3 style={{fontSize: '18px', marginBottom: '10px'}}>AI外呼中心</h3>
+                    <p style={{fontSize: '12px', opacity: 0.9}}>正在进行智能外呼</p>
+                  </div>
+                  <div style={{background: 'rgba(255,255,255,0.9)', borderRadius: '15px', padding: '20px'}}>
+                    <div style={{marginBottom: '15px'}}>
+                      <div style={{fontSize: '14px', color: '#333', marginBottom: '10px'}}>通话记录</div>
+                      <div style={{background: '#f8f9fa', borderRadius: '8px', padding: '10px', marginBottom: '8px'}}>
+                        <div style={{fontSize: '12px', color: '#666'}}>客户A - 已接通</div>
+                        <div style={{fontSize: '10px', color: '#28a745'}}>✓ 有购买意向</div>
+                      </div>
+                      <div style={{background: '#f8f9fa', borderRadius: '8px', padding: '10px', marginBottom: '8px'}}>
+                        <div style={{fontSize: '12px', color: '#666'}}>客户B - 已接通</div>
+                        <div style={{fontSize: '10px', color: '#ffc107'}}>⚠ 暂无意向</div>
+                      </div>
+                      <div style={{background: '#f8f9fa', borderRadius: '8px', padding: '10px'}}>
+                        <div style={{fontSize: '12px', color: '#666'}}>客户C - 通话中</div>
+                        <div style={{fontSize: '10px', color: '#17a2b8'}}>📞 正在沟通</div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* 第三屏：订单管理 */}
+          <div style={featureContainerStyle}>
+            <div style={featureContentStyle}>
+              <div style={{...highlightBoxStyle, background: 'linear-gradient(135deg, #27ae60 0%, #2ecc71 100%)'}}>
+                <span style={{marginRight: '10px'}}>📋</span>
+                试试「订单管理」
+              </div>
+              <p style={descriptionStyle}>
+                一键管理所有订单，自动化处理流程
+              </p>
+              <button style={{...learnMoreStyle, color: '#27ae60'}} onClick={() => console.log('了解更多')}>
+                进一步了解 →
+              </button>
+            </div>
+            <div style={featureImageStyle}>
+              <div style={phoneFrameStyle}>
+                <div style={{...phoneScreenStyle, background: 'linear-gradient(135deg, #27ae60 0%, #2ecc71 100%)'}}>
+                  <div style={{color: 'white', textAlign: 'center', marginBottom: '20px'}}>
+                    <h3 style={{fontSize: '18px', marginBottom: '10px'}}>订单中心</h3>
+                    <p style={{fontSize: '12px', opacity: 0.9}}>今日订单概览</p>
+                  </div>
+                  <div style={{background: 'rgba(255,255,255,0.9)', borderRadius: '15px', padding: '20px'}}>
+                    <div style={{marginBottom: '15px'}}>
+                      <div style={{display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '10px'}}>
+                        <span style={{fontSize: '14px', color: '#333'}}>待处理订单</span>
+                        <span style={{fontSize: '16px', fontWeight: '600', color: '#e74c3c'}}>12</span>
+                      </div>
+                      <div style={{display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '10px'}}>
+                        <span style={{fontSize: '14px', color: '#333'}}>已发货订单</span>
+                        <span style={{fontSize: '16px', fontWeight: '600', color: '#27ae60'}}>89</span>
+                      </div>
+                      <div style={{display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '10px'}}>
+                        <span style={{fontSize: '14px', color: '#333'}}>已完成订单</span>
+                        <span style={{fontSize: '16px', fontWeight: '600', color: '#3498db'}}>156</span>
+                      </div>
+                      <div style={{display: 'flex', justifyContent: 'space-between', alignItems: 'center'}}>
+                        <span style={{fontSize: '14px', color: '#333'}}>今日销售额</span>
+                        <span style={{fontSize: '16px', fontWeight: '600', color: '#f39c12'}}>¥25,680</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* 第四屏：客户跟进 */}
+          <div style={{...featureContainerStyle, flexDirection: 'row-reverse'}}>
+            <div style={featureContentStyle}>
+              <div style={{...highlightBoxStyle, background: 'linear-gradient(135deg, #e74c3c 0%, #c0392b 100%)'}}>
+                <span style={{marginRight: '10px'}}>👥</span>
+                试试「客户跟进」
+              </div>
+              <p style={descriptionStyle}>
+                智能客户画像，精准跟进策略
+              </p>
+              <button style={{...learnMoreStyle, color: '#e74c3c'}} onClick={() => console.log('了解更多')}>
+                进一步了解 →
+              </button>
+            </div>
+            <div style={featureImageStyle}>
+              <div style={phoneFrameStyle}>
+                <div style={{...phoneScreenStyle, background: 'linear-gradient(135deg, #e74c3c 0%, #c0392b 100%)'}}>
+                  <div style={{color: 'white', textAlign: 'center', marginBottom: '20px'}}>
+                    <h3 style={{fontSize: '18px', marginBottom: '10px'}}>客户跟进</h3>
+                    <p style={{fontSize: '12px', opacity: 0.9}}>智能客户管理</p>
+                  </div>
+                  <div style={{background: 'rgba(255,255,255,0.9)', borderRadius: '15px', padding: '20px'}}>
+                    <div style={{marginBottom: '15px'}}>
+                      <div style={{background: '#f8f9fa', borderRadius: '8px', padding: '12px', marginBottom: '10px'}}>
+                        <div style={{display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '5px'}}>
+                          <span style={{fontSize: '14px', fontWeight: '600', color: '#333'}}>张先生</span>
+                          <span style={{fontSize: '10px', color: '#28a745', background: '#d4edda', padding: '2px 6px', borderRadius: '4px'}}>高意向</span>
+                        </div>
+                        <div style={{fontSize: '12px', color: '#666'}}>上次沟通：2小时前</div>
+                        <div style={{fontSize: '12px', color: '#666'}}>需要跟进：明天上午</div>
+                      </div>
+                      <div style={{background: '#f8f9fa', borderRadius: '8px', padding: '12px', marginBottom: '10px'}}>
+                        <div style={{display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '5px'}}>
+                          <span style={{fontSize: '14px', fontWeight: '600', color: '#333'}}>李女士</span>
+                          <span style={{fontSize: '10px', color: '#ffc107', background: '#fff3cd', padding: '2px 6px', borderRadius: '4px'}}>中意向</span>
+                        </div>
+                        <div style={{fontSize: '12px', color: '#666'}}>上次沟通：1天前</div>
+                        <div style={{fontSize: '12px', color: '#666'}}>需要跟进：今天下午</div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* 第五屏：成功案例统计 */}
+          <div style={{textAlign: 'center', marginTop: '100px'}}>
+            <h2 style={{fontSize: '2rem', fontWeight: 700, color: '#222', marginBottom: '20px'}}>
+              外呼成功案例
+            </h2>
+            <p style={{fontSize: '1.2rem', color: '#666', marginBottom: '60px'}}>
+              提升销售效率的最佳选择
+            </p>
+            <div style={statsContainerStyle}>
+              <div style={statCardStyle}>
+                <div style={statNumberStyle}>80%</div>
+                <div style={statLabelStyle}>接通率提升</div>
+              </div>
+              <div style={statCardStyle}>
+                <div style={statNumberStyle}>3倍</div>
+                <div style={statLabelStyle}>转化效率</div>
+              </div>
+              <div style={statCardStyle}>
+                <div style={statNumberStyle}>24小时</div>
+                <div style={statLabelStyle}>全天候服务</div>
+              </div>
             </div>
           </div>
         </div>
       </div>
-    </div>
+    </>
   );
 };
 

@@ -124,6 +124,7 @@ const Testimonials: React.FC = () => {
                     <img
                       src={testimonial.avatar}
                       alt={testimonial.name}
+                      loading="lazy"
                       style={{ width: 80, height: 80, borderRadius: '50%', objectFit: 'cover', position: 'absolute', top: -40, left: '50%', transform: 'translateX(-50%)', border: '4px solid #fff', boxShadow: '0 2px 12px rgba(0,0,0,0.10)' }}
                     />
                     <div style={{ paddingTop: 48, textAlign: 'center' }}>

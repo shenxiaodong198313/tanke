@@ -44,7 +44,8 @@ const AppContent: React.FC = () => {
           <div style={{ minHeight: '100vh', display: 'flex', flexDirection: 'column' }}>
             <KuaiNavbar />
             <div style={{ flex: 1 }}>
-              <FullPageScroll>
+              {/* 取消整屏滑动，直接普通滚动 */}
+              <div>
                 <KuaiHero />
                 <HeroGeometric />
                 <KuaiFeatures />
@@ -61,7 +62,7 @@ const AppContent: React.FC = () => {
                   </div>
                   <KuaiFooter />
                 </div>
-              </FullPageScroll>
+              </div>
             </div>
           </div>
         } />
