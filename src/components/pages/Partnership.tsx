@@ -115,7 +115,7 @@ const Partnership: React.FC = () => {
   const containerStyle: React.CSSProperties = {
     minHeight: '100vh',
     paddingTop: '64px',
-    background: '#f4f8ff',
+    background: 'linear-gradient(135deg, #f4f8ff 0%, #e8f2ff 50%, #dbeafe 100%)',
     width: '100%',
   };
 
@@ -131,20 +131,19 @@ const Partnership: React.FC = () => {
 
   const heroSection: React.CSSProperties = {
     width: '100%',
-    minHeight: '380px',
-    display: 'flex',
-    flexDirection: 'column',
-    alignItems: 'center',
-    justifyContent: 'center',
-    background: 'linear-gradient(135deg, #e3f0ff 0%, #d2e6ff 100%)',
+    minHeight: '600px',
+    background: 'linear-gradient(135deg, #2574e8 0%, #1e40af 100%)',
     position: 'relative',
     marginBottom: '0',
     overflow: 'hidden',
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'center',
   };
   const heroTitle: React.CSSProperties = {
-    fontSize: '2.6rem',
+    fontSize: '3.2rem',
     fontWeight: 700,
-    color: '#222',
+    color: 'white',
     marginBottom: '32px',
     marginTop: '0',
     textAlign: 'center',
@@ -217,7 +216,7 @@ const Partnership: React.FC = () => {
   };
   const partnerCardDesc: React.CSSProperties = {
     fontSize: '1.05rem',
-    color: '#444',
+    color: '#666',
     lineHeight: 1.7,
     margin: 0,
   };
@@ -268,7 +267,7 @@ const Partnership: React.FC = () => {
   };
   const supportDesc: React.CSSProperties = {
     fontSize: '1.05rem',
-    color: '#444',
+    color: '#666',
     lineHeight: 1.7,
     margin: 0,
   };
@@ -284,11 +283,26 @@ const Partnership: React.FC = () => {
       />
       <div style={containerStyle}>
         <section style={heroSection}>
-          <h1 style={heroTitle}>探客AI增长手机合作伙伴火热招募中</h1>
-          <h2 style={{fontSize: '1.3rem', color: '#6b7280', textAlign: 'center', marginBottom: '24px', fontWeight: 400}}>
-            携手共赢，共创智能营销新未来
-          </h2>
-          <button style={heroBtn} onClick={() => setIsModalOpen(true)}>立即申请加入</button>
+          <div style={{textAlign: 'center', maxWidth: '800px', padding: '0 24px'}}>
+            <h1 style={heroTitle}>探客AI增长手机合作伙伴火热招募中</h1>
+            <p style={{fontSize: '1.3rem', color: 'rgba(255,255,255,0.9)', marginBottom: '48px', lineHeight: 1.6}}>
+              诚邀各界合作伙伴，共同开拓智能营销新市场，合作共赢
+            </p>
+            <button 
+              style={heroBtn}
+              onClick={() => setIsModalOpen(true)}
+              onMouseEnter={(e) => {
+                e.currentTarget.style.background = '#2574e8';
+                e.currentTarget.style.color = 'white';
+              }}
+              onMouseLeave={(e) => {
+                e.currentTarget.style.background = 'white';
+                e.currentTarget.style.color = '#2574e8';
+              }}
+            >
+              立即申请合作
+            </button>
+          </div>
         </section>
         <div style={{ height: 40 }} />
         <div style={contentWrap}>
@@ -399,4 +413,4 @@ const Partnership: React.FC = () => {
   );
 };
 
-export default Partnership; 
+export default Partnership;
