@@ -17,7 +17,7 @@ const AiLive: React.FC = () => {
   const titleStyle: React.CSSProperties = {
     fontSize: '2.5rem',
     fontWeight: 700,
-    color: '#222',
+    color: '#1f2937',
     textAlign: 'center',
     marginBottom: '48px',
     letterSpacing: '1px',
@@ -183,7 +183,7 @@ const AiLive: React.FC = () => {
 
   const descriptionStyle: React.CSSProperties = {
     fontSize: '1.1rem',
-    color: '#666',
+    color: '#6b7280',
     lineHeight: '1.8',
     marginBottom: '20px',
   };
@@ -224,7 +224,7 @@ const AiLive: React.FC = () => {
 
   const statLabelStyle: React.CSSProperties = {
     fontSize: '1.1rem',
-    color: '#666',
+    color: '#6b7280',
     fontWeight: 500,
   };
 
@@ -240,7 +240,7 @@ const AiLive: React.FC = () => {
       <div style={containerStyle}>
         <div style={sectionStyle}>
           <h1 style={titleStyle}>AI直播助手</h1>
-          <h2 style={{fontSize: '1.3rem', color: '#bdbdbd', textAlign: 'center', marginBottom: '32px', fontWeight: 400}}>
+          <h2 style={{fontSize: '1.3rem', color: '#6b7280', textAlign: 'center', marginBottom: '32px', fontWeight: 400}}>
             私域直播新体验，提升客户互动与转化率
           </h2>
           
@@ -471,10 +471,10 @@ const AiLive: React.FC = () => {
 
           {/* 第五屏：成功案例统计 */}
           <div style={{textAlign: 'center', marginTop: '100px'}}>
-            <h2 style={{fontSize: '2rem', fontWeight: 700, color: '#222', marginBottom: '20px'}}>
+            <h2 style={{fontSize: '2rem', fontWeight: 700, color: '#1f2937', marginBottom: '20px'}}>
               直播成功案例
             </h2>
-            <p style={{fontSize: '1.2rem', color: '#666', marginBottom: '60px'}}>
+            <p style={{fontSize: '1.2rem', color: '#6b7280', marginBottom: '60px'}}>
               打造专业直播带货体验
             </p>
             <div style={statsContainerStyle}>

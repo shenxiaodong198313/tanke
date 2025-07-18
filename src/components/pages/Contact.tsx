@@ -7,7 +7,7 @@ const Contact: React.FC = () => {
   const containerStyle: React.CSSProperties = {
     minHeight: '100vh',
     paddingTop: '64px',
-    background: '#18181c', // 深色背景
+    background: 'linear-gradient(135deg, #ffffff 0%, #f8fafc 50%, #f1f5f9 100%)', // 白色渐变背景
     display: 'flex',
     flexDirection: 'column',
     alignItems: 'center',
@@ -18,7 +18,7 @@ const Contact: React.FC = () => {
   const titleStyle: React.CSSProperties = {
     fontSize: '2.5rem',
     fontWeight: 700,
-    color: '#222',
+    color: '#1f2937',
     textAlign: 'center',
     marginBottom: '48px',
     letterSpacing: '1px',
@@ -42,7 +42,7 @@ const Contact: React.FC = () => {
   };
 
   const getCardStyle = (cardKey: string): React.CSSProperties => ({
-    background: 'rgba(36, 36, 48, 0.95)',
+    background: 'rgba(255, 255, 255, 0.9)',
     borderRadius: '24px',
     padding: '32px',
     display: 'flex',
@@ -51,9 +51,9 @@ const Contact: React.FC = () => {
     justifyContent: 'flex-start',
     cursor: 'pointer',
     transition: 'all 0.4s ease',
-    boxShadow: '0 8px 32px rgba(0, 0, 0, 0.3)',
+    boxShadow: '0 8px 32px rgba(0, 0, 0, 0.1)',
     backdropFilter: 'blur(10px)',
-    border: '1px solid rgba(255, 255, 255, 0.08)',
+    border: '1px solid rgba(226, 232, 240, 0.8)',
     flex: activeCard === cardKey ? 3 : 1,
     position: 'relative',
     overflow: 'hidden',
@@ -62,14 +62,14 @@ const Contact: React.FC = () => {
   const cardTitleStyle: React.CSSProperties = {
     fontSize: '1.5rem',
     fontWeight: 700,
-    color: '#222',
+    color: '#1f2937',
     marginBottom: '16px',
     textAlign: 'center',
   };
 
   const cardDescStyle: React.CSSProperties = {
     fontSize: '1rem',
-    color: '#666',
+    color: '#6b7280',
     textAlign: 'center',
     lineHeight: 1.6,
     marginBottom: '24px',
@@ -140,7 +140,7 @@ const Contact: React.FC = () => {
       />
       <div style={containerStyle}>
         <h1 style={titleStyle}>您可以通过以下方式联系我们</h1>
-        <h2 style={{fontSize: '1.3rem', color: '#bdbdbd', textAlign: 'center', marginBottom: '32px', fontWeight: 400}}>
+        <h2 style={{fontSize: '1.3rem', color: '#6b7280', textAlign: 'center', marginBottom: '32px', fontWeight: 400}}>
           获取产品咨询、合作与技术支持，探客AI手机团队为您服务
         </h2>
         
@@ -308,4 +308,4 @@ const Contact: React.FC = () => {
   );
 };
 
-export default Contact; 
+export default Contact;

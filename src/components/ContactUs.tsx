@@ -81,12 +81,12 @@ const ContactUs: React.FC = () => {
 
   const sectionStyle: React.CSSProperties = {
     minHeight: isMobile ? 'auto' : '100vh',
-    background: 'linear-gradient(135deg, #1e3c72 0%, #2a5298 100%)',
+    background: 'linear-gradient(135deg, #ffffff 0%, #f8fafc 50%, #f1f5f9 100%)',
     display: 'flex',
     flexDirection: 'column',
     justifyContent: isMobile ? 'flex-start' : 'center',
     alignItems: 'center',
-    color: 'white',
+    color: '#1f2937',
     textAlign: 'center',
     position: 'relative',
     padding: isMobile ? '6rem 1rem 3rem' : '6rem 1rem 2rem'
@@ -102,7 +102,7 @@ const ContactUs: React.FC = () => {
     fontSize: isMobile ? '2rem' : 'clamp(2rem, 5vw, 3rem)',
     fontWeight: 'bold',
     marginBottom: isMobile ? '1rem' : '1.5rem',
-    background: 'linear-gradient(45deg, #ffffff, #e0e7ff)',
+    background: 'linear-gradient(45deg, #1f2937, #374151)',
     WebkitBackgroundClip: 'text',
     WebkitTextFillColor: 'transparent',
     backgroundClip: 'text'
@@ -111,25 +111,26 @@ const ContactUs: React.FC = () => {
   const subtitleStyle: React.CSSProperties = {
     fontSize: isMobile ? '1rem' : 'clamp(1rem, 3vw, 1.5rem)',
     marginBottom: isMobile ? '2rem' : '3rem',
-    color: 'rgba(255, 255, 255, 0.9)',
+    color: '#6b7280',
     lineHeight: '1.6',
     maxWidth: '600px',
     margin: `0 auto ${isMobile ? '2rem' : '3rem'}`
   };
 
   const contactCardStyle: React.CSSProperties = {
-    backgroundColor: 'rgba(255, 255, 255, 0.1)',
+    backgroundColor: 'rgba(255, 255, 255, 0.8)',
     borderRadius: '12px',
     padding: isMobile ? '1.5rem 1rem' : '2rem 1.5rem',
     backdropFilter: 'blur(10px)',
-    border: '1px solid rgba(255, 255, 255, 0.2)',
+    border: '1px solid rgba(229, 231, 235, 0.8)',
     transition: 'all 0.3s ease',
     textAlign: 'center',
     height: 'auto',
     minHeight: isMobile ? '150px' : '200px',
     display: 'flex',
     flexDirection: 'column',
-    justifyContent: 'center'
+    justifyContent: 'center',
+    boxShadow: '0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06)'
   };
 
   const contactIconStyle: React.CSSProperties = {
@@ -142,20 +143,20 @@ const ContactUs: React.FC = () => {
     fontSize: isMobile ? '1rem' : 'clamp(1.1rem, 2.5vw, 1.3rem)',
     fontWeight: '600',
     marginBottom: isMobile ? '0.8rem' : '1rem',
-    color: '#ffffff'
+    color: '#1f2937'
   };
 
   const contactInfoStyle: React.CSSProperties = {
     fontSize: isMobile ? '0.85rem' : 'clamp(0.9rem, 2vw, 1rem)',
-    color: 'rgba(255, 255, 255, 0.8)',
+    color: '#6b7280',
     lineHeight: '1.6'
   };
 
   const footerTextStyle: React.CSSProperties = {
     fontSize: isMobile ? '0.8rem' : 'clamp(0.8rem, 1.5vw, 0.9rem)',
-    color: 'rgba(255, 255, 255, 0.6)',
+    color: '#9ca3af',
     marginTop: isMobile ? '2rem' : '3rem',
-    borderTop: '1px solid rgba(255, 255, 255, 0.2)',
+    borderTop: '1px solid rgba(229, 231, 235, 0.5)',
     paddingTop: '2rem',
     paddingBottom: isMobile ? '2rem' : '0'
   };
@@ -229,13 +230,15 @@ const ContactUs: React.FC = () => {
             onMouseEnter={(e) => {
               if (!isMobile) {
                 e.currentTarget.style.transform = 'translateY(-5px)';
-                e.currentTarget.style.backgroundColor = 'rgba(255, 255, 255, 0.15)';
+                e.currentTarget.style.backgroundColor = 'rgba(255, 255, 255, 0.95)';
+                e.currentTarget.style.boxShadow = '0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05)';
               }
             }}
             onMouseLeave={(e) => {
               if (!isMobile) {
                 e.currentTarget.style.transform = 'translateY(0)';
-                e.currentTarget.style.backgroundColor = 'rgba(255, 255, 255, 0.1)';
+                e.currentTarget.style.backgroundColor = 'rgba(255, 255, 255, 0.8)';
+                e.currentTarget.style.boxShadow = '0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06)';
               }
             }}
           >
@@ -252,13 +255,15 @@ const ContactUs: React.FC = () => {
             onMouseEnter={(e) => {
               if (!isMobile) {
                 e.currentTarget.style.transform = 'translateY(-5px)';
-                e.currentTarget.style.backgroundColor = 'rgba(255, 255, 255, 0.15)';
+                e.currentTarget.style.backgroundColor = 'rgba(255, 255, 255, 0.95)';
+                e.currentTarget.style.boxShadow = '0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05)';
               }
             }}
             onMouseLeave={(e) => {
               if (!isMobile) {
                 e.currentTarget.style.transform = 'translateY(0)';
-                e.currentTarget.style.backgroundColor = 'rgba(255, 255, 255, 0.1)';
+                e.currentTarget.style.backgroundColor = 'rgba(255, 255, 255, 0.8)';
+                e.currentTarget.style.boxShadow = '0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06)';
               }
             }}
           >
@@ -275,13 +280,15 @@ const ContactUs: React.FC = () => {
             onMouseEnter={(e) => {
               if (!isMobile) {
                 e.currentTarget.style.transform = 'translateY(-5px)';
-                e.currentTarget.style.backgroundColor = 'rgba(255, 255, 255, 0.15)';
+                e.currentTarget.style.backgroundColor = 'rgba(255, 255, 255, 0.95)';
+                e.currentTarget.style.boxShadow = '0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05)';
               }
             }}
             onMouseLeave={(e) => {
               if (!isMobile) {
                 e.currentTarget.style.transform = 'translateY(0)';
-                e.currentTarget.style.backgroundColor = 'rgba(255, 255, 255, 0.1)';
+                e.currentTarget.style.backgroundColor = 'rgba(255, 255, 255, 0.8)';
+                e.currentTarget.style.boxShadow = '0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06)';
               }
             }}
           >
@@ -303,4 +310,4 @@ const ContactUs: React.FC = () => {
   );
 };
 
-export default ContactUs; 
+export default ContactUs;

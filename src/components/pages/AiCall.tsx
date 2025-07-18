@@ -5,7 +5,7 @@ const AiCall: React.FC = () => {
   const containerStyle: React.CSSProperties = {
     minHeight: '100vh',
     paddingTop: '64px',
-    background: '#18181c', // 深色背景
+    background: 'linear-gradient(135deg, #ffffff 0%, #f8fafc 50%, #f1f5f9 100%)', // 白色渐变背景
     padding: '64px 24px',
   };
 
@@ -18,7 +18,7 @@ const AiCall: React.FC = () => {
   const titleStyle: React.CSSProperties = {
     fontSize: '2.5rem',
     fontWeight: 700,
-    color: '#222',
+    color: '#1f2937',
     textAlign: 'center',
     marginBottom: '48px',
     letterSpacing: '1px',
@@ -55,7 +55,7 @@ const AiCall: React.FC = () => {
 
   const phoneScreenStyle: React.CSSProperties = {
     flex: 1,
-    background: 'linear-gradient(135deg, #23233a 0%, #18181c 100%)',
+    background: 'linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%)',
     borderRadius: '20px',
     padding: '20px',
     display: 'flex',
@@ -160,7 +160,7 @@ const AiCall: React.FC = () => {
 
   const descriptionStyle: React.CSSProperties = {
     fontSize: '1.1rem',
-    color: '#666',
+    color: '#6b7280',
     lineHeight: '1.8',
     marginBottom: '20px',
   };
@@ -201,7 +201,7 @@ const AiCall: React.FC = () => {
 
   const statLabelStyle: React.CSSProperties = {
     fontSize: '1.1rem',
-    color: '#666',
+    color: '#6b7280',
     fontWeight: 500,
   };
 
@@ -217,7 +217,7 @@ const AiCall: React.FC = () => {
       <div style={containerStyle}>
         <div style={sectionStyle}>
           <h1 style={titleStyle}>AI外呼助手</h1>
-          <h2 style={{fontSize: '1.3rem', color: '#bdbdbd', textAlign: 'center', marginBottom: '32px', fontWeight: 400}}>
+          <h2 style={{fontSize: '1.3rem', color: '#6b7280', textAlign: 'center', marginBottom: '32px', fontWeight: 400}}>
             智能电话营销，自动化客户触达，提升销售效率
           </h2>
           
@@ -460,10 +460,10 @@ const AiCall: React.FC = () => {
 
           {/* 第五屏：成功案例统计 */}
           <div style={{textAlign: 'center', marginTop: '100px'}}>
-            <h2 style={{fontSize: '2rem', fontWeight: 700, color: '#222', marginBottom: '20px'}}>
+            <h2 style={{fontSize: '2rem', fontWeight: 700, color: '#1f2937', marginBottom: '20px'}}>
               外呼成功案例
             </h2>
-            <p style={{fontSize: '1.2rem', color: '#666', marginBottom: '60px'}}>
+            <p style={{fontSize: '1.2rem', color: '#6b7280', marginBottom: '60px'}}>
               提升销售效率的最佳选择
             </p>
             <div style={statsContainerStyle}>
@@ -487,4 +487,4 @@ const AiCall: React.FC = () => {
   );
 };
 
-export default AiCall; 
+export default AiCall;
