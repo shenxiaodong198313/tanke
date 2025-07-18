@@ -37,11 +37,11 @@ const KuaiNavbar: React.FC = () => {
     left: 0,
     right: 0,
     zIndex: 9999,
-    backgroundColor: isScrolled ? 'rgba(24, 24, 28, 0.95)' : 'transparent',
-    background: isScrolled ? 'rgba(24, 24, 28, 0.95)' : 'linear-gradient(135deg, #18181c 0%, #23233a 100%)',
+    backgroundColor: isScrolled ? 'rgba(255, 255, 255, 0.95)' : 'transparent',
+    background: isScrolled ? 'rgba(255, 255, 255, 0.95)' : 'linear-gradient(135deg, #1e40af 0%, #3b82f6 100%)',
     backdropFilter: isScrolled ? 'blur(10px)' : 'none',
     borderBottom: 'none',
-    boxShadow: 'none',
+    boxShadow: isScrolled ? '0 2px 10px rgba(30, 64, 175, 0.1)' : 'none',
     transition: 'all 0.3s ease',
     padding: '0 0',
     height: '64px'
@@ -63,14 +63,14 @@ const KuaiNavbar: React.FC = () => {
     gap: '8px',
     fontSize: '20px',
     fontWeight: 'bold',
-    color: isScrolled ? '#a5b4fc' : 'white',
+    color: isScrolled ? '#1e40af' : 'white',
     textDecoration: 'none'
   };
 
   const logoIconStyle: React.CSSProperties = {
     width: '32px',
     height: '32px',
-    backgroundColor: isScrolled ? '#a5b4fc' : 'white',
+    backgroundColor: isScrolled ? '#1e40af' : 'white',
     borderRadius: '6px',
     display: 'flex',
     alignItems: 'center',
@@ -96,7 +96,7 @@ const KuaiNavbar: React.FC = () => {
   const menuItemStyle: React.CSSProperties = {
     fontSize: '14px',
     fontWeight: '400',
-    color: isScrolled ? 'rgba(255,255,255,0.85)' : 'rgba(255,255,255,0.95)',
+    color: isScrolled ? 'rgba(30,64,175,0.85)' : 'rgba(255,255,255,0.95)',
     textDecoration: 'none',
     transition: 'all 0.3s ease',
     cursor: 'pointer',
@@ -111,10 +111,17 @@ const KuaiNavbar: React.FC = () => {
   const mobileMenuButtonStyle: React.CSSProperties = {
     backgroundColor: 'transparent',
     border: 'none',
-    color: isScrolled ? '#000000d9' : 'white',
-    fontSize: '16px',
+    color: isScrolled ? '#1e40af' : 'white',
+    fontSize: '20px',
     cursor: 'pointer',
-    padding: '4px'
+    padding: '8px',
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'center',
+    width: '40px',
+    height: '40px',
+    borderRadius: '8px',
+    transition: 'all 0.3s ease'
   };
 
   const menuItems = [
@@ -188,7 +195,7 @@ const KuaiNavbar: React.FC = () => {
                           gap: '4px'
                         }}
                         whileHover={{ 
-                          color: isScrolled ? '#a5b4fc' : 'white',
+                          color: isScrolled ? '#3b82f6' : 'white',
                           scale: 1.02 
                         }}
                         transition={{ duration: 0.2 }}
@@ -209,19 +216,20 @@ const KuaiNavbar: React.FC = () => {
                             position: 'absolute',
                             top: '100%',
                             left: '0',
-                            backgroundColor: '#23233a',
+                            backgroundColor: 'white',
                             borderRadius: '8px',
-                            boxShadow: '0 4px 20px rgba(0, 0, 0, 0.25)',
+                            boxShadow: '0 4px 20px rgba(30, 64, 175, 0.15)',
                             padding: '8px 0',
                             minWidth: '160px',
                             zIndex: 1000,
-                            marginTop: '8px'
+                            marginTop: '8px',
+                            border: '1px solid rgba(30, 64, 175, 0.1)'
                           }}
                         >
                           {item.subItems?.map((subItem) => (
                             <motion.div
                               key={subItem.key}
-                              whileHover={{ backgroundColor: '#18181c', color: '#a5b4fc' }}
+                              whileHover={{ backgroundColor: '#f1f5f9', color: '#1e40af' }}
                               transition={{ duration: 0.2 }}
                             >
                               <Link
@@ -229,7 +237,7 @@ const KuaiNavbar: React.FC = () => {
                                 style={{
                                   display: 'block',
                                   padding: '8px 16px',
-                                  color: 'rgba(255,255,255,0.85)',
+                                  color: 'rgba(30,64,175,0.85)',
                                   textDecoration: 'none',
                                   fontSize: '14px',
                                   transition: 'all 0.2s'
@@ -244,7 +252,7 @@ const KuaiNavbar: React.FC = () => {
                     </div>
                   ) : (
                     <motion.div
-                      whileHover={{ color: isScrolled ? '#a5b4fc' : 'white', scale: 1.02 }}
+                      whileHover={{ color: isScrolled ? '#3b82f6' : 'white', scale: 1.02 }}
                       transition={{ duration: 0.2 }}
                     >
                       <Link
@@ -267,12 +275,20 @@ const KuaiNavbar: React.FC = () => {
 
           {/* Mobile Menu Button */}
           {isMobile && (
-            <button
+            <motion.button
               style={mobileMenuButtonStyle}
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+              whileHover={{ backgroundColor: 'rgba(30, 64, 175, 0.1)' }}
+              whileTap={{ scale: 0.95 }}
             >
-              ☰
-            </button>
+              <span style={{ 
+                display: 'block',
+                transform: isMobileMenuOpen ? 'rotate(90deg)' : 'rotate(0deg)',
+                transition: 'transform 0.3s ease'
+              }}>
+                {isMobileMenuOpen ? '✕' : '☰'}
+              </span>
+            </motion.button>
           )}
         </div>
       </div>
@@ -287,8 +303,9 @@ const KuaiNavbar: React.FC = () => {
           style={{
             backgroundColor: 'rgba(255, 255, 255, 0.98)',
             backdropFilter: 'blur(10px)',
-            borderTop: '1px solid rgba(0, 0, 0, 0.08)',
-            padding: '24px'
+            borderTop: '1px solid rgba(30, 64, 175, 0.1)',
+            padding: '24px',
+            boxShadow: '0 4px 20px rgba(30, 64, 175, 0.15)'
           }}
         >
           <div style={{
@@ -306,15 +323,18 @@ const KuaiNavbar: React.FC = () => {
                       style={{
                         fontSize: '16px',
                         fontWeight: '400',
-                        color: '#000000d9',
-                        padding: '8px 0',
+                        color: 'rgba(30, 64, 175, 0.9)',
+                        padding: '12px 0',
                         cursor: 'pointer',
                         display: 'flex',
                         alignItems: 'center',
-                        justifyContent: 'space-between'
+                        justifyContent: 'space-between',
+                        borderRadius: '8px',
+                        paddingLeft: '12px',
+                        paddingRight: '12px'
                       }}
                       onClick={() => setIsMobileProductsOpen(!isMobileProductsOpen)}
-                      whileHover={{ color: '#1677ff' }}
+                      whileHover={{ color: '#1e40af', backgroundColor: 'rgba(30, 64, 175, 0.1)' }}
                       initial={{ opacity: 0, x: -20 }}
                       animate={{ opacity: 1, x: 0 }}
                       transition={{ duration: 0.3, delay: index * 0.1 }}
@@ -348,11 +368,14 @@ const KuaiNavbar: React.FC = () => {
                               display: 'block',
                               fontSize: '14px',
                               fontWeight: '400',
-                              color: '#666666',
+                              color: 'rgba(30, 64, 175, 0.7)',
                               textDecoration: 'none',
-                              padding: '6px 0',
-                              borderLeft: '2px solid #e0e0e0',
-                              paddingLeft: '12px'
+                              padding: '8px 0',
+                              borderLeft: '2px solid rgba(30, 64, 175, 0.3)',
+                              paddingLeft: '16px',
+                              marginLeft: '8px',
+                              borderRadius: '0 8px 8px 0',
+                              transition: 'all 0.2s ease'
                             }}
                             onClick={() => setIsMobileMenuOpen(false)}
                           >
@@ -368,9 +391,12 @@ const KuaiNavbar: React.FC = () => {
                     style={{
                       fontSize: '16px',
                       fontWeight: '400',
-                      color: '#000000d9',
+                      color: 'rgba(30, 64, 175, 0.9)',
                       textDecoration: 'none',
-                      padding: '8px 0'
+                      padding: '12px',
+                      borderRadius: '8px',
+                      transition: 'all 0.2s ease',
+                      display: 'block'
                     }}
                     onClick={() => setIsMobileMenuOpen(false)}
                   >
@@ -386,4 +412,4 @@ const KuaiNavbar: React.FC = () => {
   );
 };
 
-export default KuaiNavbar; 
+export default KuaiNavbar;

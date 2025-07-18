@@ -72,7 +72,7 @@ const Footer: React.FC = () => {
   ];
 
   return (
-    <footer className="bg-gray-900 text-white">
+    <footer className="bg-gradient-to-br from-blue-50 to-white text-gray-800">
       {/* Main Footer */}
       <div className="container-custom py-16">
         <div className="grid grid-cols-1 lg:grid-cols-6 gap-8">
@@ -92,7 +92,7 @@ const Footer: React.FC = () => {
                 <span className="text-2xl font-bold">探客</span>
               </div>
 
-              <p className="text-gray-300 mb-6 leading-relaxed">
+              <p className="text-gray-600 mb-6 leading-relaxed">
                 专注于为企业提供全方位的数字化转型解决方案，让科技真正成为商业发展的普惠性工具。
               </p>
 
@@ -104,9 +104,9 @@ const Footer: React.FC = () => {
                     initial={{ opacity: 0, x: -20 }}
                     whileInView={{ opacity: 1, x: 0 }}
                     transition={{ duration: 0.6, delay: index * 0.1 }}
-                    className="flex items-center space-x-3 text-gray-300"
+                    className="flex items-center space-x-3 text-gray-600"
                   >
-                    <div className="text-blue-400">
+                    <div className="text-blue-600">
                       {contact.icon}
                     </div>
                     <span className="text-sm">{contact.value}</span>
@@ -125,7 +125,7 @@ const Footer: React.FC = () => {
               transition={{ duration: 0.6, delay: sectionIndex * 0.1 }}
               className="lg:col-span-1"
             >
-              <h3 className="text-lg font-semibold mb-6 text-white">
+              <h3 className="text-lg font-semibold mb-6 text-gray-800">
                 {section.title}
               </h3>
               <ul className="space-y-3">
@@ -139,7 +139,7 @@ const Footer: React.FC = () => {
                     <motion.a
                       href="#"
                       whileHover={{ x: 5 }}
-                      className="text-gray-300 hover:text-blue-400 transition-colors text-sm"
+                      className="text-gray-600 hover:text-blue-600 transition-colors text-sm"
                     >
                       {link}
                     </motion.a>
@@ -155,18 +155,18 @@ const Footer: React.FC = () => {
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.4 }}
-          className="mt-16 pt-8 border-t border-gray-800"
+          className="mt-16 pt-8 border-t border-gray-200"
         >
           <div className="max-w-md">
-            <h3 className="text-lg font-semibold mb-4">订阅我们的资讯</h3>
-            <p className="text-gray-300 text-sm mb-4">
+            <h3 className="text-lg font-semibold mb-4 text-gray-800">订阅我们的资讯</h3>
+            <p className="text-gray-600 text-sm mb-4">
               获取最新的产品更新和行业资讯
             </p>
             <div className="flex">
               <input
                 type="email"
                 placeholder="输入您的邮箱"
-                className="flex-1 px-4 py-3 bg-gray-800 border border-gray-700 rounded-l-lg focus:outline-none focus:border-blue-500 text-sm"
+                className="flex-1 px-4 py-3 bg-white border border-gray-300 rounded-l-lg focus:outline-none focus:border-blue-500 text-sm text-gray-800"
               />
               <motion.button
                 whileHover={{ scale: 1.05 }}
@@ -181,14 +181,14 @@ const Footer: React.FC = () => {
       </div>
 
       {/* Bottom Footer */}
-      <div className="border-t border-gray-800">
+      <div className="border-t border-gray-200">
         <div className="container-custom py-6">
           <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
             <motion.div
               initial={{ opacity: 0 }}
               whileInView={{ opacity: 1 }}
               transition={{ duration: 0.6 }}
-              className="text-gray-400 text-sm"
+              className="text-gray-500 text-sm"
             >
               © 2024 探客科技. 保留所有权利. | 粤ICP备12345678号
             </motion.div>
@@ -206,7 +206,7 @@ const Footer: React.FC = () => {
                   href={social.href}
                   whileHover={{ y: -2, scale: 1.1 }}
                   whileTap={{ scale: 0.95 }}
-                  className="w-10 h-10 bg-gray-800 hover:bg-blue-600 rounded-lg flex items-center justify-center transition-colors"
+                  className="w-10 h-10 bg-white border border-gray-200 hover:bg-blue-600 hover:text-white text-gray-600 rounded-lg flex items-center justify-center transition-colors shadow-sm"
                   title={social.label}
                 >
                   {social.icon}
@@ -220,4 +220,4 @@ const Footer: React.FC = () => {
   );
 };
 
-export default Footer; 
+export default Footer;

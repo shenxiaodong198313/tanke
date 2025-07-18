@@ -23,7 +23,7 @@ const KuaiFooter: React.FC = () => {
 
   const footerSectionStyle: React.CSSProperties = {
     background: '#1a1a2e',
-    padding: isMobile ? '0.8rem 1rem 0.5rem' : '1.5rem 2rem 1rem',
+    padding: isMobile ? '1.5rem 1rem 1rem' : '1.5rem 2rem 1rem',
     color: 'white',
     overflow: 'auto'
   };
@@ -46,8 +46,8 @@ const KuaiFooter: React.FC = () => {
           {/* 主要内容区域 */}
           <div style={{
             display: 'grid',
-            gridTemplateColumns: isMobile ? 'repeat(2, 1fr)' : 'repeat(6, 1fr)',
-            gap: isMobile ? '1rem' : '2rem',
+            gridTemplateColumns: isMobile ? 'repeat(3, 1fr)' : 'repeat(6, 1fr)',
+            gap: isMobile ? '1.5rem 0.8rem' : '2rem',
             flex: 1,
             alignItems: 'start',
             alignContent: 'start'
@@ -59,10 +59,10 @@ const KuaiFooter: React.FC = () => {
               height: '100%'
             }}>
               <h3 style={{
-                fontSize: '0.8rem',
+                fontSize: isMobile ? '0.9rem' : '0.8rem',
                 fontWeight: '600',
                 color: 'white',
-                marginBottom: '0.5rem',
+                marginBottom: isMobile ? '0.8rem' : '0.5rem',
                 minHeight: '1rem',
                 display: 'flex',
                 alignItems: 'center'
@@ -75,8 +75,8 @@ const KuaiFooter: React.FC = () => {
                 gap: '0.3rem',
                 flex: 1
               }}>
-                <button style={{ color: '#a1a1aa', background: 'none', border: 'none', textAlign: 'left', cursor: 'pointer', textDecoration: 'none', fontSize: '0.65rem', padding: 0, lineHeight: '1.2' }}>外呼系统</button>
-                <button style={{ color: '#a1a1aa', background: 'none', border: 'none', textAlign: 'left', cursor: 'pointer', textDecoration: 'none', fontSize: '0.65rem', padding: 0, lineHeight: '1.2' }}>云电销BPO</button>
+                <button style={{ color: '#a1a1aa', background: 'none', border: 'none', textAlign: 'left', cursor: 'pointer', textDecoration: 'none', fontSize: isMobile ? '0.75rem' : '0.65rem', padding: 0, lineHeight: '1.4' }}>外呼系统</button>
+                <button style={{ color: '#a1a1aa', background: 'none', border: 'none', textAlign: 'left', cursor: 'pointer', textDecoration: 'none', fontSize: isMobile ? '0.75rem' : '0.65rem', padding: 0, lineHeight: '1.4' }}>云电销BPO</button>
               </div>
             </div>
 
@@ -87,10 +87,10 @@ const KuaiFooter: React.FC = () => {
               height: '100%'
             }}>
               <h3 style={{
-                fontSize: '0.8rem',
+                fontSize: isMobile ? '0.9rem' : '0.8rem',
                 fontWeight: '600',
                 color: 'white',
-                marginBottom: '0.5rem',
+                marginBottom: isMobile ? '0.8rem' : '0.5rem',
                 minHeight: '1rem',
                 display: 'flex',
                 alignItems: 'center'
@@ -103,11 +103,11 @@ const KuaiFooter: React.FC = () => {
                 gap: '0.3rem',
                 flex: 1
               }}>
-                <button style={{ color: '#a1a1aa', background: 'none', border: 'none', textAlign: 'left', cursor: 'pointer', textDecoration: 'none', fontSize: '0.65rem', padding: 0, lineHeight: '1.2' }}>工作手机</button>
-                <button style={{ color: '#a1a1aa', background: 'none', border: 'none', textAlign: 'left', cursor: 'pointer', textDecoration: 'none', fontSize: '0.65rem', padding: 0, lineHeight: '1.2' }}>微小助</button>
-                <button style={{ color: '#a1a1aa', background: 'none', border: 'none', textAlign: 'left', cursor: 'pointer', textDecoration: 'none', fontSize: '0.65rem', padding: 0, lineHeight: '1.2' }}>微联络</button>
-                <button style={{ color: '#a1a1aa', background: 'none', border: 'none', textAlign: 'left', cursor: 'pointer', textDecoration: 'none', fontSize: '0.65rem', padding: 0, lineHeight: '1.2' }}>云客CRM</button>
-                <button style={{ color: '#a1a1aa', background: 'none', border: 'none', textAlign: 'left', cursor: 'pointer', textDecoration: 'none', fontSize: '0.65rem', padding: 0, lineHeight: '1.2' }}>设备管控</button>
+                <button style={{ color: '#a1a1aa', background: 'none', border: 'none', textAlign: 'left', cursor: 'pointer', textDecoration: 'none', fontSize: isMobile ? '0.75rem' : '0.65rem', padding: 0, lineHeight: '1.4' }}>工作手机</button>
+                <button style={{ color: '#a1a1aa', background: 'none', border: 'none', textAlign: 'left', cursor: 'pointer', textDecoration: 'none', fontSize: isMobile ? '0.75rem' : '0.65rem', padding: 0, lineHeight: '1.4' }}>微小助</button>
+                <button style={{ color: '#a1a1aa', background: 'none', border: 'none', textAlign: 'left', cursor: 'pointer', textDecoration: 'none', fontSize: isMobile ? '0.75rem' : '0.65rem', padding: 0, lineHeight: '1.4' }}>微联络</button>
+                <button style={{ color: '#a1a1aa', background: 'none', border: 'none', textAlign: 'left', cursor: 'pointer', textDecoration: 'none', fontSize: isMobile ? '0.75rem' : '0.65rem', padding: 0, lineHeight: '1.4' }}>云客CRM</button>
+                <button style={{ color: '#a1a1aa', background: 'none', border: 'none', textAlign: 'left', cursor: 'pointer', textDecoration: 'none', fontSize: isMobile ? '0.75rem' : '0.65rem', padding: 0, lineHeight: '1.4' }}>设备管控</button>
               </div>
             </div>
 
@@ -118,10 +118,10 @@ const KuaiFooter: React.FC = () => {
               height: '100%'
             }}>
               <h3 style={{
-                fontSize: '0.8rem',
+                fontSize: isMobile ? '0.9rem' : '0.8rem',
                 fontWeight: '600',
                 color: 'white',
-                marginBottom: '0.5rem',
+                marginBottom: isMobile ? '0.8rem' : '0.5rem',
                 minHeight: '1rem',
                 display: 'flex',
                 alignItems: 'center'
@@ -134,8 +134,8 @@ const KuaiFooter: React.FC = () => {
                 gap: '0.3rem',
                 flex: 1
               }}>
-                <button style={{ color: '#a1a1aa', background: 'none', border: 'none', textAlign: 'left', cursor: 'pointer', textDecoration: 'none', fontSize: '0.65rem', padding: 0, lineHeight: '1.2' }}>云小智</button>
-                <button style={{ color: '#a1a1aa', background: 'none', border: 'none', textAlign: 'left', cursor: 'pointer', textDecoration: 'none', fontSize: '0.65rem', padding: 0, lineHeight: '1.2' }}>数智员工</button>
+                <button style={{ color: '#a1a1aa', background: 'none', border: 'none', textAlign: 'left', cursor: 'pointer', textDecoration: 'none', fontSize: isMobile ? '0.75rem' : '0.65rem', padding: 0, lineHeight: '1.4' }}>云小智</button>
+                <button style={{ color: '#a1a1aa', background: 'none', border: 'none', textAlign: 'left', cursor: 'pointer', textDecoration: 'none', fontSize: isMobile ? '0.75rem' : '0.65rem', padding: 0, lineHeight: '1.4' }}>数智员工</button>
               </div>
             </div>
 
@@ -146,10 +146,10 @@ const KuaiFooter: React.FC = () => {
               height: '100%'
             }}>
               <h3 style={{
-                fontSize: '0.8rem',
+                fontSize: isMobile ? '0.9rem' : '0.8rem',
                 fontWeight: '600',
                 color: 'white',
-                marginBottom: '0.5rem',
+                marginBottom: isMobile ? '0.8rem' : '0.5rem',
                 minHeight: '1rem',
                 display: 'flex',
                 alignItems: 'center'
@@ -162,9 +162,9 @@ const KuaiFooter: React.FC = () => {
                 gap: '0.3rem',
                 flex: 1
               }}>
-                <button style={{ color: '#a1a1aa', background: 'none', border: 'none', textAlign: 'left', cursor: 'pointer', textDecoration: 'none', fontSize: '0.65rem', padding: 0, lineHeight: '1.2' }}>云客SCRM</button>
-                <button style={{ color: '#a1a1aa', background: 'none', border: 'none', textAlign: 'left', cursor: 'pointer', textDecoration: 'none', fontSize: '0.65rem', padding: 0, lineHeight: '1.2' }}>趣销销</button>
-                <button style={{ color: '#a1a1aa', background: 'none', border: 'none', textAlign: 'left', cursor: 'pointer', textDecoration: 'none', fontSize: '0.65rem', padding: 0, lineHeight: '1.2' }}>代运营服务</button>
+                <button style={{ color: '#a1a1aa', background: 'none', border: 'none', textAlign: 'left', cursor: 'pointer', textDecoration: 'none', fontSize: isMobile ? '0.75rem' : '0.65rem', padding: 0, lineHeight: '1.4' }}>云客SCRM</button>
+                <button style={{ color: '#a1a1aa', background: 'none', border: 'none', textAlign: 'left', cursor: 'pointer', textDecoration: 'none', fontSize: isMobile ? '0.75rem' : '0.65rem', padding: 0, lineHeight: '1.4' }}>趣销销</button>
+                <button style={{ color: '#a1a1aa', background: 'none', border: 'none', textAlign: 'left', cursor: 'pointer', textDecoration: 'none', fontSize: isMobile ? '0.75rem' : '0.65rem', padding: 0, lineHeight: '1.4' }}>代运营服务</button>
               </div>
             </div>
 
@@ -175,10 +175,10 @@ const KuaiFooter: React.FC = () => {
               height: '100%'
             }}>
               <h3 style={{
-                fontSize: '0.8rem',
+                fontSize: isMobile ? '0.9rem' : '0.8rem',
                 fontWeight: '600',
                 color: 'white',
-                marginBottom: '0.5rem',
+                marginBottom: isMobile ? '0.8rem' : '0.5rem',
                 minHeight: '1rem',
                 display: 'flex',
                 alignItems: 'center'
@@ -191,8 +191,8 @@ const KuaiFooter: React.FC = () => {
                 gap: '0.3rem',
                 flex: 1
               }}>
-                <button style={{ color: '#a1a1aa', background: 'none', border: 'none', textAlign: 'left', cursor: 'pointer', textDecoration: 'none', fontSize: '0.65rem', padding: 0, lineHeight: '1.2' }}>短视频矩阵</button>
-                <button style={{ color: '#a1a1aa', background: 'none', border: 'none', textAlign: 'left', cursor: 'pointer', textDecoration: 'none', fontSize: '0.65rem', padding: 0, lineHeight: '1.2' }}>无人直播</button>
+                <button style={{ color: '#a1a1aa', background: 'none', border: 'none', textAlign: 'left', cursor: 'pointer', textDecoration: 'none', fontSize: isMobile ? '0.75rem' : '0.65rem', padding: 0, lineHeight: '1.4' }}>短视频矩阵</button>
+                <button style={{ color: '#a1a1aa', background: 'none', border: 'none', textAlign: 'left', cursor: 'pointer', textDecoration: 'none', fontSize: isMobile ? '0.75rem' : '0.65rem', padding: 0, lineHeight: '1.4' }}>无人直播</button>
               </div>
             </div>
 
@@ -203,10 +203,10 @@ const KuaiFooter: React.FC = () => {
               height: '100%'
             }}>
               <h3 style={{
-                fontSize: '0.8rem',
+                fontSize: isMobile ? '0.9rem' : '0.8rem',
                 fontWeight: '600',
                 color: 'white',
-                marginBottom: '0.5rem',
+                marginBottom: isMobile ? '0.8rem' : '0.5rem',
                 minHeight: '1rem',
                 display: 'flex',
                 alignItems: 'center'
@@ -219,10 +219,10 @@ const KuaiFooter: React.FC = () => {
                 gap: '0.3rem',
                 flex: 1
               }}>
-                <button style={{ color: '#a1a1aa', background: 'none', border: 'none', textAlign: 'left', cursor: 'pointer', textDecoration: 'none', fontSize: '0.65rem', padding: 0, lineHeight: '1.2' }}>公司简介</button>
-                <button style={{ color: '#a1a1aa', background: 'none', border: 'none', textAlign: 'left', cursor: 'pointer', textDecoration: 'none', fontSize: '0.65rem', padding: 0, lineHeight: '1.2' }}>团队理念</button>
-                <button style={{ color: '#a1a1aa', background: 'none', border: 'none', textAlign: 'left', cursor: 'pointer', textDecoration: 'none', fontSize: '0.65rem', padding: 0, lineHeight: '1.2' }}>投资背景</button>
-                <button style={{ color: '#a1a1aa', background: 'none', border: 'none', textAlign: 'left', cursor: 'pointer', textDecoration: 'none', fontSize: '0.65rem', padding: 0, lineHeight: '1.2' }}>云客动态</button>
+                <button style={{ color: '#a1a1aa', background: 'none', border: 'none', textAlign: 'left', cursor: 'pointer', textDecoration: 'none', fontSize: isMobile ? '0.75rem' : '0.65rem', padding: 0, lineHeight: '1.4' }}>公司简介</button>
+                <button style={{ color: '#a1a1aa', background: 'none', border: 'none', textAlign: 'left', cursor: 'pointer', textDecoration: 'none', fontSize: isMobile ? '0.75rem' : '0.65rem', padding: 0, lineHeight: '1.4' }}>团队理念</button>
+                <button style={{ color: '#a1a1aa', background: 'none', border: 'none', textAlign: 'left', cursor: 'pointer', textDecoration: 'none', fontSize: isMobile ? '0.75rem' : '0.65rem', padding: 0, lineHeight: '1.4' }}>投资背景</button>
+                <button style={{ color: '#a1a1aa', background: 'none', border: 'none', textAlign: 'left', cursor: 'pointer', textDecoration: 'none', fontSize: isMobile ? '0.75rem' : '0.65rem', padding: 0, lineHeight: '1.4' }}>云客动态</button>
               </div>
             </div>
           </div>
@@ -230,14 +230,16 @@ const KuaiFooter: React.FC = () => {
           {/* 底部版权信息 */}
           <div style={{
             borderTop: '1px solid #444',
-            paddingTop: '1.2rem',
+            paddingTop: isMobile ? '1rem' : '1.2rem',
             textAlign: 'center',
-            marginTop: '1.2rem',
-            fontSize: isMobile ? '0.85rem' : '1rem',
+            marginTop: isMobile ? '2rem' : '1.2rem',
+            fontSize: isMobile ? '0.7rem' : '1rem',
             color: '#b0b0b0',
             letterSpacing: '0.02em',
             background: 'transparent',
-            fontWeight: 400
+            fontWeight: 400,
+            lineHeight: isMobile ? '1.4' : '1.2',
+            padding: isMobile ? '0 0.5rem' : '0'
           }}>
             Copyright © 2025 北京探客互动科技有限公司 版权所有 京ICP备2022018369号
           </div>
@@ -247,4 +249,4 @@ const KuaiFooter: React.FC = () => {
   );
 };
 
-export default KuaiFooter; 
+export default KuaiFooter;

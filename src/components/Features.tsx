@@ -104,7 +104,7 @@ const Features: React.FC = () => {
   };
 
   return (
-    <section id="solutions" style={{ background: '#030303', padding: '64px 0' }}>
+    <section id="solutions" style={{ background: 'linear-gradient(135deg, #f1f5f9 0%, #e2e8f0 50%, #cbd5e1 100%)', padding: '64px 0' }}>
       <div className="container-custom">
         <motion.div
           ref={ref}
@@ -120,7 +120,7 @@ const Features: React.FC = () => {
               fontWeight: 700,
               marginBottom: '1.5rem',
               letterSpacing: '-2px',
-              background: 'linear-gradient(90deg, #a5b4fc 0%, #fca5a5 100%)',
+              background: 'linear-gradient(90deg, #1e40af 0%, #3b82f6 100%)',
               WebkitBackgroundClip: 'text',
               WebkitTextFillColor: 'transparent',
               display: 'inline-block',
@@ -128,7 +128,7 @@ const Features: React.FC = () => {
           >
             为什么选择
             <span style={{
-              background: 'linear-gradient(90deg, #a5b4fc 0%, #fca5a5 100%)',
+              background: 'linear-gradient(90deg, #1e40af 0%, #3b82f6 100%)',
               WebkitBackgroundClip: 'text',
               WebkitTextFillColor: 'transparent',
               display: 'inline-block',
@@ -140,7 +140,7 @@ const Features: React.FC = () => {
             variants={itemVariants}
             style={{
               fontSize: '1.25rem',
-              color: 'rgba(255,255,255,0.85)',
+              color: '#64748b',
               maxWidth: 700,
               margin: '0 auto',
               lineHeight: 1.7,
@@ -170,11 +170,10 @@ const Features: React.FC = () => {
                 transition: { duration: 0.3 }
               }}
               style={{
-                background: 'rgba(30,30,40,0.92)',
+                background: 'rgba(255,255,255,0.95)',
                 borderRadius: '1.5rem',
-                boxShadow: '0 8px 32px rgba(0,0,0,0.18)',
-                border: '1.5px solid',
-                borderImage: 'linear-gradient(90deg, #a5b4fc 0%, #fca5a5 100%) 1',
+                boxShadow: '0 8px 32px rgba(30, 64, 175, 0.1)',
+                border: '1px solid rgba(30, 64, 175, 0.1)',
                 padding: '2.5rem 2rem',
                 transition: 'all 0.3s cubic-bezier(0.23,0.86,0.39,0.96)',
                 minHeight: 320,
@@ -187,26 +186,26 @@ const Features: React.FC = () => {
               <div style={{
                 padding: 18,
                 borderRadius: 18,
-                background: 'linear-gradient(90deg, #a5b4fc 0%, #fca5a5 100%)',
+                background: 'linear-gradient(90deg, #1e40af 0%, #3b82f6 100%)',
                 marginBottom: 24,
                 display: 'inline-flex',
                 alignItems: 'center',
                 justifyContent: 'center',
-                boxShadow: '0 4px 24px rgba(165,180,252,0.12)',
+                boxShadow: '0 4px 24px rgba(30, 64, 175, 0.12)',
               }}>
                 {feature.icon}
               </div>
               <h3 style={{
                 fontSize: '1.25rem',
                 fontWeight: 700,
-                color: 'white',
+                color: '#1e40af',
                 marginBottom: 16,
                 letterSpacing: '-1px',
               }}>
                 {feature.title}
               </h3>
               <p style={{
-                color: 'rgba(255,255,255,0.8)',
+                color: '#64748b',
                 lineHeight: 1.7,
                 fontSize: '1rem',
                 marginBottom: 0,
@@ -218,25 +217,25 @@ const Features: React.FC = () => {
                   marginTop: 32,
                   display: 'flex',
                   alignItems: 'center',
-                  color: 'white',
+                  color: '#1e40af',
                   fontWeight: 600,
                   fontSize: '1rem',
                   cursor: 'pointer',
-                  background: 'linear-gradient(90deg, #a5b4fc 0%, #fca5a5 100%)',
+                  background: 'linear-gradient(90deg, #1e40af 0%, #3b82f6 100%)',
                   borderRadius: 9999,
                   padding: '0.5rem 1.5rem',
-                  boxShadow: '0 4px 24px rgba(165,180,252,0.10)',
+                  boxShadow: '0 4px 24px rgba(30, 64, 175, 0.10)',
                   transition: 'all 0.3s cubic-bezier(0.23,0.86,0.39,0.96)',
                   letterSpacing: '1px',
                 }}
                 whileHover={{ x: 5 }}
                 onClick={() => openContactModal()}
               >
-                <span style={{ color: '#030303' }}>了解更多</span>
+                <span style={{ color: 'white' }}>了解更多</span>
                 <motion.svg
                   style={{ marginLeft: 8 }}
                   fill="none"
-                  stroke="#030303"
+                  stroke="white"
                   width={18}
                   height={18}
                   viewBox="0 0 24 24"
@@ -253,4 +252,4 @@ const Features: React.FC = () => {
   );
 };
 
-export default Features; 
+export default Features;

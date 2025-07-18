@@ -13,8 +13,8 @@ const Hero: React.FC = () => {
   return (
     <section id="home" className="relative min-h-screen flex items-center overflow-hidden">
       {/* Background */}
-      <div className="absolute inset-0 gradient-bg">
-        <div className="absolute inset-0 bg-black/20"></div>
+      <div className="absolute inset-0 bg-gradient-to-br from-blue-50 via-white to-blue-100">
+        <div className="absolute inset-0 bg-blue-600/10"></div>
       </div>
 
       {/* Animated Background Elements */}
@@ -22,7 +22,7 @@ const Hero: React.FC = () => {
         {[...Array(20)].map((_, i) => (
           <motion.div
             key={i}
-            className="absolute w-2 h-2 bg-white/20 rounded-full"
+            className="absolute w-2 h-2 bg-blue-400/30 rounded-full"
             initial={{ 
               x: Math.random() * 1200,
               y: Math.random() * 800,
@@ -41,7 +41,7 @@ const Hero: React.FC = () => {
       </div>
 
       <div className="container-custom relative z-10">
-        <div className="max-w-4xl mx-auto text-center text-white">
+        <div className="max-w-4xl mx-auto text-center text-gray-800">
           {/* Main Heading */}
           <motion.h1
             initial={{ opacity: 0, y: 50 }}
@@ -51,7 +51,7 @@ const Hero: React.FC = () => {
           >
             让你的商业智能
             <br />
-            <span className="bg-gradient-to-r from-yellow-400 to-orange-400 bg-clip-text text-transparent">
+            <span className="bg-gradient-to-r from-blue-600 to-blue-800 bg-clip-text text-transparent">
               快人一步
             </span>
           </motion.h1>
@@ -61,7 +61,7 @@ const Hero: React.FC = () => {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}
-            className="text-xl md:text-2xl text-white/90 mb-8 leading-relaxed"
+            className="text-xl md:text-2xl text-gray-600 mb-8 leading-relaxed"
           >
             数字化转型10年沉淀，一个平台解决所有业务场景
           </motion.p>
@@ -76,7 +76,7 @@ const Hero: React.FC = () => {
             <motion.button
               whileHover={{ scale: 1.05, y: -2 }}
               whileTap={{ scale: 0.95 }}
-              className="bg-white text-blue-600 px-8 py-4 rounded-full font-semibold text-lg shadow-xl hover:shadow-2xl transition-all duration-300 inline-flex items-center space-x-2"
+              className="bg-blue-600 text-white px-8 py-4 rounded-full font-semibold text-lg shadow-xl hover:shadow-2xl transition-all duration-300 inline-flex items-center space-x-2"
 
             >
               <span>立即体验</span>
@@ -100,11 +100,11 @@ const Hero: React.FC = () => {
                 whileHover={{ scale: 1.05 }}
                 className="text-center"
               >
-                <div className="flex justify-center mb-2 text-yellow-400">
+                <div className="flex justify-center mb-2 text-blue-600">
                   {stat.icon}
                 </div>
-                <div className="text-2xl font-bold mb-1">{stat.value}</div>
-                <div className="text-sm text-white/80">{stat.label}</div>
+                <div className="text-2xl font-bold mb-1 text-gray-800">{stat.value}</div>
+                <div className="text-sm text-gray-600">{stat.label}</div>
               </motion.div>
             ))}
           </motion.div>
@@ -121,12 +121,12 @@ const Hero: React.FC = () => {
         <motion.div
           animate={{ y: [0, 10, 0] }}
           transition={{ duration: 2, repeat: Infinity }}
-          className="w-6 h-10 border-2 border-white/50 rounded-full flex justify-center"
+          className="w-6 h-10 border-2 border-blue-400/50 rounded-full flex justify-center"
         >
           <motion.div
             animate={{ y: [0, 12, 0] }}
             transition={{ duration: 2, repeat: Infinity }}
-            className="w-1 h-3 bg-white/70 rounded-full mt-2"
+            className="w-1 h-3 bg-blue-500/70 rounded-full mt-2"
           />
         </motion.div>
       </motion.div>
@@ -134,4 +134,4 @@ const Hero: React.FC = () => {
   );
 };
 
-export default Hero; 
+export default Hero;

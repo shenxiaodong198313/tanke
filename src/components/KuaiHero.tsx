@@ -23,7 +23,7 @@ const KuaiHero: React.FC = () => {
   };
 
   const heroStyle: React.CSSProperties = {
-    background: '#030303', // 深色背景
+    background: 'linear-gradient(135deg, #1e40af 0%, #3b82f6 50%, #60a5fa 100%)', // 蓝色渐变背景
     minHeight: '80vh',
     display: 'flex',
     flexDirection: 'column',
@@ -36,7 +36,7 @@ const KuaiHero: React.FC = () => {
   const overlayStyle: React.CSSProperties = {
     position: 'absolute',
     inset: 0,
-    background: 'rgba(0, 0, 0, 0.05)'
+    background: 'rgba(255, 255, 255, 0.05)'
   };
 
   const mainContentStyle: React.CSSProperties = {
@@ -67,70 +67,72 @@ const KuaiHero: React.FC = () => {
   };
 
   const mainTitleStyle: React.CSSProperties = {
-    fontSize: isMobile ? '48px' : '68px',
+    fontSize: isMobile ? '36px' : '68px',
     fontWeight: 'bold',
-    lineHeight: '1.2',
-    marginBottom: '16px',
+    lineHeight: isMobile ? '1.1' : '1.2',
+    marginBottom: isMobile ? '12px' : '16px',
     color: 'white',
-    letterSpacing: '-2px',
-    background: 'linear-gradient(90deg, #a5b4fc 0%, #fca5a5 100%)',
+    letterSpacing: isMobile ? '-1px' : '-2px',
+    background: 'linear-gradient(90deg, #ffffff 0%, #e0f2fe 100%)',
     WebkitBackgroundClip: 'text',
     WebkitTextFillColor: 'transparent',
     display: 'inline-block',
   };
 
   const subtitleStyle: React.CSSProperties = {
-    fontSize: isMobile ? '18px' : '20px',
+    fontSize: isMobile ? '16px' : '20px',
     fontWeight: '400',
-    marginBottom: '20px',
+    marginBottom: isMobile ? '16px' : '20px',
     color: 'rgba(255, 255, 255, 0.85)',
     lineHeight: '1.6'
   };
 
   const sloganStyle: React.CSSProperties = {
-    fontSize: isMobile ? '16px' : '18px',
+    fontSize: isMobile ? '14px' : '18px',
     fontWeight: '400',
-    marginBottom: '40px',
+    marginBottom: isMobile ? '32px' : '40px',
     color: 'rgba(255, 255, 255, 0.75)',
     lineHeight: '1.6'
   };
 
   const buttonContainerStyle: React.CSSProperties = {
     display: 'flex',
-    gap: '16px',
+    gap: isMobile ? '12px' : '16px',
     justifyContent: isMobile ? 'center' : 'flex-start',
     flexWrap: 'wrap',
-    marginBottom: '120px' // 增加按钮和白色容器之间的间距
+    marginBottom: isMobile ? '80px' : '120px',
+    flexDirection: isMobile ? 'column' : 'row',
+    alignItems: isMobile ? 'center' : 'flex-start'
   };
 
   const primaryButtonStyle: React.CSSProperties = {
-    background: 'linear-gradient(90deg, #a5b4fc 0%, #fca5a5 100%)',
-    color: '#030303',
-    padding: '12px 24px',
-    borderRadius: '6px',
+    background: 'linear-gradient(90deg, #ffffff 0%, #f8fafc 100%)',
+    color: '#1e40af',
+    padding: isMobile ? '14px 32px' : '12px 24px',
+    borderRadius: '8px',
     fontWeight: '600',
-    fontSize: '16px',
+    fontSize: isMobile ? '16px' : '16px',
     border: 'none',
     cursor: 'pointer',
     transition: 'all 0.3s cubic-bezier(0.23,0.86,0.39,0.96)',
-    minWidth: '120px',
-    height: '44px',
-    boxShadow: '0 8px 32px rgba(0,0,0,0.18)',
+    minWidth: isMobile ? '200px' : '120px',
+    height: isMobile ? '48px' : '44px',
+    boxShadow: '0 8px 32px rgba(30,64,175,0.18)',
     letterSpacing: '1px',
   };
 
   const secondaryButtonStyle: React.CSSProperties = {
     backgroundColor: 'transparent',
     color: 'white',
-    padding: '12px 24px',
-    borderRadius: '6px',
+    padding: isMobile ? '14px 32px' : '12px 24px',
+    borderRadius: '8px',
     fontWeight: '600',
-    fontSize: '16px',
+    fontSize: isMobile ? '16px' : '16px',
     border: '1px solid rgba(255, 255, 255, 0.4)',
     cursor: 'pointer',
     transition: 'all 0.3s ease',
-    minWidth: '120px',
-    height: '44px'
+    minWidth: isMobile ? '200px' : '120px',
+    height: isMobile ? '48px' : '44px'
   };
 
   const illustrationStyle: React.CSSProperties = {
@@ -160,11 +162,12 @@ const KuaiHero: React.FC = () => {
   const featuresStyle: React.CSSProperties = {
     display: 'grid',
     gridTemplateColumns: isMobile ? '1fr' : 'repeat(3, 1fr)',
-    gap: isMobile ? '32px' : '48px' // 减少间距
+    gap: isMobile ? '16px' : '24px' // 减少间距
   };
 
   const featureItemStyle: React.CSSProperties = {
-    textAlign: 'center'
+    textAlign: 'center',
+    padding: isMobile ? '16px' : '20px'
   };
 
   const featureIconStyle: React.CSSProperties = {
@@ -181,14 +184,14 @@ const KuaiHero: React.FC = () => {
   };
 
   const featureTitleStyle: React.CSSProperties = {
-    fontSize: '16px',
+    fontSize: isMobile ? '14px' : '16px',
     fontWeight: '600',
     marginBottom: '6px', // 减少间距
     color: '#000000d9'
   };
 
   const featureDescStyle: React.CSSProperties = {
-    fontSize: '14px',
+    fontSize: isMobile ? '12px' : '14px',
     color: '#00000073',
     lineHeight: '1.4' // 减少行高
   };
@@ -364,4 +367,4 @@ const KuaiHero: React.FC = () => {
   );
 };
 
-export default KuaiHero; 
+export default KuaiHero;

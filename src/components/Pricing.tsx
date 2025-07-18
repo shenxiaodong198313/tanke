@@ -16,6 +16,45 @@ const Pricing: React.FC = () => {
     return () => window.removeEventListener('resize', checkMobile);
   }, []);
 
+  const cardStyle: React.CSSProperties = {
+    backgroundColor: 'rgba(255, 255, 255, 0.9)',
+    borderRadius: '16px',
+    padding: isMobile ? '24px' : '32px',
+    border: '1px solid rgba(30, 64, 175, 0.1)',
+    backdropFilter: 'blur(10px)',
+    transition: 'all 0.3s ease',
+    position: 'relative',
+    overflow: 'hidden',
+    minHeight: isMobile ? '350px' : '400px',
+    display: 'flex',
+    flexDirection: 'column',
+    boxShadow: '0 4px 16px rgba(30, 64, 175, 0.1)'
+  };
+
+  const planNameStyle: React.CSSProperties = {
+    fontSize: isMobile ? '20px' : '24px',
+    fontWeight: '600',
+    color: '#1e40af',
+    marginBottom: '8px'
+  };
+
+  const planDescStyle: React.CSSProperties = {
+    fontSize: isMobile ? '13px' : '14px',
+    color: 'rgba(30, 64, 175, 0.7)',
+    marginBottom: isMobile ? '20px' : '24px',
+    lineHeight: '1.5'
+  };
+
+  const priceStyle: React.CSSProperties = {
+    fontSize: isMobile ? '36px' : '48px',
+    fontWeight: 'bold',
+    color: '#1e40af',
+    marginBottom: isMobile ? '20px' : '24px',
+    display: 'flex',
+    alignItems: 'baseline',
+    gap: '8px'
+  };
+
   const industryApps = [
     {
       title: '房租租赁',
@@ -51,7 +90,7 @@ const Pricing: React.FC = () => {
 
   const sectionStyle: React.CSSProperties = {
     minHeight: '100vh',
-    background: '#030303', // 深色背景
+    background: 'linear-gradient(135deg, #f1f5f9 0%, #e2e8f0 50%, #cbd5e1 100%)', // 浅蓝白色渐变背景
     display: 'flex',
     flexDirection: 'column',
     justifyContent: 'center',
@@ -72,48 +111,53 @@ const Pricing: React.FC = () => {
   };
 
   const titleStyle: React.CSSProperties = {
-    fontSize: isMobile ? '2.5rem' : '3.5rem',
+    fontSize: isMobile ? '28px' : '48px',
     fontWeight: 'bold',
-    color: 'white',
-    marginBottom: '1rem',
+    color: '#1e40af',
+    marginBottom: isMobile ? '12px' : '16px',
     lineHeight: '1.2',
-    letterSpacing: '-2px',
-    background: 'linear-gradient(90deg, #a5b4fc 0%, #fca5a5 100%)',
+    letterSpacing: isMobile ? '-0.5px' : '-1px',
+    background: 'linear-gradient(90deg, #1e40af 0%, #3b82f6 100%)',
     WebkitBackgroundClip: 'text',
     WebkitTextFillColor: 'transparent',
     display: 'inline-block',
+    textAlign: 'center'
   };
 
   const subtitleStyle: React.CSSProperties = {
-    fontSize: isMobile ? '1rem' : '1.2rem',
-    color: '#666',
-    lineHeight: '1.6'
+    fontSize: isMobile ? '14px' : '18px',
+    color: '#64748b',
+    lineHeight: '1.6',
+    textAlign: 'center',
+    marginBottom: isMobile ? '40px' : '60px',
+    padding: isMobile ? '0 16px' : '0'
   };
 
   const phonesContainerStyle: React.CSSProperties = {
     display: 'flex',
     justifyContent: 'center',
     alignItems: 'flex-end',
-    gap: isMobile ? '1rem' : '2rem',
+    gap: isMobile ? '24px' : '32px',
     flexWrap: isMobile ? 'wrap' : 'nowrap',
-    maxWidth: '100%'
+    maxWidth: '100%',
+    padding: isMobile ? '0 16px' : '0'
   };
 
   const phoneFrameStyle: React.CSSProperties = {
     width: isMobile ? '140px' : '200px',
     height: isMobile ? '280px' : '400px',
-    backgroundColor: '#1a1a1a',
+    backgroundColor: '#1e40af',
     borderRadius: isMobile ? '20px' : '30px',
     padding: isMobile ? '4px' : '6px',
     position: 'relative',
-    boxShadow: '0 10px 30px rgba(0, 0, 0, 0.3)',
+    boxShadow: '0 10px 30px rgba(30, 64, 175, 0.3)',
     marginBottom: isMobile ? '1rem' : '0'
   };
 
   const phoneScreenStyle = (app: any): React.CSSProperties => ({
     width: '100%',
     height: '100%',
-    background: 'linear-gradient(90deg, #a5b4fc 0%, #fca5a5 100%)',
+    background: 'linear-gradient(90deg, #3b82f6 0%, #60a5fa 100%)',
     borderRadius: isMobile ? '16px' : '24px',
     position: 'relative',
     overflow: 'hidden',
@@ -148,7 +192,7 @@ const Pricing: React.FC = () => {
     transform: 'translateX(-50%)',
     width: isMobile ? '60px' : '80px',
     height: isMobile ? '12px' : '18px',
-    backgroundColor: '#1a1a1a',
+    backgroundColor: '#1e40af',
     borderRadius: isMobile ? '0 0 8px 8px' : '0 0 12px 12px',
     zIndex: 10
   };
@@ -156,7 +200,7 @@ const Pricing: React.FC = () => {
   const labelStyle: React.CSSProperties = {
     fontSize: isMobile ? '0.9rem' : '1.1rem',
     fontWeight: '600',
-    color: '#1a1a1a',
+    color: '#1e40af',
     marginTop: isMobile ? '0.5rem' : '1rem'
   };
 
@@ -312,4 +356,4 @@ const Pricing: React.FC = () => {
   );
 };
 
-export default Pricing; 
+export default Pricing;
