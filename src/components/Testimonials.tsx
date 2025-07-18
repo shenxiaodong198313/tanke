@@ -1,5 +1,4 @@
-import React, { useState, useEffect } from 'react';
-import { motion } from 'framer-motion';
+import React, { useState } from 'react';
 import { ChevronLeft, ChevronRight, Quote } from 'lucide-react';
 
 const testimonialsData = [
@@ -32,47 +31,36 @@ const testimonialsData = [
 
 const Testimonials: React.FC = () => {
   const itemsPerPage = 3;
-  const itemsToClone = itemsPerPage;
-
-  const [displayItems, setDisplayItems] = useState<any[]>([]);
-  const [currentIndex, setCurrentIndex] = useState(itemsToClone);
+  const totalItems = testimonialsData.length;
+  
+  const [currentIndex, setCurrentIndex] = useState(0);
   const [isTransitioning, setIsTransitioning] = useState(false);
-
-  useEffect(() => {
-    const clonedBefore = testimonialsData.slice(-itemsToClone);
-    const clonedAfter = testimonialsData.slice(0, itemsToClone);
-    setDisplayItems([...clonedBefore, ...testimonialsData, ...clonedAfter]);
-  }, []);
 
   const handleNext = () => {
     if (isTransitioning) return;
     setIsTransitioning(true);
-    setCurrentIndex(prev => prev + 1);
+    setCurrentIndex(prev => (prev + 1) % totalItems);
+    setTimeout(() => setIsTransitioning(false), 400);
   };
 
   const handlePrev = () => {
     if (isTransitioning) return;
     setIsTransitioning(true);
-    setCurrentIndex(prev => prev - 1);
+    setCurrentIndex(prev => (prev - 1 + totalItems) % totalItems);
+    setTimeout(() => setIsTransitioning(false), 400);
   };
 
-  const handleTransitionEnd = () => {
-    if (currentIndex === testimonialsData.length + itemsToClone) {
-      // Just finished animating to the first item's clone at the end
-      setIsTransitioning(false); // This will make the next transition instantaneous
-      setCurrentIndex(itemsToClone);
-    } else if (currentIndex === itemsToClone - 1) {
-      // Just finished animating to the last item's clone at the beginning
-      setIsTransitioning(false); // This will make the next transition instantaneous
-      setCurrentIndex(testimonialsData.length + itemsToClone - 1);
-    } else if (isTransitioning) {
-      // It was a regular animation, now it's finished
-      setIsTransitioning(false);
+  const getVisibleItems = () => {
+    const items = [];
+    for (let i = 0; i < itemsPerPage; i++) {
+      const index = (currentIndex + i) % totalItems;
+      items.push(testimonialsData[index]);
     }
+    return items;
   };
   
   return (
-    <section style={{ background: '#030303', padding: '80px 0', overflow: 'hidden' }}>
+    <section style={{ background: '#030303', padding: '120px 0', overflow: 'visible' }}>
       <div className="container mx-auto px-4 relative">
         <h2 style={{
           fontSize: '2.5rem',
@@ -98,19 +86,11 @@ const Testimonials: React.FC = () => {
         }}>
           我们的客户来自各行各业，他们对探客AI手机的评价是我们不断前进的动力。
         </p>
-        <div className="relative" style={{ paddingTop: '40px', paddingBottom: '20px' }}>
-          <div className="w-full overflow-hidden">
-            <motion.div
-              className="flex"
-              animate={{ x: `-${(currentIndex * 100) / itemsPerPage}%` }}
-              transition={{ 
-                duration: isTransitioning ? 0.4 : 0,
-                ease: 'easeInOut' 
-              }}
-              onAnimationComplete={handleTransitionEnd}
-            >
-              {displayItems.map((testimonial, index) => (
-                <div key={index} style={{ flex: `0 0 ${100 / itemsPerPage}%`, padding: '0 1rem' }}>
+        <div className="relative" style={{ paddingTop: '80px', paddingBottom: '80px', margin: '0 -40px' }}>
+          <div className="w-full" style={{ overflow: 'visible', padding: '0 60px' }}>
+            <div className="flex transition-transform duration-400 ease-in-out">
+              {getVisibleItems().map((testimonial, index) => (
+                <div key={`${currentIndex}-${index}`} style={{ flex: `0 0 ${100 / itemsPerPage}%`, padding: '0 1rem' }}>
                   <div style={{
                     background: 'rgba(30,30,40,0.92)',
                     borderRadius: '1.5rem',
@@ -137,7 +117,7 @@ const Testimonials: React.FC = () => {
                   </div>
                 </div>
               ))}
-            </motion.div>
+            </div>
           </div>
           <button
             onClick={handlePrev}
@@ -154,10 +134,8 @@ const Testimonials: React.FC = () => {
               boxShadow: '0 2px 8px rgba(0,0,0,0.10)',
               cursor: 'pointer',
               transition: 'all 0.2s',
-              opacity: isTransitioning ? 0.5 : 1,
             }}
             aria-label="Previous testimonial"
-            disabled={isTransitioning}
           >
             <ChevronLeft style={{ color: '#030303' }} className="w-6 h-6" />
           </button>
@@ -176,10 +154,8 @@ const Testimonials: React.FC = () => {
               boxShadow: '0 2px 8px rgba(0,0,0,0.10)',
               cursor: 'pointer',
               transition: 'all 0.2s',
-              opacity: isTransitioning ? 0.5 : 1,
             }}
             aria-label="Next testimonial"
-            disabled={isTransitioning}
           >
             <ChevronRight style={{ color: '#030303' }} className="w-6 h-6" />
           </button>
@@ -189,4 +165,4 @@ const Testimonials: React.FC = () => {
   );
 };
 
-export default Testimonials; 
+export default Testimonials;

@@ -18,7 +18,7 @@ const KuaiFeatures: React.FC = () => {
 
   const sectionStyle: React.CSSProperties = {
     minHeight: '100vh',
-    background: 'linear-gradient(135deg, #f8fafc 0%, #e2e8f0 50%, #cbd5e1 100%)', // 浅蓝白色渐变背景
+    background: 'linear-gradient(135deg, #ffffff 0%, #f8fafc 50%, #f1f5f9 100%)',
     display: 'flex',
     flexDirection: 'column',
     justifyContent: 'center',
@@ -37,233 +37,138 @@ const KuaiFeatures: React.FC = () => {
 
   const headerStyle: React.CSSProperties = {
     textAlign: 'center',
-    marginBottom: isMobile ? '3rem' : '4rem'
+    marginBottom: isMobile ? '2rem' : '3rem'
   };
 
   const titleStyle: React.CSSProperties = {
-    fontSize: isMobile ? '28px' : '48px',
+    fontSize: isMobile ? '28px' : '42px',
     fontWeight: 'bold',
-    color: '#1e40af',
-    marginBottom: isMobile ? '12px' : '16px',
-    lineHeight: '1.2',
-    letterSpacing: isMobile ? '-0.5px' : '-1px',
-    background: 'linear-gradient(90deg, #1e40af 0%, #3b82f6 100%)',
-    WebkitBackgroundClip: 'text',
-    WebkitTextFillColor: 'transparent',
-    display: 'inline-block',
+    color: '#1f2937',
+    marginBottom: isMobile ? '8px' : '12px',
+    lineHeight: '1.2'
   };
 
   const subtitleStyle: React.CSSProperties = {
-    fontSize: isMobile ? '14px' : '18px',
-    color: '#64748b',
+    fontSize: isMobile ? '28px' : '42px',
+    fontWeight: 'bold',
+    color: '#6b7280',
     marginBottom: isMobile ? '40px' : '60px',
-    lineHeight: '1.6',
-    maxWidth: '600px',
-    margin: '0 auto',
-    padding: isMobile ? '0 16px' : '0'
+    lineHeight: '1.2'
   };
 
   const contentAreaStyle: React.CSSProperties = {
-    position: 'relative',
-    width: '100%',
-    height: isMobile ? '500px' : '600px',
     display: 'flex',
-    justifyContent: 'center',
+    justifyContent: 'space-between',
     alignItems: 'center',
-    padding: isMobile ? '0 16px' : '0'
+    width: '100%',
+    maxWidth: '1200px',
+    margin: '0 auto',
+    padding: isMobile ? '0 1rem' : '0 2rem',
+    flexDirection: isMobile ? 'column' : 'row',
+    gap: isMobile ? '2rem' : '3rem'
   };
 
-  // 手机容器 - 缩小尺寸
-  const phoneContainerStyle: React.CSSProperties = {
+  // 左侧微信交互区域
+  const wechatSectionStyle: React.CSSProperties = {
+    flex: 1,
+    display: 'flex',
+    flexDirection: 'column',
+    alignItems: 'center',
+    position: 'relative'
+  };
+
+  // 右侧AI智能体区域
+  const aiSectionStyle: React.CSSProperties = {
+    flex: 1,
+    display: 'flex',
+    flexDirection: 'column',
+    alignItems: 'center',
+    position: 'relative'
+  };
+
+  // 中间连接区域
+  const connectionStyle: React.CSSProperties = {
+    display: 'flex',
+    flexDirection: 'column',
+    alignItems: 'center',
+    justifyContent: 'center',
+    padding: isMobile ? '1rem' : '2rem',
+    position: 'relative'
+  };
+
+  // 微信对话框样式
+  const chatBoxStyle: React.CSSProperties = {
+    backgroundColor: '#f0fdf4',
+    borderRadius: '12px',
+    padding: '12px 16px',
+    marginBottom: '12px',
+    maxWidth: '280px',
+    fontSize: '14px',
+    lineHeight: '1.4',
     position: 'relative',
-    zIndex: 10
+    boxShadow: '0 2px 8px rgba(0,0,0,0.05)',
+    border: '1px solid #e5e7eb'
   };
 
-  const phoneFrameStyle: React.CSSProperties = {
-    width: isMobile ? '180px' : '220px',
-    height: isMobile ? '360px' : '440px',
-    backgroundColor: '#1e40af',
+  // AI智能体手机样式
+  const aiPhoneStyle: React.CSSProperties = {
+    width: isMobile ? '200px' : '240px',
+    height: isMobile ? '400px' : '480px',
+    backgroundColor: '#000',
     borderRadius: '25px',
-    padding: '6px',
+    padding: '8px',
     position: 'relative',
-    boxShadow: '0 15px 30px rgba(30, 64, 175, 0.3)'
+    boxShadow: '0 15px 30px rgba(0,0,0,0.3)'
   };
 
-  const phoneScreenStyle: React.CSSProperties = {
+  const aiScreenStyle: React.CSSProperties = {
     width: '100%',
     height: '100%',
-    backgroundColor: 'white',
-    borderRadius: '19px',
+    backgroundColor: '#1a1a1a',
+    borderRadius: '17px',
     position: 'relative',
     overflow: 'hidden',
-    backgroundImage: 'linear-gradient(90deg, #3b82f6 0%, #60a5fa 100%)',
     display: 'flex',
-    flexDirection: 'column',
-    justifyContent: 'center',
-    alignItems: 'center'
+    flexDirection: 'column'
   };
 
-  const phoneContentStyle: React.CSSProperties = {
-    color: 'white',
-    textAlign: 'center',
-    padding: isMobile ? '1rem' : '1.5rem',
-    fontSize: isMobile ? '0.7rem' : '0.8rem'
-  };
-
-  const notchStyle: React.CSSProperties = {
-    position: 'absolute',
-    top: '6px',
-    left: '50%',
-    transform: 'translateX(-50%)',
-    width: '80px',
-    height: '18px',
-    backgroundColor: '#1e40af',
-    borderRadius: '0 0 12px 12px',
-    zIndex: 10
-  };
-
-  // 手机背后的背景图
-  const phoneBackgroundStyle: React.CSSProperties = {
-    position: 'absolute',
-    top: '50%',
-    left: '50%',
-    transform: 'translate(-50%, -50%)',
-    width: isMobile ? '300px' : '400px',
-    height: isMobile ? '300px' : '400px',
-    borderRadius: '50%',
-    background: 'radial-gradient(circle, rgba(30, 64, 175, 0.1) 0%, rgba(59, 130, 246, 0.05) 50%, transparent 100%)',
-    zIndex: 1
-  };
-
-  // 环绕手机的模块样式
-  const moduleBaseStyle: React.CSSProperties = {
-    position: 'absolute',
-    backgroundColor: 'white',
-    borderRadius: '12px',
-    padding: isMobile ? '12px' : '16px',
-    boxShadow: '0 4px 16px rgba(30, 64, 175, 0.1)',
-    border: '1px solid rgba(30, 64, 175, 0.05)',
-    zIndex: 5,
-    fontSize: isMobile ? '0.75rem' : '0.85rem'
-  };
-
-  const featureListStyle: React.CSSProperties = {
-    display: 'flex',
-    flexDirection: 'column',
-    gap: isMobile ? '16px' : '24px'
-  };
-
-  const featureItemStyle: React.CSSProperties = {
-    display: 'flex',
-    alignItems: 'flex-start',
-    gap: isMobile ? '12px' : '16px',
-    padding: isMobile ? '16px' : '20px',
-    backgroundColor: 'rgba(30, 64, 175, 0.05)',
-    borderRadius: '12px',
-    border: '1px solid rgba(30, 64, 175, 0.1)',
-    transition: 'all 0.3s ease'
-  };
-
-  const featureIconStyle: React.CSSProperties = {
-    width: isMobile ? '20px' : '24px',
-    height: isMobile ? '20px' : '24px',
-    color: '#3b82f6',
-    flexShrink: 0,
-    marginTop: '2px'
-  };
-
-  const featureTitleStyle: React.CSSProperties = {
-    fontSize: isMobile ? '16px' : '18px',
-    fontWeight: '600',
-    color: '#1e40af',
-    marginBottom: '4px'
-  };
-
-  const featureDescStyle: React.CSSProperties = {
-    fontSize: isMobile ? '13px' : '14px',
-    color: 'rgba(30, 64, 175, 0.7)',
-    lineHeight: '1.5'
-  };
-
-  // 左上角模块
-  const topLeftModuleStyle: React.CSSProperties = {
-    ...moduleBaseStyle,
-    top: isMobile ? '20%' : '15%',
-    left: isMobile ? '5%' : '8%',
-    width: isMobile ? '140px' : '160px'
-  };
-
-  // 右上角模块  
-  const topRightModuleStyle: React.CSSProperties = {
-    ...moduleBaseStyle,
-    top: isMobile ? '20%' : '15%',
-    right: isMobile ? '5%' : '8%',
-    width: isMobile ? '140px' : '160px'
-  };
-
-  // 左下角模块
-  const bottomLeftModuleStyle: React.CSSProperties = {
-    ...moduleBaseStyle,
-    bottom: isMobile ? '20%' : '15%',
-    left: isMobile ? '5%' : '8%',
-    width: isMobile ? '140px' : '160px'
-  };
-
-  // 右下角模块
-  const bottomRightModuleStyle: React.CSSProperties = {
-    ...moduleBaseStyle,
-    bottom: isMobile ? '20%' : '15%',
-    right: isMobile ? '5%' : '8%',
-    width: isMobile ? '140px' : '160px'
-  };
-
-  const moduleIconStyle: React.CSSProperties = {
-    width: '32px',
-    height: '32px',
-    backgroundColor: '#f0f8ff',
-    borderRadius: '8px',
-    display: 'flex',
-    alignItems: 'center',
-    justifyContent: 'center',
-    marginBottom: '8px',
-    fontSize: '1rem'
-  };
-
-  const moduleTitleStyle: React.CSSProperties = {
-    fontSize: isMobile ? '0.9rem' : '1rem',
-    fontWeight: '600',
-    color: '#1e40af',
-    marginBottom: '4px'
-  };
-
-  const moduleDescStyle: React.CSSProperties = {
-    fontSize: isMobile ? '0.75rem' : '0.8rem',
-    color: '#64748b',
-    lineHeight: '1.4'
-  };
-
-  const moduleTagStyle: React.CSSProperties = {
+  // 功能标签样式
+  const featureTagStyle: React.CSSProperties = {
+    backgroundColor: '#f3f4f6',
+    color: '#374151',
+    padding: '8px 16px',
+    borderRadius: '20px',
+    fontSize: '14px',
+    fontWeight: '500',
+    margin: '8px',
     display: 'inline-block',
-    backgroundColor: '#e0f2fe',
-    color: '#1e40af',
-    padding: '2px 8px',
-    borderRadius: '12px',
-    fontSize: isMobile ? '0.65rem' : '0.7rem',
-    fontWeight: '500',
-    marginTop: '8px'
+    border: '1px solid #d1d5db'
   };
 
-  const successTagStyle: React.CSSProperties = {
-    backgroundColor: '#e8f5e8',
-    color: '#52c41a',
-    padding: '4px 12px',
-    borderRadius: '12px',
-    fontSize: isMobile ? '0.7rem' : '0.75rem',
-    fontWeight: '500',
-    display: 'inline-flex',
+  // 个人手机图标样式
+  const personalPhoneStyle: React.CSSProperties = {
+    width: '60px',
+    height: '60px',
+    backgroundColor: '#f9fafb',
+    borderRadius: '50%',
+    display: 'flex',
     alignItems: 'center',
-    gap: '4px',
-    marginTop: '8px'
+    justifyContent: 'center',
+    fontSize: '24px',
+    marginBottom: '8px',
+    border: '2px solid #e5e7eb'
+  };
+
+  // 微信对话样式
+  const wechatChatStyle: React.CSSProperties = {
+    backgroundColor: '#ffffff',
+    borderRadius: '12px',
+    padding: '16px',
+    marginBottom: '16px',
+    width: '100%',
+    maxWidth: '300px',
+    border: '1px solid #e5e7eb',
+    boxShadow: '0 1px 3px rgba(0,0,0,0.1)'
   };
 
   return (
@@ -276,179 +181,227 @@ const KuaiFeatures: React.FC = () => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
         >
-          <h2 style={titleStyle}>定制主题，国际语言</h2>
-          <p style={subtitleStyle}>
-            Ant Design Mini 开放更多主题样式，国际语言随意切换组件文案
-          </p>
+          <h2 style={titleStyle}>微信交互</h2>
+          <h2 style={subtitleStyle}>AI智能体</h2>
         </motion.div>
 
         {/* 主要内容区域 */}
         <div style={contentAreaStyle}>
-          {/* 手机背景圆形 */}
-          <div style={phoneBackgroundStyle} />
-
-          {/* 左上角模块 */}
+          {/* 左侧微信交互区域 */}
           <motion.div 
-            style={topLeftModuleStyle}
-            initial={{ opacity: 0, x: -30, y: -30 }}
-            animate={{ opacity: 1, x: 0, y: 0 }}
+            style={wechatSectionStyle}
+            initial={{ opacity: 0, x: -50 }}
+            animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.6, delay: 0.2 }}
           >
-            <div style={moduleIconStyle}>🎨</div>
-            <h3 style={moduleTitleStyle}>组件定制化</h3>
-            <p style={moduleDescStyle}>
-              组件定制化，享受国际化的语言切换与编辑，明亮两种主题模式
-            </p>
-            <div style={moduleTagStyle}>3分钟即可</div>
+            {/* 大量AI智能体标题 */}
+            <div style={{ marginBottom: '30px', textAlign: 'left' }}>
+              <h3 style={{ fontSize: '20px', fontWeight: 'bold', color: '#374151', marginBottom: '0' }}>大量AI智能体</h3>
+            </div>
+
+            {/* 微信对话框 */}
+            <div style={{
+              ...chatBoxStyle,
+              marginBottom: '30px',
+              position: 'relative'
+            }}>
+              <div style={{ fontSize: '12px', color: '#666', marginBottom: '8px' }}>AI智能体1：让我来帮你解决问题！</div>
+              <div style={{ fontSize: '14px', color: '#333' }}>
+                您好！我是您的专属AI助手，可以帮助您处理各种问题，包括文档编写、数据分析、代码优化等。请告诉我您需要什么帮助？
+              </div>
+              {/* 对话框尾巴 */}
+              <div style={{
+                position: 'absolute',
+                bottom: '-8px',
+                left: '20px',
+                width: '0',
+                height: '0',
+                borderLeft: '8px solid transparent',
+                borderRight: '8px solid transparent',
+                borderTop: '8px solid #f0fdf4'
+              }}></div>
+            </div>
+
+            {/* 个人手机图标 */}
+            <div style={{ display: 'flex', alignItems: 'center', marginBottom: '30px', justifyContent: 'flex-start' }}>
+              <div style={{
+                ...personalPhoneStyle,
+                marginRight: '16px'
+              }}>📱</div>
+              <div>
+                <div style={{ fontSize: '14px', fontWeight: '600', color: '#374151' }}>个人</div>
+                <div style={{ fontSize: '14px', fontWeight: '600', color: '#374151' }}>手机</div>
+              </div>
+              <div style={{ marginLeft: '20px' }}>
+                <div style={{
+                  backgroundColor: '#f3f4f6',
+                  borderRadius: '20px',
+                  padding: '6px 12px',
+                  fontSize: '12px',
+                  color: '#374151',
+                  fontWeight: '500',
+                  border: '1px solid #d1d5db'
+                }}>微信对话</div>
+              </div>
+            </div>
+
+            {/* 微信对话列表 */}
+            <div style={{
+              ...wechatChatStyle,
+              marginBottom: '30px'
+            }}>
+              <div style={{ display: 'flex', alignItems: 'center', marginBottom: '12px' }}>
+                <div style={{ width: '32px', height: '32px', backgroundColor: '#374151', borderRadius: '50%', marginRight: '8px' }}></div>
+                <div style={{ fontSize: '14px', fontWeight: '500' }}>客服</div>
+              </div>
+              <div style={{ fontSize: '13px', color: '#6b7280', lineHeight: '1.4' }}>
+                您好，22点后深度学习模型训练将开始，预计需要6小时完成。
+                <br />1. 数据集：已准备完成（✓）
+                <br />2. 模型：正在优化参数设置
+                <br />3. 训练环境：GPU集群已就绪
+                <br />4. 预计完成：明日凌晨4点（预计）
+              </div>
+            </div>
+
+            {/* 左侧功能标签 */}
+            <div style={{ display: 'flex', flexDirection: 'column', gap: '12px', alignItems: 'flex-start' }}>
+              <div style={{
+                ...featureTagStyle,
+                backgroundColor: '#f9fafb',
+                color: '#374151',
+                margin: '0'
+              }}>安排任务</div>
+              <div style={{
+                ...featureTagStyle,
+                backgroundColor: '#f9fafb',
+                color: '#374151',
+                margin: '0'
+              }}>定时工程</div>
+            </div>
           </motion.div>
 
-          {/* 右上角模块 */}
+          {/* 中间连接区域 */}
           <motion.div 
-            style={topRightModuleStyle}
-            initial={{ opacity: 0, x: 30, y: -30 }}
-            animate={{ opacity: 1, x: 0, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.3 }}
-          >
-            <div style={moduleIconStyle}>🌐</div>
-            <h3 style={moduleTitleStyle}>组件定制化</h3>
-            <p style={moduleDescStyle}>
-              组件定制化，享受国际化的语言切换与编辑，明亮两种主题模式
-            </p>
-            <div style={moduleTagStyle}>功能扩展</div>
-          </motion.div>
-
-          {/* 中间手机展示 */}
-          <motion.div 
-            style={phoneContainerStyle}
+            style={connectionStyle}
             initial={{ opacity: 0, scale: 0.8 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.6, delay: 0.4 }}
           >
-            <div style={phoneFrameStyle}>
-              <div style={notchStyle} />
-              <div style={phoneScreenStyle}>
-                <div style={phoneContentStyle}>
-                  <div style={{
-                    fontSize: isMobile ? '0.9rem' : '1rem',
-                    fontWeight: 'bold',
-                    marginBottom: '0.3rem'
-                  }}>
-                    ANTD MINI
-                  </div>
-                  <div style={{
-                    fontSize: isMobile ? '1.1rem' : '1.2rem',
-                    fontWeight: 'bold',
-                    marginBottom: '0.8rem'
-                  }}>
-                    OPEN SOURCE
-                  </div>
-              <div style={{
-                    fontSize: isMobile ? '0.7rem' : '0.75rem',
-                    opacity: 0.8,
-                    marginBottom: '1.5rem'
-                  }}>
-                    Make the mini program<br/>
-                    development more efficient
-                  </div>
-                  
-                  {/* 模拟界面元素 */}
-                  <div style={{
-                    backgroundColor: 'rgba(255, 255, 255, 0.2)',
-                    borderRadius: '8px',
-                    padding: '0.8rem',
-                    marginBottom: '0.8rem',
-                    textAlign: 'left'
-              }}>
-                    <div style={{display: 'flex', alignItems: 'center', marginBottom: '0.4rem'}}>
-                      <div style={{
-                        width: '16px',
-                        height: '16px',
-                        backgroundColor: 'rgba(255, 255, 255, 0.3)',
-                        borderRadius: '50%',
-                        marginRight: '6px'
-                      }} />
-                      <span style={{fontSize: isMobile ? '0.6rem' : '0.65rem'}}>不喜欢墙</span>
-                    </div>
-                    <div style={{display: 'flex', alignItems: 'center'}}>
-                      <div style={{
-                        width: '16px',
-                        height: '16px',
-                        backgroundColor: 'rgba(255, 255, 255, 0.3)',
-                        borderRadius: '50%',
-                        marginRight: '6px'
-                      }} />
-                      <span style={{fontSize: isMobile ? '0.6rem' : '0.65rem'}}>功能扩展</span>
-                      <span style={{
-                        backgroundColor: 'red',
-                        width: '4px',
-                        height: '4px',
-                        borderRadius: '50%',
-                        marginLeft: '3px'
-                      }} />
+            {/* 微信互联图标 */}
+            <div style={{
+              width: '80px',
+              height: '80px',
+              backgroundColor: '#6b7280',
+              borderRadius: '50%',
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'center',
+              fontSize: '32px',
+              color: 'white',
+              marginBottom: '12px',
+              boxShadow: '0 8px 20px rgba(107, 114, 128, 0.2)'
+            }}>
+              💬
             </div>
-        </div>
+            <div style={{ fontSize: '14px', fontWeight: '600', color: '#374151', marginBottom: '20px' }}>微信互联</div>
+            
+            {/* 连接箭头 */}
+            <div style={{
+              display: 'flex',
+              alignItems: 'center',
+              margin: '10px 0',
+              gap: '8px'
+            }}>
+              <div style={{ fontSize: '24px', color: '#9ca3af' }}>←</div>
+              <div style={{ fontSize: '24px', color: '#9ca3af' }}>→</div>
+            </div>
+            
+            <div style={{ fontSize: '12px', color: '#6b7280' }}>发现易</div>
+          </motion.div>
 
-        <div style={{ 
-                    display: 'flex',
-                    gap: '6px',
-                    justifyContent: 'center'
+          {/* 右侧AI智能体区域 */}
+          <motion.div 
+            style={{
+              ...aiSectionStyle,
+              position: 'relative'
+            }}
+            initial={{ opacity: 0, x: 50 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.6, delay: 0.6 }}
+          >
+            {/* 环绕的功能标签 - 上方 */}
+            <div style={{
+              position: 'absolute',
+              top: '-20px',
+              right: '20px',
+              ...featureTagStyle,
+              margin: '0'
+            }}>自动加微信</div>
+            
+            <div style={{
+              position: 'absolute',
+              top: '20px',
+              right: '-40px',
+              ...featureTagStyle,
+              margin: '0'
+            }}>智能开启</div>
+
+            {/* AI智能体手机 */}
+            <div style={aiPhoneStyle}>
+              <div style={aiScreenStyle}>
+                {/* 手机状态栏 */}
+                <div style={{
+                  padding: '12px 16px',
+                  color: 'white',
+                  fontSize: '14px',
+                  fontWeight: '600',
+                  textAlign: 'center',
+                  borderBottom: '1px solid #333'
+                }}>
+                  <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+                    <span>中国联通</span>
+                    <span>12:27</span>
+                  </div>
+                  <div style={{ textAlign: 'right', fontSize: '12px', marginTop: '2px' }}>12/23</div>
+                </div>
+
+                {/* AI智能体界面 */}
+                <div style={{ padding: '16px', flex: 1 }}>
+                  <div style={{
+                    backgroundColor: '#2d3748',
+                    borderRadius: '12px',
+                    padding: '12px',
+                    marginBottom: '16px',
+                    color: 'white'
                   }}>
-                    <button style={{
-                      backgroundColor: '#3b82f6',
-                      color: 'white',
-                      border: 'none',
-                      borderRadius: '16px',
-                      padding: '6px 12px',
-                      fontSize: isMobile ? '0.6rem' : '0.65rem'
-        }}>
-                      登陆
-                    </button>
-                    <button style={{
-                      backgroundColor: 'transparent',
-                      color: 'white',
-                      border: '1px solid rgba(255, 255, 255, 0.5)',
-                      borderRadius: '16px',
-                      padding: '6px 12px',
-                      fontSize: isMobile ? '0.6rem' : '0.65rem'
-                    }}>
-                      注册
-                    </button>
+                    <div style={{ fontSize: '16px', fontWeight: '600', marginBottom: '8px' }}>🤖 大量AI智能体</div>
+                    <div style={{ fontSize: '12px', lineHeight: '1.4' }}>
+                      1. 问答助手：智能问答与知识检索
+                      <br />2. 代码助手：自动生成与优化代码片段
+                      <br />3. 文档助手：智能文档编写与格式化
+                      <br />4. 数据分析：自动分析数据并生成报告
+                    </div>
                   </div>
                 </div>
               </div>
             </div>
-          </motion.div>
 
-          {/* 左下角模块 */}
-          <motion.div 
-            style={bottomLeftModuleStyle}
-            initial={{ opacity: 0, x: -30, y: 30 }}
-            animate={{ opacity: 1, x: 0, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.5 }}
-          >
-            <div style={moduleIconStyle}>⚙️</div>
-            <h3 style={moduleTitleStyle}>确认</h3>
-            <p style={moduleDescStyle}>
-              享受国际化的语言切换与编辑，明亮两种主题模式
-            </p>
-            <div style={moduleTagStyle}>选择其他方式</div>
-          </motion.div>
-
-          {/* 右下角模块 */}
-          <motion.div 
-            style={bottomRightModuleStyle}
-            initial={{ opacity: 0, x: 30, y: 30 }}
-            animate={{ opacity: 1, x: 0, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.6 }}
-          >
-            <div style={moduleIconStyle}>✅</div>
-            <h3 style={moduleTitleStyle}>操作成功</h3>
-            <p style={moduleDescStyle}>
-              您已成功完成了详细定制化的深度学习
-            </p>
-            <div style={successTagStyle}>
-              ✓ 操作成功
-            </div>
+            {/* 环绕的功能标签 - 下方 */}
+            <div style={{
+              position: 'absolute',
+              bottom: '60px',
+              right: '-40px',
+              ...featureTagStyle,
+              margin: '0'
+            }}>自动关注</div>
+            
+            <div style={{
+              position: 'absolute',
+              bottom: '20px',
+              right: '20px',
+              ...featureTagStyle,
+              margin: '0'
+            }}>智能引导到微信</div>
           </motion.div>
         </div>
       </div>

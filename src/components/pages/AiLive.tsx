@@ -5,14 +5,13 @@ const AiLive: React.FC = () => {
   const containerStyle: React.CSSProperties = {
     minHeight: '100vh',
     paddingTop: '64px',
-    background: '#18181c', // 深色背景
+    background: 'white', // 改为白色背景
     padding: '64px 24px',
   };
 
   const sectionStyle: React.CSSProperties = {
     maxWidth: '1200px',
     margin: '0 auto',
-    marginBottom: '120px',
   };
 
   const titleStyle: React.CSSProperties = {
@@ -28,7 +27,7 @@ const AiLive: React.FC = () => {
     display: 'flex',
     alignItems: 'center',
     gap: '60px',
-    marginBottom: '100px',
+    marginBottom: '40px',
   };
 
   const featureContentStyle: React.CSSProperties = {
@@ -55,7 +54,7 @@ const AiLive: React.FC = () => {
 
   const phoneScreenStyle: React.CSSProperties = {
     flex: 1,
-    background: 'linear-gradient(135deg, #23233a 0%, #18181c 100%)',
+    background: 'linear-gradient(135deg, #3498db 0%, #2980b9 100%)',
     borderRadius: '20px',
     padding: '15px',
     display: 'flex',
@@ -261,7 +260,7 @@ const AiLive: React.FC = () => {
             </div>
             <div style={featureImageStyle}>
               <div style={phoneFrameStyle}>
-                <div style={phoneScreenStyle}>
+                <div style={{...phoneScreenStyle, background: 'linear-gradient(135deg, #3498db 0%, #2980b9 100%)'}}>
                   <div style={liveHeaderStyle}>
                     <div style={liveIndicatorStyle}>HD 1080P</div>
                     <div>📱</div>
@@ -415,7 +414,7 @@ const AiLive: React.FC = () => {
                       <div style={{background: '#f8f9fa', borderRadius: '8px', padding: '8px', marginBottom: '6px'}}>
                         <div style={{fontSize: '12px', color: '#666'}}>用户C：我要买一个</div>
                       </div>
-                      <div style={{background: '#fff3cd', borderRadius: '8px', padding: '8px', border: '1px solid #ffc107'}}>
+                      <div style={{background: '#fff3cd', borderRadius: '8px', padding: '16px', border: '1px solid #ffc107'}}>
                         <div style={{fontSize: '12px', color: '#856404'}}>🎉 抽奖活动进行中</div>
                       </div>
                     </div>
@@ -499,4 +498,4 @@ const AiLive: React.FC = () => {
   );
 };
 
-export default AiLive; 
+export default AiLive;

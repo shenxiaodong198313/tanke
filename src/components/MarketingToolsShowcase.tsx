@@ -1,22 +1,22 @@
 import React from 'react';
 
 const icons = [
-  { color: 'linear-gradient(135deg, #ffd6b7 0%, #ffb98a 100%)', icon: '💬', left: '8%', top: '60%' },
-  { color: 'linear-gradient(135deg, #b7d3ff 0%, #8abaff 100%)', icon: '🏬', left: '18%', top: '30%' },
-  { color: 'linear-gradient(135deg, #ffb98a 0%, #ff7e5f 100%)', icon: '📝', left: '30%', top: '80%' },
-  { color: 'linear-gradient(135deg, #b7d3ff 0%, #8abaff 100%)', icon: '📷', left: '70%', top: '75%' },
-  { color: 'linear-gradient(135deg, #b7f7d3 0%, #8affb9 100%)', icon: '🎯', left: '60%', top: '90%' },
-  { color: 'linear-gradient(135deg, #ffd6b7 0%, #ffb98a 100%)', icon: '👤', left: '85%', top: '60%' },
-  { color: 'linear-gradient(135deg, #b7d3ff 0%, #8abaff 100%)', icon: '📄', left: '80%', top: '30%' },
-  { color: 'linear-gradient(135deg, #b7f7d3 0%, #8affb9 100%)', icon: '🔍', left: '10%', top: '20%' },
-  { color: 'linear-gradient(135deg, #ffd6b7 0%, #ffb98a 100%)', icon: '🛒', left: '60%', top: '10%' },
-  { color: 'linear-gradient(135deg, #b7d3ff 0%, #8abaff 100%)', icon: '⭐', left: '40%', top: '10%' },
+  { color: '#fef3c7', icon: '💬', left: '12%', top: '45%', size: 56 },
+  { color: '#dbeafe', icon: '🏬', left: '15%', top: '25%', size: 48 },
+  { color: '#fed7aa', icon: '📝', left: '25%', top: '70%', size: 52 },
+  { color: '#dbeafe', icon: '📷', left: '75%', top: '65%', size: 50 },
+  { color: '#dcfce7', icon: '🎯', left: '78%', top: '80%', size: 54 },
+  { color: '#fef3c7', icon: '👤', left: '85%', top: '45%', size: 58 },
+  { color: '#dbeafe', icon: '📄', left: '82%', top: '25%', size: 46 },
+  { color: '#dcfce7', icon: '🔍', left: '8%', top: '20%', size: 50 },
+  { color: '#fed7aa', icon: '🛒', left: '70%', top: '15%', size: 52 },
+  { color: '#dbeafe', icon: '⭐', left: '35%', top: '12%', size: 48 },
 ];
 
 const MarketingToolsShowcase: React.FC = () => {
   return (
     <section style={{
-      background: '#030303', // 深色背景
+      background: 'linear-gradient(180deg, #ffffff 0%, #f8fafc 100%)', // 白色背景
       padding: '64px 0 0',
       minHeight: '900px',
       position: 'relative',
@@ -38,9 +38,7 @@ const MarketingToolsShowcase: React.FC = () => {
           fontWeight: 700,
           marginBottom: 8,
           letterSpacing: '-2px',
-          background: 'linear-gradient(90deg, #a5b4fc 0%, #fca5a5 100%)',
-          WebkitBackgroundClip: 'text',
-          WebkitTextFillColor: 'transparent',
+          color: '#1f2937',
           display: 'inline-block',
         }}>
           大模型营销工具
@@ -48,14 +46,14 @@ const MarketingToolsShowcase: React.FC = () => {
         <div style={{
           fontSize: '2rem',
           fontWeight: 600,
-          color: 'rgba(255,255,255,0.92)',
+          color: '#374151',
           marginBottom: 12,
         }}>
           内置多款营销工具，满足不同营销需求
         </div>
         <div style={{
           fontSize: '1.05rem',
-          color: 'rgba(255,255,255,0.7)',
+          color: '#6b7280',
           marginBottom: 48,
         }}>
           高效热门营销工具，包含企业筛选、短视频爆款、短视频找门店、基开客户、精准查找各个行业下细分领域客户
@@ -69,49 +67,48 @@ const MarketingToolsShowcase: React.FC = () => {
             position: 'absolute',
             left: item.left,
             top: item.top,
-            width: 64,
-            height: 64,
-            background: 'linear-gradient(90deg, #a5b4fc 0%, #fca5a5 100%)',
-            borderRadius: 18,
+            width: item.size,
+            height: item.size,
+            background: item.color,
+            borderRadius: 16,
             display: 'flex',
             alignItems: 'center',
             justifyContent: 'center',
-            fontSize: 32,
-            boxShadow: '0 4px 24px rgba(165,180,252,0.08)',
+            fontSize: item.size * 0.5,
+            boxShadow: '0 4px 16px rgba(0,0,0,0.12)',
+            border: '2px solid #ffffff',
             zIndex: 1,
-            opacity: 0.85,
-            filter: 'blur(0.5px)',
-            color: '#fff',
+            opacity: 0.95,
           }}
         >
           {item.icon}
         </div>
       ))}
-      {/* 手机图片外框 */}
+      {/* 手机框占位图 */}
       <div style={{
         position: 'relative',
         zIndex: 3,
         margin: '0 auto',
         marginTop: 0,
         marginBottom: 0,
-        width: 420,
+        width: 320,
+        height: 640,
         maxWidth: '90vw',
-        boxShadow: '0 8px 48px rgba(0,0,0,0.10)',
+        boxShadow: '0 8px 48px rgba(0,0,0,0.15)',
         borderRadius: 40,
-        overflow: 'hidden',
-        background: '#18181c',
-        border: '2.5px solid',
-        borderImage: 'linear-gradient(90deg, #a5b4fc 0%, #fca5a5 100%) 1',
+        background: '#ffffff',
+        border: '3px solid #d1d5db',
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'center',
+        fontSize: '18px',
+        color: '#9ca3af',
+        fontWeight: 500,
       }}>
-        <img
-          src="https://files.cdn.bcebos.com/tanke/marketing-tools-phone-demo.png"
-          alt="营销工具手机界面"
-          loading="lazy"
-          style={{ width: '100%', display: 'block', borderRadius: 40 }}
-        />
+        手机界面占位图
       </div>
     </section>
   );
 };
 
-export default MarketingToolsShowcase; 
+export default MarketingToolsShowcase;

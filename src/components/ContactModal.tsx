@@ -141,7 +141,12 @@ const ContactModal: React.FC<ContactModalProps> = ({ isOpen, onClose }) => {
 
   const qrSectionStyle: React.CSSProperties = {
     textAlign: 'center',
-    marginTop: '20px'
+    marginTop: '40px',
+    display: 'flex',
+    flexDirection: 'column',
+    alignItems: 'center',
+    justifyContent: 'center',
+    flex: 1
   };
 
   const qrCodeStyle: React.CSSProperties = {
@@ -230,84 +235,140 @@ const ContactModal: React.FC<ContactModalProps> = ({ isOpen, onClose }) => {
           <div style={contentStyle}>
             {/* 左侧内容 */}
             <div style={leftSectionStyle}>
-              <div>
+              <div style={{ marginBottom: '20px' }}>
                 <h2 style={titleStyle}>
                   扫码免费领取<span style={{ color: '#ff6b47' }}>有赞私域直播试用资格</span>
                 </h2>
                 <p style={subtitleStyle}>
                   还可以定制你的专属解决方案
                 </p>
-
-                {/* 手机预览 */}
-                <div style={phonePreviewStyle}>
-                  <div style={phoneContentStyle}>
-                    {/* 手机状态栏 */}
-                    <div style={{
-                      height: '30px',
-                      backgroundColor: '#f8f9fa',
-                      display: 'flex',
-                      alignItems: 'center',
-                      justifyContent: 'space-between',
-                      padding: '0 15px',
-                      fontSize: '12px',
-                      fontWeight: '600'
-                    }}>
-                      <span>16:52</span>
-                      <div style={{ display: 'flex', gap: '5px' }}>
-                        <span>●●●</span>
-                        <span>📶</span>
-                        <span>🔋</span>
-                      </div>
-                    </div>
-
-                    {/* 手机内容 */}
-                    <div style={{ padding: '20px', flex: 1 }}>
-                      <div style={{
-                        backgroundColor: '#f0f0f0',
-                        borderRadius: '12px',
-                        padding: '15px',
-                        marginBottom: '15px',
-                        fontSize: '14px'
-                      }}>
-                        <div style={{ marginBottom: '10px', fontWeight: '600' }}>数据</div>
-                        <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: '8px' }}>
-                          <span>销售额</span>
-                          <span>¥ 0</span>
-                        </div>
-                        <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: '8px' }}>
-                          <span>客流量</span>
-                          <span>0</span>
-                        </div>
-                        <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: '8px' }}>
-                          <span>订单</span>
-                          <span>0</span>
-                        </div>
-                        <div style={{ display: 'flex', justifyContent: 'space-between' }}>
-                          <span>小程序</span>
-                          <span>0</span>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
               </div>
 
               {/* 二维码区域 */}
               <div style={qrSectionStyle}>
                 <div style={qrCodeStyle}>
-                  <div style={{
-                    width: '100%',
-                    height: '100%',
-                    backgroundColor: '#000',
-                    borderRadius: '4px',
-                    display: 'flex',
-                    alignItems: 'center',
-                    justifyContent: 'center',
-                    color: 'white',
-                    fontSize: '8px'
-                  }}>
-                    二维码
-                  </div>
+                  <svg width="100%" height="100%" viewBox="0 0 150 150" xmlns="http://www.w3.org/2000/svg">
+                    {/* QR Code Pattern */}
+                    <rect width="150" height="150" fill="white"/>
+                    
+                    {/* Corner squares */}
+                    <rect x="10" y="10" width="35" height="35" fill="black"/>
+                    <rect x="15" y="15" width="25" height="25" fill="white"/>
+                    <rect x="20" y="20" width="15" height="15" fill="black"/>
+                    
+                    <rect x="105" y="10" width="35" height="35" fill="black"/>
+                    <rect x="110" y="15" width="25" height="25" fill="white"/>
+                    <rect x="115" y="20" width="15" height="15" fill="black"/>
+                    
+                    <rect x="10" y="105" width="35" height="35" fill="black"/>
+                    <rect x="15" y="110" width="25" height="25" fill="white"/>
+                    <rect x="20" y="115" width="15" height="15" fill="black"/>
+                    
+                    {/* Data pattern */}
+                    <rect x="50" y="10" width="5" height="5" fill="black"/>
+                    <rect x="60" y="10" width="5" height="5" fill="black"/>
+                    <rect x="70" y="10" width="5" height="5" fill="black"/>
+                    <rect x="80" y="10" width="5" height="5" fill="black"/>
+                    <rect x="90" y="10" width="5" height="5" fill="black"/>
+                    
+                    <rect x="50" y="20" width="5" height="5" fill="black"/>
+                    <rect x="70" y="20" width="5" height="5" fill="black"/>
+                    <rect x="90" y="20" width="5" height="5" fill="black"/>
+                    
+                    <rect x="50" y="30" width="5" height="5" fill="black"/>
+                    <rect x="60" y="30" width="5" height="5" fill="black"/>
+                    <rect x="80" y="30" width="5" height="5" fill="black"/>
+                    
+                    <rect x="50" y="40" width="5" height="5" fill="black"/>
+                    <rect x="70" y="40" width="5" height="5" fill="black"/>
+                    <rect x="90" y="40" width="5" height="5" fill="black"/>
+                    
+                    <rect x="10" y="50" width="5" height="5" fill="black"/>
+                    <rect x="20" y="50" width="5" height="5" fill="black"/>
+                    <rect x="30" y="50" width="5" height="5" fill="black"/>
+                    <rect x="40" y="50" width="5" height="5" fill="black"/>
+                    <rect x="50" y="50" width="5" height="5" fill="black"/>
+                    <rect x="60" y="50" width="5" height="5" fill="black"/>
+                    <rect x="70" y="50" width="5" height="5" fill="black"/>
+                    <rect x="80" y="50" width="5" height="5" fill="black"/>
+                    <rect x="90" y="50" width="5" height="5" fill="black"/>
+                    <rect x="100" y="50" width="5" height="5" fill="black"/>
+                    <rect x="110" y="50" width="5" height="5" fill="black"/>
+                    <rect x="120" y="50" width="5" height="5" fill="black"/>
+                    <rect x="130" y="50" width="5" height="5" fill="black"/>
+                    <rect x="140" y="50" width="5" height="5" fill="black"/>
+                    
+                    <rect x="10" y="60" width="5" height="5" fill="black"/>
+                    <rect x="30" y="60" width="5" height="5" fill="black"/>
+                    <rect x="50" y="60" width="5" height="5" fill="black"/>
+                    <rect x="70" y="60" width="5" height="5" fill="black"/>
+                    <rect x="90" y="60" width="5" height="5" fill="black"/>
+                    <rect x="110" y="60" width="5" height="5" fill="black"/>
+                    <rect x="130" y="60" width="5" height="5" fill="black"/>
+                    
+                    <rect x="10" y="70" width="5" height="5" fill="black"/>
+                    <rect x="20" y="70" width="5" height="5" fill="black"/>
+                    <rect x="40" y="70" width="5" height="5" fill="black"/>
+                    <rect x="60" y="70" width="5" height="5" fill="black"/>
+                    <rect x="80" y="70" width="5" height="5" fill="black"/>
+                    <rect x="100" y="70" width="5" height="5" fill="black"/>
+                    <rect x="120" y="70" width="5" height="5" fill="black"/>
+                    <rect x="140" y="70" width="5" height="5" fill="black"/>
+                    
+                    <rect x="10" y="80" width="5" height="5" fill="black"/>
+                    <rect x="30" y="80" width="5" height="5" fill="black"/>
+                    <rect x="50" y="80" width="5" height="5" fill="black"/>
+                    <rect x="70" y="80" width="5" height="5" fill="black"/>
+                    <rect x="90" y="80" width="5" height="5" fill="black"/>
+                    <rect x="110" y="80" width="5" height="5" fill="black"/>
+                    <rect x="130" y="80" width="5" height="5" fill="black"/>
+                    
+                    <rect x="10" y="90" width="5" height="5" fill="black"/>
+                    <rect x="20" y="90" width="5" height="5" fill="black"/>
+                    <rect x="30" y="90" width="5" height="5" fill="black"/>
+                    <rect x="40" y="90" width="5" height="5" fill="black"/>
+                    <rect x="50" y="90" width="5" height="5" fill="black"/>
+                    <rect x="60" y="90" width="5" height="5" fill="black"/>
+                    <rect x="70" y="90" width="5" height="5" fill="black"/>
+                    <rect x="80" y="90" width="5" height="5" fill="black"/>
+                    <rect x="90" y="90" width="5" height="5" fill="black"/>
+                    <rect x="100" y="90" width="5" height="5" fill="black"/>
+                    <rect x="110" y="90" width="5" height="5" fill="black"/>
+                    <rect x="120" y="90" width="5" height="5" fill="black"/>
+                    <rect x="130" y="90" width="5" height="5" fill="black"/>
+                    <rect x="140" y="90" width="5" height="5" fill="black"/>
+                    
+                    {/* Bottom pattern */}
+                    <rect x="50" y="110" width="5" height="5" fill="black"/>
+                    <rect x="60" y="110" width="5" height="5" fill="black"/>
+                    <rect x="70" y="110" width="5" height="5" fill="black"/>
+                    <rect x="80" y="110" width="5" height="5" fill="black"/>
+                    <rect x="90" y="110" width="5" height="5" fill="black"/>
+                    <rect x="100" y="110" width="5" height="5" fill="black"/>
+                    <rect x="110" y="110" width="5" height="5" fill="black"/>
+                    <rect x="120" y="110" width="5" height="5" fill="black"/>
+                    <rect x="130" y="110" width="5" height="5" fill="black"/>
+                    <rect x="140" y="110" width="5" height="5" fill="black"/>
+                    
+                    <rect x="50" y="120" width="5" height="5" fill="black"/>
+                    <rect x="70" y="120" width="5" height="5" fill="black"/>
+                    <rect x="90" y="120" width="5" height="5" fill="black"/>
+                    <rect x="110" y="120" width="5" height="5" fill="black"/>
+                    <rect x="130" y="120" width="5" height="5" fill="black"/>
+                    
+                    <rect x="50" y="130" width="5" height="5" fill="black"/>
+                    <rect x="60" y="130" width="5" height="5" fill="black"/>
+                    <rect x="80" y="130" width="5" height="5" fill="black"/>
+                    <rect x="100" y="130" width="5" height="5" fill="black"/>
+                    <rect x="120" y="130" width="5" height="5" fill="black"/>
+                    <rect x="140" y="130" width="5" height="5" fill="black"/>
+                    
+                    <rect x="50" y="140" width="5" height="5" fill="black"/>
+                    <rect x="70" y="140" width="5" height="5" fill="black"/>
+                    <rect x="90" y="140" width="5" height="5" fill="black"/>
+                    <rect x="110" y="140" width="5" height="5" fill="black"/>
+                    <rect x="130" y="140" width="5" height="5" fill="black"/>
+                  </svg>
                 </div>
                 <p style={{ fontSize: '14px', color: '#666', margin: 0 }}>
                   支付宝或微信扫一扫安全登录
@@ -397,4 +458,4 @@ const ContactModal: React.FC<ContactModalProps> = ({ isOpen, onClose }) => {
   );
 };
 
-export default ContactModal; 
+export default ContactModal;

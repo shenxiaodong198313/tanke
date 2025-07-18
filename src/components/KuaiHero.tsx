@@ -361,8 +361,7 @@ const KuaiHero: React.FC = () => {
         </motion.div>
       </section>
 
-      {/* 底部占位区域 */}
-      <div style={spacerStyle}></div>
+
     </>
   );
 };
