@@ -36,7 +36,7 @@ const solutions = [
 const AIStreamingSolutions: React.FC = () => {
   return (
     <section style={{
-      background: 'linear-gradient(180deg, #f9fafb 0%, #f3f4f6 100%)',
+      background: '#f8f9fa', // 浅灰色背景
       padding: '100px 0',
       color: '#23242a',
       minHeight: '100vh',

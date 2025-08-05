@@ -18,7 +18,7 @@ const KuaiFeatures: React.FC = () => {
 
   const sectionStyle: React.CSSProperties = {
     minHeight: '100vh',
-    background: 'linear-gradient(135deg, #ffffff 0%, #f8fafc 50%, #f1f5f9 100%)',
+    background: '#f8f9fa', // 浅灰色背景
     display: 'flex',
     flexDirection: 'column',
     justifyContent: 'center',

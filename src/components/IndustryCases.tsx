@@ -68,7 +68,7 @@ const IndustryCases: React.FC = () => {
   
   const sectionStyle: React.CSSProperties = {
     minHeight: '100vh',
-    background: '#f8fafc',
+    background: '#f8f9fa', // 统一浅灰色背景
     display: 'flex',
     flexDirection: 'column',
     justifyContent: 'center',

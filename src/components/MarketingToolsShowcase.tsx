@@ -16,7 +16,7 @@ const icons = [
 const MarketingToolsShowcase: React.FC = () => {
   return (
     <section style={{
-      background: 'linear-gradient(180deg, #ffffff 0%, #f8fafc 100%)', // 白色背景
+      background: '#f8f9fa', // 浅灰色背景
       padding: '64px 0 0',
       minHeight: '900px',
       position: 'relative',

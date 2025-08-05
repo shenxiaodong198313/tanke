@@ -90,7 +90,7 @@ const Pricing: React.FC = () => {
 
   const sectionStyle: React.CSSProperties = {
     minHeight: '100vh',
-    background: 'linear-gradient(135deg, #f1f5f9 0%, #e2e8f0 50%, #cbd5e1 100%)', // 浅蓝白色渐变背景
+    background: '#f8f9fa', // 浅灰色背景
     display: 'flex',
     flexDirection: 'column',
     justifyContent: 'center',

@@ -111,7 +111,7 @@ const KuaiDetails: React.FC = () => {
   const sectionStyle: React.CSSProperties = {
     minHeight: isMobile ? 'auto' : '100vh',
     padding: isMobile ? '8rem 1rem 6rem' : '8rem 2rem 6rem',
-    backgroundColor: '#f8fafc',
+    backgroundColor: '#f8f9fa',
     display: 'flex',
     flexDirection: 'column',
     justifyContent: 'center',

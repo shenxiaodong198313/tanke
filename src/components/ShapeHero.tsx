@@ -92,7 +92,7 @@ export default function HeroGeometric() {
         position: 'relative',
         minHeight: '100vh',
         width: '100%',
-        background: 'linear-gradient(135deg, #ffffff 0%, #f8fafc 50%, #f1f5f9 100%)',
+        background: '#f8f9fa', // 浅灰色背景
         overflow: 'hidden',
         display: 'flex',
         alignItems: 'center',
@@ -120,41 +120,39 @@ export default function HeroGeometric() {
       >
         {/* 左侧内容区域 */}
         <div style={{flex: 1, maxWidth: '500px'}}>
-          <div style={{marginBottom: '20px', display: 'flex', alignItems: 'center', gap: '12px'}}>
-            <div style={{width: '8px', height: '8px', backgroundColor: '#ef4444', borderRadius: '50%'}}></div>
-            <span style={{fontSize: '14px', color: '#6b7280', fontWeight: 500}}>TANKE AI</span>
-          </div>
           <h1 style={{
             fontSize: '2.6rem',
             fontWeight: 700,
-            color: '#1f2937',
             marginBottom: '32px',
             marginTop: '0',
             textAlign: 'left',
             letterSpacing: '2px',
-          }}>用 AI 提升营销效率</h1>
+            lineHeight: '1.2'
+          }}>
+            <div style={{color: '#1f2937'}}>高效热门</div>
+            <div style={{
+              background: 'linear-gradient(90deg, #3b82f6 0%, #8b5cf6 50%, #ec4899 100%)',
+              WebkitBackgroundClip: 'text',
+              WebkitTextFillColor: 'transparent',
+              backgroundClip: 'text',
+              display: 'inline-block'
+            }}>AI营销工具</div>
+          </h1>
           <p style={{fontSize: '18px', color: '#6b7280', lineHeight: '1.6', marginBottom: '32px'}}>
-            让 AI 自动化为人工打造销售的产品
+            让AI自动化替代人工进行全场景营销
           </p>
           <div style={{display: 'flex', gap: '16px', flexWrap: 'wrap'}}>
-            <div style={{padding: '8px 16px', backgroundColor: '#f3f4f6', borderRadius: '20px', fontSize: '14px', color: '#374151'}}>通用风</div>
-            <div style={{padding: '8px 16px', backgroundColor: '#f3f4f6', borderRadius: '20px', fontSize: '14px', color: '#374151'}}>文采风</div>
-            <div style={{padding: '8px 16px', backgroundColor: '#f3f4f6', borderRadius: '20px', fontSize: '14px', color: '#374151'}}>种草风</div>
-            <div style={{padding: '8px 16px', backgroundColor: '#f3f4f6', borderRadius: '20px', fontSize: '14px', color: '#374151'}}>情感风</div>
-            <div style={{padding: '8px 16px', backgroundColor: '#f3f4f6', borderRadius: '20px', fontSize: '14px', color: '#374151'}}>科普风</div>
-          </div>
-          <div style={{marginTop: '32px', textAlign: 'center'}}>
-            <h3 style={{fontSize: '24px', fontWeight: 600, color: '#1f2937', marginBottom: '8px'}}>万亿级商品知识</h3>
-            <p style={{fontSize: '16px', color: '#6b7280', marginBottom: '24px'}}>最专业商品讲解</p>
-            <h3 style={{fontSize: '24px', fontWeight: 600, color: '#1f2937', marginBottom: '8px'}}>沉浸式描绘购买场景</h3>
-            <p style={{fontSize: '16px', color: '#6b7280'}}>直击痛点巧妙促单</p>
+            <div style={{padding: '8px 16px', backgroundColor: '#f3f4f6', borderRadius: '20px', fontSize: '14px', color: '#374151'}}>微信</div>
+            <div style={{padding: '8px 16px', backgroundColor: '#f3f4f6', borderRadius: '20px', fontSize: '14px', color: '#374151'}}>抖音</div>
+            <div style={{padding: '8px 16px', backgroundColor: '#f3f4f6', borderRadius: '20px', fontSize: '14px', color: '#374151'}}>快手</div>
+            <div style={{padding: '8px 16px', backgroundColor: '#f3f4f6', borderRadius: '20px', fontSize: '14px', color: '#374151'}}>小红书</div>
           </div>
         </div>
         
         {/* 右侧手机展示区域 */}
         <div style={{flex: 1, display: 'flex', justifyContent: 'center', alignItems: 'center', gap: '20px', position: 'relative'}}>
           {/* 第一个手机 - 神草风 */}
-          <div style={{position: 'relative', transform: 'rotate(-5deg)'}}>
+          <div style={{position: 'relative'}}>
             <div style={{width: '200px', height: '400px', backgroundColor: '#1f2937', borderRadius: '25px', padding: '20px', display: 'flex', flexDirection: 'column', boxShadow: '0 10px 30px rgba(0,0,0,0.2)'}}>
               <div style={{backgroundColor: '#3b82f6', borderRadius: '15px', padding: '16px', marginBottom: '16px', textAlign: 'center'}}>
                 <h4 style={{color: 'white', fontSize: '14px', fontWeight: 600, margin: '0 0 8px 0'}}>神草风</h4>
@@ -190,7 +188,7 @@ export default function HeroGeometric() {
           </div>
           
           {/* 第三个手机 - 科普风 */}
-          <div style={{position: 'relative', transform: 'rotate(5deg)'}}>
+          <div style={{position: 'relative'}}>
             <div style={{width: '200px', height: '400px', backgroundColor: '#1f2937', borderRadius: '25px', padding: '20px', display: 'flex', flexDirection: 'column', boxShadow: '0 10px 30px rgba(0,0,0,0.2)'}}>
               <div style={{backgroundColor: '#10b981', borderRadius: '15px', padding: '16px', marginBottom: '16px', textAlign: 'center'}}>
                 <h4 style={{color: 'white', fontSize: '14px', fontWeight: 600, margin: '0 0 8px 0'}}>科普风</h4>
