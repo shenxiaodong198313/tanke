@@ -26,11 +26,11 @@ const translations: Record<Language, Record<string, string>> = {
     'nav.language': '语言',
     
     // 首页Hero
-    'hero.title': '探客AI手机',
-    'hero.subtitle': '让营销更智能，让直播更简单',
-    'hero.description': '基于人工智能技术的全新营销解决方案，为企业提供私域直播、客户管理、智能营销等一站式服务',
-    'hero.getStarted': '开始体验',
-    'hero.learnMore': '了解更多',
+    'hero.title': '探客AI增长手机',
+    'hero.subtitle': '让AI替你营销',
+    'hero.description': '基于人工智能和RPA自动化技术的全新营销解决方案，为您提供智能营销、公域拓客、自动直播、智能外呼等一站式营销增长服务',
+    'hero.getStarted': '现在开始体验',
+    'hero.learnMore': '现在开始体验',
     
     // 功能特性
     'features.title': 'AI自动化营销平台',
@@ -288,11 +288,11 @@ const translations: Record<Language, Record<string, string>> = {
     'nav.language': 'Language',
     
     // Hero
-    'hero.title': 'Tanke AI Phone',
-    'hero.subtitle': 'Smarter Marketing, Simpler Live Streaming',
-    'hero.description': 'Revolutionary AI-powered marketing solution providing one-stop services for private live streaming, customer management, and intelligent marketing',
-    'hero.getStarted': 'Get Started',
-    'hero.learnMore': 'Learn More',
+    'hero.title': 'Tanke AI Growth Phone',
+    'hero.subtitle': 'Let AI Do Marketing for You',
+    'hero.description': 'Revolutionary AI and RPA automation marketing solution providing intelligent marketing, public domain customer acquisition, automated live streaming, intelligent outbound calling and other one-stop marketing growth services',
+    'hero.getStarted': 'Start Now',
+    'hero.learnMore': 'Start Now',
     
     // Features
     'features.title': 'AI Automated Marketing Platform',

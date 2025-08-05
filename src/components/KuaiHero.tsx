@@ -121,19 +121,7 @@ const KuaiHero: React.FC = () => {
     letterSpacing: '1px',
   };
 
-  const secondaryButtonStyle: React.CSSProperties = {
-    backgroundColor: 'transparent',
-    color: 'white',
-    padding: isMobile ? '14px 32px' : '12px 24px',
-    borderRadius: '8px',
-    fontWeight: '600',
-    fontSize: isMobile ? '16px' : '16px',
-    border: '1px solid rgba(255, 255, 255, 0.4)',
-    cursor: 'pointer',
-    transition: 'all 0.3s ease',
-    minWidth: isMobile ? '200px' : '120px',
-    height: isMobile ? '48px' : '44px'
-  };
+
 
   const illustrationStyle: React.CSSProperties = {
     flex: 1,
@@ -196,11 +184,7 @@ const KuaiHero: React.FC = () => {
     lineHeight: '1.4' // 减少行高
   };
 
-  // 底部占位区域 - 增加高度确保白色容器有足够空间
-  const spacerStyle: React.CSSProperties = {
-    height: '350px', // 进一步增加高度，确保第一屏完整显示
-    backgroundColor: '#f5f5f5'
-  };
+
 
   return (
     <>
@@ -260,18 +244,6 @@ const KuaiHero: React.FC = () => {
                     onMouseLeave={(e) => {
                       e.currentTarget.style.backgroundColor = 'white';
                     }}
-                  >
-                    {t('hero.getStarted')}
-                  </motion.button>
-
-                  <motion.button
-                    whileHover={{ 
-                      scale: 1.02,
-                      backgroundColor: 'rgba(255, 255, 255, 0.1)',
-                      borderColor: 'rgba(255, 255, 255, 0.6)'
-                    }}
-                    whileTap={{ scale: 0.98 }}
-                    style={secondaryButtonStyle}
                     onClick={() => openContactModal()}
                   >
                     {t('hero.learnMore')}
@@ -326,10 +298,10 @@ const KuaiHero: React.FC = () => {
               style={featureItemStyle}
             >
               <div style={featureIconStyle}>
-                <span>📱</span>
+                <span>🎯</span>
               </div>
-              <div style={featureTitleStyle}>智能手机</div>
-              <div style={featureDescStyle}>无需配置，即可拥有最佳的包体积大小和极致的性能</div>
+              <div style={featureTitleStyle}>AI公域拓客</div>
+              <div style={featureDescStyle}>智能匹配精准流量，实现用户高效触达与转化</div>
             </motion.div>
             
             <motion.div
@@ -339,10 +311,10 @@ const KuaiHero: React.FC = () => {
               style={featureItemStyle}
             >
               <div style={featureIconStyle}>
-                <span>🎯</span>
+                <span>👥</span>
               </div>
-              <div style={featureTitleStyle}>精准营销</div>
-              <div style={featureDescStyle}>可以高效地对组件外观进行调整或者创建自己的主题</div>
+              <div style={featureTitleStyle}>AI私域运营</div>
+              <div style={featureDescStyle}>数据驱动个性化互动，构建高粘性用户社群</div>
             </motion.div>
             
             <motion.div
@@ -354,8 +326,8 @@ const KuaiHero: React.FC = () => {
               <div style={featureIconStyle}>
                 <span>📺</span>
               </div>
-              <div style={featureTitleStyle}>自动直播</div>
-              <div style={featureDescStyle}>拥有流畅的手势和细腻的动画，助力产品打造极致体验</div>
+              <div style={featureTitleStyle}>AI无人直播</div>
+              <div style={featureDescStyle}>24小时自动化直播，打造沉浸式智能交互体验</div>
             </motion.div>
           </div>
         </motion.div>
