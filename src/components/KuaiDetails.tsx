@@ -18,7 +18,7 @@ const KuaiDetails: React.FC = () => {
     return () => window.removeEventListener('resize', checkMobile);
   }, []);
 
-  // 16个功能模块，每个都有独特的渐变色系
+  // 12个功能模块，每个都有独特的渐变色系（删除了最后4个）
   const featureModules = [
     { 
       icon: "📱", 
@@ -105,35 +105,6 @@ const KuaiDetails: React.FC = () => {
       description: "提供丰富拓客工具，精准获客",
       gradient: "linear-gradient(135deg, #c2e9fb 0%, #a1c4fd 100%)",
       bgColor: "#f0f8ff"
-    },
-    
-    { 
-      icon: "🖼️", 
-      title: "动态背景", 
-      description: "虚拟背景直播，降低场地成本",
-      gradient: "linear-gradient(135deg, #d299c2 0%, #fef9d7 100%)",
-      bgColor: "#fcf8ff"
-    },
-    { 
-      icon: "📇", 
-      title: "智能名片", 
-      description: "电子名片智能获客，提升转化",
-      gradient: "linear-gradient(135deg, #89f7fe 0%, #66a6ff 100%)",
-      bgColor: "#f0fbff"
-    },
-    { 
-      icon: "📊", 
-      title: "CRM", 
-      description: "会员分层管理与精准营销",
-      gradient: "linear-gradient(135deg, #fdbb2d 0%, #22c1c3 100%)",
-      bgColor: "#fffbf0"
-    },
-    { 
-      icon: "📞", 
-      title: "云呼叫中心", 
-      description: "外呼系统稳定，智能高效触达",
-      gradient: "linear-gradient(135deg, #ee9ca7 0%, #ffdde1 100%)",
-      bgColor: "#fff8f8"
     }
   ];
 
@@ -306,31 +277,6 @@ const KuaiDetails: React.FC = () => {
               </div>
             </div>
           ))}
-        </div>
-
-        {/* 底部CTA按钮 */}
-        <div style={{ 
-          textAlign: 'center'
-        }}>
-          <button 
-            style={ctaButtonStyle}
-            onClick={() => openContactModal()}
-            onMouseEnter={(e) => {
-              if (!isMobile) {
-                e.currentTarget.style.backgroundColor = '#2563eb';
-                e.currentTarget.style.transform = 'translateY(-2px)';
-              }
-            }}
-            onMouseLeave={(e) => {
-              if (!isMobile) {
-                e.currentTarget.style.backgroundColor = '#3b82f6';
-                e.currentTarget.style.transform = 'translateY(0)';
-              }
-            }}
-          >
-            了解完整功能清单
-            <span style={{ fontSize: '1.2rem' }}>→</span>
-          </button>
         </div>
       </div>
     </section>
