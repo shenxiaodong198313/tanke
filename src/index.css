@@ -25,6 +25,12 @@ code {
 /* Smooth scrolling */
 html {
   scroll-behavior: smooth;
+  scroll-padding-top: 0;
+}
+
+/* 确保页面跳转时重置滚动位置 */
+html, body {
+  scroll-behavior: auto;
 }
 
 /* Remove default button styles */

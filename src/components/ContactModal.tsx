@@ -237,7 +237,7 @@ const ContactModal: React.FC<ContactModalProps> = ({ isOpen, onClose }) => {
             <div style={leftSectionStyle}>
               <div style={{ marginBottom: '20px' }}>
                 <h2 style={titleStyle}>
-                  扫码免费领取<span style={{ color: '#ff6b47' }}>有赞私域直播试用资格</span>
+                  扫码免费领取<span style={{ color: '#ff6b47' }}>AI增长手机解决方案</span>
                 </h2>
                 <p style={subtitleStyle}>
                   还可以定制你的专属解决方案
@@ -371,7 +371,7 @@ const ContactModal: React.FC<ContactModalProps> = ({ isOpen, onClose }) => {
                   </svg>
                 </div>
                 <p style={{ fontSize: '14px', color: '#666', margin: 0 }}>
-                  支付宝或微信扫一扫安全登录
+                  添加专属顾问
                 </p>
               </div>
 

@@ -1,5 +1,6 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { HelmetProvider } from 'react-helmet-async';
+import { BrowserRouter, Routes, Route, useLocation } from 'react-router-dom';
 import { LanguageProvider } from './contexts/LanguageContext';
 import { ModalProvider, useModal } from './contexts/ModalContext';
 import SEOHead from './components/SEOHead';
@@ -10,7 +11,6 @@ import FloatingToolbar from './components/FloatingToolbar';
 import ContactModal from './components/ContactModal';
 import './App.css';
 
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
 // 页面组件
 import AiMarketing from './components/pages/AiMarketing';
 import AiLive from './components/pages/AiLive';
@@ -32,11 +32,35 @@ import IndustryShowcase from './components/IndustryShowcase';
 import FullPageScroll from './components/FullPageScroll';
 import CallToAction from './components/CallToAction';
 
+// 滚动到顶部组件
+const ScrollToTop: React.FC = () => {
+  const { pathname } = useLocation();
+
+  useEffect(() => {
+    // 每次路由变化时滚动到顶部
+    window.scrollTo(0, 0);
+    
+    // 确保所有滚动容器都重置到顶部
+    document.documentElement.scrollTop = 0;
+    document.body.scrollTop = 0;
+  }, [pathname]);
+
+  // 页面刷新时也滚动到顶部
+  useEffect(() => {
+    window.scrollTo(0, 0);
+    document.documentElement.scrollTop = 0;
+    document.body.scrollTop = 0;
+  }, []);
+
+  return null;
+};
+
 const AppContent: React.FC = () => {
   const { isContactModalOpen, closeContactModal } = useModal();
 
   return (
     <BrowserRouter>
+      <ScrollToTop />
       <SEOHead />
       <Routes>
         {/* 首页 */}

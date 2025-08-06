@@ -148,6 +148,7 @@ const Partnership: React.FC = () => {
     marginTop: '0',
     textAlign: 'center',
     letterSpacing: '2px',
+    whiteSpace: 'nowrap',
   };
   const heroBtn: React.CSSProperties = {
     fontSize: '1.2rem',
