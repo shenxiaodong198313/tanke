@@ -7,12 +7,12 @@ const Contact: React.FC = () => {
   const containerStyle: React.CSSProperties = {
     minHeight: '100vh',
     paddingTop: '64px',
-    background: 'linear-gradient(135deg, #ffffff 0%, #f8fafc 50%, #f1f5f9 100%)', // 白色渐变背景
+    background: 'linear-gradient(135deg, #f4f8ff 0%, #e8f2ff 50%, #dbeafe 100%)', // 浅蓝色渐变背景
     display: 'flex',
     flexDirection: 'column',
     alignItems: 'center',
     justifyContent: 'center',
-    padding: '64px 24px',
+    padding: '64px 0',
   };
 
   const titleStyle: React.CSSProperties = {
@@ -139,13 +139,37 @@ const Contact: React.FC = () => {
         ogDescription="欢迎联系探客AI手机团队，获取产品咨询、合作与技术支持。"
       />
       <div style={containerStyle}>
-        <h1 style={titleStyle}>您可以通过以下方式联系我们</h1>
-        <h2 style={{fontSize: '1.3rem', color: '#6b7280', textAlign: 'center', marginBottom: '32px', fontWeight: 400}}>
-          获取产品咨询、合作与技术支持，探客AI手机团队为您服务
-        </h2>
+                 {/* 蓝色背景的标题区域 */}
+         <div style={{
+           width: '100%',
+           minHeight: '400px',
+           background: 'linear-gradient(135deg, #2574e8 0%, #1e40af 100%)',
+           position: 'relative',
+           overflow: 'hidden',
+           display: 'flex',
+           alignItems: 'center',
+           justifyContent: 'center',
+           marginBottom: '64px',
+         }}>
+          <div style={{textAlign: 'center', maxWidth: '800px', padding: '0 24px'}}>
+            <h1 style={{
+              fontSize: '3.2rem',
+              fontWeight: 700,
+              color: 'white',
+              marginBottom: '32px',
+              marginTop: '0',
+              textAlign: 'center',
+              letterSpacing: '2px',
+              whiteSpace: 'nowrap',
+            }}>您可以通过以下方式联系我们</h1>
+            <p style={{fontSize: '1.3rem', color: 'rgba(255,255,255,0.9)', marginBottom: '48px', lineHeight: 1.6}}>
+              获取产品咨询、合作与技术支持，探客AI手机团队为您服务
+            </p>
+          </div>
+        </div>
         
-        {/* 上方联系方式卡片 */}
-        <div style={topCardsContainerStyle}>
+                 {/* 上方联系方式卡片 */}
+         <div style={{...topCardsContainerStyle, padding: '0 24px'}}>
           {/* 1V1咨询 */}
           <div style={{
             background: 'rgba(255, 255, 255, 0.9)',
@@ -213,8 +237,8 @@ const Contact: React.FC = () => {
           </div>
         </div>
 
-        {/* 预约演示3个模块 */}
-        <div style={cardsContainerStyle}>
+                 {/* 预约演示3个模块 */}
+         <div style={{...cardsContainerStyle, padding: '0 24px'}}>
           {/* 预约演示 */}
           <div
             style={getCardStyle('demo')}
