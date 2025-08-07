@@ -240,7 +240,7 @@ const AiLive: React.FC = () => {
       <div style={containerStyle}>
         {/* 蓝色背景的标题区域 */}
         <div style={{
-          width: '100%',
+          width: '100vw',
           minHeight: '400px',
           background: 'linear-gradient(135deg, #2574e8 0%, #1e40af 100%)',
           position: 'relative',
@@ -249,8 +249,9 @@ const AiLive: React.FC = () => {
           alignItems: 'center',
           justifyContent: 'center',
           marginBottom: '64px',
+          marginLeft: 'calc(-50vw + 50%)',
         }}>
-          <div style={{textAlign: 'center', maxWidth: '800px', padding: '0 24px'}}>
+          <div style={{textAlign: 'center', maxWidth: '800px', padding: '0'}}>
             <h1 style={{
               fontSize: '3.2rem',
               fontWeight: 700,
@@ -260,7 +261,7 @@ const AiLive: React.FC = () => {
               textAlign: 'center',
               letterSpacing: '2px',
               whiteSpace: 'nowrap',
-            }}>AI直播助手</h1>
+            }}>AI直播智能体</h1>
             <p style={{fontSize: '1.3rem', color: 'rgba(255,255,255,0.9)', marginBottom: '48px', lineHeight: 1.6}}>
               私域直播新体验，提升客户互动与转化率
             </p>

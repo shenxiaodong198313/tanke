@@ -65,11 +65,11 @@ const AppContent: React.FC = () => {
       <Routes>
         {/* 首页 */}
         <Route path="/" element={
-          <div style={{ minHeight: '100vh', display: 'flex', flexDirection: 'column' }}>
+          <div style={{ minHeight: '100vh', display: 'flex', flexDirection: 'column', margin: 0, padding: 0 }}>
             <KuaiNavbar />
-            <div style={{ flex: 1 }}>
+            <div style={{ flex: 1, margin: 0, padding: 0 }}>
               {/* 取消整屏滑动，直接普通滚动 */}
-              <div>
+              <div style={{ margin: 0, padding: 0 }}>
                 <KuaiHero />
                 <HeroGeometric />
                 <KuaiFeatures />
@@ -80,8 +80,8 @@ const AppContent: React.FC = () => {
                 <IndustryCases />
                 <Pricing />
                 <IndustryShowcase />
-                <div style={{ height: '100%', display: 'flex', flexDirection: 'column' }}>
-                  <div style={{ flex: 1, display: 'flex' }}>
+                <div style={{ height: '100%', display: 'flex', flexDirection: 'column', margin: 0, padding: 0 }}>
+                  <div style={{ flex: 1, display: 'flex', margin: 0, padding: 0 }}>
                     <CallToAction />
                   </div>
                   <KuaiFooter />

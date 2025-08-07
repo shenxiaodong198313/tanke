@@ -90,7 +90,7 @@ const FloatingToolbar: React.FC = () => {
     flexDirection: 'column',
     alignItems: 'center',
     gap: '6px', // 减少间距
-    fontSize: '0.65rem', // 稍微缩小字体
+    fontSize: '0.85rem', // 相当于12px的rem大小
     color: '#666',
     fontWeight: '500',
     position: 'relative'

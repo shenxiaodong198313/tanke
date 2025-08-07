@@ -18,14 +18,18 @@ const KuaiFooter: React.FC = () => {
   const containerStyle: React.CSSProperties = {
     display: 'flex',
     flexDirection: 'column',
-    overflow: 'hidden'
+    overflow: 'hidden',
+    margin: 0,
+    padding: 0
   };
 
   const footerSectionStyle: React.CSSProperties = {
     background: '#1a1a2e',
     padding: isMobile ? '1.5rem 1rem 1rem' : '1.5rem 2rem 1rem',
     color: 'white',
-    overflow: 'auto'
+    overflow: 'auto',
+    margin: 0,
+    border: 'none'
   };
 
   return (
@@ -75,8 +79,8 @@ const KuaiFooter: React.FC = () => {
                 gap: '0.3rem',
                 flex: 1
               }}>
-                <button style={{ color: '#a1a1aa', background: 'none', border: 'none', textAlign: 'left', cursor: 'pointer', textDecoration: 'none', fontSize: isMobile ? '0.75rem' : '0.65rem', padding: 0, lineHeight: '1.4' }}>外呼系统</button>
-                <button style={{ color: '#a1a1aa', background: 'none', border: 'none', textAlign: 'left', cursor: 'pointer', textDecoration: 'none', fontSize: isMobile ? '0.75rem' : '0.65rem', padding: 0, lineHeight: '1.4' }}>云电销BPO</button>
+                <button style={{ color: '#a1a1aa', background: 'none', border: 'none', textAlign: 'left', cursor: 'pointer', textDecoration: 'none', fontSize: isMobile ? '0.75rem' : '0.85rem', padding: 0, lineHeight: '1.4' }}>外呼系统</button>
+                <button style={{ color: '#a1a1aa', background: 'none', border: 'none', textAlign: 'left', cursor: 'pointer', textDecoration: 'none', fontSize: isMobile ? '0.75rem' : '0.85rem', padding: 0, lineHeight: '1.4' }}>云电销BPO</button>
               </div>
             </div>
 
@@ -103,11 +107,11 @@ const KuaiFooter: React.FC = () => {
                 gap: '0.3rem',
                 flex: 1
               }}>
-                <button style={{ color: '#a1a1aa', background: 'none', border: 'none', textAlign: 'left', cursor: 'pointer', textDecoration: 'none', fontSize: isMobile ? '0.75rem' : '0.65rem', padding: 0, lineHeight: '1.4' }}>工作手机</button>
-                <button style={{ color: '#a1a1aa', background: 'none', border: 'none', textAlign: 'left', cursor: 'pointer', textDecoration: 'none', fontSize: isMobile ? '0.75rem' : '0.65rem', padding: 0, lineHeight: '1.4' }}>微小助</button>
-                <button style={{ color: '#a1a1aa', background: 'none', border: 'none', textAlign: 'left', cursor: 'pointer', textDecoration: 'none', fontSize: isMobile ? '0.75rem' : '0.65rem', padding: 0, lineHeight: '1.4' }}>微联络</button>
-                <button style={{ color: '#a1a1aa', background: 'none', border: 'none', textAlign: 'left', cursor: 'pointer', textDecoration: 'none', fontSize: isMobile ? '0.75rem' : '0.65rem', padding: 0, lineHeight: '1.4' }}>云客CRM</button>
-                <button style={{ color: '#a1a1aa', background: 'none', border: 'none', textAlign: 'left', cursor: 'pointer', textDecoration: 'none', fontSize: isMobile ? '0.75rem' : '0.65rem', padding: 0, lineHeight: '1.4' }}>设备管控</button>
+                <button style={{ color: '#a1a1aa', background: 'none', border: 'none', textAlign: 'left', cursor: 'pointer', textDecoration: 'none', fontSize: isMobile ? '0.75rem' : '0.85rem', padding: 0, lineHeight: '1.4' }}>工作手机</button>
+                <button style={{ color: '#a1a1aa', background: 'none', border: 'none', textAlign: 'left', cursor: 'pointer', textDecoration: 'none', fontSize: isMobile ? '0.75rem' : '0.85rem', padding: 0, lineHeight: '1.4' }}>微小助</button>
+                <button style={{ color: '#a1a1aa', background: 'none', border: 'none', textAlign: 'left', cursor: 'pointer', textDecoration: 'none', fontSize: isMobile ? '0.75rem' : '0.85rem', padding: 0, lineHeight: '1.4' }}>微联络</button>
+                <button style={{ color: '#a1a1aa', background: 'none', border: 'none', textAlign: 'left', cursor: 'pointer', textDecoration: 'none', fontSize: isMobile ? '0.75rem' : '0.85rem', padding: 0, lineHeight: '1.4' }}>云客CRM</button>
+                <button style={{ color: '#a1a1aa', background: 'none', border: 'none', textAlign: 'left', cursor: 'pointer', textDecoration: 'none', fontSize: isMobile ? '0.75rem' : '0.85rem', padding: 0, lineHeight: '1.4' }}>设备管控</button>
               </div>
             </div>
 
@@ -134,8 +138,8 @@ const KuaiFooter: React.FC = () => {
                 gap: '0.3rem',
                 flex: 1
               }}>
-                <button style={{ color: '#a1a1aa', background: 'none', border: 'none', textAlign: 'left', cursor: 'pointer', textDecoration: 'none', fontSize: isMobile ? '0.75rem' : '0.65rem', padding: 0, lineHeight: '1.4' }}>云小智</button>
-                <button style={{ color: '#a1a1aa', background: 'none', border: 'none', textAlign: 'left', cursor: 'pointer', textDecoration: 'none', fontSize: isMobile ? '0.75rem' : '0.65rem', padding: 0, lineHeight: '1.4' }}>数智员工</button>
+                <button style={{ color: '#a1a1aa', background: 'none', border: 'none', textAlign: 'left', cursor: 'pointer', textDecoration: 'none', fontSize: isMobile ? '0.75rem' : '0.85rem', padding: 0, lineHeight: '1.4' }}>云小智</button>
+                <button style={{ color: '#a1a1aa', background: 'none', border: 'none', textAlign: 'left', cursor: 'pointer', textDecoration: 'none', fontSize: isMobile ? '0.75rem' : '0.85rem', padding: 0, lineHeight: '1.4' }}>数智员工</button>
               </div>
             </div>
 
@@ -162,9 +166,9 @@ const KuaiFooter: React.FC = () => {
                 gap: '0.3rem',
                 flex: 1
               }}>
-                <button style={{ color: '#a1a1aa', background: 'none', border: 'none', textAlign: 'left', cursor: 'pointer', textDecoration: 'none', fontSize: isMobile ? '0.75rem' : '0.65rem', padding: 0, lineHeight: '1.4' }}>云客SCRM</button>
-                <button style={{ color: '#a1a1aa', background: 'none', border: 'none', textAlign: 'left', cursor: 'pointer', textDecoration: 'none', fontSize: isMobile ? '0.75rem' : '0.65rem', padding: 0, lineHeight: '1.4' }}>趣销销</button>
-                <button style={{ color: '#a1a1aa', background: 'none', border: 'none', textAlign: 'left', cursor: 'pointer', textDecoration: 'none', fontSize: isMobile ? '0.75rem' : '0.65rem', padding: 0, lineHeight: '1.4' }}>代运营服务</button>
+                <button style={{ color: '#a1a1aa', background: 'none', border: 'none', textAlign: 'left', cursor: 'pointer', textDecoration: 'none', fontSize: isMobile ? '0.75rem' : '0.85rem', padding: 0, lineHeight: '1.4' }}>云客SCRM</button>
+                <button style={{ color: '#a1a1aa', background: 'none', border: 'none', textAlign: 'left', cursor: 'pointer', textDecoration: 'none', fontSize: isMobile ? '0.75rem' : '0.85rem', padding: 0, lineHeight: '1.4' }}>趣销销</button>
+                <button style={{ color: '#a1a1aa', background: 'none', border: 'none', textAlign: 'left', cursor: 'pointer', textDecoration: 'none', fontSize: isMobile ? '0.75rem' : '0.85rem', padding: 0, lineHeight: '1.4' }}>代运营服务</button>
               </div>
             </div>
 
@@ -191,8 +195,8 @@ const KuaiFooter: React.FC = () => {
                 gap: '0.3rem',
                 flex: 1
               }}>
-                <button style={{ color: '#a1a1aa', background: 'none', border: 'none', textAlign: 'left', cursor: 'pointer', textDecoration: 'none', fontSize: isMobile ? '0.75rem' : '0.65rem', padding: 0, lineHeight: '1.4' }}>短视频矩阵</button>
-                <button style={{ color: '#a1a1aa', background: 'none', border: 'none', textAlign: 'left', cursor: 'pointer', textDecoration: 'none', fontSize: isMobile ? '0.75rem' : '0.65rem', padding: 0, lineHeight: '1.4' }}>无人直播</button>
+                <button style={{ color: '#a1a1aa', background: 'none', border: 'none', textAlign: 'left', cursor: 'pointer', textDecoration: 'none', fontSize: isMobile ? '0.75rem' : '0.85rem', padding: 0, lineHeight: '1.4' }}>短视频矩阵</button>
+                <button style={{ color: '#a1a1aa', background: 'none', border: 'none', textAlign: 'left', cursor: 'pointer', textDecoration: 'none', fontSize: isMobile ? '0.75rem' : '0.85rem', padding: 0, lineHeight: '1.4' }}>无人直播</button>
               </div>
             </div>
 
@@ -219,10 +223,10 @@ const KuaiFooter: React.FC = () => {
                 gap: '0.3rem',
                 flex: 1
               }}>
-                <button style={{ color: '#a1a1aa', background: 'none', border: 'none', textAlign: 'left', cursor: 'pointer', textDecoration: 'none', fontSize: isMobile ? '0.75rem' : '0.65rem', padding: 0, lineHeight: '1.4' }}>公司简介</button>
-                <button style={{ color: '#a1a1aa', background: 'none', border: 'none', textAlign: 'left', cursor: 'pointer', textDecoration: 'none', fontSize: isMobile ? '0.75rem' : '0.65rem', padding: 0, lineHeight: '1.4' }}>团队理念</button>
-                <button style={{ color: '#a1a1aa', background: 'none', border: 'none', textAlign: 'left', cursor: 'pointer', textDecoration: 'none', fontSize: isMobile ? '0.75rem' : '0.65rem', padding: 0, lineHeight: '1.4' }}>投资背景</button>
-                <button style={{ color: '#a1a1aa', background: 'none', border: 'none', textAlign: 'left', cursor: 'pointer', textDecoration: 'none', fontSize: isMobile ? '0.75rem' : '0.65rem', padding: 0, lineHeight: '1.4' }}>云客动态</button>
+                <button style={{ color: '#a1a1aa', background: 'none', border: 'none', textAlign: 'left', cursor: 'pointer', textDecoration: 'none', fontSize: isMobile ? '0.75rem' : '0.85rem', padding: 0, lineHeight: '1.4' }}>公司简介</button>
+                <button style={{ color: '#a1a1aa', background: 'none', border: 'none', textAlign: 'left', cursor: 'pointer', textDecoration: 'none', fontSize: isMobile ? '0.75rem' : '0.85rem', padding: 0, lineHeight: '1.4' }}>团队理念</button>
+                <button style={{ color: '#a1a1aa', background: 'none', border: 'none', textAlign: 'left', cursor: 'pointer', textDecoration: 'none', fontSize: isMobile ? '0.75rem' : '0.85rem', padding: 0, lineHeight: '1.4' }}>投资背景</button>
+                <button style={{ color: '#a1a1aa', background: 'none', border: 'none', textAlign: 'left', cursor: 'pointer', textDecoration: 'none', fontSize: isMobile ? '0.75rem' : '0.85rem', padding: 0, lineHeight: '1.4' }}>云客动态</button>
               </div>
             </div>
           </div>
