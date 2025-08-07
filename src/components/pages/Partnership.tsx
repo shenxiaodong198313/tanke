@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { useLanguage } from '../../contexts/LanguageContext';
 import SEOHead from '../SEOHead';
+import { partnerApplicationApi, formValidation } from '../../services/api';
 
 const MAX_WIDTH = 1200;
 const CARD_WIDTH = 340;
@@ -16,17 +17,49 @@ const Partnership: React.FC = () => {
     position: '',
     phone: ''
   });
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitMessage, setSubmitMessage] = useState('');
 
   const handleInputChange = (field: string, value: string) => {
     setFormData(prev => ({ ...prev, [field]: value }));
+    // 清除之前的错误信息
+    if (submitMessage) {
+      setSubmitMessage('');
+    }
   };
 
-  const handleSubmit = () => {
-    // 这里可以添加表单提交逻辑
-    console.log('提交申请：', formData);
-    setIsModalOpen(false);
-    // 重置表单
-    setFormData({ name: '', company: '', position: '', phone: '' });
+  const handleSubmit = async () => {
+    // 表单验证
+    const errors = formValidation.validatePartnerApplication(formData);
+    if (errors.length > 0) {
+      setSubmitMessage(errors.join(', '));
+      return;
+    }
+
+    setIsSubmitting(true);
+    setSubmitMessage('');
+
+    try {
+      const response = await partnerApplicationApi.submit(formData);
+      
+      if (response.success) {
+        setSubmitMessage('申请提交成功！我们会尽快与您联系。');
+        // 重置表单
+        setFormData({ name: '', company: '', position: '', phone: '' });
+        // 3秒后关闭模态窗口
+        setTimeout(() => {
+          setIsModalOpen(false);
+          setSubmitMessage('');
+        }, 3000);
+      } else {
+        setSubmitMessage(response.message || '提交失败，请稍后重试');
+      }
+    } catch (error) {
+      console.error('提交申请失败:', error);
+      setSubmitMessage('网络错误，请检查网络连接后重试');
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   // 模态窗口样式
@@ -101,15 +134,26 @@ const Partnership: React.FC = () => {
   const submitButton: React.CSSProperties = {
     width: '100%',
     padding: '12px 24px',
-    backgroundColor: '#2574e8',
+    backgroundColor: isSubmitting ? '#ccc' : '#2574e8',
     color: 'white',
     border: 'none',
     borderRadius: '8px',
     fontSize: '16px',
     fontWeight: 600,
-    cursor: 'pointer',
+    cursor: isSubmitting ? 'not-allowed' : 'pointer',
     marginTop: '8px',
     transition: 'background-color 0.2s',
+  };
+
+  const messageStyle: React.CSSProperties = {
+    marginTop: '12px',
+    padding: '8px 12px',
+    borderRadius: '6px',
+    fontSize: '14px',
+    textAlign: 'center',
+    backgroundColor: submitMessage.includes('成功') ? '#d4edda' : '#f8d7da',
+    color: submitMessage.includes('成功') ? '#155724' : '#721c24',
+    border: `1px solid ${submitMessage.includes('成功') ? '#c3e6cb' : '#f5c6cb'}`,
   };
 
   const containerStyle: React.CSSProperties = {
@@ -405,7 +449,19 @@ const Partnership: React.FC = () => {
                 />
               </div>
 
-              <button style={submitButton} onClick={handleSubmit}>提交申请</button>
+              <button 
+                style={submitButton} 
+                onClick={handleSubmit}
+                disabled={isSubmitting}
+              >
+                {isSubmitting ? '提交中...' : '提交申请'}
+              </button>
+              
+              {submitMessage && (
+                <div style={messageStyle}>
+                  {submitMessage}
+                </div>
+              )}
             </div>
           </div>
         )}
