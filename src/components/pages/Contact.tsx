@@ -24,15 +24,6 @@ const Contact: React.FC = () => {
     letterSpacing: '1px',
   };
 
-  // 上方联系方式卡片容器样式
-  const topCardsContainerStyle: React.CSSProperties = {
-    display: 'flex',
-    gap: '32px',
-    marginBottom: '64px',
-    maxWidth: '1200px',
-    width: '100%',
-  };
-
   const cardsContainerStyle: React.CSSProperties = {
     display: 'flex',
     gap: '24px',
@@ -75,31 +66,6 @@ const Contact: React.FC = () => {
     marginBottom: '24px',
   };
 
-  const qrCodeStyle: React.CSSProperties = {
-    width: '120px',
-    height: '120px',
-    background: 'white',
-    borderRadius: '12px',
-    display: 'flex',
-    alignItems: 'center',
-    justifyContent: 'center',
-    marginBottom: '16px',
-    border: '2px solid #f0f0f0',
-  };
-
-  const qrPlaceholderStyle: React.CSSProperties = {
-    width: '100px',
-    height: '100px',
-    background: `
-      linear-gradient(45deg, #000 25%, transparent 25%),
-      linear-gradient(-45deg, #000 25%, transparent 25%),
-      linear-gradient(45deg, transparent 75%, #000 75%),
-      linear-gradient(-45deg, transparent 75%, #000 75%)
-    `,
-    backgroundSize: '8px 8px',
-    backgroundPosition: '0 0, 0 4px, 4px -4px, -4px 0px'
-  };
-
   const buttonStyle: React.CSSProperties = {
     background: 'linear-gradient(135deg, #3b82f6 0%, #1d4ed8 100%)',
     color: 'white',
@@ -139,18 +105,18 @@ const Contact: React.FC = () => {
         ogDescription="欢迎联系探客AI手机团队，获取产品咨询、合作与技术支持。"
       />
       <div style={containerStyle}>
-                 {/* 蓝色背景的标题区域 */}
-         <div style={{
-           width: '100%',
-           minHeight: '400px',
-           background: 'linear-gradient(135deg, #2574e8 0%, #1e40af 100%)',
-           position: 'relative',
-           overflow: 'hidden',
-           display: 'flex',
-           alignItems: 'center',
-           justifyContent: 'center',
-           marginBottom: '64px',
-         }}>
+        {/* 蓝色背景的标题区域 */}
+        <div style={{
+          width: '100%',
+          minHeight: '400px',
+          background: 'linear-gradient(135deg, #2574e8 0%, #1e40af 100%)',
+          position: 'relative',
+          overflow: 'hidden',
+          display: 'flex',
+          alignItems: 'center',
+          justifyContent: 'center',
+          marginBottom: '64px',
+        }}>
           <div style={{textAlign: 'center', maxWidth: '800px', padding: '0 24px'}}>
             <h1 style={{
               fontSize: '3.2rem',
@@ -167,78 +133,9 @@ const Contact: React.FC = () => {
             </p>
           </div>
         </div>
-        
-                 {/* 上方联系方式卡片 */}
-         <div style={{...topCardsContainerStyle, padding: '0 24px'}}>
-          {/* 1V1咨询 */}
-          <div style={{
-            background: 'rgba(255, 255, 255, 0.9)',
-            borderRadius: '20px',
-            padding: '32px',
-            flex: 1,
-            textAlign: 'center',
-            backdropFilter: 'blur(10px)',
-            border: '1px solid rgba(255, 255, 255, 0.2)',
-            boxShadow: '0 8px 32px rgba(0, 0, 0, 0.1)',
-          }}>
-            <h3 style={{ fontSize: '1.4rem', fontWeight: 700, marginBottom: '12px', color: '#222' }}>
-              1V1咨询
-            </h3>
-            <p style={{ fontSize: '1rem', color: '#666', marginBottom: '20px' }}>
-              您的专属顾问为您提供产品咨询
-            </p>
-            <div style={qrCodeStyle}>
-              <div style={qrPlaceholderStyle}></div>
-            </div>
-          </div>
 
-          {/* 公众号 */}
-          <div style={{
-            background: 'rgba(255, 255, 255, 0.9)',
-            borderRadius: '20px',
-            padding: '32px',
-            flex: 1,
-            textAlign: 'center',
-            backdropFilter: 'blur(10px)',
-            border: '1px solid rgba(255, 255, 255, 0.2)',
-            boxShadow: '0 8px 32px rgba(0, 0, 0, 0.1)',
-          }}>
-            <h3 style={{ fontSize: '1.4rem', fontWeight: 700, marginBottom: '12px', color: '#222' }}>
-              公众号
-            </h3>
-            <p style={{ fontSize: '1rem', color: '#666', marginBottom: '20px' }}>
-              关注公众号，实时掌握探客AI最新动态
-            </p>
-            <div style={qrCodeStyle}>
-              <div style={qrPlaceholderStyle}></div>
-            </div>
-          </div>
-
-          {/* 视频号 */}
-          <div style={{
-            background: 'rgba(255, 255, 255, 0.9)',
-            borderRadius: '20px',
-            padding: '32px',
-            flex: 1,
-            textAlign: 'center',
-            backdropFilter: 'blur(10px)',
-            border: '1px solid rgba(255, 255, 255, 0.2)',
-            boxShadow: '0 8px 32px rgba(0, 0, 0, 0.1)',
-          }}>
-            <h3 style={{ fontSize: '1.4rem', fontWeight: 700, marginBottom: '12px', color: '#222' }}>
-              视频号
-            </h3>
-            <p style={{ fontSize: '1rem', color: '#666', marginBottom: '20px' }}>
-              关注视频号，分享您的商业深度思考
-            </p>
-            <div style={qrCodeStyle}>
-              <div style={qrPlaceholderStyle}></div>
-            </div>
-          </div>
-        </div>
-
-                 {/* 预约演示3个模块 */}
-         <div style={{...cardsContainerStyle, padding: '0 24px'}}>
+        {/* 预约演示3个模块 */}
+        <div style={{...cardsContainerStyle, padding: '0 24px'}}>
           {/* 预约演示 */}
           <div
             style={getCardStyle('demo')}

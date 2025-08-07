@@ -131,10 +131,10 @@ const Partnership: React.FC = () => {
 
   const heroSection: React.CSSProperties = {
     width: '100%',
-    minHeight: '600px',
+    minHeight: '400px',
     background: 'linear-gradient(135deg, #2574e8 0%, #1e40af 100%)',
     position: 'relative',
-    marginBottom: '0',
+    marginBottom: '64px',
     overflow: 'hidden',
     display: 'flex',
     alignItems: 'center',

@@ -215,11 +215,36 @@ const AiCall: React.FC = () => {
         ogDescription="探客AI手机AI外呼模块，智能电话营销，自动化客户触达，提升销售效率。"
       />
       <div style={containerStyle}>
+        {/* 蓝色背景的标题区域 */}
+        <div style={{
+          width: '100%',
+          minHeight: '400px',
+          background: 'linear-gradient(135deg, #2574e8 0%, #1e40af 100%)',
+          position: 'relative',
+          overflow: 'hidden',
+          display: 'flex',
+          alignItems: 'center',
+          justifyContent: 'center',
+          marginBottom: '64px',
+        }}>
+          <div style={{textAlign: 'center', maxWidth: '800px', padding: '0 24px'}}>
+            <h1 style={{
+              fontSize: '3.2rem',
+              fontWeight: 700,
+              color: 'white',
+              marginBottom: '32px',
+              marginTop: '0',
+              textAlign: 'center',
+              letterSpacing: '2px',
+              whiteSpace: 'nowrap',
+            }}>AI外呼助手</h1>
+            <p style={{fontSize: '1.3rem', color: 'rgba(255,255,255,0.9)', marginBottom: '48px', lineHeight: 1.6}}>
+              智能电话营销，自动化客户触达，提升销售效率
+            </p>
+          </div>
+        </div>
+        
         <div style={sectionStyle}>
-          <h1 style={titleStyle}>AI外呼助手</h1>
-          <h2 style={{fontSize: '1.3rem', color: '#6b7280', textAlign: 'center', marginBottom: '32px', fontWeight: 400}}>
-            智能电话营销，自动化客户触达，提升销售效率
-          </h2>
           
           {/* 第一屏：线上小店功能 */}
           <div style={featureContainerStyle}>
