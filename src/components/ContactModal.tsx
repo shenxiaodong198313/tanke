@@ -120,24 +120,7 @@ const ContactModal: React.FC<ContactModalProps> = ({ isOpen, onClose }) => {
     lineHeight: '1.5'
   };
 
-  const phonePreviewStyle: React.CSSProperties = {
-    width: isMobile ? '200px' : '280px',
-    height: isMobile ? '350px' : '480px',
-    backgroundColor: '#1a1a1a',
-    borderRadius: '30px',
-    padding: '8px',
-    margin: '20px auto',
-    boxShadow: '0 10px 30px rgba(0, 0, 0, 0.3)'
-  };
-
-  const phoneContentStyle: React.CSSProperties = {
-    width: '100%',
-    height: '100%',
-    backgroundColor: 'white',
-    borderRadius: '22px',
-    overflow: 'hidden',
-    position: 'relative'
-  };
+  // 移除未使用样式，避免 ESLint 报警
 
   const qrSectionStyle: React.CSSProperties = {
     textAlign: 'center',

@@ -215,20 +215,7 @@ const KuaiDetails: React.FC = () => {
     boxShadow: '0 2px 8px rgba(59, 130, 246, 0.3)'
   };
 
-  const ctaButtonStyle: React.CSSProperties = {
-    backgroundColor: '#3b82f6',
-    color: 'white',
-    border: 'none',
-    borderRadius: '8px',
-    padding: isMobile ? '12px 32px' : '14px 40px',
-    fontSize: isMobile ? '1rem' : '1.125rem',
-    fontWeight: '600',
-    cursor: 'pointer',
-    transition: 'all 0.3s ease',
-    display: 'inline-flex',
-    alignItems: 'center',
-    gap: '8px'
-  };
+  // 移除未使用的样式对象，避免 ESLint 报警
 
   return (
     <section style={sectionStyle}>

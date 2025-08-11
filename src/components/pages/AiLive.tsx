@@ -14,14 +14,7 @@ const AiLive: React.FC = () => {
     margin: '0 auto',
   };
 
-  const titleStyle: React.CSSProperties = {
-    fontSize: '2.5rem',
-    fontWeight: 700,
-    color: '#1f2937',
-    textAlign: 'center',
-    marginBottom: '48px',
-    letterSpacing: '1px',
-  };
+  // 移除未使用的样式常量，避免 ESLint 报警
 
   const featureContainerStyle: React.CSSProperties = {
     display: 'flex',

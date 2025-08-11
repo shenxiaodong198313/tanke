@@ -29,7 +29,6 @@ import MarketingToolsShowcase from './components/MarketingToolsShowcase';
 import IndustryCases from './components/IndustryCases';
 import Pricing from './components/Pricing';
 import IndustryShowcase from './components/IndustryShowcase';
-import FullPageScroll from './components/FullPageScroll';
 import CallToAction from './components/CallToAction';
 
 // 滚动到顶部组件

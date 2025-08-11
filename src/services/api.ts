@@ -155,7 +155,8 @@ export const formValidation = {
   },
 };
 
-export default {
+// 避免 import/no-anonymous-default-export 警告：使用具名导出
+export const api = {
   partnerApplicationApi,
   healthApi,
   formValidation,

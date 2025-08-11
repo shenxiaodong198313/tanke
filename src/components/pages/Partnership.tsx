@@ -1,15 +1,13 @@
 import React, { useState } from 'react';
-import { useLanguage } from '../../contexts/LanguageContext';
 import SEOHead from '../SEOHead';
 import { partnerApplicationApi, formValidation } from '../../services/api';
 
-const MAX_WIDTH = 1200;
+// 移除未使用常量，避免 ESLint 报警
 const CARD_WIDTH = 340;
 // 内容区最大宽度与导航栏一致
 const contentMaxWidth = 1100;
 
 const Partnership: React.FC = () => {
-  const { t } = useLanguage();
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [formData, setFormData] = useState({
     name: '',

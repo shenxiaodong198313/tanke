@@ -18,15 +18,22 @@ const SEOHead: React.FC<SEOHeadProps> = ({
   ogTitle,
   ogDescription,
   ogImage = "/logo512.png",
-  canonicalUrl = "https://www.tanke.com"
+  canonicalUrl
 }) => {
+  // 动态 canonical：未显式传入时，自动拼接为当前页面 URL
+  const defaultCanonical =
+    typeof window !== 'undefined'
+      ? `${window.location.origin}${window.location.pathname}`
+      : 'https://www.tanke.com';
+  const resolvedCanonicalUrl = canonicalUrl || defaultCanonical;
+
   const structuredData = {
     "@context": "https://schema.org",
     "@type": "Organization",
     "name": "探客互动科技有限公司",
     "alternateName": "探客互动",
-    "url": canonicalUrl,
-    "logo": `${canonicalUrl}/logo512.png`,
+    "url": resolvedCanonicalUrl,
+    "logo": `${resolvedCanonicalUrl}/logo512.png`,
     "description": description,
     "contactPoint": {
       "@type": "ContactPoint",
@@ -77,7 +84,7 @@ const SEOHead: React.FC<SEOHeadProps> = ({
       
       {/* Open Graph / Facebook */}
       <meta property="og:type" content="website" />
-      <meta property="og:url" content={canonicalUrl} />
+      <meta property="og:url" content={resolvedCanonicalUrl} />
       <meta property="og:title" content={ogTitle || title} />
       <meta property="og:description" content={ogDescription || description} />
       <meta property="og:image" content={ogImage} />
@@ -86,13 +93,13 @@ const SEOHead: React.FC<SEOHeadProps> = ({
       
       {/* Twitter */}
       <meta property="twitter:card" content="summary_large_image" />
-      <meta property="twitter:url" content={canonicalUrl} />
+      <meta property="twitter:url" content={resolvedCanonicalUrl} />
       <meta property="twitter:title" content={ogTitle || title} />
       <meta property="twitter:description" content={ogDescription || description} />
       <meta property="twitter:image" content={ogImage} />
       
       {/* 规范化URL */}
-      <link rel="canonical" href={canonicalUrl} />
+      <link rel="canonical" href={resolvedCanonicalUrl} />
       
       {/* 图标 */}
       <link rel="icon" type="image/x-icon" href="/favicon.ico" />

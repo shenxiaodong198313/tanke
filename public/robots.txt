@@ -1,9 +1,7 @@
 # https://www.robotstxt.org/robotstxt.html
 User-agent: *
-Disallow: /static/
-Disallow: /*.json$
-Disallow: /*.xml$
 Allow: /
+Disallow: /static/
 
 Sitemap: https://www.tanke.com/sitemap.xml
 

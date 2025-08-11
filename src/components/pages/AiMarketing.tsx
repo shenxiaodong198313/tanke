@@ -15,18 +15,7 @@ const AiMarketing: React.FC = () => {
     marginBottom: '120px',
   };
 
-  const titleStyle: React.CSSProperties = {
-    fontSize: '2.5rem',
-    fontWeight: 700,
-    color: '#1f2937',
-    textAlign: 'center',
-    marginBottom: '48px',
-    letterSpacing: '-2px',
-    background: 'linear-gradient(90deg, #3b82f6 0%, #1d4ed8 100%)',
-    WebkitBackgroundClip: 'text',
-    WebkitTextFillColor: 'transparent',
-    display: 'inline-block',
-  };
+  // 移除未使用的样式常量，避免 ESLint 报警
 
   const featureContainerStyle: React.CSSProperties = {
     display: 'flex',

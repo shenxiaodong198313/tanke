@@ -16,44 +16,13 @@ const Pricing: React.FC = () => {
     return () => window.removeEventListener('resize', checkMobile);
   }, []);
 
-  const cardStyle: React.CSSProperties = {
-    backgroundColor: 'rgba(255, 255, 255, 0.9)',
-    borderRadius: '16px',
-    padding: isMobile ? '24px' : '32px',
-    border: '1px solid rgba(30, 64, 175, 0.1)',
-    backdropFilter: 'blur(10px)',
-    transition: 'all 0.3s ease',
-    position: 'relative',
-    overflow: 'hidden',
-    minHeight: isMobile ? '350px' : '400px',
-    display: 'flex',
-    flexDirection: 'column',
-    boxShadow: '0 4px 16px rgba(30, 64, 175, 0.1)'
-  };
+  // 删除未使用样式：原 cardStyle
 
-  const planNameStyle: React.CSSProperties = {
-    fontSize: isMobile ? '20px' : '24px',
-    fontWeight: '600',
-    color: '#1e40af',
-    marginBottom: '8px'
-  };
+  // 删除未使用样式：原 planNameStyle
 
-  const planDescStyle: React.CSSProperties = {
-    fontSize: isMobile ? '13px' : '14px',
-    color: 'rgba(30, 64, 175, 0.7)',
-    marginBottom: isMobile ? '20px' : '24px',
-    lineHeight: '1.5'
-  };
+  // 删除未使用样式：原 planDescStyle
 
-  const priceStyle: React.CSSProperties = {
-    fontSize: isMobile ? '36px' : '48px',
-    fontWeight: 'bold',
-    color: '#1e40af',
-    marginBottom: isMobile ? '20px' : '24px',
-    display: 'flex',
-    alignItems: 'baseline',
-    gap: '8px'
-  };
+  // 删除未使用样式：原 priceStyle
 
   const industryApps = [
     {
