@@ -41,7 +41,7 @@ const MarketingToolsShowcase: React.FC = () => {
           color: '#1f2937',
           display: 'inline-block',
         }}>
-          大模型营销工具
+          AI外呼
         </div>
         <div style={{
           fontSize: '2rem',
@@ -49,14 +49,14 @@ const MarketingToolsShowcase: React.FC = () => {
           color: '#374151',
           marginBottom: 12,
         }}>
-          内置多款营销工具，满足不同营销需求
+          使用机主的声音自动给客户打电话、加微信、推送产品资料
         </div>
         <div style={{
           fontSize: '1.05rem',
           color: '#6b7280',
           marginBottom: 48,
         }}>
-          高效热门营销工具，包含企业筛选、短视频爆款、短视频找门店、基开客户、精准查找各个行业下细分领域客户
+          让手机自动完成重复的外呼工作
         </div>
       </div>
       {/* 漂浮icon */}
