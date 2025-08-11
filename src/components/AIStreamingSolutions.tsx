@@ -108,6 +108,26 @@ const AIStreamingSolutions: React.FC = () => {
             </div>
           ))}
         </div>
+        
+        {/* 在三个容器下方添加图片 */}
+        <div style={{
+          marginTop: '60px',
+          display: 'flex',
+          alignItems: 'center',
+          justifyContent: 'center',
+        }}>
+          <img
+            src="https://img01.yzcdn.cn/upload_files/2025/05/21/FgQ3I8848jV_1BFTaMnVlbWitMGB.png?imageMogr2/format/webp"
+            alt="矩阵式AI智能生态"
+            loading="lazy"
+            style={{
+              maxWidth: '100%',
+              height: 'auto',
+              display: 'block',
+              objectFit: 'contain',
+            }}
+          />
+        </div>
       </div>
     </section>
   );
