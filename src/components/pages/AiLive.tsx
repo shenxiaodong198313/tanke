@@ -16,6 +16,83 @@ const AiLive: React.FC = () => {
 
   // 移除未使用的样式常量，避免 ESLint 报警
 
+  // 概览模块样式（仿图2）
+  const overviewTitleStyle: React.CSSProperties = {
+    fontSize: '2.6rem',
+    fontWeight: 800,
+    color: '#111827',
+    textAlign: 'center',
+    lineHeight: 1.25,
+    margin: '0 0 16px',
+    letterSpacing: '-0.5px'
+  };
+
+  const overviewSubTitleStyle: React.CSSProperties = {
+    fontSize: '2.2rem',
+    fontWeight: 800,
+    color: '#111827',
+    textAlign: 'center',
+    lineHeight: 1.25,
+    margin: '0 0 48px',
+    letterSpacing: '-0.5px'
+  };
+
+  const overviewGridStyle: React.CSSProperties = {
+    display: 'flex',
+    flexWrap: 'nowrap',
+    alignItems: 'stretch',
+    justifyContent: 'space-between',
+    gap: 0,
+  };
+
+  const overviewItemStyle: React.CSSProperties = {
+    display: 'flex',
+    flexDirection: 'column',
+    alignItems: 'center',
+    justifyContent: 'center',
+    padding: '28px 12px',
+    flex: 1,
+    minWidth: 0,
+  };
+
+  const overviewIconWrapStyle: React.CSSProperties = {
+    width: 68,
+    height: 68,
+    borderRadius: 20,
+    background: '#eef2ff',
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'center',
+    boxShadow: '0 12px 28px rgba(59,130,246,0.12)'
+  };
+
+  const overviewNumberStyle: React.CSSProperties = {
+    fontSize: '2.2rem',
+    fontWeight: 800,
+    color: '#111827',
+    marginTop: 20,
+    marginBottom: 6,
+    letterSpacing: '-0.5px'
+  };
+
+  const overviewLabelStyle: React.CSSProperties = {
+    fontSize: '1rem',
+    color: '#6b7280',
+  };
+
+  const overviewDividerStyle: React.CSSProperties = {
+    width: 1,
+    background: 'rgba(17,24,39,0.08)',
+    alignSelf: 'stretch',
+  };
+
+  const liveStats = [
+    { icon: '📱', number: '3689万+', label: '直播总场次' },
+    { icon: '⭐', number: '15.9亿+', label: '全网曝光数量' },
+    { icon: '🧩', number: '63590个+', label: '授权矩阵数量' },
+    { icon: '🌐', number: '23658家+', label: '服务商家数量' },
+  ];
+
   const featureContainerStyle: React.CSSProperties = {
     display: 'flex',
     alignItems: 'center',
@@ -191,6 +268,61 @@ const AiLive: React.FC = () => {
     border: 'none',
   };
 
+  // 新增：图2样式 - 左侧内容块
+  const heroTitleStyle: React.CSSProperties = {
+    fontSize: '2.8rem',
+    fontWeight: 800,
+    color: '#0f172a',
+    lineHeight: 1.2,
+    margin: 0,
+  };
+
+  const heroSubTitleStyle: React.CSSProperties = {
+    fontSize: '2.2rem',
+    fontWeight: 800,
+    color: '#0f172a',
+    lineHeight: 1.2,
+    margin: '12px 0 24px',
+  };
+
+  const heroParagraphStyle: React.CSSProperties = {
+    fontSize: '1rem',
+    color: '#475569',
+    lineHeight: 1.9,
+    margin: '0 0 16px',
+    maxWidth: 640,
+  };
+
+  const bulletRowStyle: React.CSSProperties = {
+    display: 'flex',
+    alignItems: 'flex-start',
+    gap: 10,
+    margin: '10px 0',
+    color: '#0f172a',
+  };
+
+  const bulletIconStyle: React.CSSProperties = {
+    width: 12,
+    height: 12,
+    borderRadius: 9999,
+    background: '#2563eb',
+    marginTop: 8,
+    boxShadow: '0 0 0 3px rgba(37,99,235,0.15)'
+  };
+
+  const ctaPrimaryButtonStyle: React.CSSProperties = {
+    background: '#2563eb',
+    color: '#ffffff',
+    border: 'none',
+    borderRadius: 12,
+    padding: '14px 24px',
+    fontSize: '1rem',
+    fontWeight: 700,
+    cursor: 'pointer',
+    marginTop: 22,
+    boxShadow: '0 10px 24px rgba(37,99,235,0.25)'
+  };
+
   const statsContainerStyle: React.CSSProperties = {
     display: 'grid',
     gridTemplateColumns: 'repeat(3, 1fr)',
@@ -219,6 +351,64 @@ const AiLive: React.FC = () => {
     fontSize: '1.1rem',
     color: '#6b7280',
     fontWeight: 500,
+  };
+
+  // 新增：四项优势模块样式
+  const benefitsTitleStyle: React.CSSProperties = {
+    fontSize: '2.6rem',
+    fontWeight: 800,
+    color: '#0f172a',
+    textAlign: 'center',
+    letterSpacing: '-0.5px',
+    margin: 0,
+  };
+
+  const benefitGridStyle: React.CSSProperties = {
+    display: 'grid',
+    gridTemplateColumns: '1fr 420px 1fr',
+    gap: '40px',
+    alignItems: 'center',
+    marginTop: '40px',
+  };
+
+  const benefitColStyle: React.CSSProperties = {
+    display: 'flex',
+    flexDirection: 'column',
+    gap: '28px',
+  };
+
+  const benefitItemStyle: React.CSSProperties = {
+    display: 'flex',
+    gap: '16px',
+    alignItems: 'flex-start',
+  };
+
+  const numBadgeStyle: React.CSSProperties = {
+    width: 64,
+    height: 64,
+    borderRadius: 16,
+    border: '2px solid #e5e7eb',
+    background: '#ffffff',
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'center',
+    color: '#4338ca',
+    fontSize: '1.6rem',
+    fontWeight: 800,
+    boxShadow: '0 10px 24px rgba(0,0,0,0.05)'
+  };
+
+  const benefitHeadingStyle: React.CSSProperties = {
+    fontSize: '1.25rem',
+    fontWeight: 800,
+    color: '#0f172a',
+    marginBottom: 6,
+  };
+
+  const benefitDescStyle: React.CSSProperties = {
+    fontSize: '0.95rem',
+    color: '#64748b',
+    lineHeight: 1.8,
   };
 
   return (
@@ -262,92 +452,54 @@ const AiLive: React.FC = () => {
         </div>
         
         <div style={sectionStyle}>
-          
-          {/* 第一屏：高清私域直播功能 */}
-          <div style={featureContainerStyle}>
-            <div style={featureContentStyle}>
-              <div style={highlightBoxStyle}>
-                <span style={{marginRight: '10px'}}>📹</span>
-                试试「高清私域直播」
-              </div>
-              <p style={descriptionStyle}>
-                支持批量结合，自动剪切商品短视频
-              </p>
-              <button style={learnMoreStyle} onClick={() => console.log('了解更多')}>
-                进一步了解 →
-              </button>
+          {/* 概览模块：大标题 + 4项指标 */}
+          <div style={{ margin: '0 0 80px' }}>
+            <h2 style={overviewTitleStyle}>全自动化AI实景智能直播</h2>
+            <h3 style={overviewSubTitleStyle}>助您快速开启财富自由之路</h3>
+            <div style={overviewGridStyle}>
+              {liveStats.map((s, idx) => (
+                <React.Fragment key={s.label}>
+                  <div style={overviewItemStyle}>
+                    <div style={overviewIconWrapStyle}><span style={{ fontSize: 28, color: '#3b82f6' }}>{s.icon}</span></div>
+                    <div style={overviewNumberStyle}>{s.number}</div>
+                    <div style={overviewLabelStyle}>{s.label}</div>
+                  </div>
+                  {idx < liveStats.length - 1 && <div style={overviewDividerStyle} />}
+                </React.Fragment>
+              ))}
             </div>
+          </div>
+          
+          {/* 第一屏（替换）：图2 左文右图 */}
+          <div style={featureContainerStyle}>
+            {/* 左侧文案 */}
+            <div style={{ ...featureContentStyle, maxWidth: 640 }}>
+              <h2 style={heroTitleStyle}>能为商家降低成本，提高效益</h2>
+              <h3 style={heroSubTitleStyle}>的好工具</h3>
+              <p style={heroParagraphStyle}>
+                每个商家都可以通过智能语音直播系统，实现自动直播、自动卖团购/优惠券；
+                只需录入直播话术，找到合适的场景，架设好手机就可开播：降低门槛，家家都能播！
+              </p>
+              <div style={bulletRowStyle}><span style={bulletIconStyle}></span><span>智能语音、文字回复，无需人工干预</span></div>
+              <div style={bulletRowStyle}><span style={bulletIconStyle}></span><span>商品、团购券，自动讲解/推窗</span></div>
+              <div style={bulletRowStyle}><span style={bulletIconStyle}></span><span>文字场控，解决直播间无互动问题</span></div>
+              <div style={bulletRowStyle}><span style={bulletIconStyle}></span><span>支持贴图、贴视频、贴数字人、绿幕抠图视频</span></div>
+              <button style={ctaPrimaryButtonStyle}>联系客服免费试用</button>
+            </div>
+            {/* 右侧手机占位图 */}
             <div style={featureImageStyle}>
               <div style={phoneFrameStyle}>
-                <div style={{...phoneScreenStyle, background: 'linear-gradient(135deg, #3498db 0%, #2980b9 100%)'}}>
-                  <div style={liveHeaderStyle}>
-                    <div style={liveIndicatorStyle}>HD 1080P</div>
-                    <div>📱</div>
-                  </div>
-                  
-                  <div style={orderNotificationStyle}>
-                    客户C拍了一手
-                  </div>
-                  
-                  <div style={hostAreaStyle}>
-                    <div style={hostAvatarStyle}>
-                      👩‍💼
-                    </div>
-                    <div style={{fontSize: '14px', fontWeight: '600'}}>
-                      主播同款长裙
-                    </div>
-                    <div style={{fontSize: '16px', color: '#ffeb3b', marginTop: '5px'}}>
-                      ¥199
-                    </div>
-                    <button style={{
-                      ...buyButtonStyle,
-                      marginTop: '10px',
-                      padding: '8px 16px',
-                      fontSize: '12px',
-                    }}>
-                      拿一手
-                    </button>
-                  </div>
-                  
-                  <div style={productShowcaseStyle}>
-                    <div style={productItemStyle}>
-                      <div style={productImageStyle}>👔</div>
-                      <div style={productInfoStyle}>
-                        <div style={productNameStyle}>潮牌T恤</div>
-                        <div style={productPriceStyle}>¥199</div>
-                      </div>
-                      <button style={buyButtonStyle}>下单</button>
-                    </div>
-                    
-                    <div style={productItemStyle}>
-                      <div style={productImageStyle}>👟</div>
-                      <div style={productInfoStyle}>
-                        <div style={productNameStyle}>运动鞋</div>
-                        <div style={productPriceStyle}>¥299</div>
-                      </div>
-                      <button style={buyButtonStyle}>下单</button>
-                    </div>
-                    
-                    <div style={productItemStyle}>
-                      <div style={productImageStyle}>👜</div>
-                      <div style={productInfoStyle}>
-                        <div style={productNameStyle}>手提包</div>
-                        <div style={productPriceStyle}>¥399</div>
-                      </div>
-                      <button style={buyButtonStyle}>下单</button>
-                    </div>
-                  </div>
-                  
+                <div style={{ ...phoneScreenStyle, background: 'linear-gradient(135deg, #1f2937 0%, #0f172a 100%)' }}>
                   <div style={{
-                    marginTop: 'auto',
-                    background: 'rgba(255, 255, 255, 0.1)',
-                    borderRadius: '20px',
-                    padding: '8px 15px',
-                    color: 'white',
-                    fontSize: '12px',
-                    textAlign: 'center',
+                    margin: 'auto',
+                    background: 'rgba(255,255,255,0.06)',
+                    border: '1px dashed rgba(255,255,255,0.25)',
+                    borderRadius: 16,
+                    padding: 16,
+                    color: '#e5e7eb',
+                    textAlign: 'center'
                   }}>
-                    💬 正在直播中...
+                    手机界面占位图
                   </div>
                 </div>
               </div>
@@ -355,133 +507,98 @@ const AiLive: React.FC = () => {
           </div>
 
           {/* 第二屏：直播数据分析 */}
-          <div style={{...featureContainerStyle, flexDirection: 'row-reverse'}}>
-            <div style={featureContentStyle}>
-              <div style={{...highlightBoxStyle, background: 'linear-gradient(135deg, #3498db 0%, #2980b9 100%)'}}>
-                <span style={{marginRight: '10px'}}>📊</span>
-                试试「直播数据分析」
-              </div>
-              <p style={descriptionStyle}>
-                实时监控直播效果，优化直播策略
+          <div style={{ ...featureContainerStyle, flexDirection: 'row-reverse', marginTop: '80px' }}>
+            {/* 右侧文案（标题/步骤/按钮） */}
+            <div style={{ ...featureContentStyle, maxWidth: 620 }}>
+              <h2 style={{ fontSize: '2.8rem', fontWeight: 800, color: '#0f172a', margin: 0 }}>简易操作，一键开播</h2>
+              <p style={{ fontSize: '1.05rem', color: '#64748b', lineHeight: 1.9, margin: '16px 0 24px' }}>
+                只需录制好语音、设置好回复内容、选择开播平台，即可开播
               </p>
-              <button style={{...learnMoreStyle, color: '#3498db'}} onClick={() => console.log('了解更多')}>
-                进一步了解 →
-              </button>
+              <div style={{ display: 'flex', flexDirection: 'column', gap: 18 }}>
+                <div style={{ display: 'flex', alignItems: 'center', gap: 14 }}>
+                  <div style={{ width: 48, height: 48, borderRadius: 12, background: '#eef2ff', display: 'flex', alignItems: 'center', justifyContent: 'center', color: '#2563eb', fontSize: 22 }}>📝</div>
+                  <div>
+                    <div style={{ fontSize: '1.1rem', fontWeight: 700, color: '#0f172a', marginBottom: 4 }}>产品的语音/文字设置</div>
+                    <div style={{ fontSize: '0.95rem', color: '#64748b' }}>产品语音讲解、文字回复内容</div>
+                  </div>
+                </div>
+                <div style={{ display: 'flex', alignItems: 'center', gap: 14 }}>
+                  <div style={{ width: 48, height: 48, borderRadius: 12, background: '#eef2ff', display: 'flex', alignItems: 'center', justifyContent: 'center', color: '#2563eb', fontSize: 22 }}>📱</div>
+                  <div>
+                    <div style={{ fontSize: '1.1rem', fontWeight: 700, color: '#0f172a', marginBottom: 4 }}>设置好需要开播的平台</div>
+                    <div style={{ fontSize: '0.95rem', color: '#64748b' }}>抖音、视频号、快手、美团、Tiktok</div>
+                  </div>
+                </div>
+              </div>
+              <button style={{ ...ctaPrimaryButtonStyle, marginTop: 26 }}>联系客服免费试用</button>
             </div>
+            {/* 左侧手机占位图 */}
             <div style={featureImageStyle}>
               <div style={phoneFrameStyle}>
-                <div style={{...phoneScreenStyle, background: 'linear-gradient(135deg, #3498db 0%, #2980b9 100%)'}}>
-                  <div style={{color: 'white', textAlign: 'center', marginBottom: '20px'}}>
-                    <h3 style={{fontSize: '18px', marginBottom: '10px'}}>直播数据</h3>
-                    <p style={{fontSize: '12px', opacity: 0.9}}>实时直播统计</p>
-                  </div>
-                  <div style={{background: 'rgba(255,255,255,0.9)', borderRadius: '15px', padding: '20px'}}>
-                    <div style={{display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '15px'}}>
-                      <div style={{textAlign: 'center'}}>
-                        <div style={{fontSize: '24px', fontWeight: '700', color: '#3498db'}}>2,456</div>
-                        <div style={{fontSize: '12px', color: '#666'}}>在线观看</div>
-                      </div>
-                      <div style={{textAlign: 'center'}}>
-                        <div style={{fontSize: '24px', fontWeight: '700', color: '#3498db'}}>156</div>
-                        <div style={{fontSize: '12px', color: '#666'}}>实时下单</div>
-                      </div>
-                      <div style={{textAlign: 'center'}}>
-                        <div style={{fontSize: '24px', fontWeight: '700', color: '#3498db'}}>6.4%</div>
-                        <div style={{fontSize: '12px', color: '#666'}}>转化率</div>
-                      </div>
-                      <div style={{textAlign: 'center'}}>
-                        <div style={{fontSize: '24px', fontWeight: '700', color: '#3498db'}}>¥18K</div>
-                        <div style={{fontSize: '12px', color: '#666'}}>直播销售</div>
-                      </div>
-                    </div>
+                <div style={{ ...phoneScreenStyle, background: 'linear-gradient(135deg, #1f2937 0%, #0f172a 100%)' }}>
+                  <div style={{
+                    margin: 'auto',
+                    background: 'rgba(255,255,255,0.06)',
+                    border: '1px dashed rgba(255,255,255,0.25)',
+                    borderRadius: 16,
+                    padding: 16,
+                    color: '#e5e7eb',
+                    textAlign: 'center'
+                  }}>
+                    手机界面占位图
                   </div>
                 </div>
               </div>
             </div>
           </div>
 
-          {/* 第三屏：互动功能 */}
-          <div style={featureContainerStyle}>
-            <div style={featureContentStyle}>
-              <div style={{...highlightBoxStyle, background: 'linear-gradient(135deg, #f39c12 0%, #e67e22 100%)'}}>
-                <span style={{marginRight: '10px'}}>💬</span>
-                试试「互动功能」
-              </div>
-              <p style={descriptionStyle}>
-                弹幕互动、抽奖活动、实时问答
-              </p>
-              <button style={{...learnMoreStyle, color: '#f39c12'}} onClick={() => console.log('了解更多')}>
-                进一步了解 →
-              </button>
-            </div>
-            <div style={featureImageStyle}>
-              <div style={phoneFrameStyle}>
-                <div style={{...phoneScreenStyle, background: 'linear-gradient(135deg, #f39c12 0%, #e67e22 100%)'}}>
-                  <div style={{color: 'white', textAlign: 'center', marginBottom: '20px'}}>
-                    <h3 style={{fontSize: '18px', marginBottom: '10px'}}>直播互动</h3>
-                    <p style={{fontSize: '12px', opacity: 0.9}}>实时互动功能</p>
+          {/* 第三屏（替换）：四项优势模块 */}
+          <div style={{ marginTop: '120px' }}>
+            <h2 style={benefitsTitleStyle}>适用实体门店直播,带货直播</h2>
+            <div style={benefitGridStyle}>
+              {/* 左列 */}
+              <div style={benefitColStyle}>
+                <div style={benefitItemStyle}>
+                  <div style={numBadgeStyle}>01</div>
+                  <div>
+                    <div style={benefitHeadingStyle}>降低门槛</div>
+                    <div style={benefitDescStyle}>不需要专业的知识，不需要雇用主播。可以是老板、员工、服务员都可以一键操作、无需出镜、自动收集评论。</div>
                   </div>
-                  <div style={{background: 'rgba(255,255,255,0.9)', borderRadius: '15px', padding: '20px'}}>
-                    <div style={{marginBottom: '15px'}}>
-                      <div style={{fontSize: '14px', color: '#333', marginBottom: '10px'}}>弹幕消息</div>
-                      <div style={{background: '#f8f9fa', borderRadius: '8px', padding: '8px', marginBottom: '6px'}}>
-                        <div style={{fontSize: '12px', color: '#666'}}>用户A：这个包包好看！</div>
-                      </div>
-                      <div style={{background: '#f8f9fa', borderRadius: '8px', padding: '8px', marginBottom: '6px'}}>
-                        <div style={{fontSize: '12px', color: '#666'}}>用户B：有什么颜色？</div>
-                      </div>
-                      <div style={{background: '#f8f9fa', borderRadius: '8px', padding: '8px', marginBottom: '6px'}}>
-                        <div style={{fontSize: '12px', color: '#666'}}>用户C：我要买一个</div>
-                      </div>
-                      <div style={{background: '#fff3cd', borderRadius: '8px', padding: '16px', border: '1px solid #ffc107'}}>
-                        <div style={{fontSize: '12px', color: '#856404'}}>🎉 抽奖活动进行中</div>
-                      </div>
+                </div>
+                <div style={benefitItemStyle}>
+                  <div style={numBadgeStyle}>02</div>
+                  <div>
+                    <div style={benefitHeadingStyle}>操作简单</div>
+                    <div style={benefitDescStyle}>找到合适的场景，架设好手机即可开播。每个商家都可以实现自动直播，只需录入直播话术，家家都能播。</div>
+                  </div>
+                </div>
+              </div>
+
+              {/* 中部手机 */}
+              <div style={{ display: 'flex', justifyContent: 'center' }}>
+                <div style={phoneFrameStyle}>
+                  <div style={{ ...phoneScreenStyle, background: 'linear-gradient(135deg, #1f2937 0%, #0f172a 100%)' }}>
+                    <div style={{ margin: 'auto', background: 'rgba(255,255,255,0.06)', border: '1px dashed rgba(255,255,255,0.25)', borderRadius: 16, padding: 16, color: '#e5e7eb', textAlign: 'center' }}>
+                      手机界面占位图
                     </div>
                   </div>
                 </div>
               </div>
-            </div>
-          </div>
 
-          {/* 第四屏：多平台直播 */}
-          <div style={{...featureContainerStyle, flexDirection: 'row-reverse'}}>
-            <div style={featureContentStyle}>
-              <div style={{...highlightBoxStyle, background: 'linear-gradient(135deg, #9b59b6 0%, #8e44ad 100%)'}}>
-                <span style={{marginRight: '10px'}}>📱</span>
-                试试「多平台直播」
-              </div>
-              <p style={descriptionStyle}>
-                同时推流到多个平台，扩大直播覆盖面
-              </p>
-              <button style={{...learnMoreStyle, color: '#9b59b6'}} onClick={() => console.log('了解更多')}>
-                进一步了解 →
-              </button>
-            </div>
-            <div style={featureImageStyle}>
-              <div style={phoneFrameStyle}>
-                <div style={{...phoneScreenStyle, background: 'linear-gradient(135deg, #9b59b6 0%, #8e44ad 100%)'}}>
-                  <div style={{color: 'white', textAlign: 'center', marginBottom: '20px'}}>
-                    <h3 style={{fontSize: '18px', marginBottom: '10px'}}>多平台推流</h3>
-                    <p style={{fontSize: '12px', opacity: 0.9}}>同步直播状态</p>
+              {/* 右列 */}
+              <div style={benefitColStyle}>
+                <div style={benefitItemStyle}>
+                  <div style={numBadgeStyle}>03</div>
+                  <div>
+                    <div style={benefitHeadingStyle}>支持代理和OEM</div>
+                    <div style={benefitDescStyle}>提供专属品牌APP、独立会员、独立后台；并提供宣传海报、贴牌宣传视频、线下物料、PPT，销售话术等相关营销物料。</div>
                   </div>
-                  <div style={{background: 'rgba(255,255,255,0.9)', borderRadius: '15px', padding: '20px'}}>
-                    <div style={{marginBottom: '15px'}}>
-                      <div style={{fontSize: '14px', color: '#333', marginBottom: '10px'}}>直播平台</div>
-                      <div style={{display: 'flex', flexDirection: 'column', gap: '8px'}}>
-                        <div style={{display: 'flex', justifyContent: 'space-between', alignItems: 'center', padding: '8px', background: '#f8f9fa', borderRadius: '6px'}}>
-                          <span style={{fontSize: '12px', color: '#333'}}>微信视频号</span>
-                          <span style={{fontSize: '10px', color: '#28a745', background: '#d4edda', padding: '2px 6px', borderRadius: '4px'}}>直播中</span>
-                        </div>
-                        <div style={{display: 'flex', justifyContent: 'space-between', alignItems: 'center', padding: '8px', background: '#f8f9fa', borderRadius: '6px'}}>
-                          <span style={{fontSize: '12px', color: '#333'}}>抖音直播</span>
-                          <span style={{fontSize: '10px', color: '#28a745', background: '#d4edda', padding: '2px 6px', borderRadius: '4px'}}>直播中</span>
-                        </div>
-                        <div style={{display: 'flex', justifyContent: 'space-between', alignItems: 'center', padding: '8px', background: '#f8f9fa', borderRadius: '6px'}}>
-                          <span style={{fontSize: '12px', color: '#333'}}>快手直播</span>
-                          <span style={{fontSize: '10px', color: '#6c757d', background: '#e9ecef', padding: '2px 6px', borderRadius: '4px'}}>待开启</span>
-                        </div>
-                      </div>
-                    </div>
+                </div>
+                <div style={benefitItemStyle}>
+                  <div style={numBadgeStyle}>04</div>
+                  <div>
+                    <div style={benefitHeadingStyle}>节省时间</div>
+                    <div style={benefitDescStyle}>提供GPT自动话术生成、自动语音生成。输入话术文字，系统自动生成语音，也可以自行录制好真人语音。</div>
                   </div>
                 </div>
               </div>

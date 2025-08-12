@@ -1,16 +1,33 @@
 import React from 'react';
 
-const icons = [
-  { color: '#fef3c7', icon: '💬', left: '12%', top: '45%', size: 56 },
-  { color: '#dbeafe', icon: '🏬', left: '15%', top: '25%', size: 48 },
-  { color: '#fed7aa', icon: '📝', left: '25%', top: '70%', size: 52 },
-  { color: '#dbeafe', icon: '📷', left: '75%', top: '65%', size: 50 },
-  { color: '#dcfce7', icon: '🎯', left: '78%', top: '80%', size: 54 },
-  { color: '#fef3c7', icon: '👤', left: '85%', top: '45%', size: 58 },
-  { color: '#dbeafe', icon: '📄', left: '82%', top: '25%', size: 46 },
-  { color: '#dcfce7', icon: '🔍', left: '8%', top: '20%', size: 50 },
-  { color: '#fed7aa', icon: '🛒', left: '70%', top: '15%', size: 52 },
-  { color: '#dbeafe', icon: '⭐', left: '35%', top: '12%', size: 48 },
+const icons: { color: string; icon: string; left: string; top: string; size: number }[] = [];
+
+// 新增：图1的四项功能内容
+const highlightItems = [
+  {
+    icon: '🎥',
+    title: '复刻直播间',
+    desc:
+      '无需真人模特、无需绿幕脚本提示词。基于往期直播视频即可生成7x24小时在线、可主动交互的数字人主播。',
+  },
+  {
+    icon: '🤖',
+    title: '多模态大模型智能运营',
+    desc:
+      '按交易额、互动次数等维度智能选品，可自动拆分多段视频并智能提取特写镜头，直播间运营效率最高提升7倍。',
+  },
+  {
+    icon: '💬',
+    title: '智能问答/互动切品',
+    desc:
+      '根据评论区提问留言，自动切换讲解商品并控场。支持语音、弹幕等多种方式互动，有问必答，有效带动成交。',
+  },
+  {
+    icon: '🎬',
+    title: '高效便捷，打造视频专业质感',
+    desc:
+      '摆脱专业设备/场地限制，输入文字或上传录音，仅需数分钟即可合成高质量数字人视频。',
+  },
 ];
 
 const MarketingToolsShowcase: React.FC = () => {
@@ -33,6 +50,44 @@ const MarketingToolsShowcase: React.FC = () => {
         position: 'relative',
         zIndex: 2,
       }}>
+        {/* 新增：放在AI外呼标题之前的功能说明区块（图1） */}
+        <div style={{
+          margin: '0 auto 32px',
+          padding: '0 16px',
+          maxWidth: 1100,
+          display: 'grid',
+          gridTemplateColumns: 'repeat(2, minmax(0, 1fr))',
+          gap: 40,
+          textAlign: 'left',
+        }}>
+          {highlightItems.map((item) => (
+            <div key={item.title} style={{ display: 'flex', alignItems: 'flex-start', gap: 16 }}>
+              <div
+                aria-hidden
+                style={{
+                  width: 44,
+                  height: 44,
+                  borderRadius: 12,
+                  border: '2px solid #ef4444',
+                  color: '#ef4444',
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                  fontSize: 22,
+                  flexShrink: 0,
+                  background: '#fff',
+                }}
+              >
+                {item.icon}
+              </div>
+              <div style={{ flex: 1, minWidth: 0 }}>
+                <div style={{ fontSize: 18, fontWeight: 700, color: '#1f2937', marginBottom: 8 }}>{item.title}</div>
+                <div style={{ fontSize: 14, lineHeight: 1.8, color: '#6b7280' }}>{item.desc}</div>
+              </div>
+            </div>
+          ))}
+        </div>
+
         <div style={{
           fontSize: '2.5rem',
           fontWeight: 700,

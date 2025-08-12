@@ -124,6 +124,15 @@ const KuaiDetails: React.FC = () => {
     width: '100%'
   };
 
+  // 新增：标题样式
+  const titleStyle: React.CSSProperties = {
+    fontSize: isMobile ? '1.4rem' : '1.8rem',
+    fontWeight: 700,
+    color: '#1f2937',
+    textAlign: 'center',
+    margin: isMobile ? '0 0 1rem' : '0 0 1.5rem'
+  };
+
   const gridContainerStyle: React.CSSProperties = {
     display: 'grid',
     gridTemplateColumns: isMobile ? 'repeat(2, 1fr)' : 'repeat(4, 1fr)',
@@ -220,6 +229,8 @@ const KuaiDetails: React.FC = () => {
   return (
     <section style={sectionStyle}>
       <div style={containerStyle}>
+        {/* 标题 */}
+        <h2 style={titleStyle}>热门公域、私域运营工具</h2>
         {/* 功能网格 */}
         <div style={gridContainerStyle}>
           {featureModules.map((module, index) => (

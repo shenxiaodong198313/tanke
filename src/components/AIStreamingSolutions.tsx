@@ -30,7 +30,7 @@ const AIStreamingSolutions: React.FC = () => {
       justifyContent: 'center',
     }}>
       <div style={{
-        maxWidth: 1100,
+        maxWidth: 1280,
         width: '100%',
         margin: '0 auto',
         padding: '0 24px',
@@ -109,9 +109,50 @@ const AIStreamingSolutions: React.FC = () => {
           ))}
         </div>
         
+        {/* 图片上方新增标题与副标题（含装饰条） */}
+        <div style={{ marginTop: '56px', marginBottom: '8px' }}>
+          <div style={{
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'center',
+            gap: '16px',
+            marginBottom: '8px'
+          }}>
+            {/* 左侧装饰条 */}
+            <div style={{ display: 'flex', gap: 6 }}>
+              <span style={{ width: 8, height: 20, borderRadius: 6, background: 'linear-gradient(180deg, #3b82f6, #6366f1)' }} />
+              <span style={{ width: 8, height: 20, borderRadius: 6, background: 'linear-gradient(180deg, #60a5fa, #3b82f6)' }} />
+            </div>
+
+            <h2 style={{
+              fontSize: '2rem',
+              fontWeight: 800,
+              color: '#1f2937',
+              margin: 0,
+              letterSpacing: '1px'
+            }}>
+              取代真人主/副播，一台手机即可开启直播
+            </h2>
+
+            {/* 右侧装饰条 */}
+            <div style={{ display: 'flex', gap: 6 }}>
+              <span style={{ width: 8, height: 20, borderRadius: 6, background: 'linear-gradient(180deg, #60a5fa, #3b82f6)' }} />
+              <span style={{ width: 8, height: 20, borderRadius: 6, background: 'linear-gradient(180deg, #3b82f6, #6366f1)' }} />
+            </div>
+          </div>
+
+          <p style={{
+            fontSize: '1rem',
+            color: '#6b7280',
+            margin: 0
+          }}>
+            在电商、本地生活、企业获客等直播场景均成熟落地
+          </p>
+        </div>
+
         {/* 在三个容器下方添加图片 */}
         <div style={{
-          marginTop: '60px',
+          marginTop: '20px',
           display: 'flex',
           alignItems: 'center',
           justifyContent: 'center',
@@ -121,7 +162,8 @@ const AIStreamingSolutions: React.FC = () => {
             alt="矩阵式AI智能生态"
             loading="lazy"
             style={{
-              maxWidth: '100%',
+              width: '100%',
+              maxWidth: '1280px',
               height: 'auto',
               display: 'block',
               objectFit: 'contain',

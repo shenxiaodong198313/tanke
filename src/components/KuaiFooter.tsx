@@ -1,4 +1,5 @@
 import React from 'react';
+import { Award, Leaf, BadgeCheck, ShieldCheck } from 'lucide-react';
 
 const KuaiFooter: React.FC = () => {
   const [isMobile, setIsMobile] = React.useState(false);
@@ -30,6 +31,40 @@ const KuaiFooter: React.FC = () => {
     overflow: 'auto',
     margin: 0,
     border: 'none'
+  };
+
+  // 新增：资质/认证展示区数据与样式
+  const honors: { icon: React.ElementType; title: string }[] = [
+    { icon: Leaf, title: '国家高新技术企业' },
+    { icon: Award, title: '科技创新企业' },
+    { icon: BadgeCheck, title: '软件著作权' },
+    { icon: ShieldCheck, title: '信息安全等级保护' },
+  ];
+
+  const honorSectionStyle: React.CSSProperties = {
+    borderTop: '1px solid #3a3a3a',
+    borderBottom: '1px solid #3a3a3a',
+    padding: isMobile ? '1rem 0' : '1.2rem 0',
+    margin: isMobile ? '1rem 0' : '1.2rem 0',
+  };
+
+  const honorItemStyle: React.CSSProperties = {
+    display: 'flex',
+    flexDirection: 'column',
+    alignItems: 'center',
+    justifyContent: 'center',
+    gap: isMobile ? 6 : 8,
+    color: '#e5e7eb',
+  };
+
+  const honorIconCircleStyle: React.CSSProperties = {
+    width: isMobile ? 36 : 44,
+    height: isMobile ? 36 : 44,
+    borderRadius: 9999,
+    border: '2px solid rgba(255,255,255,0.9)',
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'center',
   };
 
   return (
@@ -228,6 +263,37 @@ const KuaiFooter: React.FC = () => {
                 <button style={{ color: '#a1a1aa', background: 'none', border: 'none', textAlign: 'left', cursor: 'pointer', textDecoration: 'none', fontSize: isMobile ? '0.75rem' : '0.85rem', padding: 0, lineHeight: '1.4' }}>投资背景</button>
                 <button style={{ color: '#a1a1aa', background: 'none', border: 'none', textAlign: 'left', cursor: 'pointer', textDecoration: 'none', fontSize: isMobile ? '0.75rem' : '0.85rem', padding: 0, lineHeight: '1.4' }}>云客动态</button>
               </div>
+            </div>
+          </div>
+
+          {/* 资质/认证展示 */}
+          <div style={honorSectionStyle}>
+            <div
+              style={{
+                display: isMobile ? 'grid' : 'flex',
+                gridTemplateColumns: isMobile ? 'repeat(2, 1fr)' : undefined,
+                alignItems: 'center',
+                justifyContent: 'space-between',
+                gap: isMobile ? 16 : 0,
+                textAlign: 'center',
+              }}
+            >
+              {honors.map((h, idx) => {
+                const Icon = h.icon as any;
+                return (
+                  <React.Fragment key={h.title}>
+                    <div style={honorItemStyle}>
+                      <div style={honorIconCircleStyle}>
+                        <Icon size={isMobile ? 18 : 22} color="#ffffff" strokeWidth={2.2} />
+                      </div>
+                      <div style={{ fontSize: isMobile ? 12 : 14, color: '#cbd5e1' }}>{h.title}</div>
+                    </div>
+                    {!isMobile && idx < honors.length - 1 && (
+                      <div style={{ width: 1, height: 44, background: 'rgba(255,255,255,0.16)' }} />
+                    )}
+                  </React.Fragment>
+                );
+              })}
             </div>
           </div>
 
