@@ -7,6 +7,7 @@ const AiLive: React.FC = () => {
     paddingTop: '64px',
     background: 'white', // 改为白色背景
     padding: '64px 24px',
+    overflowX: 'hidden',
   };
 
   const sectionStyle: React.CSSProperties = {

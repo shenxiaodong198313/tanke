@@ -7,6 +7,7 @@ const AiMarketing: React.FC = () => {
     paddingTop: '64px',
     background: 'linear-gradient(135deg, #ffffff 0%, #f8fafc 50%, #f1f5f9 100%)', // 白色渐变背景
     padding: '64px 24px',
+    overflowX: 'hidden',
   };
 
   const sectionStyle: React.CSSProperties = {
