@@ -264,54 +264,53 @@ const Partnership: React.FC = () => {
     margin: 0,
   };
 
-  // 合作支持卡片
+  // 合作支持（三板块新排版）
   const supportSection: React.CSSProperties = {
     width: '100%',
     marginBottom: 64,
   };
   const supportGrid: React.CSSProperties = {
     display: 'grid',
-    gridTemplateColumns: 'repeat(2, 1fr)',
-    gap: '32px',
+    gridTemplateColumns: '1.5fr 1fr',
+    gridAutoRows: 'minmax(220px, auto)',
+    gap: '28px',
     width: '100%',
     maxWidth: contentMaxWidth,
     margin: '0 auto',
+    alignItems: 'stretch',
   };
-  const supportCard: React.CSSProperties = {
-    background: 'white',
-    borderRadius: '18px',
-    boxShadow: '0 4px 24px rgba(0,0,0,0.06)',
-    padding: '36px 32px 28px 32px',
-    minHeight: 160,
+  const supportCardLarge: React.CSSProperties = {
+    background: 'linear-gradient(135deg, #eef7ff 0%, #e6f2ff 40%, #e9fbff 100%)',
+    borderRadius: 22,
+    boxShadow: '0 8px 28px rgba(37, 116, 232, 0.15)',
+    padding: '32px 32px',
+    position: 'relative',
+    overflow: 'hidden',
+    gridRow: '1 / span 2',
     display: 'flex',
     flexDirection: 'column',
-    alignItems: 'flex-start',
-    justifyContent: 'flex-start',
-    width: '100%',
-  };
-  const supportIcon: React.CSSProperties = {
-    width: 48,
-    height: 48,
-    background: '#2574e8',
-    borderRadius: '50%',
-    display: 'flex',
-    alignItems: 'center',
     justifyContent: 'center',
-    color: 'white',
-    fontSize: 28,
-    marginBottom: 16,
+  };
+  const supportCardRight: React.CSSProperties = {
+    background: 'linear-gradient(135deg, #f4f7ff 0%, #f7fbff 100%)',
+    borderRadius: 22,
+    boxShadow: '0 8px 24px rgba(0,0,0,0.06)',
+    padding: '28px 28px',
+    display: 'flex',
+    flexDirection: 'column',
+    justifyContent: 'center',
   };
   const supportTitle: React.CSSProperties = {
-    fontSize: '1.18rem',
-    fontWeight: 700,
-    marginBottom: '12px',
-    color: '#222',
-    letterSpacing: '1px',
+    fontSize: '1.6rem',
+    fontWeight: 800,
+    margin: '0 0 14px 0',
+    color: '#0f172a',
+    letterSpacing: '0.5px',
   };
   const supportDesc: React.CSSProperties = {
     fontSize: '1.05rem',
-    color: '#666',
-    lineHeight: 1.7,
+    color: '#475569',
+    lineHeight: 1.9,
     margin: 0,
   };
 
@@ -368,29 +367,32 @@ const Partnership: React.FC = () => {
               <div style={partnerCardDesc}>具备专业知识和影响力的个人，致力于推广探客AI增长手机的品牌和产品。</div>
             </div>
           </div>
-          {/* 合作支持 */}
+          {/* 合作支持（图2排版替换） */}
           <div style={sectionTitle}>合作支持</div>
           <div style={supportSection}>
             <div style={supportGrid}>
-              <div style={supportCard}>
-                <div style={supportIcon}>W</div>
-                <div style={supportTitle}>产品支持</div>
-                <div style={supportDesc}>领先的产品理念，快速迭代的产品功能，确保产品具有竞争力，为客户营销数字化提供保障。</div>
+              {/* 左侧：培训体系（大卡，贯穿两行） */}
+              <div style={supportCardLarge}>
+                <h3 style={supportTitle}>培训体系</h3>
+                <p style={supportDesc}>
+                  线上: 产品操作培训课程平台，定期钉钉、飞书、腾讯会议展开产品培训技术难题一对一技术指导等
+                </p>
+                <div style={{ height: 16 }} />
+                <p style={supportDesc}>
+                  线下: 集团技术导师+团队驻场指导; 集团总部定期统一开展培训活动
+                </p>
               </div>
-              <div style={supportCard}>
-                <div style={supportIcon}>👤</div>
-                <div style={supportTitle}>培训支持</div>
-                <div style={supportDesc}>培训师驻场完成产品及销售SOP的培训，不定期线上产品更新培训及线下实战训练营，助理合作伙伴快速成长。</div>
+
+              {/* 右上：优惠扶持 */}
+              <div style={supportCardRight}>
+                <h3 style={supportTitle}>优惠扶持</h3>
+                <p style={supportDesc}>超额奖励、年度峰会资格、首批补贴</p>
               </div>
-              <div style={supportCard}>
-                <div style={supportIcon}>◼️</div>
-                <div style={supportTitle}>业务支持</div>
-                <div style={supportDesc}>提供行业解决方案，客户打单跑路赋能，多渠道商机获取，让每位伙伴都具备销冠的能力。</div>
-              </div>
-              <div style={supportCard}>
-                <div style={supportIcon}>📄</div>
-                <div style={supportTitle}>售后支持</div>
-                <div style={supportDesc}>完善的客户成功体系，帮助客户实现协同增长，保持着行业内遥遥领先的续约率，保障合作伙伴收益。</div>
+
+              {/* 右下：市场支持 */}
+              <div style={supportCardRight}>
+                <h3 style={supportTitle}>市场支持</h3>
+                <p style={supportDesc}>联合品牌推广、客户撮合、首单陪谈、当地客户流量线索提供等</p>
               </div>
             </div>
           </div>
