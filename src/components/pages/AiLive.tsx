@@ -412,6 +412,210 @@ const AiLive: React.FC = () => {
     lineHeight: 1.8,
   };
 
+  // 应用场景（新增模块）
+  const scenes = [
+    {
+      title: '鞋服箱包',
+      desc:
+        '直击鞋服行业AI直播无法真实上身展示的痛点，真实还原模特试穿效果，增加相关尺寸道具展示，大幅提升试穿展示率，降低退货率，助力直播转化。',
+      metrics: [
+        { value: '+100%', label: '试穿展示率' },
+        { value: '+50%', label: '下单转化率提升' },
+        { value: '-30%', label: '退货率降低' },
+        { value: '+20%', label: '复购率提升' },
+      ],
+    },
+    {
+      title: '数码家电',
+      desc:
+        '针对数码家电客单高、参数复杂等特点，AI 1:1 还原使用场景，临场感受直播氛围，加速用户下单决策；面对复杂提问，给出专业及时解答。',
+      metrics: [
+        { value: '+70%', label: '曝光率提升' },
+        { value: '+40%', label: '停留时长' },
+        { value: '+50%', label: '转化率' },
+        { value: '+30%', label: '商品点击率' },
+      ],
+    },
+    {
+      title: '美妆个护',
+      desc:
+        '深度还原日用美妆使用场景，结合行业话术大模型，生成针对场景化促单话术，提升加购到支付的链路转化，保障直播间合规运营。',
+      metrics: [
+        { value: '+20%', label: 'GPM（千次成交额）' },
+        { value: '+10%', label: '直播间 UV' },
+        { value: '+25%', label: '老客复购率' },
+        { value: '+30%', label: '下单转化率' },
+      ],
+    },
+    {
+      title: '汽车留资',
+      desc:
+        '击破车企用户增长痛点，知识库驱动智能答疑，提供行业专家级回复，有效提升客户停留时长与到店意向，降低商机获客成本。',
+      metrics: [
+        { value: '+10%', label: '到店率' },
+        { value: '+50%', label: '线索提升' },
+        { value: '+30%', label: '转化率' },
+        { value: '+20%', label: '客户满意度' },
+      ],
+    },
+    {
+      title: '餐饮酒店',
+      desc:
+        '全天候展示餐饮酒店实景，AI 主播语音通真、实时语音互动，吸引顾客到店消费；总部集中管控+门店手机开播，高效助力门店业绩增长。',
+      metrics: [
+        { value: '100+', label: '同时开播门店数' },
+        { value: '+20%', label: '吸引顾客到店率' },
+        { value: '+10%', label: '单月门店销售额' },
+        { value: '30秒', label: '店员开播操作耗时' },
+      ],
+    },
+  ];
+
+  const sceneSectionStyle: React.CSSProperties = {
+    marginTop: '80px',
+  };
+
+  const sceneTitleStyle: React.CSSProperties = {
+    fontSize: '2.6rem',
+    fontWeight: 800,
+    color: '#0f172a',
+    textAlign: 'center',
+    margin: '0 0 24px',
+  };
+
+  const tabBarStyle: React.CSSProperties = {
+    display: 'flex',
+    gap: 16,
+    justifyContent: 'center',
+    marginBottom: 24,
+    flexWrap: 'wrap',
+  };
+
+  const tabButtonStyle: React.CSSProperties = {
+    padding: '10px 22px',
+    borderRadius: 12,
+    border: '1px solid #bbf7d0',
+    background: '#f0fdf4',
+    color: '#166534',
+    fontWeight: 700,
+    cursor: 'pointer',
+  };
+
+  const tabButtonActiveStyle: React.CSSProperties = {
+    ...tabButtonStyle,
+    background: '#22c55e',
+    color: '#fff',
+    border: '1px solid #16a34a',
+  };
+
+  const sceneContentStyle: React.CSSProperties = {
+    display: 'grid',
+    gridTemplateColumns: '1.2fr 1fr',
+    gap: 40,
+    alignItems: 'center',
+  };
+
+  const sceneLeftCardStyle: React.CSSProperties = {
+    background: '#fff',
+    borderRadius: 20,
+    padding: '28px 24px',
+    boxShadow: '0 8px 24px rgba(0,0,0,0.06)',
+  };
+
+  const sceneLeftTitleStyle: React.CSSProperties = {
+    fontSize: '1.6rem',
+    fontWeight: 800,
+    color: '#0f172a',
+    marginBottom: 12,
+  };
+
+  const sceneDescStyle: React.CSSProperties = {
+    color: '#64748b',
+    lineHeight: 1.8,
+  };
+
+  const sceneMetricGridStyle: React.CSSProperties = {
+    display: 'grid',
+    gridTemplateColumns: 'repeat(4, 1fr)',
+    gap: 24,
+    marginTop: 18,
+  };
+
+  const sceneMetricItemStyle: React.CSSProperties = {
+    textAlign: 'center' as const,
+  };
+
+  const sceneMetricValueStyle: React.CSSProperties = {
+    fontSize: '1.8rem',
+    fontWeight: 800,
+    color: '#16a34a',
+    marginBottom: 6,
+  };
+
+  const sceneMetricLabelStyle: React.CSSProperties = {
+    color: '#64748b',
+    fontSize: '0.95rem',
+  };
+
+  // 多平台支持（新增模块样式）
+  const platformSectionStyle: React.CSSProperties = {
+    marginTop: '100px',
+    textAlign: 'center' as const,
+  };
+
+  const platformTitleStyle: React.CSSProperties = {
+    fontSize: '2.4rem',
+    fontWeight: 800,
+    color: '#0f172a',
+    marginBottom: '28px',
+  };
+
+  const platformGridStyle: React.CSSProperties = {
+    display: 'grid',
+    gridTemplateColumns: 'repeat(8, 1fr)',
+    gap: '28px',
+    alignItems: 'center',
+  };
+
+  const platformItemStyle: React.CSSProperties = {
+    display: 'flex',
+    flexDirection: 'column',
+    alignItems: 'center',
+    gap: '10px',
+  };
+
+  const platformIconStyle: React.CSSProperties = {
+    width: 72,
+    height: 72,
+    borderRadius: 16,
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'center',
+    color: '#fff',
+    fontWeight: 800,
+    fontSize: 22,
+    boxShadow: '0 8px 20px rgba(0,0,0,0.08)'
+  };
+
+  const platformLabelStyle: React.CSSProperties = {
+    color: '#6b7280',
+    fontSize: '0.95rem',
+  };
+
+  const platforms = [
+    { name: '抖音', bg: 'linear-gradient(135deg,#111 0%,#222 100%)', text: '抖' },
+    { name: '快手', bg: 'linear-gradient(135deg,#ff7a00 0%,#ff5500 100%)', text: '快' },
+    { name: '淘宝', bg: 'linear-gradient(135deg,#ff7a00 0%,#ff5a1f 100%)', text: '淘' },
+    { name: '京东京麦', bg: 'linear-gradient(135deg,#d7000f 0%,#b3000d 100%)', text: '东' },
+    { name: '美团', bg: 'linear-gradient(135deg,#ffd54f 0%,#ffb300 100%)', text: '团' },
+    { name: '百度', bg: 'linear-gradient(135deg,#3b82f6 0%,#2563eb 100%)', text: '度' },
+    { name: '拼多多', bg: 'linear-gradient(135deg,#ef4444 0%,#dc2626 100%)', text: '拼' },
+    { name: '微信视频号', bg: 'linear-gradient(135deg,#ffcd76 0%,#f59e0b 100%)', text: '微' },
+  ];
+
+  // 应用场景当前激活索引
+  const [activeSceneIdx, setActiveSceneIdx] = React.useState(0);
+
   return (
     <>
       <SEOHead
@@ -606,6 +810,69 @@ const AiLive: React.FC = () => {
             </div>
           </div>
 
+          {/* 多平台支持（新增） */}
+          <div style={platformSectionStyle}>
+            <h2 style={platformTitleStyle}>多平台支持</h2>
+            <div style={platformGridStyle}>
+              {platforms.map(p => (
+                <div key={p.name} style={platformItemStyle}>
+                  <div style={{ ...platformIconStyle, background: p.bg }}>{p.text}</div>
+                  <div style={platformLabelStyle}>{p.name}</div>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          {/* 应用场景（新增） */}
+          <div style={sceneSectionStyle}>
+            <h2 style={sceneTitleStyle}>应用场景</h2>
+            {/* Tabs */}
+            <div style={tabBarStyle}>
+              {scenes.map((s, i) => (
+                <button
+                  key={s.title}
+                  style={i === activeSceneIdx ? tabButtonActiveStyle : tabButtonStyle}
+                  onClick={() => setActiveSceneIdx(i)}
+                >
+                  {s.title}
+                </button>
+              ))}
+            </div>
+            {/* Content */}
+            <div style={sceneContentStyle} className="slide-in-right">
+              <div style={sceneLeftCardStyle}>
+                <div style={sceneLeftTitleStyle}>{scenes[activeSceneIdx].title}</div>
+                <div style={sceneDescStyle}>{scenes[activeSceneIdx].desc}</div>
+                <div style={sceneMetricGridStyle}>
+                  {scenes[activeSceneIdx].metrics.map(m => (
+                    <div key={m.label} style={sceneMetricItemStyle}>
+                      <div style={sceneMetricValueStyle}>{m.value}</div>
+                      <div style={sceneMetricLabelStyle}>{m.label}</div>
+                    </div>
+                  ))}
+                </div>
+              </div>
+              {/* 右侧：手机占位图 */}
+              <div style={{ display: 'flex', justifyContent: 'center' }}>
+                <div style={phoneFrameStyle}>
+                  <div style={{ ...phoneScreenStyle, background: 'linear-gradient(135deg, #1f2937 0%, #0f172a 100%)' }}>
+                    <div style={{
+                      margin: 'auto',
+                      background: 'rgba(255,255,255,0.06)',
+                      border: '1px dashed rgba(255,255,255,0.25)',
+                      borderRadius: 16,
+                      padding: 16,
+                      color: '#e5e7eb',
+                      textAlign: 'center'
+                    }}>
+                      手机界面占位图
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
           {/* 第五屏：成功案例统计 */}
           <div style={{textAlign: 'center', marginTop: '100px'}}>
             <h2 style={{fontSize: '2rem', fontWeight: 700, color: '#1f2937', marginBottom: '20px'}}>
@@ -632,6 +899,63 @@ const AiLive: React.FC = () => {
         </div>
       </div>
     </>
+  );
+};
+
+// 场景标签组件（最下方定义，避免在文件顶部创建额外文件）
+const SceneTabs: React.FC = () => {
+  const [active, setActive] = React.useState(0);
+
+  // 复用上方 scenes 与样式变量
+  // 因为处于同一文件作用域，这里可以直接访问 scenes 和样式对象
+  // 渲染标签栏与内容
+  return (
+    <div>
+      <div style={tabBarStyle}>
+        {scenes.map((s, i) => (
+          <button
+            key={s.title}
+            style={i === active ? tabButtonActiveStyle : tabButtonStyle}
+            onClick={() => setActive(i)}
+          >
+            {s.title}
+          </button>
+        ))}
+      </div>
+      <div style={sceneContentStyle}>
+        {/* 左侧：文字卡片 */}
+        <div style={sceneLeftCardStyle}>
+          <div style={sceneLeftTitleStyle}>{scenes[active].title}</div>
+          <div style={sceneDescStyle}>{scenes[active].desc}</div>
+          <div style={sceneMetricGridStyle}>
+            {scenes[active].metrics.map(m => (
+              <div key={m.label} style={sceneMetricItemStyle}>
+                <div style={sceneMetricValueStyle}>{m.value}</div>
+                <div style={sceneMetricLabelStyle}>{m.label}</div>
+              </div>
+            ))}
+          </div>
+        </div>
+        {/* 右侧：手机占位图 */}
+        <div style={{ display: 'flex', justifyContent: 'center' }}>
+          <div style={phoneFrameStyle}>
+            <div style={{ ...phoneScreenStyle, background: 'linear-gradient(135deg, #1f2937 0%, #0f172a 100%)' }}>
+              <div style={{
+                margin: 'auto',
+                background: 'rgba(255,255,255,0.06)',
+                border: '1px dashed rgba(255,255,255,0.25)',
+                borderRadius: 16,
+                padding: 16,
+                color: '#e5e7eb',
+                textAlign: 'center'
+              }}>
+                手机界面占位图
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
   );
 };
 

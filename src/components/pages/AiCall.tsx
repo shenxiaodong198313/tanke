@@ -171,6 +171,37 @@ const AiCall: React.FC = () => {
     border: 'none',
   };
 
+  // 顶部蓝色区：替换副标题为图2内容（标题+三条要点）
+  const heroSubTitleStyle: React.CSSProperties = {
+    fontSize: '1.4rem',
+    color: 'rgba(255,255,255,0.95)',
+    marginBottom: '16px',
+    lineHeight: 1.6,
+  };
+
+  const heroBulletList: React.CSSProperties = {
+    listStyle: 'none',
+    padding: 0,
+    margin: 0,
+    color: 'rgba(255,255,255,0.9)'
+  };
+
+  const heroBulletItem: React.CSSProperties = {
+    display: 'flex',
+    alignItems: 'flex-start',
+    gap: '10px',
+    marginBottom: '6px',
+    fontSize: '1rem',
+    lineHeight: 1.8,
+    justifyContent: 'center'
+  };
+
+  const heroBulletIcon: React.CSSProperties = {
+    color: '#c7d2fe',
+    fontSize: '1rem',
+    marginTop: '4px'
+  };
+
   const statsContainerStyle: React.CSSProperties = {
     display: 'grid',
     gridTemplateColumns: 'repeat(3, 1fr)',
@@ -527,9 +558,12 @@ const AiCall: React.FC = () => {
               letterSpacing: '2px',
               whiteSpace: 'nowrap',
             }}>AI外呼助手</h1>
-            <p style={{fontSize: '1.3rem', color: 'rgba(255,255,255,0.9)', marginBottom: '48px', lineHeight: 1.6}}>
-              智能电话营销，自动化客户触达，提升销售效率
-            </p>
+            <h2 style={heroSubTitleStyle}>智能电话营销，自动化客户触达，提升销售效率</h2>
+            <ul style={heroBulletList}>
+              <li style={heroBulletItem}><span style={heroBulletIcon}>✔</span><span>融合自研大模型、ASR、NLP、TTS 等能力，打造智能外呼系统</span></li>
+              <li style={heroBulletItem}><span style={heroBulletIcon}>✔</span><span>多轮语音对话，精准识别与自然交互，显著提升转化体验</span></li>
+              <li style={heroBulletItem}><span style={heroBulletIcon}>✔</span><span>替代传统外呼流程，降本增效，提升客户满意度</span></li>
+            </ul>
           </div>
         </div>
         

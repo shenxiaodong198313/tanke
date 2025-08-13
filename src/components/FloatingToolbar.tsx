@@ -33,7 +33,7 @@ const FloatingToolbar: React.FC = () => {
     display: 'flex',
     flexDirection: 'column',
     alignItems: 'center',
-    width: '56px', // 减少30%宽度（80px -> 56px）
+    width: '80px',
     backdropFilter: 'blur(10px)',
     border: '1px solid rgba(255, 255, 255, 0.8)'
   };
@@ -93,7 +93,8 @@ const FloatingToolbar: React.FC = () => {
     fontSize: '0.85rem', // 相当于12px的rem大小
     color: '#666',
     fontWeight: '500',
-    position: 'relative'
+    position: 'relative',
+    lineHeight: 1
   };
 
   const iconStyle: React.CSSProperties = {
@@ -102,10 +103,18 @@ const FloatingToolbar: React.FC = () => {
   };
 
   const separatorStyle: React.CSSProperties = {
-    width: '30px', // 缩小分隔线宽度
+    width: '60px',
     height: '1px',
     backgroundColor: '#f0f0f0',
     margin: '0 auto'
+  };
+
+  // 防止中文在窄容器内自动换行
+  const labelStyle: React.CSSProperties = {
+    whiteSpace: 'nowrap',
+    wordBreak: 'keep-all',
+    textAlign: 'center',
+    display: 'block'
   };
 
   const handleButtonHover = (e: React.MouseEvent<HTMLButtonElement>, isEnter: boolean) => {
@@ -147,7 +156,7 @@ const FloatingToolbar: React.FC = () => {
           }}
         >
           <div style={iconStyle}>💬</div>
-          <span>微信咨询</span>
+          <span style={labelStyle}>微信咨询</span>
         </button>
         
         <div style={separatorStyle}></div>
@@ -163,7 +172,7 @@ const FloatingToolbar: React.FC = () => {
           }}
         >
           <div style={iconStyle}>🎧</div>
-          <span>电话咨询</span>
+          <span style={labelStyle}>电话咨询</span>
         </button>
 
         <div style={separatorStyle}></div>
@@ -179,7 +188,7 @@ const FloatingToolbar: React.FC = () => {
           }}
         >
           <div style={iconStyle}>📊</div>
-          <span>预约演示</span>
+          <span style={labelStyle}>预约演示</span>
         </button>
       </div>
     </div>
