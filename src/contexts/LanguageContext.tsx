@@ -140,7 +140,101 @@ const translations: Record<Language, Record<string, string>> = {
     'footer.help': '帮助中心',
     'footer.docs': '开发文档',
     'footer.community': '社区',
-    'footer.copyright': '© 2024 探客AI. 保留所有权利。'
+    'footer.copyright': '© 2024 探客AI. 保留所有权利。',
+    
+    // AI营销页面
+    'aiMarketing.title': 'AI营销智能体',
+    'aiMarketing.subtitle': '智能微信营销引擎，10倍提升私域运营效率',
+    'aiMarketing.feature1': '全流程自动化',
+    'aiMarketing.feature1.desc': '从引流到转化的闭环管理',
+    'aiMarketing.feature2': '微信风控规避',
+    'aiMarketing.feature2.desc': '智能分时策略 + 行为模拟技术',
+    'aiMarketing.feature3': '数据可视化',
+    'aiMarketing.feature3.desc': '实时监控转化漏斗',
+    
+    // 实时服务数据
+    'realTimeData.title': '实时服务数据',
+    'realTimeData.messageSent': '累计发送消息',
+    'realTimeData.momentsPublished': '累计发布朋友圈',
+    'realTimeData.friendsAdded': '累计添加好友',
+    'realTimeData.aiChats': '累计AI对话',
+    
+    // 专注私域营销自动化
+    'privateDomain.number': '01',
+    'privateDomain.title': '专注私域营销自动化',
+    'privateDomain.about': 'ABOUT SIKEBAO',
+    'privateDomain.desc1': '专注社群营销自动化，给您私有化部署一款微信群管理系统。',
+    'privateDomain.desc2': '登陆任意微信作为机器人小助手，智能管理微信社群，实现社群营销自动化。',
+    'privateDomain.feature1': '批量导入好友',
+    'privateDomain.feature1.sub1': '一键通讯录备份',
+    'privateDomain.feature1.sub2': '批量智能打招呼',
+    'privateDomain.feature1.sub3': '朋友圈自动关怀',
+    'privateDomain.feature1.sub4': '多号同时运行',
+    'privateDomain.feature2': '极大提升微信群管理效率和活跃度等等',
+    'privateDomain.consultButton': '立即咨询',
+    
+    // 24H高效群聊管理
+    'groupManagement.title': '24H高效群聊管理',
+    'groupManagement.subtitle': '千群管理，一人搞定，快速高效促活群成员，解放双手，省时省力',
+    'groupManagement.autoApprove': '自动通过',
+    'groupManagement.autoApprove.desc': '自动通过入群申请，并可设置时间间隔规避风险',
+    'groupManagement.welcome': '入群欢迎',
+    'groupManagement.welcome.desc': '新人进群后及时发送消息并@新人，增加入群仪式感及快速了解群规则',
+    'groupManagement.keywordJoin': '关键字入群',
+    'groupManagement.keywordJoin.desc': '设定关键词，触发关键词即可自动拉群',
+    'groupManagement.autoKick': '自动踢人',
+    'groupManagement.autoKick.desc': '根据发言名片、频率、异常字、垃圾信息等自动踢出，并进入黑名单系统',
+    'groupManagement.trialButton': '免费试用',
+    
+    // 智能客服聊天工具
+    'smartChat.title': '智能客服聊天工具',
+    'smartChat.subtitle': '多方式触达用户，24H智能聊天，让沟通更灵活！',
+    'smartChat.conversation': '会话沟通',
+    'smartChat.conversation.desc': '多人多号会话沟通，一人轻松管理多个微信号',
+    'smartChat.keywordReply': '关键词回复',
+    'smartChat.keywordReply.desc': '设定关键词，触发关键词即可自动回复，实现24H智能问答',
+    'smartChat.scriptLib': '话术库',
+    'smartChat.scriptLib.desc': '话术集中收录管理，其他功能模块识别可快捷调用，沉淀有价值内容',
+    'smartChat.quickReply': '快捷回复',
+    'smartChat.quickReply.desc': '预设常见问题的回复用语，人机协作，快速高效解答用户问题',
+    
+    // 强大的功能特点
+    'powerfulFeatures.title': '强大的功能特点',
+    'powerfulFeatures.subtitle': '微云营提供全方位的微信营销解决方案，助您轻松管理微信营销活动',
+    'powerfulFeatures.cleanFans': '清理无效粉丝',
+    'powerfulFeatures.cleanFans.desc': '智能识别并一键清理僵尸粉、黑名单等无效粉丝，保持粉丝质量',
+    'powerfulFeatures.addGroupFriends': '加群好友',
+    'powerfulFeatures.addGroupFriends.desc': '快速构群成员添加为好友，扩大人脉网络',
+    'powerfulFeatures.batchImport': '批量导入手机号',
+    'powerfulFeatures.batchImport.desc': '支持Excel批量导入手机号，一键添加为微信好友',
+    'powerfulFeatures.batchSend': '批量群发',
+    'powerfulFeatures.batchSend.desc': '定时发送消息给选定好友或群组，提高营销效率',
+    'powerfulFeatures.autoSwitchGroup': '自动换群',
+    'powerfulFeatures.autoSwitchGroup.desc': '智能管理多个群组，自动执行群组切换策略',
+    'powerfulFeatures.exportMembers': '导出群成员',
+    'powerfulFeatures.exportMembers.desc': '一键导出群成员信息，便于后续精准营销',
+    'powerfulFeatures.autoMoments': '自动朋友圈',
+    'powerfulFeatures.autoMoments.desc': '定时自动发布朋友圈内容，保持活跃度',
+    'powerfulFeatures.multiAccount': '无限多开',
+    'powerfulFeatures.multiAccount.desc': '支持同时登录多个微信账号，高效管理多个营销渠道',
+    'powerfulFeatures.dataAnalysis': '数据分析',
+    'powerfulFeatures.dataAnalysis.desc': '全面分析营销数据，助您做出明智的决策',
+    
+    // 成功案例
+    'successCases.title': '用户成功案例',
+    'successCases.subtitle': '数千家企业的共同选择',
+    'successCases.activeUsers': '活跃用户',
+    'successCases.satisfaction': '客户满意度',
+    'successCases.conversionImprovement': '平均转化提升',
+    
+    // 手机占位图标题
+    'mobileApp.smartMarketing': '智能营销助手',
+    'mobileApp.groupManagement': '群聊管理助手',
+    'mobileApp.autoManagement': '24小时自动化管理',
+    'mobileApp.efficient': '高效便捷',
+    'mobileApp.smartCustomerService': '智能客服助手',
+    'mobileApp.smartChat': '24小时智能对话',
+    'mobileApp.efficientCommunication': '高效沟通'
   },
   
   'zh-TW': {
@@ -271,7 +365,101 @@ const translations: Record<Language, Record<string, string>> = {
     'footer.help': '幫助中心',
     'footer.docs': '開發文檔',
     'footer.community': '社區',
-    'footer.copyright': '© 2024 探客AI. 保留所有權利。'
+    'footer.copyright': '© 2024 探客AI. 保留所有權利。',
+    
+    // AI營銷頁面
+    'aiMarketing.title': 'AI營銷智能體',
+    'aiMarketing.subtitle': '智能微信營銷引擎，10倍提升私域運營效率',
+    'aiMarketing.feature1': '全流程自動化',
+    'aiMarketing.feature1.desc': '從引流到轉化的閉環管理',
+    'aiMarketing.feature2': '微信風控規避',
+    'aiMarketing.feature2.desc': '智能分時策略 + 行為模擬技術',
+    'aiMarketing.feature3': '數據可視化',
+    'aiMarketing.feature3.desc': '實時監控轉化漏斗',
+    
+    // 實時服務數據
+    'realTimeData.title': '實時服務數據',
+    'realTimeData.messageSent': '累計發送消息',
+    'realTimeData.momentsPublished': '累計發布朋友圈',
+    'realTimeData.friendsAdded': '累計添加好友',
+    'realTimeData.aiChats': '累計AI對話',
+    
+    // 專注私域營銷自動化
+    'privateDomain.number': '01',
+    'privateDomain.title': '專注私域營銷自動化',
+    'privateDomain.about': 'ABOUT SIKEBAO',
+    'privateDomain.desc1': '專注社群營銷自動化，給您私有化部署一款微信群管理系統。',
+    'privateDomain.desc2': '登陸任意微信作為機器人小助手，智能管理微信社群，實現社群營銷自動化。',
+    'privateDomain.feature1': '批量導入好友',
+    'privateDomain.feature1.sub1': '一鍵通訊錄備份',
+    'privateDomain.feature1.sub2': '批量智能打招呼',
+    'privateDomain.feature1.sub3': '朋友圈自動關懷',
+    'privateDomain.feature1.sub4': '多號同時運行',
+    'privateDomain.feature2': '極大提升微信群管理效率和活躍度等等',
+    'privateDomain.consultButton': '立即諮詢',
+    
+    // 24H高效群聊管理
+    'groupManagement.title': '24H高效群聊管理',
+    'groupManagement.subtitle': '千群管理，一人搞定，快速高效促活群成員，解放雙手，省時省力',
+    'groupManagement.autoApprove': '自動通過',
+    'groupManagement.autoApprove.desc': '自動通過入群申請，並可設置時間間隔規避風險',
+    'groupManagement.welcome': '入群歡迎',
+    'groupManagement.welcome.desc': '新人進群後及時發送消息並@新人，增加入群儀式感及快速了解群規則',
+    'groupManagement.keywordJoin': '關鍵字入群',
+    'groupManagement.keywordJoin.desc': '設定關鍵詞，觸發關鍵詞即可自動拉群',
+    'groupManagement.autoKick': '自動踢人',
+    'groupManagement.autoKick.desc': '根據發言名片、頻率、異常字、垃圾信息等自動踢出，並進入黑名單系統',
+    'groupManagement.trialButton': '免費試用',
+    
+    // 智能客服聊天工具
+    'smartChat.title': '智能客服聊天工具',
+    'smartChat.subtitle': '多方式觸達用戶，24H智能聊天，讓溝通更靈活！',
+    'smartChat.conversation': '會話溝通',
+    'smartChat.conversation.desc': '多人多號會話溝通，一人輕鬆管理多個微信號',
+    'smartChat.keywordReply': '關鍵詞回復',
+    'smartChat.keywordReply.desc': '設定關鍵詞，觸發關鍵詞即可自動回復，實現24H智能問答',
+    'smartChat.scriptLib': '話術庫',
+    'smartChat.scriptLib.desc': '話術集中收錄管理，其他功能模塊識別可快捷調用，沉澱有價值內容',
+    'smartChat.quickReply': '快捷回復',
+    'smartChat.quickReply.desc': '預設常見問題的回復用語，人機協作，快速高效解答用戶問題',
+    
+    // 強大的功能特點
+    'powerfulFeatures.title': '強大的功能特點',
+    'powerfulFeatures.subtitle': '微雲營提供全方位的微信營銷解決方案，助您輕鬆管理微信營銷活動',
+    'powerfulFeatures.cleanFans': '清理無效粉絲',
+    'powerfulFeatures.cleanFans.desc': '智能識別並一鍵清理殭屍粉、黑名單等無效粉絲，保持粉絲質量',
+    'powerfulFeatures.addGroupFriends': '加群好友',
+    'powerfulFeatures.addGroupFriends.desc': '快速構群成員添加為好友，擴大人脈網絡',
+    'powerfulFeatures.batchImport': '批量導入手機號',
+    'powerfulFeatures.batchImport.desc': '支持Excel批量導入手機號，一鍵添加為微信好友',
+    'powerfulFeatures.batchSend': '批量群發',
+    'powerfulFeatures.batchSend.desc': '定時發送消息給選定好友或群組，提高營銷效率',
+    'powerfulFeatures.autoSwitchGroup': '自動換群',
+    'powerfulFeatures.autoSwitchGroup.desc': '智能管理多個群組，自動執行群組切換策略',
+    'powerfulFeatures.exportMembers': '導出群成員',
+    'powerfulFeatures.exportMembers.desc': '一鍵導出群成員信息，便於後續精準營銷',
+    'powerfulFeatures.autoMoments': '自動朋友圈',
+    'powerfulFeatures.autoMoments.desc': '定時自動發布朋友圈內容，保持活躍度',
+    'powerfulFeatures.multiAccount': '無限多開',
+    'powerfulFeatures.multiAccount.desc': '支持同時登錄多個微信賬號，高效管理多個營銷渠道',
+    'powerfulFeatures.dataAnalysis': '數據分析',
+    'powerfulFeatures.dataAnalysis.desc': '全面分析營銷數據，助您做出明智的決策',
+    
+    // 成功案例
+    'successCases.title': '用戶成功案例',
+    'successCases.subtitle': '數千家企業的共同選擇',
+    'successCases.activeUsers': '活躍用戶',
+    'successCases.satisfaction': '客戶滿意度',
+    'successCases.conversionImprovement': '平均轉化提升',
+    
+    // 手機占位圖標題
+    'mobileApp.smartMarketing': '智能營銷助手',
+    'mobileApp.groupManagement': '群聊管理助手',
+    'mobileApp.autoManagement': '24小時自動化管理',
+    'mobileApp.efficient': '高效便捷',
+    'mobileApp.smartCustomerService': '智能客服助手',
+    'mobileApp.smartChat': '24小時智能對話',
+    'mobileApp.efficientCommunication': '高效溝通'
   },
   
   'en': {
@@ -402,7 +590,101 @@ const translations: Record<Language, Record<string, string>> = {
     'footer.help': 'Help Center',
     'footer.docs': 'Documentation',
     'footer.community': 'Community',
-    'footer.copyright': '© 2024 Tanke AI. All rights reserved.'
+    'footer.copyright': '© 2024 Tanke AI. All rights reserved.',
+    
+    // AI Marketing Page
+    'aiMarketing.title': 'AI Marketing Agent',
+    'aiMarketing.subtitle': 'Intelligent WeChat Marketing Engine, 10x Boost in Private Domain Operations',
+    'aiMarketing.feature1': 'Full Process Automation',
+    'aiMarketing.feature1.desc': 'Closed-loop management from lead generation to conversion',
+    'aiMarketing.feature2': 'WeChat Risk Control Avoidance',
+    'aiMarketing.feature2.desc': 'Smart timing strategy + behavior simulation technology',
+    'aiMarketing.feature3': 'Data Visualization',
+    'aiMarketing.feature3.desc': 'Real-time conversion funnel monitoring',
+    
+    // Real-time Service Data
+    'realTimeData.title': 'Real-time Service Data',
+    'realTimeData.messageSent': 'Total Messages Sent',
+    'realTimeData.momentsPublished': 'Total Moments Published',
+    'realTimeData.friendsAdded': 'Total Friends Added',
+    'realTimeData.aiChats': 'Total AI Conversations',
+    
+    // Private Domain Marketing Automation
+    'privateDomain.number': '01',
+    'privateDomain.title': 'Focus on Private Domain Marketing Automation',
+    'privateDomain.about': 'ABOUT SIKEBAO',
+    'privateDomain.desc1': 'Focused on community marketing automation, providing you with a privately deployed WeChat group management system.',
+    'privateDomain.desc2': 'Log in any WeChat as a robot assistant to intelligently manage WeChat communities and achieve community marketing automation.',
+    'privateDomain.feature1': 'Batch Import Friends',
+    'privateDomain.feature1.sub1': 'One-click contact backup',
+    'privateDomain.feature1.sub2': 'Batch intelligent greetings',
+    'privateDomain.feature1.sub3': 'Automatic Moments care',
+    'privateDomain.feature1.sub4': 'Multi-account simultaneous operation',
+    'privateDomain.feature2': 'Greatly improve WeChat group management efficiency and activity',
+    'privateDomain.consultButton': 'Consult Now',
+    
+    // 24H Efficient Group Management
+    'groupManagement.title': '24H Efficient Group Chat Management',
+    'groupManagement.subtitle': 'Manage thousands of groups, one person handles it all, efficiently activate group members, free your hands, save time and effort',
+    'groupManagement.autoApprove': 'Auto Approve',
+    'groupManagement.autoApprove.desc': 'Automatically approve group join requests with time interval settings to avoid risks',
+    'groupManagement.welcome': 'Group Welcome',
+    'groupManagement.welcome.desc': 'Send welcome messages and @new members promptly after joining to enhance joining ceremony and quick understanding of group rules',
+    'groupManagement.keywordJoin': 'Keyword Join Group',
+    'groupManagement.keywordJoin.desc': 'Set keywords to automatically invite to group when triggered',
+    'groupManagement.autoKick': 'Auto Kick',
+    'groupManagement.autoKick.desc': 'Automatically kick out based on name cards, frequency, abnormal words, spam, etc., and add to blacklist system',
+    'groupManagement.trialButton': 'Free Trial',
+    
+    // Smart Customer Service Chat Tool
+    'smartChat.title': 'Smart Customer Service Chat Tool',
+    'smartChat.subtitle': 'Multi-channel user reach, 24H smart chat, making communication more flexible!',
+    'smartChat.conversation': 'Conversation Communication',
+    'smartChat.conversation.desc': 'Multi-person multi-account conversation communication, easily manage multiple WeChat accounts',
+    'smartChat.keywordReply': 'Keyword Reply',
+    'smartChat.keywordReply.desc': 'Set keywords for automatic replies when triggered, achieving 24H smart Q&A',
+    'smartChat.scriptLib': 'Script Library',
+    'smartChat.scriptLib.desc': 'Centralized script collection and management, quick access by other function modules, accumulating valuable content',
+    'smartChat.quickReply': 'Quick Reply',
+    'smartChat.quickReply.desc': 'Preset common question replies, human-AI collaboration for efficient user problem solving',
+    
+    // Powerful Features
+    'powerfulFeatures.title': 'Powerful Features',
+    'powerfulFeatures.subtitle': 'WeCloud Marketing provides comprehensive WeChat marketing solutions to help you easily manage WeChat marketing activities',
+    'powerfulFeatures.cleanFans': 'Clean Invalid Fans',
+    'powerfulFeatures.cleanFans.desc': 'Intelligently identify and one-click clean zombie fans, blacklisted users to maintain fan quality',
+    'powerfulFeatures.addGroupFriends': 'Add Group Friends',
+    'powerfulFeatures.addGroupFriends.desc': 'Quickly add group members as friends to expand your network',
+    'powerfulFeatures.batchImport': 'Batch Import Phone Numbers',
+    'powerfulFeatures.batchImport.desc': 'Support Excel batch import of phone numbers, one-click add as WeChat friends',
+    'powerfulFeatures.batchSend': 'Batch Send',
+    'powerfulFeatures.batchSend.desc': 'Schedule messages to selected friends or groups to improve marketing efficiency',
+    'powerfulFeatures.autoSwitchGroup': 'Auto Switch Groups',
+    'powerfulFeatures.autoSwitchGroup.desc': 'Intelligently manage multiple groups with automatic group switching strategies',
+    'powerfulFeatures.exportMembers': 'Export Group Members',
+    'powerfulFeatures.exportMembers.desc': 'One-click export group member information for precise follow-up marketing',
+    'powerfulFeatures.autoMoments': 'Auto Moments',
+    'powerfulFeatures.autoMoments.desc': 'Schedule automatic Moments posting to maintain activity',
+    'powerfulFeatures.multiAccount': 'Unlimited Multi-open',
+    'powerfulFeatures.multiAccount.desc': 'Support simultaneous login of multiple WeChat accounts for efficient multi-channel marketing management',
+    'powerfulFeatures.dataAnalysis': 'Data Analysis',
+    'powerfulFeatures.dataAnalysis.desc': 'Comprehensive marketing data analysis to help you make informed decisions',
+    
+    // Success Cases
+    'successCases.title': 'User Success Stories',
+    'successCases.subtitle': 'The common choice of thousands of enterprises',
+    'successCases.activeUsers': 'Active Users',
+    'successCases.satisfaction': 'Customer Satisfaction',
+    'successCases.conversionImprovement': 'Average Conversion Improvement',
+    
+    // Mobile App Placeholders
+    'mobileApp.smartMarketing': 'Smart Marketing Assistant',
+    'mobileApp.groupManagement': 'Group Chat Management Assistant',
+    'mobileApp.autoManagement': '24-hour Automated Management',
+    'mobileApp.efficient': 'Efficient & Convenient',
+    'mobileApp.smartCustomerService': 'Smart Customer Service Assistant',
+    'mobileApp.smartChat': '24-hour Smart Chat',
+    'mobileApp.efficientCommunication': 'Efficient Communication'
   },
   
   'ja': {
@@ -533,7 +815,101 @@ const translations: Record<Language, Record<string, string>> = {
     'footer.help': 'ヘルプセンター',
     'footer.docs': '開発ドキュメント',
     'footer.community': 'コミュニティ',
-    'footer.copyright': '© 2024 TankeAI. 全著作権所有。'
+    'footer.copyright': '© 2024 TankeAI. 全著作権所有。',
+    
+    // AIマーケティングページ
+    'aiMarketing.title': 'AIマーケティングエージェント',
+    'aiMarketing.subtitle': 'インテリジェントWeChatマーケティングエンジン、プライベートドメイン運営効率を10倍向上',
+    'aiMarketing.feature1': '全プロセス自動化',
+    'aiMarketing.feature1.desc': '集客からコンバージョンまでの閉ループ管理',
+    'aiMarketing.feature2': 'WeChatリスク制御回避',
+    'aiMarketing.feature2.desc': 'スマートタイミング戦略+行動シミュレーション技術',
+    'aiMarketing.feature3': 'データ可視化',
+    'aiMarketing.feature3.desc': 'リアルタイムコンバージョンファネル監視',
+    
+    // リアルタイムサービスデータ
+    'realTimeData.title': 'リアルタイムサービスデータ',
+    'realTimeData.messageSent': '累計送信メッセージ数',
+    'realTimeData.momentsPublished': '累計モーメント投稿数',
+    'realTimeData.friendsAdded': '累計友達追加数',
+    'realTimeData.aiChats': '累計AI会話数',
+    
+    // プライベートドメインマーケティング自動化
+    'privateDomain.number': '01',
+    'privateDomain.title': 'プライベートドメインマーケティング自動化に特化',
+    'privateDomain.about': 'ABOUT SIKEBAO',
+    'privateDomain.desc1': 'コミュニティマーケティング自動化に特化し、プライベート展開のWeChatグループ管理システムを提供します。',
+    'privateDomain.desc2': '任意のWeChatにロボットアシスタントとしてログインし、WeChatコミュニティをインテリジェントに管理し、コミュニティマーケティング自動化を実現します。',
+    'privateDomain.feature1': '友達の一括インポート',
+    'privateDomain.feature1.sub1': 'ワンクリック連絡先バックアップ',
+    'privateDomain.feature1.sub2': '一括インテリジェント挨拶',
+    'privateDomain.feature1.sub3': 'モーメント自動ケア',
+    'privateDomain.feature1.sub4': '複数アカウント同時運行',
+    'privateDomain.feature2': 'WeChatグループ管理効率とアクティビティを大幅向上',
+    'privateDomain.consultButton': '今すぐ相談',
+    
+    // 24H効率的グループ管理
+    'groupManagement.title': '24H効率的グループチャット管理',
+    'groupManagement.subtitle': '千のグループ管理、一人で対応、迅速かつ効率的にグループメンバーを活性化、手間を省き時間と労力を節約',
+    'groupManagement.autoApprove': '自動承認',
+    'groupManagement.autoApprove.desc': 'グループ参加申請を自動承認し、時間間隔を設定してリスクを回避',
+    'groupManagement.welcome': '入群歓迎',
+    'groupManagement.welcome.desc': '新メンバーがグループに参加後、速やかにメッセージを送信し@新メンバー、入群儀式感を高めグループルールを素早く理解',
+    'groupManagement.keywordJoin': 'キーワード入群',
+    'groupManagement.keywordJoin.desc': 'キーワードを設定し、キーワードトリガーで自動グループ招待',
+    'groupManagement.autoKick': '自動キック',
+    'groupManagement.autoKick.desc': '発言名刺、頻度、異常文字、迷惑情報などに基づく自動キックアウトとブラックリストシステム登録',
+    'groupManagement.trialButton': '無料体験',
+    
+    // スマートカスタマーサービスチャットツール
+    'smartChat.title': 'スマートカスタマーサービスチャットツール',
+    'smartChat.subtitle': '多方式ユーザーリーチ、24Hスマートチャット、コミュニケーションをより柔軟に！',
+    'smartChat.conversation': '会話コミュニケーション',
+    'smartChat.conversation.desc': '多人数・多アカウント会話コミュニケーション、一人で複数のWeChatアカウントを簡単管理',
+    'smartChat.keywordReply': 'キーワード返信',
+    'smartChat.keywordReply.desc': 'キーワードを設定し、キーワードトリガーで自動返信、24Hスマート問答を実現',
+    'smartChat.scriptLib': '話術ライブラリ',
+    'smartChat.scriptLib.desc': '話術集中収録管理、他機能モジュールが識別し迅速呼び出し、価値あるコンテンツを蓄積',
+    'smartChat.quickReply': 'クイック返信',
+    'smartChat.quickReply.desc': 'よくある質問の返信文を予設定、人機協作でユーザー問題を迅速かつ効率的に解答',
+    
+    // 強力な機能特徴
+    'powerfulFeatures.title': '強力な機能特徴',
+    'powerfulFeatures.subtitle': 'WeCloudマーケティングは全方位のWeChatマーケティングソリューションを提供し、WeChatマーケティング活動を簡単に管理',
+    'powerfulFeatures.cleanFans': '無効ファンのクリーンアップ',
+    'powerfulFeatures.cleanFans.desc': 'ゾンビファン、ブラックリストなど無効ファンをインテリジェント識別・ワンクリッククリーンアップ、ファン品質維持',
+    'powerfulFeatures.addGroupFriends': 'グループメンバー追加',
+    'powerfulFeatures.addGroupFriends.desc': 'グループメンバーを迅速に友達追加、人脈ネットワークを拡大',
+    'powerfulFeatures.batchImport': '携帯番号一括インポート',
+    'powerfulFeatures.batchImport.desc': 'Excel携帯番号一括インポートをサポート、ワンクリックでWeChat友達追加',
+    'powerfulFeatures.batchSend': '一括送信',
+    'powerfulFeatures.batchSend.desc': '選択した友達やグループに定時メッセージ送信、マーケティング効率向上',
+    'powerfulFeatures.autoSwitchGroup': '自動グループ切替',
+    'powerfulFeatures.autoSwitchGroup.desc': '複数グループをインテリジェント管理、自動グループ切替戦略実行',
+    'powerfulFeatures.exportMembers': 'グループメンバーエクスポート',
+    'powerfulFeatures.exportMembers.desc': 'ワンクリックでグループメンバー情報をエクスポート、後続の精密マーケティングに便利',
+    'powerfulFeatures.autoMoments': '自動モーメント',
+    'powerfulFeatures.autoMoments.desc': '定時自動モーメントコンテンツ投稿、アクティビティ維持',
+    'powerfulFeatures.multiAccount': '無制限マルチオープン',
+    'powerfulFeatures.multiAccount.desc': '複数WeChatアカウント同時ログインをサポート、複数マーケティングチャネルを効率管理',
+    'powerfulFeatures.dataAnalysis': 'データ分析',
+    'powerfulFeatures.dataAnalysis.desc': 'マーケティングデータを全面分析、賢明な決定をサポート',
+    
+    // 成功事例
+    'successCases.title': 'ユーザー成功事例',
+    'successCases.subtitle': '数千の企業の共通選択',
+    'successCases.activeUsers': 'アクティブユーザー',
+    'successCases.satisfaction': '顧客満足度',
+    'successCases.conversionImprovement': '平均コンバージョン向上',
+    
+    // モバイルアプリプレースホルダー
+    'mobileApp.smartMarketing': 'スマートマーケティングアシスタント',
+    'mobileApp.groupManagement': 'グループチャット管理アシスタント',
+    'mobileApp.autoManagement': '24時間自動化管理',
+    'mobileApp.efficient': '効率的で便利',
+    'mobileApp.smartCustomerService': 'スマートカスタマーサービスアシスタント',
+    'mobileApp.smartChat': '24時間スマートチャット',
+    'mobileApp.efficientCommunication': '効率的コミュニケーション'
   },
   
   'ko': {
@@ -664,7 +1040,101 @@ const translations: Record<Language, Record<string, string>> = {
     'footer.help': '도움말 센터',
     'footer.docs': '개발 문서',
     'footer.community': '커뮤니티',
-    'footer.copyright': '© 2024 Tanke AI. 모든 권리 보유.'
+    'footer.copyright': '© 2024 Tanke AI. 모든 권리 보유.',
+    
+    // AI 마케팅 페이지
+    'aiMarketing.title': 'AI 마케팅 에이전트',
+    'aiMarketing.subtitle': '지능형 WeChat 마케팅 엔진, 프라이빗 도메인 운영 효율 10배 향상',
+    'aiMarketing.feature1': '전체 프로세스 자동화',
+    'aiMarketing.feature1.desc': '고객 유치부터 전환까지의 폐쇄 루프 관리',
+    'aiMarketing.feature2': 'WeChat 리스크 제어 회피',
+    'aiMarketing.feature2.desc': '스마트 타이밍 전략 + 행동 시뮬레이션 기술',
+    'aiMarketing.feature3': '데이터 시각화',
+    'aiMarketing.feature3.desc': '실시간 전환 퍼널 모니터링',
+    
+    // 실시간 서비스 데이터
+    'realTimeData.title': '실시간 서비스 데이터',
+    'realTimeData.messageSent': '누적 메시지 전송',
+    'realTimeData.momentsPublished': '누적 모멘트 게시',
+    'realTimeData.friendsAdded': '누적 친구 추가',
+    'realTimeData.aiChats': '누적 AI 대화',
+    
+    // 프라이빗 도메인 마케팅 자동화
+    'privateDomain.number': '01',
+    'privateDomain.title': '프라이빗 도메인 마케팅 자동화에 집중',
+    'privateDomain.about': 'ABOUT SIKEBAO',
+    'privateDomain.desc1': '커뮤니티 마케팅 자동화에 집중하여 프라이빗 배포 WeChat 그룹 관리 시스템을 제공합니다.',
+    'privateDomain.desc2': '임의의 WeChat에 로봇 어시스턴트로 로그인하여 WeChat 커뮤니티를 지능적으로 관리하고 커뮤니티 마케팅 자동화를 실현합니다.',
+    'privateDomain.feature1': '친구 일괄 가져오기',
+    'privateDomain.feature1.sub1': '원클릭 연락처 백업',
+    'privateDomain.feature1.sub2': '일괄 지능 인사',
+    'privateDomain.feature1.sub3': '모멘트 자동 관리',
+    'privateDomain.feature1.sub4': '다중 계정 동시 운영',
+    'privateDomain.feature2': 'WeChat 그룹 관리 효율성과 활동성을 크게 향상',
+    'privateDomain.consultButton': '즉시 상담',
+    
+    // 24시간 효율적 그룹 관리
+    'groupManagement.title': '24시간 효율적 그룹 채팅 관리',
+    'groupManagement.subtitle': '수천 개 그룹 관리, 한 사람이 처리, 신속하고 효율적으로 그룹 구성원 활성화, 손을 자유롭게 하여 시간과 노력 절약',
+    'groupManagement.autoApprove': '자동 승인',
+    'groupManagement.autoApprove.desc': '그룹 가입 신청 자동 승인, 시간 간격 설정으로 위험 회피',
+    'groupManagement.welcome': '그룹 환영',
+    'groupManagement.welcome.desc': '신규 회원 그룹 가입 후 즉시 메시지 전송 및 @신규 회원, 가입 의식감 증가 및 그룹 규칙 빠른 이해',
+    'groupManagement.keywordJoin': '키워드 그룹 가입',
+    'groupManagement.keywordJoin.desc': '키워드 설정, 키워드 트리거 시 자동 그룹 초대',
+    'groupManagement.autoKick': '자동 추방',
+    'groupManagement.autoKick.desc': '발언 명함, 빈도, 이상 문자, 스팸 정보 등을 기반으로 자동 추방 및 블랙리스트 시스템 등록',
+    'groupManagement.trialButton': '무료 체험',
+    
+    // 스마트 고객 서비스 채팅 도구
+    'smartChat.title': '스마트 고객 서비스 채팅 도구',
+    'smartChat.subtitle': '다양한 방식으로 사용자 접근, 24시간 스마트 채팅으로 소통을 더욱 유연하게!',
+    'smartChat.conversation': '대화 소통',
+    'smartChat.conversation.desc': '다인원 다계정 대화 소통, 한 사람이 여러 WeChat 계정을 쉽게 관리',
+    'smartChat.keywordReply': '키워드 답변',
+    'smartChat.keywordReply.desc': '키워드 설정, 키워드 트리거 시 자동 답변, 24시간 스마트 Q&A 실현',
+    'smartChat.scriptLib': '대화 라이브러리',
+    'smartChat.scriptLib.desc': '대화 집중 수록 관리, 다른 기능 모듈이 인식하여 빠른 호출, 가치 있는 콘텐츠 축적',
+    'smartChat.quickReply': '빠른 답변',
+    'smartChat.quickReply.desc': '자주 묻는 질문의 답변 용어 사전 설정, 인간-AI 협력으로 사용자 문제를 신속하고 효율적으로 해결',
+    
+    // 강력한 기능 특징
+    'powerfulFeatures.title': '강력한 기능 특징',
+    'powerfulFeatures.subtitle': 'WeCloud 마케팅은 전방위 WeChat 마케팅 솔루션을 제공하여 WeChat 마케팅 활동을 쉽게 관리',
+    'powerfulFeatures.cleanFans': '무효 팬 정리',
+    'powerfulFeatures.cleanFans.desc': '좀비 팬, 블랙리스트 등 무효 팬을 지능적으로 식별 및 원클릭 정리, 팬 품질 유지',
+    'powerfulFeatures.addGroupFriends': '그룹 친구 추가',
+    'powerfulFeatures.addGroupFriends.desc': '그룹 구성원을 빠르게 친구로 추가하여 인맥 네트워크 확장',
+    'powerfulFeatures.batchImport': '휴대폰 번호 일괄 가져오기',
+    'powerfulFeatures.batchImport.desc': 'Excel 휴대폰 번호 일괄 가져오기 지원, 원클릭으로 WeChat 친구 추가',
+    'powerfulFeatures.batchSend': '일괄 전송',
+    'powerfulFeatures.batchSend.desc': '선택한 친구나 그룹에 정시 메시지 전송, 마케팅 효율 향상',
+    'powerfulFeatures.autoSwitchGroup': '자동 그룹 전환',
+    'powerfulFeatures.autoSwitchGroup.desc': '여러 그룹을 지능적으로 관리, 자동 그룹 전환 전략 실행',
+    'powerfulFeatures.exportMembers': '그룹 구성원 내보내기',
+    'powerfulFeatures.exportMembers.desc': '원클릭으로 그룹 구성원 정보 내보내기, 후속 정밀 마케팅에 편리',
+    'powerfulFeatures.autoMoments': '자동 모멘트',
+    'powerfulFeatures.autoMoments.desc': '정시 자동 모멘트 콘텐츠 게시, 활동성 유지',
+    'powerfulFeatures.multiAccount': '무제한 멀티 오픈',
+    'powerfulFeatures.multiAccount.desc': '여러 WeChat 계정 동시 로그인 지원, 여러 마케팅 채널 효율적 관리',
+    'powerfulFeatures.dataAnalysis': '데이터 분석',
+    'powerfulFeatures.dataAnalysis.desc': '마케팅 데이터 전면 분석, 현명한 결정 지원',
+    
+    // 성공 사례
+    'successCases.title': '사용자 성공 사례',
+    'successCases.subtitle': '수천 개 기업의 공통 선택',
+    'successCases.activeUsers': '활성 사용자',
+    'successCases.satisfaction': '고객 만족도',
+    'successCases.conversionImprovement': '평균 전환 개선',
+    
+    // 모바일 앱 플레이스홀더
+    'mobileApp.smartMarketing': '스마트 마케팅 어시스턴트',
+    'mobileApp.groupManagement': '그룹 채팅 관리 어시스턴트',
+    'mobileApp.autoManagement': '24시간 자동화 관리',
+    'mobileApp.efficient': '효율적이고 편리',
+    'mobileApp.smartCustomerService': '스마트 고객 서비스 어시스턴트',
+    'mobileApp.smartChat': '24시간 스마트 채팅',
+    'mobileApp.efficientCommunication': '효율적인 소통'
   }
 };
 

@@ -1,7 +1,10 @@
 import React from 'react';
 import SEOHead from '../SEOHead';
+import { useLanguage } from '../../contexts/LanguageContext';
 
 const AiMarketing: React.FC = () => {
+  const { t } = useLanguage();
+  
   const containerStyle: React.CSSProperties = {
     minHeight: '100vh',
     paddingTop: '64px',
@@ -233,31 +236,31 @@ const AiMarketing: React.FC = () => {
               textAlign: 'center',
               letterSpacing: '2px',
               whiteSpace: 'nowrap',
-            }}>AI营销智能体</h1>
+            }}>{t('aiMarketing.title')}</h1>
             <p style={{fontSize: '1.3rem', color: 'rgba(255,255,255,0.9)', marginBottom: '24px', lineHeight: 1.6}}>
-              智能微信营销引擎，10倍提升私域运营效率
+              {t('aiMarketing.subtitle')}
             </p>
             {/* 三大卖点（显示在副标题下方） */}
             <div style={heroFeatureGridStyle}>
               <div style={heroFeatureItemStyle}>
                 <div style={heroFeatureIconStyle}>🔁</div>
                 <div>
-                  <div style={heroFeatureTitleStyle}>全流程自动化</div>
-                  <div style={heroFeatureDescStyle}>从引流到转化的闭环管理</div>
+                  <div style={heroFeatureTitleStyle}>{t('aiMarketing.feature1')}</div>
+                  <div style={heroFeatureDescStyle}>{t('aiMarketing.feature1.desc')}</div>
                 </div>
               </div>
               <div style={heroFeatureItemStyle}>
                 <div style={heroFeatureIconStyle}>🛡️</div>
                 <div>
-                  <div style={heroFeatureTitleStyle}>微信风控规避</div>
-                  <div style={heroFeatureDescStyle}>智能分时策略 + 行为模拟技术</div>
+                  <div style={heroFeatureTitleStyle}>{t('aiMarketing.feature2')}</div>
+                  <div style={heroFeatureDescStyle}>{t('aiMarketing.feature2.desc')}</div>
                 </div>
               </div>
               <div style={heroFeatureItemStyle}>
                 <div style={heroFeatureIconStyle}>📈</div>
                 <div>
-                  <div style={heroFeatureTitleStyle}>数据可视化</div>
-                  <div style={heroFeatureDescStyle}>实时监控转化漏斗</div>
+                  <div style={heroFeatureTitleStyle}>{t('aiMarketing.feature3')}</div>
+                  <div style={heroFeatureDescStyle}>{t('aiMarketing.feature3.desc')}</div>
                 </div>
               </div>
             </div>
@@ -285,7 +288,7 @@ const AiMarketing: React.FC = () => {
               color: '#1f2937',
               marginBottom: '60px',
               marginTop: '0',
-            }}>实时服务数据</h2>
+            }}>{t('realTimeData.title')}</h2>
             <div style={{
               borderBottom: '4px solid #3b82f6',
               width: '60px',
@@ -309,7 +312,7 @@ const AiMarketing: React.FC = () => {
                   fontSize: '1.1rem',
                   color: '#6b7280',
                   fontWeight: 500,
-                }}>累计发送消息</div>
+                }}>{t('realTimeData.messageSent')}</div>
               </div>
               <div style={{textAlign: 'center'}}>
                 <div style={{
@@ -322,7 +325,7 @@ const AiMarketing: React.FC = () => {
                   fontSize: '1.1rem',
                   color: '#6b7280',
                   fontWeight: 500,
-                }}>累计发布朋友圈</div>
+                }}>{t('realTimeData.momentsPublished')}</div>
               </div>
               <div style={{textAlign: 'center'}}>
                 <div style={{
@@ -335,7 +338,7 @@ const AiMarketing: React.FC = () => {
                   fontSize: '1.1rem',
                   color: '#6b7280',
                   fontWeight: 500,
-                }}>累计添加好友</div>
+                }}>{t('realTimeData.friendsAdded')}</div>
               </div>
               <div style={{textAlign: 'center'}}>
                 <div style={{
@@ -348,7 +351,7 @@ const AiMarketing: React.FC = () => {
                   fontSize: '1.1rem',
                   color: '#6b7280',
                   fontWeight: 500,
-                }}>累计AI对话</div>
+                }}>{t('realTimeData.aiChats')}</div>
               </div>
             </div>
           </div>
@@ -378,8 +381,8 @@ const AiMarketing: React.FC = () => {
                   fontWeight: 700,
                   flexShrink: 0,
                 }}>
-                  01
-                </div>
+                  {t('privateDomain.number')}
+              </div>
                 <h2 style={{
                   fontSize: '2.2rem',
                   fontWeight: 700,
@@ -387,7 +390,7 @@ const AiMarketing: React.FC = () => {
                   margin: 0,
                   lineHeight: 1.2,
                 }}>
-                  专注私域营销自动化
+                  {t('privateDomain.title')}
                 </h2>
               </div>
               
@@ -400,7 +403,7 @@ const AiMarketing: React.FC = () => {
                 letterSpacing: '2px',
                 textTransform: 'uppercase',
               }}>
-                ABOUT SIKEBAO
+                {t('privateDomain.about')}
               </p>
 
               {/* 主要描述 */}
@@ -412,10 +415,10 @@ const AiMarketing: React.FC = () => {
               }}>
                 <p style={{marginBottom: '20px'}}>
                   <span style={{color: '#3b82f6', marginRight: '8px'}}>◆</span>
-                  专注社群营销自动化，给您私有化部署一款微信群管理系统。
+                  {t('privateDomain.desc1')}
                 </p>
                 <p style={{marginBottom: '20px'}}>
-                  登陆任意微信作为机器人小助手，智能管理微信社群，实现社群营销自动化。
+                  {t('privateDomain.desc2')}
                 </p>
               </div>
 
@@ -431,11 +434,11 @@ const AiMarketing: React.FC = () => {
                   fontSize: '1rem',
                   color: '#374151',
                 }}>
-                  <div><span style={{color: '#3b82f6', marginRight: '8px'}}>◆</span> 批量导入好友</div>
-                  <div style={{marginLeft: '16px'}}>一键通讯录备份</div>
-                  <div style={{marginLeft: '16px'}}>批量智能打招呼</div>
-                  <div style={{marginLeft: '16px'}}>朋友圈自动关怀</div>
-                  <div style={{marginLeft: '16px'}}>多号同时运行</div>
+                  <div><span style={{color: '#3b82f6', marginRight: '8px'}}>◆</span> {t('privateDomain.feature1')}</div>
+                  <div style={{marginLeft: '16px'}}>{t('privateDomain.feature1.sub1')}</div>
+                  <div style={{marginLeft: '16px'}}>{t('privateDomain.feature1.sub2')}</div>
+                  <div style={{marginLeft: '16px'}}>{t('privateDomain.feature1.sub3')}</div>
+                  <div style={{marginLeft: '16px'}}>{t('privateDomain.feature1.sub4')}</div>
                 </div>
                 <p style={{
                   marginTop: '15px',
@@ -443,7 +446,7 @@ const AiMarketing: React.FC = () => {
                   color: '#374151',
                 }}>
                   <span style={{color: '#3b82f6', marginRight: '8px'}}>◆</span>
-                  极大提升微信群管理效率和活跃度等等
+                  {t('privateDomain.feature2')}
                 </p>
               </div>
 
@@ -470,9 +473,9 @@ const AiMarketing: React.FC = () => {
                   e.currentTarget.style.boxShadow = '0 4px 15px rgba(59, 130, 246, 0.3)';
                 }}
                 onClick={() => console.log('立即咨询')}>
-                  立即咨询
-                </button>
-              </div>
+                  {t('privateDomain.consultButton')}
+              </button>
+            </div>
             </div>
             
             {/* 右侧图片区域 */}
@@ -558,7 +561,7 @@ const AiMarketing: React.FC = () => {
                       color: '#64748b',
                       textAlign: 'center',
                       fontWeight: 600,
-                    }}>智能营销助手</div>
+                    }}>{t('mobileApp.smartMarketing')}</div>
                     <div style={{
                       display: 'flex',
                       gap: '8px',
@@ -582,9 +585,9 @@ const AiMarketing: React.FC = () => {
                         background: '#cbd5e1',
                         borderRadius: '50%',
                       }}></div>
-                    </div>
                   </div>
-                </div>
+                  </div>
+                  </div>
                 
                 {/* 右侧标题 */}
                 <div style={{
@@ -599,7 +602,7 @@ const AiMarketing: React.FC = () => {
                   maxWidth: '120px',
                 }}>
                   专注营销自动化
-                </div>
+                  </div>
                 
                 {/* 右侧描述 */}
                 <div style={{
@@ -631,7 +634,7 @@ const AiMarketing: React.FC = () => {
                 margin: '0 0 20px 0',
                 lineHeight: 1.2,
               }}>
-                24H高效群聊管理
+                {t('groupManagement.title')}
               </h2>
               
               {/* 副标题 */}
@@ -641,7 +644,7 @@ const AiMarketing: React.FC = () => {
                 marginBottom: '40px',
                 lineHeight: 1.6,
               }}>
-                千群管理，一人搞定，快速高效促活群成员，解放双手，省时省力
+{t('groupManagement.subtitle')}
               </p>
 
               {/* 功能列表 */}
@@ -677,7 +680,7 @@ const AiMarketing: React.FC = () => {
                       flexShrink: 0,
                     }}>
                       📝
-                    </div>
+            </div>
                     <div>
                       <div style={{
                         fontSize: '1.1rem',
@@ -686,19 +689,19 @@ const AiMarketing: React.FC = () => {
                         marginBottom: '4px',
                       }}>
                         自动通过
-                      </div>
+                  </div>
                       <div style={{
                         fontSize: '0.95rem',
                         color: '#6b7280',
                         lineHeight: 1.5,
                       }}>
                         自动通过入群申请，并可设置时间间隔规避风险
-                      </div>
-                    </div>
+                  </div>
+                  </div>
                   </div>
 
                   {/* 入群欢迎 */}
-                  <div style={{
+                    <div style={{
                     display: 'flex',
                     alignItems: 'flex-start',
                     gap: '12px',
@@ -971,7 +974,7 @@ const AiMarketing: React.FC = () => {
                 margin: '0 0 20px 0',
                 lineHeight: 1.2,
               }}>
-                智能客服聊天工具
+                {t('smartChat.title')}
               </h2>
               
               {/* 副标题 */}
@@ -981,7 +984,7 @@ const AiMarketing: React.FC = () => {
                 marginBottom: '40px',
                 lineHeight: 1.6,
               }}>
-                多方式触达用户，24H智能聊天，让沟通更灵活！
+{t('smartChat.subtitle')}
               </p>
 
               {/* 功能列表 */}
@@ -1183,8 +1186,8 @@ const AiMarketing: React.FC = () => {
                 }}
                 onClick={() => console.log('免费试用')}>
                   免费试用
-                </button>
-              </div>
+              </button>
+            </div>
             </div>
             
             {/* 右侧手机占位图 */}
@@ -1253,7 +1256,7 @@ const AiMarketing: React.FC = () => {
                       lineHeight: 1.4,
                     }}>
                       智能客服助手
-                    </div>
+                  </div>
                     
                     {/* 副标题 */}
                     <div style={{
@@ -1267,7 +1270,7 @@ const AiMarketing: React.FC = () => {
                       24小时智能对话
                       <br/>
                       高效沟通
-                    </div>
+                        </div>
                     
                     {/* 底部指示器 */}
                     <div style={{
@@ -1293,12 +1296,12 @@ const AiMarketing: React.FC = () => {
                         background: '#d1d5db',
                         borderRadius: '50%',
                       }}></div>
+                        </div>
+                      </div>
                     </div>
                   </div>
                 </div>
               </div>
-            </div>
-          </div>
 
           {/* 第四屏：强大的功能特点 */}
           <div style={{
@@ -1314,7 +1317,7 @@ const AiMarketing: React.FC = () => {
               marginBottom: '20px',
               lineHeight: 1.2,
             }}>
-              强大的功能特点
+              {t('powerfulFeatures.title')}
             </h2>
             
             <p style={{
@@ -1325,7 +1328,7 @@ const AiMarketing: React.FC = () => {
               maxWidth: '600px',
               margin: '0 auto 80px auto',
             }}>
-              微云营提供全方位的微信营销解决方案，助您轻松管理微信营销活动
+{t('powerfulFeatures.subtitle')}
             </p>
 
             {/* 功能特点网格 */}
@@ -1356,7 +1359,7 @@ const AiMarketing: React.FC = () => {
                   margin: '0 auto 20px auto',
                 }}>
                   <span style={{fontSize: '1.8rem', color: '#3b82f6'}}>✓</span>
-                </div>
+            </div>
                 <h3 style={{
                   fontSize: '1.3rem',
                   fontWeight: 600,
@@ -1370,7 +1373,7 @@ const AiMarketing: React.FC = () => {
                 }}>
                   智能识别并一键清理僵尸粉、黑名单等无效粉丝，保持粉丝质量
                 </p>
-              </div>
+          </div>
 
               {/* 加群好友 */}
               <div style={{
@@ -1392,7 +1395,7 @@ const AiMarketing: React.FC = () => {
                   margin: '0 auto 20px auto',
                 }}>
                   <span style={{fontSize: '1.8rem', color: '#3b82f6'}}>👥</span>
-                </div>
+              </div>
                 <h3 style={{
                   fontSize: '1.3rem',
                   fontWeight: 600,
@@ -1406,7 +1409,7 @@ const AiMarketing: React.FC = () => {
                 }}>
                   快速构群成员添加为好友，扩大人脉网络
                 </p>
-              </div>
+            </div>
 
               {/* 批量导入手机号 */}
               <div style={{
@@ -1428,7 +1431,7 @@ const AiMarketing: React.FC = () => {
                   margin: '0 auto 20px auto',
                 }}>
                   <span style={{fontSize: '1.8rem', color: '#3b82f6'}}>💬</span>
-                </div>
+                  </div>
                 <h3 style={{
                   fontSize: '1.3rem',
                   fontWeight: 600,
@@ -1442,7 +1445,7 @@ const AiMarketing: React.FC = () => {
                 }}>
                   支持Excel批量导入手机号，一键添加为微信好友
                 </p>
-              </div>
+                      </div>
 
               {/* 批量群发 */}
               <div style={{
@@ -1464,7 +1467,7 @@ const AiMarketing: React.FC = () => {
                   margin: '0 auto 20px auto',
                 }}>
                   <span style={{fontSize: '1.8rem', color: '#3b82f6'}}>📷</span>
-                </div>
+                      </div>
                 <h3 style={{
                   fontSize: '1.3rem',
                   fontWeight: 600,
@@ -1478,7 +1481,7 @@ const AiMarketing: React.FC = () => {
                 }}>
                   定时发送消息给选定好友或群组，提高营销效率
                 </p>
-              </div>
+                      </div>
 
               {/* 自动换群 */}
               <div style={{
@@ -1500,7 +1503,7 @@ const AiMarketing: React.FC = () => {
                   margin: '0 auto 20px auto',
                 }}>
                   <span style={{fontSize: '1.8rem', color: '#3b82f6'}}>🔄</span>
-                </div>
+                      </div>
                 <h3 style={{
                   fontSize: '1.3rem',
                   fontWeight: 600,
@@ -1514,7 +1517,7 @@ const AiMarketing: React.FC = () => {
                 }}>
                   智能管理多个群组，自动执行群组切换策略
                 </p>
-              </div>
+                    </div>
 
               {/* 导出群成员 */}
               <div style={{
@@ -1536,7 +1539,7 @@ const AiMarketing: React.FC = () => {
                   margin: '0 auto 20px auto',
                 }}>
                   <span style={{fontSize: '1.8rem', color: '#3b82f6'}}>⏰</span>
-                </div>
+                  </div>
                 <h3 style={{
                   fontSize: '1.3rem',
                   fontWeight: 600,
@@ -1550,7 +1553,7 @@ const AiMarketing: React.FC = () => {
                 }}>
                   一键导出群成员信息，便于后续精准营销
                 </p>
-              </div>
+                </div>
 
               {/* 自动朋友圈 */}
               <div style={{
@@ -1572,7 +1575,7 @@ const AiMarketing: React.FC = () => {
                   margin: '0 auto 20px auto',
                 }}>
                   <span style={{fontSize: '1.8rem', color: '#3b82f6'}}>⏰</span>
-                </div>
+              </div>
                 <h3 style={{
                   fontSize: '1.3rem',
                   fontWeight: 600,
@@ -1665,23 +1668,23 @@ const AiMarketing: React.FC = () => {
           {/* 第五屏：成功案例统计 */}
           <div style={{textAlign: 'center', marginTop: '100px'}}>
             <h2 style={{fontSize: '2rem', fontWeight: 700, color: '#1f2937', marginBottom: '20px'}}>
-              用户成功案例
+{t('successCases.title')}
             </h2>
             <p style={{fontSize: '1.2rem', color: '#6b7280', marginBottom: '60px'}}>
-              数千家企业的共同选择
+{t('successCases.subtitle')}
             </p>
             <div style={statsContainerStyle}>
               <div style={statCardStyle}>
                 <div style={statNumberStyle}>5000+</div>
-                <div style={statLabelStyle}>活跃用户</div>
+                <div style={statLabelStyle}>{t('successCases.activeUsers')}</div>
               </div>
               <div style={statCardStyle}>
                 <div style={statNumberStyle}>95%</div>
-                <div style={statLabelStyle}>客户满意度</div>
+                <div style={statLabelStyle}>{t('successCases.satisfaction')}</div>
               </div>
               <div style={statCardStyle}>
                 <div style={statNumberStyle}>200%</div>
-                <div style={statLabelStyle}>平均转化提升</div>
+                <div style={statLabelStyle}>{t('successCases.conversionImprovement')}</div>
               </div>
             </div>
           </div>
