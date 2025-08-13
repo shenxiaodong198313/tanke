@@ -167,6 +167,38 @@ const AiMarketing: React.FC = () => {
     fontWeight: 500,
   };
 
+  // 顶部（副标题下方）三大卖点
+  const heroFeatureGridStyle: React.CSSProperties = {
+    display: 'grid',
+    gridTemplateColumns: 'repeat(3, 1fr)',
+    gap: '40px',
+    marginTop: '20px',
+  };
+
+  const heroFeatureItemStyle: React.CSSProperties = {
+    display: 'flex',
+    alignItems: 'flex-start',
+    gap: '12px',
+    color: 'white',
+  };
+
+  const heroFeatureIconStyle: React.CSSProperties = {
+    fontSize: '32px',
+    color: '#8fb6ff',
+    lineHeight: 1,
+  };
+
+  const heroFeatureTitleStyle: React.CSSProperties = {
+    fontSize: '20px',
+    fontWeight: 700,
+    marginBottom: '6px',
+  };
+
+  const heroFeatureDescStyle: React.CSSProperties = {
+    fontSize: '14px',
+    color: 'rgba(255,255,255,0.9)'
+  };
+
   return (
     <>
       <SEOHead
@@ -201,14 +233,37 @@ const AiMarketing: React.FC = () => {
               letterSpacing: '2px',
               whiteSpace: 'nowrap',
             }}>AI营销智能体</h1>
-            <p style={{fontSize: '1.3rem', color: 'rgba(255,255,255,0.9)', marginBottom: '48px', lineHeight: 1.6}}>
-              智能驱动，助力企业全渠道数字化获客与转化
+            <p style={{fontSize: '1.3rem', color: 'rgba(255,255,255,0.9)', marginBottom: '24px', lineHeight: 1.6}}>
+              智能微信营销引擎，10倍提升私域运营效率
             </p>
+            {/* 三大卖点（显示在副标题下方） */}
+            <div style={heroFeatureGridStyle}>
+              <div style={heroFeatureItemStyle}>
+                <div style={heroFeatureIconStyle}>🔁</div>
+                <div>
+                  <div style={heroFeatureTitleStyle}>全流程自动化</div>
+                  <div style={heroFeatureDescStyle}>从引流到转化的闭环管理</div>
+                </div>
+              </div>
+              <div style={heroFeatureItemStyle}>
+                <div style={heroFeatureIconStyle}>🛡️</div>
+                <div>
+                  <div style={heroFeatureTitleStyle}>微信风控规避</div>
+                  <div style={heroFeatureDescStyle}>智能分时策略 + 行为模拟技术</div>
+                </div>
+              </div>
+              <div style={heroFeatureItemStyle}>
+                <div style={heroFeatureIconStyle}>📈</div>
+                <div>
+                  <div style={heroFeatureTitleStyle}>数据可视化</div>
+                  <div style={heroFeatureDescStyle}>实时监控转化漏斗</div>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
         
         <div style={sectionStyle}>
-          
           {/* 第一屏：共享素材库 */}
           <div style={featureContainerStyle}>
             <div style={featureContentStyle}>
