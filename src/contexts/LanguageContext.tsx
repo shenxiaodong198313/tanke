@@ -15,7 +15,7 @@ const translations: Record<Language, Record<string, string>> = {
   'zh-CN': {
     // 导航栏
     'nav.home': '首页',
-    'nav.products': '产品方案',
+    'nav.products': '产品功能',
     'nav.products.aiMarketing': 'AI营销智能体',
     'nav.products.aiLive': 'AI直播智能体',
     'nav.products.aiCall': 'AI外呼智能体',
@@ -146,7 +146,7 @@ const translations: Record<Language, Record<string, string>> = {
   'zh-TW': {
     // 導航欄
     'nav.home': '首頁',
-    'nav.products': '產品方案',
+    'nav.products': '產品功能',
     'nav.products.aiMarketing': 'AI營銷智能體',
     'nav.products.aiLive': 'AI直播智能體',
     'nav.products.aiCall': 'AI外呼智能體',
@@ -277,7 +277,7 @@ const translations: Record<Language, Record<string, string>> = {
   'en': {
     // Navigation
     'nav.home': 'Home',
-    'nav.products': 'Products',
+    'nav.products': 'Product Features',
     'nav.products.aiMarketing': 'AI Marketing',
     'nav.products.aiLive': 'AI Live',
     'nav.products.aiCall': 'AI Call',
@@ -408,7 +408,7 @@ const translations: Record<Language, Record<string, string>> = {
   'ja': {
     // ナビゲーション
     'nav.home': 'ホーム',
-    'nav.products': '製品ソリューション',
+    'nav.products': '製品機能',
     'nav.products.aiMarketing': 'AIマーケティングインテリジェント',
     'nav.products.aiLive': 'AIライブインテリジェント',
     'nav.products.aiCall': 'AIコールインテリジェント',
@@ -539,7 +539,7 @@ const translations: Record<Language, Record<string, string>> = {
   'ko': {
     // 내비게이션
     'nav.home': '홈페이지',
-    'nav.products': '제품 솔루션',
+    'nav.products': '제품 기능',
     'nav.products.aiMarketing': 'AI 마케팅',
     'nav.products.aiLive': 'AI 라이브',
     'nav.products.aiCall': 'AI 콜',

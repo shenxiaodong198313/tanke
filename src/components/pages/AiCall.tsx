@@ -537,7 +537,7 @@ const AiCall: React.FC = () => {
         {/* 蓝色背景的标题区域 */}
         <div style={{
           width: '100vw',
-          minHeight: '400px',
+          minHeight: '600px',
           background: 'linear-gradient(135deg, #2574e8 0%, #1e40af 100%)',
           position: 'relative',
           overflow: 'hidden',
