@@ -3,14 +3,48 @@ const cors = require('cors');
 const bodyParser = require('body-parser');
 const fs = require('fs');
 const path = require('path');
+const helmet = require('helmet');
+const rateLimit = require('express-rate-limit');
+const hpp = require('hpp');
+require('dotenv').config();
 
 const app = express();
 const PORT = process.env.PORT || 3001;
 
 // 中间件
-app.use(cors());
-app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({ extended: true }));
+app.use(helmet());
+
+// CORS 仅允许配置的来源（逗号分隔），默认本地前端
+const allowedOrigins = (process.env.ALLOWED_ORIGINS || 'http://localhost:3002')
+  .split(',')
+  .map(o => o.trim())
+  .filter(Boolean);
+
+app.use(cors({
+  origin: function(origin, callback) {
+    if (!origin) return callback(null, true);
+    if (allowedOrigins.includes(origin)) return callback(null, true);
+    return callback(new Error('Not allowed by CORS'));
+  },
+  methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
+  allowedHeaders: ['Content-Type', 'Authorization', 'X-Requested-With', 'X-Admin-Token'],
+  credentials: false,
+  maxAge: 600
+}));
+
+// 参数污染防护 & 请求体大小限制
+app.use(hpp());
+app.use(bodyParser.json({ limit: '64kb' }));
+app.use(bodyParser.urlencoded({ extended: true, limit: '64kb' }));
+
+// 速率限制（基础保护）
+const apiLimiter = rateLimit({
+  windowMs: 15 * 60 * 1000,
+  max: 200,
+  standardHeaders: true,
+  legacyHeaders: false
+});
+app.use('/api/', apiLimiter);
 
 // 数据存储文件路径
 const dataFilePath = path.join(__dirname, 'partner-applications.json');
@@ -82,6 +116,15 @@ app.post('/api/partner-applications', (req, res) => {
       });
     }
 
+    // 基础长度限制，防止异常大输入
+    const isTooLong = (v, max) => typeof v === 'string' && v.trim().length > max;
+    if (isTooLong(name, 50) || isTooLong(company, 100) || isTooLong(position, 60)) {
+      return res.status(400).json({
+        success: false,
+        message: '字段长度超出限制'
+      });
+    }
+
     // 创建新的申请记录
     const newApplication = {
       id: Date.now().toString(),
@@ -117,14 +160,25 @@ app.post('/api/partner-applications', (req, res) => {
     console.error('提交申请失败:', error);
     res.status(500).json({
       success: false,
-      message: '服务器错误，请稍后重试',
-      error: error.message
+      message: '服务器错误，请稍后重试'
     });
   }
 });
 
+// 管理员校验中间件（要求请求头 X-Admin-Token 与环境变量一致）
+const requireAdmin = (req, res, next) => {
+  const adminToken = process.env.ADMIN_TOKEN;
+  if (!adminToken) {
+    return res.status(503).json({ success: false, message: '管理员令牌未配置' });
+  }
+  if (req.header('X-Admin-Token') !== adminToken) {
+    return res.status(401).json({ success: false, message: '未授权' });
+  }
+  next();
+};
+
 // 更新申请状态（管理员功能）
-app.put('/api/partner-applications/:id', (req, res) => {
+app.put('/api/partner-applications/:id', requireAdmin, (req, res) => {
   try {
     const { id } = req.params;
     const { status, notes } = req.body;
@@ -133,6 +187,13 @@ app.put('/api/partner-applications/:id', (req, res) => {
       return res.status(400).json({
         success: false,
         message: '无效的状态值'
+      });
+    }
+
+    if (notes && String(notes).length > 500) {
+      return res.status(400).json({
+        success: false,
+        message: '备注长度超出限制'
       });
     }
 
@@ -170,14 +231,13 @@ app.put('/api/partner-applications/:id', (req, res) => {
     console.error('更新申请状态失败:', error);
     res.status(500).json({
       success: false,
-      message: '服务器错误，请稍后重试',
-      error: error.message
+      message: '服务器错误，请稍后重试'
     });
   }
 });
 
 // 删除申请记录（管理员功能）
-app.delete('/api/partner-applications/:id', (req, res) => {
+app.delete('/api/partner-applications/:id', requireAdmin, (req, res) => {
   try {
     const { id } = req.params;
     const applications = readApplications();
@@ -208,8 +268,7 @@ app.delete('/api/partner-applications/:id', (req, res) => {
     console.error('删除申请记录失败:', error);
     res.status(500).json({
       success: false,
-      message: '服务器错误，请稍后重试',
-      error: error.message
+      message: '服务器错误，请稍后重试'
     });
   }
 });

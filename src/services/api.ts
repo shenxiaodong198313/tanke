@@ -1,5 +1,8 @@
-// API基础配置
-const API_BASE_URL = process.env.REACT_APP_API_URL || 'http://localhost:3001/api';
+// API基础配置（兼容 CRA 与 Vite 环境变量）
+const viteApiUrl = (typeof import.meta !== 'undefined' && (import.meta as any).env && (import.meta as any).env.VITE_API_URL) || '';
+// 在浏览器环境中 process 可能不存在
+const craApiUrl = (typeof process !== 'undefined' && (process as any).env && (process as any).env.REACT_APP_API_URL) || '';
+const API_BASE_URL = viteApiUrl || craApiUrl || 'http://localhost:3001/api';
 
 // API响应类型定义
 export interface ApiResponse<T = any> {

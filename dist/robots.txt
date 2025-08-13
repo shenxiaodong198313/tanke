@@ -1,0 +1,18 @@
+# https://www.robotstxt.org/robotstxt.html
+User-agent: *
+Allow: /
+Disallow: /static/
+
+Sitemap: https://www.tanke.com/sitemap.xml
+
+# 百度爬虫
+User-agent: Baiduspider
+Allow: /
+
+# 谷歌爬虫
+User-agent: Googlebot
+Allow: /
+
+# 微信爬虫
+User-agent: WeChatShareTool
+Allow: /
