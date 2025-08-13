@@ -615,6 +615,7 @@ const AiLive: React.FC = () => {
 
   // 应用场景当前激活索引
   const [activeSceneIdx, setActiveSceneIdx] = React.useState(0);
+  const [lastSceneIdx, setLastSceneIdx] = React.useState(0);
 
   return (
     <>
@@ -832,14 +833,27 @@ const AiLive: React.FC = () => {
                 <button
                   key={s.title}
                   style={i === activeSceneIdx ? tabButtonActiveStyle : tabButtonStyle}
-                  onClick={() => setActiveSceneIdx(i)}
+                  onClick={() => {
+                    setLastSceneIdx(activeSceneIdx);
+                    setActiveSceneIdx(i);
+                  }}
                 >
                   {s.title}
                 </button>
               ))}
             </div>
             {/* Content */}
-            <div style={sceneContentStyle} className="slide-in-right">
+            <div
+              key={`${activeSceneIdx}-${activeSceneIdx > lastSceneIdx ? 'r' : activeSceneIdx < lastSceneIdx ? 'l' : 'n'}`}
+              style={sceneContentStyle}
+              className={
+                activeSceneIdx > lastSceneIdx
+                  ? 'slide-in-right'
+                  : activeSceneIdx < lastSceneIdx
+                  ? 'slide-in-left'
+                  : ''
+              }
+            >
               <div style={sceneLeftCardStyle}>
                 <div style={sceneLeftTitleStyle}>{scenes[activeSceneIdx].title}</div>
                 <div style={sceneDescStyle}>{scenes[activeSceneIdx].desc}</div>
