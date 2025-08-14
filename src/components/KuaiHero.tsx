@@ -300,8 +300,8 @@ const KuaiHero: React.FC = () => {
               <div style={featureIconStyle}>
                 <span>🎯</span>
               </div>
-              <div style={featureTitleStyle}>AI公域拓客</div>
-              <div style={featureDescStyle}>智能匹配精准流量，实现用户高效触达与转化</div>
+              <div style={featureTitleStyle}>AI自动拓客</div>
+              <div style={featureDescStyle}>从公域获客到私域获客的全链路全自动化营销</div>
             </motion.div>
             
             <motion.div
@@ -313,8 +313,8 @@ const KuaiHero: React.FC = () => {
               <div style={featureIconStyle}>
                 <span>👥</span>
               </div>
-              <div style={featureTitleStyle}>AI私域运营</div>
-              <div style={featureDescStyle}>数据驱动个性化互动，构建高粘性用户社群</div>
+              <div style={featureTitleStyle}>AI自动直播</div>
+              <div style={featureDescStyle}>24小时自动化直播，打造沉浸式智能交互体验</div>
             </motion.div>
             
             <motion.div
@@ -326,8 +326,8 @@ const KuaiHero: React.FC = () => {
               <div style={featureIconStyle}>
                 <span>📺</span>
               </div>
-              <div style={featureTitleStyle}>AI无人直播</div>
-              <div style={featureDescStyle}>24小时自动化直播，打造沉浸式智能交互体验</div>
+              <div style={featureTitleStyle}>AI自动外呼</div>
+              <div style={featureDescStyle}>模拟真人全自动智能打电话，效率碾压人工外呼</div>
             </motion.div>
           </div>
         </motion.div>

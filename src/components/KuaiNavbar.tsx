@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { useLanguage } from '../contexts/LanguageContext';
-import LanguageSwitcher from './LanguageSwitcher';
 import { Link, useNavigate } from 'react-router-dom';
 
 const KuaiNavbar: React.FC = () => {
@@ -104,9 +103,7 @@ const KuaiNavbar: React.FC = () => {
     position: 'relative'
   };
 
-  const languageSwitcherStyle: React.CSSProperties = {
-    marginLeft: '16px'
-  };
+  
 
   const mobileMenuButtonStyle: React.CSSProperties = {
     backgroundColor: 'transparent',
@@ -268,10 +265,7 @@ const KuaiNavbar: React.FC = () => {
             </ul>
           )}
 
-          {/* Language Switcher */}
-          <div style={languageSwitcherStyle}>
-            <LanguageSwitcher isScrolled={isScrolled} />
-          </div>
+          
 
           {/* Mobile Menu Button */}
           {isMobile && (

@@ -378,11 +378,11 @@ interface LanguageProviderProps {
 export const LanguageProvider: React.FC<LanguageProviderProps> = ({ children }) => {
   // 从localStorage获取保存的语言，如果没有则使用默认语言
   const getStoredLanguage = (): Language => {
+    // 固定使用中文，覆盖任何已保存的英文设置
     if (typeof window !== 'undefined') {
-      const stored = localStorage.getItem('tanke-language');
-      if (stored && ['zh-CN', 'en'].includes(stored)) {
-        return stored as Language;
-      }
+      try {
+        localStorage.setItem('tanke-language', 'zh-CN');
+      } catch {}
     }
     return 'zh-CN';
   };
