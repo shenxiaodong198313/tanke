@@ -30,8 +30,8 @@ const About: React.FC = () => {
     <div style={containerStyle}>
       <div style={contentStyle}>
         <div style={placeholderStyle}>
-          <h1>关于我们页面</h1>
-          <p>页面内容正在开发中...</p>
+          <h1>{t('page.about.title')}</h1>
+          <p>{t('page.about.description')}</p>
         </div>
       </div>
     </div>

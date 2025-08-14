@@ -1,7 +1,9 @@
 import React, { useState } from 'react';
 import SEOHead from '../SEOHead';
+import { useLanguage } from '../../contexts/LanguageContext';
 
 const Contact: React.FC = () => {
+  const { t } = useLanguage();
   const [activeCard, setActiveCard] = useState('demo'); // 默认展开预约演示
 
   const containerStyle: React.CSSProperties = {
@@ -120,9 +122,9 @@ const Contact: React.FC = () => {
               textAlign: 'center',
               letterSpacing: '2px',
               whiteSpace: 'nowrap',
-            }}>您可以通过以下方式联系我们</h1>
+            }}>{t('page.contact.title')}</h1>
             <p style={{fontSize: '1.3rem', color: 'rgba(255,255,255,0.9)', marginBottom: '48px', lineHeight: 1.6}}>
-              获取产品咨询、合作与技术支持，探客AI手机团队为您服务
+              {t('page.contact.subtitle')}
             </p>
           </div>
         </div>
@@ -136,10 +138,9 @@ const Contact: React.FC = () => {
           >
             {activeCard === 'demo' ? (
               <div style={expandedContentStyle}>
-                <h2 style={cardTitleStyle}>预约演示</h2>
+                <h2 style={cardTitleStyle}>{t('page.contact.demo')}</h2>
                 <p style={cardDescStyle}>
-                  通过演示，您可以快速了解探客AI增长手机的产品功能和使用场景，
-                  判断与您的业务需求是否适配，并获取专属您的解决方案和价格方案
+                  {t('page.contact.demo.desc')}
                 </p>
                 <button 
                   style={buttonStyle}
@@ -152,12 +153,12 @@ const Contact: React.FC = () => {
                     e.currentTarget.style.boxShadow = '0 4px 12px rgba(59, 130, 246, 0.3)';
                   }}
                 >
-                  立即预约 →
+                  {t('page.contact.book')} →
                 </button>
               </div>
             ) : (
               <div style={collapsedContentStyle}>
-                <h3 style={{ ...cardTitleStyle, fontSize: '1.2rem' }}>预约演示</h3>
+                <h3 style={{ ...cardTitleStyle, fontSize: '1.2rem' }}>{t('page.contact.demo')}</h3>
               </div>
             )}
           </div>
@@ -169,9 +170,9 @@ const Contact: React.FC = () => {
           >
             {activeCard === 'email' ? (
               <div style={expandedContentStyle}>
-                <h2 style={cardTitleStyle}>邮件联系</h2>
+                <h2 style={cardTitleStyle}>{t('page.contact.email')}</h2>
                 <p style={cardDescStyle}>
-                  帮助您快速了解探客AI增长手机产品及价格。
+                  {t('page.contact.email.desc')}
                 </p>
                 <p style={{ ...cardDescStyle, fontWeight: 600, color: '#1d4ed8' }}>
                   邮箱地址：info@weiling.cn
@@ -179,7 +180,7 @@ const Contact: React.FC = () => {
               </div>
             ) : (
               <div style={collapsedContentStyle}>
-                <h3 style={{ ...cardTitleStyle, fontSize: '1.2rem' }}>邮件联系</h3>
+                <h3 style={{ ...cardTitleStyle, fontSize: '1.2rem' }}>{t('page.contact.email')}</h3>
               </div>
             )}
           </div>
@@ -191,9 +192,9 @@ const Contact: React.FC = () => {
           >
             {activeCard === 'partner' ? (
               <div style={expandedContentStyle}>
-                <h2 style={cardTitleStyle}>成为合作伙伴</h2>
+                <h2 style={cardTitleStyle}>{t('page.contact.partner')}</h2>
                 <p style={cardDescStyle}>
-                  了解我们的合作伙伴体系和对合作伙伴的支持
+                  {t('page.contact.partner.desc')}
                 </p>
                 <button 
                   style={buttonStyle}
@@ -207,12 +208,12 @@ const Contact: React.FC = () => {
                   }}
                   onClick={() => window.location.href = '/partnership'}
                 >
-                  立即加入我们 →
+                  {t('page.contact.join')} →
                 </button>
               </div>
             ) : (
               <div style={collapsedContentStyle}>
-                <h3 style={{ ...cardTitleStyle, fontSize: '1.2rem' }}>成为合作伙伴</h3>
+                <h3 style={{ ...cardTitleStyle, fontSize: '1.2rem' }}>{t('page.contact.partner')}</h3>
               </div>
             )}
           </div>

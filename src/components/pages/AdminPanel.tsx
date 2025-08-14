@@ -1,8 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import SEOHead from '../SEOHead';
 import { partnerApplicationApi, PartnerApplication } from '../../services/api';
+import { useLanguage } from '../../contexts/LanguageContext';
 
 const AdminPanel: React.FC = () => {
+  const { t } = useLanguage();
   const [applications, setApplications] = useState<PartnerApplication[]>([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState('');
@@ -21,7 +23,7 @@ const AdminPanel: React.FC = () => {
         setError(response.message);
       }
     } catch (error) {
-      setError('获取申请记录失败');
+      setError(t('admin.error'));
       console.error('获取申请记录失败:', error);
     } finally {
       setLoading(false);
@@ -86,11 +88,11 @@ const AdminPanel: React.FC = () => {
   const getStatusInfo = (status: string) => {
     switch (status) {
       case 'pending':
-        return { text: '待处理', color: '#f39c12', bgColor: '#fef3cd' };
+        return { text: t('admin.status.pending'), color: '#f39c12', bgColor: '#fef3cd' };
       case 'approved':
-        return { text: '已通过', color: '#27ae60', bgColor: '#d4edda' };
+        return { text: t('admin.status.approved'), color: '#27ae60', bgColor: '#d4edda' };
       case 'rejected':
-        return { text: '已拒绝', color: '#e74c3c', bgColor: '#f8d7da' };
+        return { text: t('admin.status.rejected'), color: '#e74c3c', bgColor: '#f8d7da' };
       default:
         return { text: '未知', color: '#6c757d', bgColor: '#f8f9fa' };
     }
@@ -196,7 +198,7 @@ const AdminPanel: React.FC = () => {
       <div style={containerStyle}>
         <div style={contentStyle}>
           <div style={{ textAlign: 'center', padding: '48px' }}>
-            <div>加载中...</div>
+            <div>{t('admin.loading')}</div>
           </div>
         </div>
       </div>
@@ -212,7 +214,7 @@ const AdminPanel: React.FC = () => {
       />
       <div style={containerStyle}>
         <div style={contentStyle}>
-          <h1 style={titleStyle}>合作伙伴申请管理</h1>
+          <h1 style={titleStyle}>{t('admin.title')}</h1>
           
           {error && (
             <div style={{
@@ -235,23 +237,23 @@ const AdminPanel: React.FC = () => {
                 color: 'white',
               }}
             >
-              刷新数据
+              {t('admin.refresh')}
             </button>
             <span style={{ color: '#6c757d', fontSize: '14px' }}>
-              共 {applications.length} 条申请记录
+              {t('admin.total').replace('{count}', applications.length.toString())}
             </span>
           </div>
 
           <table style={tableStyle}>
             <thead>
               <tr>
-                <th style={thStyle}>申请时间</th>
-                <th style={thStyle}>姓名</th>
-                <th style={thStyle}>公司</th>
-                <th style={thStyle}>职位</th>
-                <th style={thStyle}>手机号</th>
-                <th style={thStyle}>状态</th>
-                <th style={thStyle}>操作</th>
+                <th style={thStyle}>{t('admin.table.time')}</th>
+                <th style={thStyle}>{t('admin.table.name')}</th>
+                <th style={thStyle}>{t('admin.table.company')}</th>
+                <th style={thStyle}>{t('admin.table.position')}</th>
+                <th style={thStyle}>{t('admin.table.phone')}</th>
+                <th style={thStyle}>{t('admin.table.status')}</th>
+                <th style={thStyle}>{t('admin.table.action')}</th>
               </tr>
             </thead>
             <tbody>
@@ -276,7 +278,7 @@ const AdminPanel: React.FC = () => {
                         color: 'white',
                       }}
                     >
-                      查看/编辑
+                      {t('admin.action.view')}
                     </button>
                     <button
                       onClick={() => handleDelete(app.id)}
@@ -286,7 +288,7 @@ const AdminPanel: React.FC = () => {
                         color: 'white',
                       }}
                     >
-                      删除
+                      {t('admin.action.delete')}
                     </button>
                   </td>
                 </tr>
@@ -296,7 +298,7 @@ const AdminPanel: React.FC = () => {
 
           {applications.length === 0 && (
             <div style={{ textAlign: 'center', padding: '48px', color: '#6c757d' }}>
-              暂无申请记录
+              {t('admin.empty')}
             </div>
           )}
         </div>
@@ -305,7 +307,7 @@ const AdminPanel: React.FC = () => {
         {selectedApplication && (
           <div style={modalOverlay} onClick={() => setSelectedApplication(null)}>
             <div style={modalContent} onClick={(e) => e.stopPropagation()}>
-              <h2 style={{ marginTop: 0, marginBottom: '24px' }}>编辑申请状态</h2>
+              <h2 style={{ marginTop: 0, marginBottom: '24px' }}>{t('admin.modal.title')}</h2>
               
               <div style={{ marginBottom: '16px' }}>
                 <strong>申请人：</strong>{selectedApplication.name}
@@ -373,7 +375,7 @@ const AdminPanel: React.FC = () => {
                     cursor: 'pointer',
                   }}
                 >
-                  取消
+                  {t('admin.modal.cancel')}
                 </button>
                 <button
                   onClick={handleUpdateStatus}
@@ -386,7 +388,7 @@ const AdminPanel: React.FC = () => {
                     cursor: 'pointer',
                   }}
                 >
-                  保存
+                  {t('admin.modal.save')}
                 </button>
               </div>
             </div>

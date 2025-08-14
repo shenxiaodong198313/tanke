@@ -1,7 +1,9 @@
 import React from 'react';
 import SEOHead from '../SEOHead';
+import { useLanguage } from '../../contexts/LanguageContext';
 
 const AiLive: React.FC = () => {
+  const { t } = useLanguage();
   const containerStyle: React.CSSProperties = {
     minHeight: '100vh',
     paddingTop: '64px',

@@ -30,8 +30,8 @@ const Tutorials: React.FC = () => {
     <div style={containerStyle}>
       <div style={contentStyle}>
         <div style={placeholderStyle}>
-          <h1>使用教程页面</h1>
-          <p>页面内容正在开发中...</p>
+          <h1>{t('page.tutorials.title')}</h1>
+          <p>{t('page.tutorials.description')}</p>
         </div>
       </div>
     </div>

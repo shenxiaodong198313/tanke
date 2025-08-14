@@ -1,7 +1,9 @@
 import React, { useState } from 'react';
 import SEOHead from '../SEOHead';
+import { useLanguage } from '../../contexts/LanguageContext';
 
 const AiCall: React.FC = () => {
+  const { t } = useLanguage();
   const [audio, setAudio] = useState<{ open: boolean; title: string; url: string }>({ open: false, title: '', url: '' });
 
   const containerStyle: React.CSSProperties = {
