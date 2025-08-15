@@ -58,7 +58,7 @@ const AppContent: React.FC = () => {
   const { isContactModalOpen, closeContactModal } = useModal();
 
   return (
-    <BrowserRouter>
+    <BrowserRouter basename={import.meta.env.BASE_URL}>
       <ScrollToTop />
       <SEOHead />
       <Routes>
