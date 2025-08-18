@@ -58,13 +58,13 @@ const Pricing: React.FC = () => {
   ];
 
   const sectionStyle: React.CSSProperties = {
-    minHeight: '100vh',
+    // minHeight: '100vh', // 移除全屏高度，避免出现大面积顶部留白
     background: '#f8f9fa', // 浅灰色背景
     display: 'flex',
     flexDirection: 'column',
-    justifyContent: 'center',
+    justifyContent: 'flex-start', // 顶部对齐，避免居中造成的空白
     alignItems: 'center',
-    padding: isMobile ? '3rem 1rem' : '4rem 2rem',
+    padding: isMobile ? '2rem 0.75rem' : '2.8rem 1.5rem', // 再收紧整体上下留白
     position: 'relative'
   };
 
@@ -76,7 +76,7 @@ const Pricing: React.FC = () => {
   };
 
   const headerStyle: React.CSSProperties = {
-    marginBottom: isMobile ? '3rem' : '4rem'
+    marginBottom: isMobile ? '1.1rem' : '1.4rem' // 再缩短标题块下方空间
   };
 
   const titleStyle: React.CSSProperties = {
@@ -98,8 +98,8 @@ const Pricing: React.FC = () => {
     color: '#64748b',
     lineHeight: '1.6',
     textAlign: 'center',
-    marginBottom: isMobile ? '40px' : '60px',
-    padding: isMobile ? '0 16px' : '0'
+    marginBottom: isMobile ? '14px' : '20px', // 再缩短副标题下方空间
+    padding: isMobile ? '0 12px' : '0'
   };
 
   const phonesContainerStyle: React.CSSProperties = {

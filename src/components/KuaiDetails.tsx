@@ -110,8 +110,8 @@ const KuaiDetails: React.FC = () => {
 
   const sectionStyle: React.CSSProperties = {
     minHeight: isMobile ? 'auto' : '100vh',
-    padding: isMobile ? '8rem 1rem 6rem' : '8rem 2rem 6rem',
-    backgroundColor: '#f8f9fa',
+    padding: isMobile ? '7rem 1rem 6rem' : '7rem 2rem 6rem',
+    background: 'linear-gradient(180deg, #0a0a0a 0%, #141414 50%, #0a0a0a 100%)',
     display: 'flex',
     flexDirection: 'column',
     justifyContent: 'center',
@@ -126,11 +126,11 @@ const KuaiDetails: React.FC = () => {
 
   // 新增：标题样式
   const titleStyle: React.CSSProperties = {
-    fontSize: isMobile ? '1.4rem' : '1.8rem',
+    fontSize: isMobile ? '1.6rem' : '2.2rem',
     fontWeight: 700,
-    color: '#1f2937',
+    color: '#e5e7eb',
     textAlign: 'center',
-    margin: isMobile ? '0 0 1rem' : '0 0 1.5rem'
+    margin: isMobile ? '0 0 1.1rem' : '0 0 1.6rem'
   };
 
   const gridContainerStyle: React.CSSProperties = {
@@ -141,14 +141,14 @@ const KuaiDetails: React.FC = () => {
   };
 
   const getCardStyle = (index: number, bgColor: string): React.CSSProperties => ({
-    backgroundColor: bgColor,
-    borderRadius: '8px', // 更小的圆角
+    background: '#ffffff',
+    borderRadius: '8px',
     padding: isMobile ? '1.2rem' : '1.5rem',
     textAlign: 'left',
-    border: '1px solid rgba(255, 255, 255, 0.8)',
+    border: '1px solid #e5e7eb',
     transition: 'all 0.3s ease',
     position: 'relative',
-    boxShadow: '0 1px 3px rgba(0, 0, 0, 0.05)', // 更淡的投影
+    boxShadow: '0 6px 18px rgba(0, 0, 0, 0.12)',
     minHeight: isMobile ? '100px' : '120px',
     display: 'flex',
     flexDirection: 'row',
@@ -159,17 +159,18 @@ const KuaiDetails: React.FC = () => {
   });
 
   const getIconStyle = (gradient: string): React.CSSProperties => ({
-    width: isMobile ? '48px' : '56px', // 更大的图标
+    width: isMobile ? '48px' : '56px',
     height: isMobile ? '48px' : '56px',
-    background: gradient,
-    borderRadius: '12px', // 圆角图标背景
+    background: '#f1f5f9',
+    border: '1px solid #e2e8f0',
+    borderRadius: '12px',
     display: 'flex',
     alignItems: 'center',
     justifyContent: 'center',
-    fontSize: isMobile ? '1.5rem' : '1.8rem', // 更大的emoji
+    fontSize: isMobile ? '1.5rem' : '1.8rem',
     flexShrink: 0,
     position: 'relative',
-    boxShadow: '0 2px 8px rgba(0, 0, 0, 0.1)'
+    boxShadow: '0 1px 2px rgba(0, 0, 0, 0.06)'
   });
 
   const textContainerStyle: React.CSSProperties = {
@@ -183,14 +184,14 @@ const KuaiDetails: React.FC = () => {
     fontSize: isMobile ? '1rem' : '1.1rem',
     fontWeight: '600',
     marginBottom: '0.5rem',
-    color: '#1e293b',
+    color: '#0f172a',
     lineHeight: '1.3'
   };
 
   const cardDescStyle: React.CSSProperties = {
     fontSize: isMobile ? '0.8rem' : '0.85rem',
     lineHeight: '1.4',
-    color: '#64748b',
+    color: '#475569',
     margin: 0
   };
 
@@ -200,19 +201,19 @@ const KuaiDetails: React.FC = () => {
     left: 0,
     right: 0,
     bottom: 0,
-    backgroundColor: 'rgba(255, 255, 255, 0.95)',
+    backgroundColor: 'rgba(15, 23, 42, 0.55)',
     display: 'flex',
     alignItems: 'center',
     justifyContent: 'center',
     opacity: isVisible ? 1 : 0,
     visibility: isVisible ? 'visible' : 'hidden',
     transition: 'all 0.3s ease',
-    backdropFilter: 'blur(4px)',
+    backdropFilter: 'blur(2px)',
     borderRadius: '8px'
   });
 
   const consultButtonStyle: React.CSSProperties = {
-    backgroundColor: '#3b82f6',
+    backgroundColor: '#0ea5e9',
     color: 'white',
     border: 'none',
     borderRadius: '6px',
@@ -221,7 +222,7 @@ const KuaiDetails: React.FC = () => {
     fontWeight: '600',
     cursor: 'pointer',
     transition: 'all 0.3s ease',
-    boxShadow: '0 2px 8px rgba(59, 130, 246, 0.3)'
+    boxShadow: '0 8px 20px rgba(14, 165, 233, 0.35)'
   };
 
   // 移除未使用的样式对象，避免 ESLint 报警
@@ -281,4 +282,4 @@ const KuaiDetails: React.FC = () => {
   );
 };
 
-export default KuaiDetails; 
+export default KuaiDetails;

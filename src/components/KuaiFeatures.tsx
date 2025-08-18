@@ -229,7 +229,7 @@ const KuaiFeatures: React.FC = () => {
             transition={{ duration: 0.6, delay: 0.1 }}
           >
             <div style={descStyle}>
-              快速热情响应，精准意图识别，细致情绪分析，自然流畅对话，如同一位7x24小时在线的专业销售前经理，灵活追问，随机应变引导留资，高效获线。
+              一个不知疲倦的"超级销售员"，全天候在线，能同时和成百上千位客户自然流畅地聊天。它不仅能精准理解每位客户的需求和情绪，还能像经验丰富的销售经理一样，灵活追问、随机应变，用最贴心的方式引导客户留下联系方式。
             </div>
             <div style={ctaRowStyle}>
               <button style={primaryBtnStyle} onClick={() => openContactModal()}>预约演示</button>

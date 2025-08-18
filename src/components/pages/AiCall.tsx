@@ -422,6 +422,46 @@ const AiCall: React.FC = () => {
     boxShadow: '0 12px 24px rgba(99, 102, 241, 0.35)'
   };
 
+  // 新增：通用标题/段落与占位图样式（用于图2、图3/图4模块）
+  const sectionTitleLargeStyle: React.CSSProperties = {
+    fontSize: '2.2rem',
+    fontWeight: 800,
+    color: '#111827',
+    margin: '0 0 12px 0',
+    lineHeight: 1.3,
+  };
+  const sectionParagraphStyle: React.CSSProperties = {
+    fontSize: '1.05rem',
+    color: '#6b7280',
+    lineHeight: 1.9,
+    marginBottom: '18px',
+  };
+  const placeholderLargeBoxStyle: React.CSSProperties = {
+    width: 460,
+    height: 300,
+    borderRadius: 24,
+    background: 'linear-gradient(135deg, #e0e7ff 0%, #fde68a 100%)',
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'center',
+    color: '#111827',
+    fontWeight: 700,
+    boxShadow: '0 12px 28px rgba(0,0,0,0.08)'
+  };
+  const bulletListStyle: React.CSSProperties = {
+    listStyle: 'none',
+    padding: 0,
+    margin: '8px 0 18px 0',
+    color: '#374151'
+  };
+  const bulletItemStyle: React.CSSProperties = {
+    display: 'flex',
+    alignItems: 'center',
+    gap: 10,
+    marginBottom: 10,
+    fontSize: '1rem',
+  };
+
   // 试听弹窗
   const audioModalOverlay: React.CSSProperties = {
     position: 'fixed',
@@ -653,6 +693,69 @@ const AiCall: React.FC = () => {
             </div>
           </div>
 
+          {/* 新增模块：图2 一键批量外呼 */}
+          <div style={featureContainerStyle}>
+            {/* 左侧占位图片 */}
+            <div style={featureImageStyle}>
+              <div style={placeholderLargeBoxStyle}>占位图</div>
+            </div>
+            {/* 右侧文案 */}
+            <div style={featureContentStyle}>
+              <h2 style={sectionTitleLargeStyle}>一键批量外呼，稳定完成高并发任务</h2>
+              <p style={sectionParagraphStyle}>
+                支持一键导入外呼名单与批量发起拨打，弹性扩容保障高并发稳定性；实时回传通话状态与结果，自动分配跟进任务，显著提升整体触达与转化效率。
+              </p>
+              <div style={pillRowStyle}>
+                <div style={pillStyle}><span style={{ fontSize: '1.2rem' }}>📞</span> 一键批量外呼</div>
+                <div style={pillStyle}><span style={{ fontSize: '1.2rem' }}>📊</span> 实时监控</div>
+                <div style={pillStyle}><span style={{ fontSize: '1.2rem' }}>⚙️</span> 智能分配</div>
+              </div>
+              <button style={contactBtnStyle} onClick={() => (window.location.href = '/contact')}>预约演示 →</button>
+            </div>
+          </div>
+
+          {/* 新增模块：图3/图4 组合 */}
+          <div style={{ display: 'flex', flexDirection: 'column', gap: 80, marginBottom: 20 }}>
+            {/* 图3：无限接近真人能力（左文右图） */}
+            <div style={featureContainerStyle}>
+              <div style={featureContentStyle}>
+                <h2 style={sectionTitleLargeStyle}>无限接近真人能力</h2>
+                <p style={sectionParagraphStyle}>
+                  多轮自然语音交互，语义理解、打断恢复、情绪识别与上下文记忆协同工作；根据业务目标自动调整话术策略，实现更高的沟通效率与用户体验。
+                </p>
+                <div style={pillRowStyle}>
+                  <div style={pillStyle}><span style={{ fontSize: '1.2rem' }}>⚡</span> 快速交互</div>
+                  <div style={pillStyle}><span style={{ fontSize: '1.2rem' }}>🗣️</span> 语音识别</div>
+                  <div style={pillStyle}><span style={{ fontSize: '1.2rem' }}>💬</span> 情绪识别</div>
+                </div>
+                <button style={contactBtnStyle} onClick={() => (window.location.href = '/contact')}>预约演示 →</button>
+              </div>
+              <div style={featureImageStyle}>
+                <div style={placeholderLargeBoxStyle}>占位图</div>
+              </div>
+            </div>
+
+            {/* 图4：通话数据分析（左图右文） */}
+            <div style={featureContainerStyle}>
+              <div style={featureImageStyle}>
+                <div style={placeholderLargeBoxStyle}>占位图</div>
+              </div>
+              <div style={featureContentStyle}>
+                <h2 style={sectionTitleLargeStyle}>通话数据分析</h2>
+                <ul style={bulletListStyle}>
+                  <li style={bulletItemStyle}><span style={{ color: '#10b981' }}>✔</span> 指标体系覆盖接通率、触达率、有效通话与转化等关键环节</li>
+                  <li style={bulletItemStyle}><span style={{ color: '#10b981' }}>✔</span> 高级洞察与趋势分析，帮助优化策略、提升运营决策效率</li>
+                  <li style={bulletItemStyle}><span style={{ color: '#10b981' }}>✔</span> AI 自动质检与评分，快速定位问题话术与合规风险</li>
+                </ul>
+                <div style={pillRowStyle}>
+                  <div style={pillStyle}><span style={{ fontSize: '1.2rem' }}>📈</span> 高级数据统计</div>
+                  <div style={pillStyle}><span style={{ fontSize: '1.2rem' }}>🤖</span> AI 自动质检分析</div>
+                </div>
+                <button style={contactBtnStyle} onClick={() => (window.location.href = '/contact')}>预约演示 →</button>
+              </div>
+            </div>
+          </div>
+
           {/* 第二屏：智能外呼 */}
           <div style={{ marginTop: 24 }}>
             <div style={showcaseWrapperStyle}>
@@ -784,3 +887,69 @@ const AiCall: React.FC = () => {
 };
 
 export default AiCall;
+
+
++          {/* 新增模块：图2 一键批量外呼 */}
++          <div style={featureContainerStyle}>
++            {/* 左侧占位图片 */}
++            <div style={featureImageStyle}>
++              <div style={placeholderLargeBoxStyle}>占位图</div>
++            </div>
++            {/* 右侧文案 */}
++            <div style={featureContentStyle}>
++              <h2 style={sectionTitleLargeStyle}>一键批量外呼，稳定完成高并发任务</h2>
++              <p style={sectionParagraphStyle}>
++                支持一键导入外呼名单与批量发起拨打，弹性扩容保障高并发稳定性；实时回传通话状态与结果，自动分配跟进任务，显著提升整体触达与转化效率。
++              </p>
++              <div style={pillRowStyle}>
++                <div style={pillStyle}><span style={{ fontSize: '1.2rem' }}>📞</span> 一键批量外呼</div>
++                <div style={pillStyle}><span style={{ fontSize: '1.2rem' }}>📊</span> 实时监控</div>
++                <div style={pillStyle}><span style={{ fontSize: '1.2rem' }}>⚙️</span> 智能分配</div>
++              </div>
++              <button style={contactBtnStyle} onClick={() => (window.location.href = '/contact')}>预约演示 →</button>
++            </div>
++          </div>
++
++          {/* 新增模块：图3/图4 组合 */}
++          <div style={{ display: 'flex', flexDirection: 'column', gap: 80, marginBottom: 20 }}>
++            {/* 图3：无限接近真人能力（左文右图） */}
++            <div style={featureContainerStyle}>
++              <div style={featureContentStyle}>
++                <h2 style={sectionTitleLargeStyle}>无限接近真人能力</h2>
++                <p style={sectionParagraphStyle}>
++                  多轮自然语音交互，语义理解、打断恢复、情绪识别与上下文记忆协同工作；根据业务目标自动调整话术策略，实现更高的沟通效率与用户体验。
++                </p>
++                <div style={pillRowStyle}>
++                  <div style={pillStyle}><span style={{ fontSize: '1.2rem' }}>⚡</span> 快速交互</div>
++                  <div style={pillStyle}><span style={{ fontSize: '1.2rem' }}>🗣️</span> 语音识别</div>
++                  <div style={pillStyle}><span style={{ fontSize: '1.2rem' }}>💬</span> 情绪识别</div>
++                </div>
++                <button style={contactBtnStyle} onClick={() => (window.location.href = '/contact')}>预约演示 →</button>
++              </div>
++              <div style={featureImageStyle}>
++                <div style={placeholderLargeBoxStyle}>占位图</div>
++              </div>
++            </div>
++
++            {/* 图4：通话数据分析（左图右文） */}
++            <div style={featureContainerStyle}>
++              <div style={featureImageStyle}>
++                <div style={placeholderLargeBoxStyle}>占位图</div>
++              </div>
++              <div style={featureContentStyle}>
++                <h2 style={sectionTitleLargeStyle}>通话数据分析</h2>
++                <ul style={bulletListStyle}>
++                  <li style={bulletItemStyle}><span style={{ color: '#10b981' }}>✔</span> 指标体系覆盖接通率、触达率、有效通话与转化等关键环节</li>
++                  <li style={bulletItemStyle}><span style={{ color: '#10b981' }}>✔</span> 高级洞察与趋势分析，帮助优化策略、提升运营决策效率</li>
++                  <li style={bulletItemStyle}><span style={{ color: '#10b981' }}>✔</span> AI 自动质检与评分，快速定位问题话术与合规风险</li>
++                </ul>
++                <div style={pillRowStyle}>
++                  <div style={pillStyle}><span style={{ fontSize: '1.2rem' }}>📈</span> 高级数据统计</div>
++                  <div style={pillStyle}><span style={{ fontSize: '1.2rem' }}>🤖</span> AI 自动质检分析</div>
++                </div>
++                <button style={contactBtnStyle} onClick={() => (window.location.href = '/contact')}>预约演示 →</button>
++              </div>
++            </div>
++          </div>
++
+           {/* 第二屏：智能外呼 */}

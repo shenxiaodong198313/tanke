@@ -50,11 +50,11 @@ const IndustryShowcase: React.FC = () => {
   ];
 
   const sectionStyle: React.CSSProperties = {
-    minHeight: '100vh',
+    // minHeight: '100vh',
     background: '#f8f9fa', // 浅灰色背景
     display: 'flex',
     flexDirection: 'column',
-    justifyContent: 'center',
+    justifyContent: 'flex-start',
     alignItems: 'center',
     padding: isMobile ? '2rem 1rem' : '3rem 2rem',
     position: 'relative'
@@ -68,7 +68,7 @@ const IndustryShowcase: React.FC = () => {
   };
 
   const headerStyle: React.CSSProperties = {
-    marginBottom: isMobile ? '2rem' : '3rem'
+    marginBottom: isMobile ? '1rem' : '1.5rem'
   };
 
   const titleStyle: React.CSSProperties = {
