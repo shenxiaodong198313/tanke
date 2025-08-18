@@ -92,11 +92,13 @@ export default function HeroGeometric() {
         position: 'relative',
         minHeight: '100vh',
         width: '100%',
-        background: '#f8f9fa', // 浅灰色背景
+        background: 'linear-gradient(180deg, #0a0a0a 0%, #1a1a1a 50%, #0a0a0a 100%)', // 深色背景
         overflow: 'hidden',
         display: 'flex',
+        flexDirection: 'column',
         alignItems: 'center',
         justifyContent: 'center',
+        padding: '80px 40px',
       }}
     >
       {/* 漂浮几何体 */}
@@ -111,99 +113,147 @@ export default function HeroGeometric() {
           zIndex: 10,
           width: '100%',
           maxWidth: 1200,
-          margin: '0 auto',
-          display: 'flex',
-          alignItems: 'center',
-          justifyContent: 'space-between',
-          padding: '0 80px',
+          textAlign: 'center',
         }}
       >
-        {/* 左侧内容区域 */}
-        <div style={{flex: 1, maxWidth: '500px'}}>
-          <h1 style={{
-            fontSize: '2.6rem',
-            fontWeight: 700,
-            marginBottom: '32px',
-            marginTop: '0',
-            textAlign: 'left',
-            letterSpacing: '2px',
-            lineHeight: '1.2'
-          }}>
-            <div style={{color: '#1f2937'}}>高效热门</div>
-            <div style={{
-              background: 'linear-gradient(90deg, #3b82f6 0%, #8b5cf6 50%, #ec4899 100%)',
-              WebkitBackgroundClip: 'text',
-              WebkitTextFillColor: 'transparent',
-              backgroundClip: 'text',
-              display: 'inline-block'
-            }}>AI营销工具</div>
-          </h1>
-          <p style={{fontSize: '18px', color: '#6b7280', lineHeight: '1.6', marginBottom: '32px'}}>
-            让AI自动化替代人工进行全场景营销
-          </p>
-          <div style={{display: 'flex', gap: '16px', flexWrap: 'wrap'}}>
-            <div style={{padding: '8px 16px', backgroundColor: '#f3f4f6', borderRadius: '20px', fontSize: '14px', color: '#374151'}}>微信</div>
-            <div style={{padding: '8px 16px', backgroundColor: '#f3f4f6', borderRadius: '20px', fontSize: '14px', color: '#374151'}}>抖音</div>
-            <div style={{padding: '8px 16px', backgroundColor: '#f3f4f6', borderRadius: '20px', fontSize: '14px', color: '#374151'}}>快手</div>
-            <div style={{padding: '8px 16px', backgroundColor: '#f3f4f6', borderRadius: '20px', fontSize: '14px', color: '#374151'}}>小红书</div>
-          </div>
-        </div>
+        {/* 标题区域 */}
+        <h1 style={{
+          fontSize: '3.5rem',
+          fontWeight: 700,
+          marginBottom: '20px',
+          marginTop: '0',
+          color: 'white',
+          letterSpacing: '2px',
+          lineHeight: '1.2'
+        }}>
+          基于AI的全自动营销手机
+        </h1>
         
-        {/* 右侧手机展示区域 */}
-        <div style={{flex: 1, display: 'flex', justifyContent: 'center', alignItems: 'center', gap: '20px', position: 'relative'}}>
-          {/* 第一个手机 - 神草风 */}
-          <div style={{position: 'relative'}}>
-            <div style={{width: '200px', height: '400px', backgroundColor: '#1f2937', borderRadius: '25px', padding: '20px', display: 'flex', flexDirection: 'column', boxShadow: '0 10px 30px rgba(0,0,0,0.2)'}}>
-              <div style={{backgroundColor: '#3b82f6', borderRadius: '15px', padding: '16px', marginBottom: '16px', textAlign: 'center'}}>
-                <h4 style={{color: 'white', fontSize: '14px', fontWeight: 600, margin: '0 0 8px 0'}}>神草风</h4>
-                <p style={{color: 'white', fontSize: '12px', margin: 0}}>营光</p>
-              </div>
-              <div style={{backgroundColor: '#f8fafc', borderRadius: '12px', padding: '12px', flex: 1, display: 'flex', flexDirection: 'column', justifyContent: 'center'}}>
-                <div style={{textAlign: 'center'}}>
-                  <div style={{width: '60px', height: '60px', backgroundColor: '#e5e7eb', borderRadius: '50%', margin: '0 auto 12px', display: 'flex', alignItems: 'center', justifyContent: 'center'}}>
-                    <span style={{fontSize: '24px'}}>👤</span>
-                  </div>
-                  <p style={{fontSize: '10px', color: '#6b7280', lineHeight: '1.4', margin: 0}}>一键生成优质内容文案</p>
-                </div>
-              </div>
+        <p style={{
+          fontSize: '1.2rem', 
+          color: 'rgba(255,255,255,0.8)', 
+          marginBottom: '60px',
+          lineHeight: '1.6'
+        }}>
+          全面开启高感影像时代
+        </p>
+
+        {/* 手机展示区域 */}
+        <div style={{
+          display: 'flex', 
+          justifyContent: 'center', 
+          alignItems: 'center', 
+          gap: '40px',
+          marginTop: '40px'
+        }}>
+          {/* 第一个手机 */}
+          <motion.div
+            initial={{ opacity: 0, y: 50 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.2 }}
+            style={{
+              width: '180px',
+              height: '360px',
+              backgroundColor: '#1f1f1f',
+              borderRadius: '25px',
+              border: '2px solid #333',
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'center',
+              boxShadow: '0 8px 32px rgba(0,0,0,0.5)',
+              position: 'relative',
+              background: 'linear-gradient(135deg, #2a2a2a 0%, #1a1a1a 100%)'
+            }}
+          >
+            <div style={{
+              position: 'absolute',
+              top: '20px',
+              width: '40%',
+              height: '4px',
+              backgroundColor: '#333',
+              borderRadius: '2px'
+            }} />
+            <div style={{
+              color: '#666',
+              fontSize: '14px',
+              textAlign: 'center'
+            }}>
+              手机占位图
             </div>
-          </div>
-          
-          {/* 第二个手机 - 文学风 */}
-          <div style={{position: 'relative', zIndex: 2}}>
-            <div style={{width: '200px', height: '400px', backgroundColor: '#1f2937', borderRadius: '25px', padding: '20px', display: 'flex', flexDirection: 'column', boxShadow: '0 15px 40px rgba(0,0,0,0.3)'}}>
-              <div style={{backgroundColor: '#ec4899', borderRadius: '15px', padding: '16px', marginBottom: '16px', textAlign: 'center'}}>
-                <h4 style={{color: 'white', fontSize: '14px', fontWeight: 600, margin: '0 0 8px 0'}}>文学风</h4>
-                <p style={{color: 'white', fontSize: '12px', margin: 0}}>文郭儿</p>
-              </div>
-              <div style={{backgroundColor: '#f8fafc', borderRadius: '12px', padding: '12px', flex: 1, display: 'flex', flexDirection: 'column', justifyContent: 'center'}}>
-                <div style={{textAlign: 'center'}}>
-                  <div style={{width: '60px', height: '60px', backgroundColor: '#e5e7eb', borderRadius: '50%', margin: '0 auto 12px', display: 'flex', alignItems: 'center', justifyContent: 'center'}}>
-                    <span style={{fontSize: '24px'}}>👩</span>
-                  </div>
-                  <p style={{fontSize: '10px', color: '#6b7280', lineHeight: '1.4', margin: 0}}>智能生成文学风格内容</p>
-                </div>
-              </div>
+          </motion.div>
+
+          {/* 第二个手机（中间，稍大） */}
+          <motion.div
+            initial={{ opacity: 0, y: 50 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.4 }}
+            style={{
+              width: '200px',
+              height: '400px',
+              backgroundColor: '#1f1f1f',
+              borderRadius: '28px',
+              border: '2px solid #333',
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'center',
+              boxShadow: '0 12px 40px rgba(0,0,0,0.6)',
+              position: 'relative',
+              background: 'linear-gradient(135deg, #2a2a2a 0%, #1a1a1a 100%)',
+              zIndex: 2
+            }}
+          >
+            <div style={{
+              position: 'absolute',
+              top: '22px',
+              width: '40%',
+              height: '4px',
+              backgroundColor: '#333',
+              borderRadius: '2px'
+            }} />
+            <div style={{
+              color: '#666',
+              fontSize: '14px',
+              textAlign: 'center'
+            }}>
+              手机占位图
             </div>
-          </div>
-          
-          {/* 第三个手机 - 科普风 */}
-          <div style={{position: 'relative'}}>
-            <div style={{width: '200px', height: '400px', backgroundColor: '#1f2937', borderRadius: '25px', padding: '20px', display: 'flex', flexDirection: 'column', boxShadow: '0 10px 30px rgba(0,0,0,0.2)'}}>
-              <div style={{backgroundColor: '#10b981', borderRadius: '15px', padding: '16px', marginBottom: '16px', textAlign: 'center'}}>
-                <h4 style={{color: 'white', fontSize: '14px', fontWeight: 600, margin: '0 0 8px 0'}}>科普风</h4>
-                <p style={{color: 'white', fontSize: '12px', margin: 0}}>科技达人</p>
-              </div>
-              <div style={{backgroundColor: '#f8fafc', borderRadius: '12px', padding: '12px', flex: 1, display: 'flex', flexDirection: 'column', justifyContent: 'center'}}>
-                <div style={{textAlign: 'center'}}>
-                  <div style={{width: '60px', height: '60px', backgroundColor: '#e5e7eb', borderRadius: '50%', margin: '0 auto 12px', display: 'flex', alignItems: 'center', justifyContent: 'center'}}>
-                    <span style={{fontSize: '24px'}}>🔬</span>
-                  </div>
-                  <p style={{fontSize: '10px', color: '#6b7280', lineHeight: '1.4', margin: 0}}>专业科普内容生成</p>
-                </div>
-              </div>
+          </motion.div>
+
+          {/* 第三个手机 */}
+          <motion.div
+            initial={{ opacity: 0, y: 50 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.6 }}
+            style={{
+              width: '180px',
+              height: '360px',
+              backgroundColor: '#1f1f1f',
+              borderRadius: '25px',
+              border: '2px solid #333',
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'center',
+              boxShadow: '0 8px 32px rgba(0,0,0,0.5)',
+              position: 'relative',
+              background: 'linear-gradient(135deg, #2a2a2a 0%, #1a1a1a 100%)'
+            }}
+          >
+            <div style={{
+              position: 'absolute',
+              top: '20px',
+              width: '40%',
+              height: '4px',
+              backgroundColor: '#333',
+              borderRadius: '2px'
+            }} />
+            <div style={{
+              color: '#666',
+              fontSize: '14px',
+              textAlign: 'center'
+            }}>
+              手机占位图
             </div>
-          </div>
+          </motion.div>
         </div>
       </div>
     </div>
