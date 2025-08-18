@@ -1,10 +1,12 @@
 import React, { useState } from 'react';
 import SEOHead from '../SEOHead';
 import { useLanguage } from '../../contexts/LanguageContext';
+import { useNavigate } from 'react-router-dom';
 
 const Contact: React.FC = () => {
   const { t } = useLanguage();
   const [activeCard, setActiveCard] = useState('demo'); // 默认展开预约演示
+  const navigate = useNavigate();
 
   const containerStyle: React.CSSProperties = {
     minHeight: '100vh',
@@ -206,7 +208,7 @@ const Contact: React.FC = () => {
                     e.currentTarget.style.transform = 'translateY(0)';
                     e.currentTarget.style.boxShadow = '0 4px 12px rgba(59, 130, 246, 0.3)';
                   }}
-                  onClick={() => window.location.href = '/partnership'}
+                  onClick={() => navigate('/partnership')}
                 >
                   {t('page.contact.join')} →
                 </button>

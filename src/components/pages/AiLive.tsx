@@ -1,6 +1,7 @@
 import React from 'react';
 import SEOHead from '../SEOHead';
 import { useLanguage } from '../../contexts/LanguageContext';
+import { useNavigate } from 'react-router-dom';
 
 const AiLive: React.FC = () => {
   const { t } = useLanguage();
@@ -911,6 +912,57 @@ const AiLive: React.FC = () => {
                 <div style={statLabelStyle}>直播销售额</div>
               </div>
             </div>
+          </div>
+
+          {/* CTA：拥抱探客，拥抱AI（放在Footer上方） */}
+          <div style={{
+            marginTop: '80px',
+            marginBottom: '40px',
+            textAlign: 'center',
+            padding: '80px 40px',
+            background: 'linear-gradient(135deg, #22c55e 0%, #16a34a 100%)',
+            borderRadius: '24px',
+            color: 'white',
+          }}>
+            <h2 style={{
+              fontSize: '3rem',
+              fontWeight: 800,
+              margin: '0 0 20px',
+              letterSpacing: '-1px',
+            }}>拥抱探客，拥抱AI</h2>
+            <p style={{
+              fontSize: '1.3rem',
+              color: 'rgba(255,255,255,0.9)',
+              marginBottom: '40px',
+              lineHeight: 1.6,
+            }}>
+              90% 以上的决策者希望在更多直播带货场景中引入 AI Agent
+            </p>
+            <button
+              style={{
+                background: 'rgba(255,255,255,0.15)',
+                border: '2px solid rgba(255,255,255,0.3)',
+                color: 'white',
+                padding: '16px 40px',
+                borderRadius: '50px',
+                fontSize: '1.1rem',
+                fontWeight: 700,
+                cursor: 'pointer',
+                backdropFilter: 'blur(10px)',
+                transition: 'all 0.3s ease',
+              }}
+              onClick={() => navigate('/contact')}
+              onMouseEnter={(e) => {
+                e.currentTarget.style.background = 'rgba(255,255,255,0.25)';
+                e.currentTarget.style.transform = 'translateY(-2px)';
+              }}
+              onMouseLeave={(e) => {
+                e.currentTarget.style.background = 'rgba(255,255,255,0.15)';
+                e.currentTarget.style.transform = 'translateY(0)';
+              }}
+            >
+              联系我们
+            </button>
           </div>
         </div>
       </div>
