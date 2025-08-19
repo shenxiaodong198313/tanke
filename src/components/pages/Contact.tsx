@@ -2,11 +2,13 @@ import React, { useState } from 'react';
 import SEOHead from '../SEOHead';
 import { useLanguage } from '../../contexts/LanguageContext';
 import { useNavigate } from 'react-router-dom';
+import { useModal } from '../../contexts/ModalContext';
 
 const Contact: React.FC = () => {
   const { t } = useLanguage();
   const [activeCard, setActiveCard] = useState('demo'); // 默认展开预约演示
   const navigate = useNavigate();
+  const { openContactModal } = useModal();
 
   const containerStyle: React.CSSProperties = {
     minHeight: '100vh',
@@ -145,6 +147,7 @@ const Contact: React.FC = () => {
                 </p>
                 <button 
                   style={buttonStyle}
+                  onClick={() => openContactModal()}
                   onMouseEnter={(e) => {
                     e.currentTarget.style.transform = 'translateY(-2px)';
                     e.currentTarget.style.boxShadow = '0 6px 16px rgba(59, 130, 246, 0.4)';
@@ -176,7 +179,7 @@ const Contact: React.FC = () => {
                   {t('page.contact.email.desc')}
                 </p>
                 <p style={{ ...cardDescStyle, fontWeight: 600, color: '#1d4ed8' }}>
-                  邮箱地址：info@weiling.cn
+                  邮箱地址：15811568066@163.com
                 </p>
               </div>
             ) : (

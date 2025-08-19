@@ -282,19 +282,6 @@ app.get('/api/health', (req, res) => {
   });
 });
 
-// 启动服务器
-app.listen(PORT, () => {
-  console.log(`🚀 合作伙伴申请API服务器已启动`);
-  console.log(`📍 服务器地址: http://localhost:${PORT}`);
-  console.log(`📝 API文档:`);
-  console.log(`   GET  /api/partner-applications - 获取所有申请记录`);
-  console.log(`   POST /api/partner-applications - 提交新申请`);
-  console.log(`   PUT  /api/partner-applications/:id - 更新申请状态`);
-  console.log(`   DELETE /api/partner-applications/:id - 删除申请记录`);
-  console.log(`   GET  /api/health - 健康检查`);
-  console.log(`📁 数据文件: ${dataFilePath}`);
-});
-
 // CTA手机号提交接口（新增）
 app.post('/api/cta-phone', (req, res) => {
   try {
@@ -358,6 +345,20 @@ app.post('/api/cta-phone', (req, res) => {
       message: '服务器错误，请稍后重试'
     });
   }
+});
+
+// 启动服务器
+app.listen(PORT, () => {
+  console.log(`🚀 合作伙伴申请API服务器已启动`);
+  console.log(`📍 服务器地址: http://localhost:${PORT}`);
+  console.log(`📝 API文档:`);
+  console.log(`   GET  /api/partner-applications - 获取所有申请记录`);
+  console.log(`   POST /api/partner-applications - 提交新申请`);
+  console.log(`   PUT  /api/partner-applications/:id - 更新申请状态`);
+  console.log(`   DELETE /api/partner-applications/:id - 删除申请记录`);
+  console.log(`   GET  /api/health - 健康检查`);
+  console.log(`   POST /api/cta-phone - CTA手机号提交`);
+  console.log(`📁 数据文件: ${dataFilePath}`);
 });
 
 module.exports = app;

@@ -2,11 +2,13 @@ import React, { useState } from 'react';
 import SEOHead from '../SEOHead';
 import { useLanguage } from '../../contexts/LanguageContext';
 import { useNavigate } from 'react-router-dom';
+import { useModal } from '../../contexts/ModalContext';
 
 const AiCall: React.FC = () => {
   const { t } = useLanguage();
   const [audio, setAudio] = useState<{ open: boolean; title: string; url: string }>({ open: false, title: '', url: '' });
   const navigate = useNavigate();
+  const { openContactModal } = useModal();
 
   const containerStyle: React.CSSProperties = {
     minHeight: '100vh',
@@ -689,7 +691,7 @@ const AiCall: React.FC = () => {
                   <span style={{ fontSize: '1.4rem' }}>✴️</span> 通义千问
                 </div>
               </div>
-              <button style={contactBtnStyle} onClick={() => navigate('/contact')}>
+              <button style={contactBtnStyle} onClick={() => openContactModal()}>
                 详情联系客服 →
               </button>
             </div>
@@ -712,7 +714,7 @@ const AiCall: React.FC = () => {
                 <div style={pillStyle}><span style={{ fontSize: '1.2rem' }}>📊</span> 实时监控</div>
                 <div style={pillStyle}><span style={{ fontSize: '1.2rem' }}>⚙️</span> 智能分配</div>
               </div>
-              <button style={contactBtnStyle} onClick={() => navigate('/contact')}>预约演示 →</button>
+              <button style={contactBtnStyle} onClick={() => openContactModal()}>预约演示 →</button>
             </div>
           </div>
 
@@ -730,7 +732,7 @@ const AiCall: React.FC = () => {
                   <div style={pillStyle}><span style={{ fontSize: '1.2rem' }}>🗣️</span> 语音识别</div>
                   <div style={pillStyle}><span style={{ fontSize: '1.2rem' }}>💬</span> 情绪识别</div>
                 </div>
-                <button style={contactBtnStyle} onClick={() => navigate('/contact')}>预约演示 →</button>
+                <button style={contactBtnStyle} onClick={() => openContactModal()}>预约演示 →</button>
               </div>
               <div style={featureImageStyle}>
                 <div style={placeholderLargeBoxStyle}>占位图</div>
@@ -753,7 +755,7 @@ const AiCall: React.FC = () => {
                   <div style={pillStyle}><span style={{ fontSize: '1.2rem' }}>📈</span> 高级数据统计</div>
                   <div style={pillStyle}><span style={{ fontSize: '1.2rem' }}>🤖</span> AI 自动质检分析</div>
                 </div>
-                <button style={contactBtnStyle} onClick={() => navigate('/contact')}>预约演示 →</button>
+                <button style={contactBtnStyle} onClick={() => openContactModal()}>预约演示 →</button>
               </div>
             </div>
           </div>
