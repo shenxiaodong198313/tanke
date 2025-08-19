@@ -23,6 +23,8 @@ export interface PartnerApplication {
   createdAt: string;
   updatedAt: string;
   notes?: string;
+  type?: 'cta' | 'full';
+  source?: string;
 }
 
 // 提交申请的数据类型
@@ -159,8 +161,19 @@ export const formValidation = {
 };
 
 // 避免 import/no-anonymous-default-export 警告：使用具名导出
+// CTA 提交手机号 API
+export const ctaApi = {
+  submitPhone: async (phone: string): Promise<ApiResponse<PartnerApplication>> => {
+    return apiRequest<PartnerApplication>(`/cta-phone`, {
+      method: 'POST',
+      body: JSON.stringify({ phone }),
+    });
+  },
+};
+
 export const api = {
   partnerApplicationApi,
   healthApi,
   formValidation,
+  ctaApi,
 };

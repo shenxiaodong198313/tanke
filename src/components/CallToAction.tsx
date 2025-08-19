@@ -1,7 +1,15 @@
 import React from 'react';
 import { motion } from 'framer-motion';
+import Toast from './Toast';
+import { api } from '../services/api';
 
 const CallToAction: React.FC = () => {
+  const [phone, setPhone] = React.useState('');
+  const [toastOpen, setToastOpen] = React.useState(false);
+  const [toastMsg, setToastMsg] = React.useState('');
+  const [toastType, setToastType] = React.useState<'success' | 'error'>('success');
+  const [submitting, setSubmitting] = React.useState(false);
+
   const sectionStyle: React.CSSProperties = {
     background: 'linear-gradient(135deg, #1e40af 0%, #3b82f6 50%, #60a5fa 100%)', // 蓝色渐变背景
     color: 'white',
@@ -78,12 +86,40 @@ const CallToAction: React.FC = () => {
     fontWeight: '600',
     margin: '4px',
     transition: 'all 0.3s ease',
-    backdropFilter: 'blur(10px)'
+    backdropFilter: 'blur(10px)',
+    opacity: submitting ? 0.7 : 1
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const showToast = (msg: string, type: 'success' | 'error') => {
+    setToastMsg(msg);
+    setToastType(type);
+    setToastOpen(true);
+  };
+
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    console.log('立即咨询');
+    if (submitting) return;
+
+    const valid = api.formValidation.validatePhone(phone);
+    if (!valid) {
+      showToast('请输入正确的11位手机号码', 'error');
+      return;
+    }
+
+    try {
+      setSubmitting(true);
+      const res = await api.ctaApi.submitPhone(phone);
+      if (res.success) {
+        showToast('提交成功！我们会尽快与您联系。', 'success');
+        setPhone('');
+      } else {
+        showToast(res.message || '提交失败，请稍后重试', 'error');
+      }
+    } catch (err) {
+      showToast('网络异常，请稍后重试', 'error');
+    } finally {
+      setSubmitting(false);
+    }
   };
 
   return (
@@ -121,10 +157,13 @@ const CallToAction: React.FC = () => {
               type="tel"
               placeholder="请输入11位手机号"
               style={inputStyle}
+              value={phone}
+              onChange={(e) => setPhone(e.target.value.replace(/[^\d]/g, '').slice(0, 11))}
             />
             <button 
               type="submit" 
               style={submitButtonStyle}
+              disabled={submitting}
               onMouseEnter={(e) => {
                 e.currentTarget.style.backgroundColor = 'rgba(255, 255, 255, 0.3)';
               }}
@@ -132,9 +171,16 @@ const CallToAction: React.FC = () => {
                 e.currentTarget.style.backgroundColor = 'rgba(255, 255, 255, 0.2)';
               }}
             >
-              立即咨询
+              {submitting ? '提交中...' : '立即咨询'}
             </button>
           </motion.form>
+
+          <Toast
+            isOpen={toastOpen}
+            onClose={() => setToastOpen(false)}
+            message={toastMsg}
+            type={toastType}
+          />
       </div>
     </section>
   );

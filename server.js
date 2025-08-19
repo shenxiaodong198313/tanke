@@ -15,7 +15,7 @@ const PORT = process.env.PORT || 3001;
 app.use(helmet());
 
 // CORS 仅允许配置的来源（逗号分隔），默认本地前端
-const allowedOrigins = (process.env.ALLOWED_ORIGINS || 'http://localhost:3002')
+const allowedOrigins = (process.env.ALLOWED_ORIGINS || 'http://localhost:3002,http://localhost:3003,http://localhost:3004')
   .split(',')
   .map(o => o.trim())
   .filter(Boolean);
@@ -293,6 +293,71 @@ app.listen(PORT, () => {
   console.log(`   DELETE /api/partner-applications/:id - 删除申请记录`);
   console.log(`   GET  /api/health - 健康检查`);
   console.log(`📁 数据文件: ${dataFilePath}`);
+});
+
+// CTA手机号提交接口（新增）
+app.post('/api/cta-phone', (req, res) => {
+  try {
+    const { phone } = req.body;
+
+    // 验证手机号是否提供
+    if (!phone) {
+      return res.status(400).json({
+        success: false,
+        message: '请输入手机号'
+      });
+    }
+
+    // 验证手机号格式（11位中国手机号）
+    const phoneRegex = /^1[3-9]\d{9}$/;
+    if (!phoneRegex.test(phone)) {
+      return res.status(400).json({
+        success: false,
+        message: '请输入正确的11位手机号码'
+      });
+    }
+
+    // 创建新的申请记录（CTA类型）
+    const newApplication = {
+      id: Date.now().toString(),
+      type: 'cta', // 标识为CTA提交
+      name: '', // CTA提交只有手机号，其他字段为空
+      company: '',
+      position: '',
+      phone,
+      status: 'pending',
+      source: 'CTA表单', // 来源标识
+      createdAt: new Date().toISOString(),
+      updatedAt: new Date().toISOString()
+    };
+
+    // 读取现有数据
+    const applications = readApplications();
+    
+    // 添加新申请
+    applications.push(newApplication);
+    
+    // 保存数据
+    if (writeApplications(applications)) {
+      console.log('CTA手机号提交成功:', { phone, id: newApplication.id, timestamp: newApplication.createdAt });
+      res.json({
+        success: true,
+        data: newApplication,
+        message: '提交成功！我们会尽快与您联系。'
+      });
+    } else {
+      res.status(500).json({
+        success: false,
+        message: '提交失败，请稍后重试'
+      });
+    }
+  } catch (error) {
+    console.error('CTA手机号提交失败:', error);
+    res.status(500).json({
+      success: false,
+      message: '服务器错误，请稍后重试'
+    });
+  }
 });
 
 module.exports = app;

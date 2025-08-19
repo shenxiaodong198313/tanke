@@ -153,6 +153,46 @@ PUT /api/partner-applications/:id
 DELETE /api/partner-applications/:id
 ```
 
+#### 6. CTA手机号提交
+```
+POST /api/cta-phone
+```
+
+**功能说明**: 用于网站CTA（Call To Action）组件的手机号快速收集，适用于用户咨询或留资场景。
+
+**请求体**:
+```json
+{
+  "phone": "13800138000"
+}
+```
+
+**响应示例**:
+```json
+{
+  "success": true,
+  "data": {
+    "id": "1704067200000",
+    "type": "cta",
+    "name": "",
+    "company": "",
+    "position": "",
+    "phone": "13800138000",
+    "status": "pending",
+    "source": "CTA表单",
+    "createdAt": "2024-01-01T12:00:00.000Z",
+    "updatedAt": "2024-01-01T12:00:00.000Z"
+  },
+  "message": "提交成功！我们会尽快与您联系。"
+}
+```
+
+**特殊说明**:
+- 该接口数据会统一存储到 `partner-applications.json` 文件中
+- 记录类型标记为 `type: "cta"`，来源标记为 `source: "CTA表单"`
+- name、company、position 字段为空字符串，便于后续完善信息
+- 可通过现有的申请管理接口进行后续操作（查看、状态更新等）
+
 ## 数据存储
 
 申请数据存储在项目根目录的 `partner-applications.json` 文件中，格式如下：
