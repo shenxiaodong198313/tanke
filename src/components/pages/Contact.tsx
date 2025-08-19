@@ -15,8 +15,7 @@ const Contact: React.FC = () => {
     display: 'flex',
     flexDirection: 'column',
     alignItems: 'center',
-    justifyContent: 'center',
-    padding: '64px 0',
+    justifyContent: 'flex-start',
   };
 
   // 移除未使用的样式常量，避免 ESLint 报警
