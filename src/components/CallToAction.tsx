@@ -1,12 +1,10 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { motion } from 'framer-motion';
 
 const CallToAction: React.FC = () => {
-  const [phoneNumber, setPhoneNumber] = useState('');
-
   const sectionStyle: React.CSSProperties = {
-    background: '#ffffff', // 白色背景
-    color: '#333',
+    background: 'linear-gradient(135deg, #1e40af 0%, #3b82f6 50%, #60a5fa 100%)', // 蓝色渐变背景
+    color: 'white',
     position: 'relative',
     width: '100%',
     padding: '80px 0',
@@ -31,9 +29,16 @@ const CallToAction: React.FC = () => {
   const titleStyle: React.CSSProperties = {
     fontSize: '2.5rem',
     fontWeight: 'bold',
-    marginBottom: '2rem',
+    marginBottom: '1rem',
     letterSpacing: '1px',
-    color: '#333'
+    color: 'white'
+  };
+
+  const subtitleStyle: React.CSSProperties = {
+    fontSize: '1.1rem',
+    color: 'rgba(255, 255, 255, 0.9)',
+    marginBottom: '2.5rem',
+    lineHeight: '1.6'
   };
 
   const formContainerStyle: React.CSSProperties = {
@@ -42,48 +47,43 @@ const CallToAction: React.FC = () => {
     gap: '0',
     maxWidth: '500px',
     width: '100%',
-    border: '2px solid #ff4444',
+    border: '2px solid rgba(255, 255, 255, 0.3)',
     borderRadius: '50px',
     overflow: 'hidden',
-    backgroundColor: 'white'
-  };
-
-  const countryCodeStyle: React.CSSProperties = {
-    padding: '16px 20px',
-    backgroundColor: 'white',
-    border: 'none',
-    fontSize: '16px',
-    color: '#666',
-    minWidth: '80px'
+    backgroundColor: 'rgba(255, 255, 255, 0.1)',
+    backdropFilter: 'blur(10px)'
   };
 
   const inputStyle: React.CSSProperties = {
     flex: 1,
-    padding: '16px 20px',
+    padding: '16px 24px',
     border: 'none',
     outline: 'none',
     fontSize: '16px',
-    backgroundColor: 'white'
+    backgroundColor: 'transparent',
+    color: 'white'
   };
 
   const submitButtonStyle: React.CSSProperties = {
-    padding: '16px 24px',
-    backgroundColor: '#ff4444',
+    padding: '16px 32px',
+    backgroundColor: 'rgba(255, 255, 255, 0.2)',
     border: 'none',
-    borderRadius: '50%',
+    borderRadius: '50px',
     cursor: 'pointer',
     display: 'flex',
     alignItems: 'center',
     justifyContent: 'center',
-    minWidth: '50px',
-    minHeight: '50px',
-    margin: '4px'
+    color: 'white',
+    fontSize: '16px',
+    fontWeight: '600',
+    margin: '4px',
+    transition: 'all 0.3s ease',
+    backdropFilter: 'blur(10px)'
   };
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    console.log('Phone number:', phoneNumber);
-    // 这里可以添加提交逻辑
+    console.log('立即咨询');
   };
 
   return (
@@ -96,8 +96,18 @@ const CallToAction: React.FC = () => {
             viewport={{ once: true }}
             style={titleStyle}
           >
-            <span style={{color: '#ff4444'}}>联系我们</span>，帮您轻松开单
+            请专业顾问为您解答或演示
           </motion.h2>
+
+          <motion.p
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.3 }}
+            viewport={{ once: true }}
+            style={subtitleStyle}
+          >
+            留下您的联系方式，会有专业工作人员为您服务
+          </motion.p>
 
           <motion.form
             initial={{ opacity: 0, y: 20 }}
@@ -107,18 +117,22 @@ const CallToAction: React.FC = () => {
             style={formContainerStyle}
             onSubmit={handleSubmit}
           >
-            <div style={countryCodeStyle}>+86</div>
             <input
               type="tel"
-              value={phoneNumber}
-              onChange={(e) => setPhoneNumber(e.target.value)}
-              placeholder="请输入您的手机号"
+              placeholder="请输入11位手机号"
               style={inputStyle}
             />
-            <button type="submit" style={submitButtonStyle}>
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="white">
-                <path d="M2,21L23,12L2,3V10L17,12L2,14V21Z" />
-              </svg>
+            <button 
+              type="submit" 
+              style={submitButtonStyle}
+              onMouseEnter={(e) => {
+                e.currentTarget.style.backgroundColor = 'rgba(255, 255, 255, 0.3)';
+              }}
+              onMouseLeave={(e) => {
+                e.currentTarget.style.backgroundColor = 'rgba(255, 255, 255, 0.2)';
+              }}
+            >
+              立即咨询
             </button>
           </motion.form>
       </div>
@@ -126,4 +140,4 @@ const CallToAction: React.FC = () => {
   );
 };
 
-export default CallToAction; 
+export default CallToAction;
