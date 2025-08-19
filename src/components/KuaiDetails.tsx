@@ -110,11 +110,11 @@ const KuaiDetails: React.FC = () => {
 
   const sectionStyle: React.CSSProperties = {
     minHeight: isMobile ? 'auto' : '100vh',
-    padding: isMobile ? '7rem 1rem 6rem' : '7rem 2rem 6rem',
+    padding: isMobile ? '5rem 1rem 5rem' : '4rem 2rem 5rem',
     background: 'linear-gradient(180deg, #0a0a0a 0%, #141414 50%, #0a0a0a 100%)',
     display: 'flex',
     flexDirection: 'column',
-    justifyContent: 'center',
+    justifyContent: 'flex-start',
     position: 'relative'
   };
 
@@ -126,11 +126,11 @@ const KuaiDetails: React.FC = () => {
 
   // 新增：标题样式
   const titleStyle: React.CSSProperties = {
-    fontSize: isMobile ? '1.6rem' : '2.2rem',
+    fontSize: isMobile ? '2rem' : '3rem',
     fontWeight: 700,
     color: '#e5e7eb',
     textAlign: 'center',
-    margin: isMobile ? '0 0 1.1rem' : '0 0 1.6rem'
+    margin: isMobile ? '0 0 3rem' : '0 0 4rem'
   };
 
   const gridContainerStyle: React.CSSProperties = {
