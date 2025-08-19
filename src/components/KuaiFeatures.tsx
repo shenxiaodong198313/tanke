@@ -208,14 +208,14 @@ const KuaiFeatures: React.FC = () => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
         >
-          <div style={badgeRowStyle}>
-            <span style={badgeStyle}><span style={{ width: 8, height: 8, borderRadius: '50%', background: '#f59e0b', display: 'inline-block' }} /> 大模型获客机器人</span>
-            <span style={badgeStyle}>AI Agent</span>
-          </div>
-          <h1 style={titleStyle}>对话自然流畅，获客行云流水</h1>
+
+          {/* 标签移动到指标行右侧，移除原位置 */}
+          <h1 style={titleStyle}>AI Agent，让对话自然流畅，获客行云流水</h1>
           <div style={metricRowStyle}>
-            <span style={metricBadgeStyle}>有效对话率 ↑</span>
-            <span style={metricBadgeStyle}>线索获取率 ↑</span>
+            <span style={metricBadgeStyle}>大语言模型技术加持</span>
+            <span style={metricBadgeStyle}>AI 赋能营销&服务</span>
+            <span style={metricBadgeStyle}>大模型获客机器人</span>
+            <span style={metricBadgeStyle}>AI Agent</span>
           </div>
         </motion.div>
 
@@ -233,7 +233,7 @@ const KuaiFeatures: React.FC = () => {
             </div>
             <div style={ctaRowStyle}>
               <button style={primaryBtnStyle} onClick={() => openContactModal()}>预约演示</button>
-              <button style={secondaryBtnStyle} onClick={() => navigate('/contact')}>免费试用</button>
+              {/* 移除免费试用按钮 */}
             </div>
           </motion.div>
 
